@@ -1,0 +1,5465 @@
+{
+  "timelineObjects": [{
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114410431,
+        "longitudeE7": -858310917,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114278636,
+        "longitudeE7": -858101075,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-07T13:55:52.196Z",
+        "endTimestamp": "2023-01-07T14:03:56.490Z"
+      },
+      "distance": 3091,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 86.21906638145447
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 6.490124017000198
+      }, {
+        "activityType": "WALKING",
+        "probability": 3.798310086131096
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.7001966014504433
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.1414467357099056
+      }, {
+        "activityType": "STILL",
+        "probability": 0.3691199468448758
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.10872090933844447
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.06745841819792986
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.06258711218833923
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.015928181528579444
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.013100773503538221
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.007589799497509375
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.0041510877053951845
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.0022032574634067714
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.6764257759760426E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114410305,
+          "lngE7": -858310852
+        }, {
+          "latE7": 114416446,
+          "lngE7": -858269119
+        }, {
+          "latE7": 114414339,
+          "lngE7": -858267822
+        }, {
+          "latE7": 114379253,
+          "lngE7": -858196563
+        }, {
+          "latE7": 114281187,
+          "lngE7": -858097763
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJ1_2zrd1OdI8RLS4loeNfV0o",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJX3VCut1OdI8R091vKMBHLJU",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJAxsc691OdI8RVQg9hgo7aEw",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJ1w69-d1OdI8RSPyLNyGdlTo",
+          "duration": "26s"
+        }, {
+          "placeId": "ChIJjfR9WudOdI8R-zoD8DmfNVs",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJgctPaedOdI8R-ETrWVZ-YtI",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJgctPaedOdI8RghIAcoCN1QI",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJUWVqcudOdI8RNd--TI_69fM",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJIbstdedOdI8Rbs28ix0v9gU",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJQwSooedOdI8RUjny-9CizGM",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJ95ARp-dOdI8Ryn__jBcYL8w",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJk9k1B-dOdI8RyvHEgSUee3I",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ3zPI5OZOdI8Rqgk3gbnIN4c",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJEfHy7eZOdI8RFFlNuHR7Bi0",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJjfpo7OZOdI8RTbxBo-J58is",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJW5aciOZOdI8RC3g3Nt33F8w",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJy-3Lh-ZOdI8R2mbJcK-wGQA",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8R25My0-ZWEWc",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RK26niaKbgcA",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RS5WxIRl91o0",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXxzW7Qu0oN4",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPWiYyOS_hoo",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8Rx5oyuaU18-M",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rs42rdxHKs-M",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxyxsCRK6FYQ",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLQs8mDNUsRs",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8Ro4qbeUX2O8k",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RdpsI_Xe_XXo",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RU_9CFkYLhgI",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGQMpsy9_-mc",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RG3fC5t2dUCI",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROzg7aK_e-xs",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RM8jUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REj4oq3vPn7I",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RAREIzE9KstA",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8Ry4bJGTkL4t0",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdXLiOqwykuY",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RD0YecmxEF24",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJrS6PFIpOdI8Ro7KOqm4uztk",
+          "duration": "44s"
+        }],
+        "distanceMeters": 3310.206123134546,
+        "travelMode": "DRIVE",
+        "confidence": 0.9750081306990391
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114416065,
+          "lngE7": -858267212,
+          "accuracyMeters": 23,
+          "timestamp": "2023-01-07T13:57:56.396Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114298321,
+          "longitudeE7": -858120036,
+          "accuracyMetres": 58
+        },
+        "method": "EXITING_VEHICLE_SIGNAL",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-07T14:04:51.440Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114282690,
+        "longitudeE7": -858100891,
+        "placeId": "ChIJV0PI_PROdI8RNz1s-WsVTnI",
+        "address": "Universidad Politécnica de Nicaragua, Rivas, Km 113 Carretera Panamericana, Carr. Panamericana, Nicaragua",
+        "name": "Polytechnic University of Nicaragua, Rivas",
+        "semanticType": "TYPE_WORK",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 67.65065,
+        "calibratedProbability": 45.57094
+      },
+      "duration": {
+        "startTimestamp": "2023-01-07T14:03:56.490Z",
+        "endTimestamp": "2023-01-07T18:40:09.183Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114277813,
+      "centerLngE7": -858101816,
+      "visitConfidence": 86,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114279603,
+        "longitudeE7": -858117605,
+        "placeId": "ChIJZ8hl2F9PdI8RGgLnBmMmN1w",
+        "address": "C5HQ+57Q, Rivas, Nicaragua",
+        "name": "Escuela El Mesias",
+        "locationConfidence": 13.744298,
+        "calibratedProbability": 9.258455
+      }, {
+        "latitudeE7": 114280004,
+        "longitudeE7": -858087587,
+        "placeId": "ChIJlYDCLgBPdI8RVkd3fsghlWo",
+        "address": "NIC-1, Nicaragua",
+        "name": "Pepsi Rivas",
+        "locationConfidence": 9.59684,
+        "calibratedProbability": 6.464638
+      }, {
+        "latitudeE7": 114281997,
+        "longitudeE7": -858119600,
+        "placeId": "ChIJ80BlKf9VcY8RFaEzL-UZTdA",
+        "address": "Km 113, Contiguo a Upoli, 1/2 Carr. Sur Vía Panamericana, Rivas, Nicaragua",
+        "name": "Colegio Pre-Universitario El Mesías",
+        "locationConfidence": 5.2147026,
+        "calibratedProbability": 3.5127363
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Rwpxbba6kCaM",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "VIVERO BELEN",
+        "locationConfidence": 1.8679348,
+        "calibratedProbability": 1.2582812
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Ru7Y_F2O1X90",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "Resturante Comilona",
+        "locationConfidence": 1.212335,
+        "calibratedProbability": 0.81665504
+      }, {
+        "latitudeE7": 115350384,
+        "longitudeE7": -853951964,
+        "placeId": "ChIJp-1idXOOdI8ROhmxM1N_1iQ",
+        "address": "Nicaragua",
+        "name": "Lake Nicaragua",
+        "locationConfidence": 0.713241,
+        "calibratedProbability": 0.4804545
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 54,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114292200,
+        "longitudeE7": -858106199,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114393541,
+        "longitudeE7": -858258403,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-07T18:40:09.183Z",
+        "endTimestamp": "2023-01-07T18:52:14.624Z"
+      },
+      "distance": 3164,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 75.09855031967163
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 15.375220775604248
+      }, {
+        "activityType": "WALKING",
+        "probability": 6.506556272506714
+      }, {
+        "activityType": "STILL",
+        "probability": 1.3163740746676922
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.9575965814292431
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.3728646319359541
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.22717253305017948
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.075198506237939
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.02262074704049155
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.02248445525765419
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.014840270159766078
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.008724978397367522
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.0016600264643784612
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 1.3169159274184494E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 6.980787059518434E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114292001,
+          "lngE7": -858106460
+        }, {
+          "latE7": 114381198,
+          "lngE7": -858198776
+        }, {
+          "latE7": 114395599,
+          "lngE7": -858302154
+        }, {
+          "latE7": 114395618,
+          "lngE7": -858260269
+        }, {
+          "latE7": 114393262,
+          "lngE7": -858259124
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJrS6PFIpOdI8RorKOqm4uztk",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RDkYecmxEF24",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdHLiOqwykuY",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8RyobJGTkL4t0",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RABEIzE9KstA",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REz4oq3vPn7I",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RMsjUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROjg7aK_e-xs",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RGnfC5t2dUCI",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGAMpsy9_-mc",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RUv9CFkYLhgI",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8Rd5sI_Xe_XXo",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8RooqbeUX2O8k",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLAs8mDNUsRs",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxixsCRK6FYQ",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rso2rdxHKs-M",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8RxpoyuaU18-M",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPGiYyOS_hoo",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXhzW7Qu0oN4",
+          "duration": "37s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RSpWxIRl91o0",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RKm6niaKbgcA",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8RmtJIOAWpWd8",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJHRosj-ZOdI8RYXqUFn-QFx0",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJRaUqieZOdI8RkDJZGfHHNos",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJi25M7eZOdI8RgjZDDK_dj80",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJtXYj6eZOdI8RVSJGKXWsYuQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJtVop4uZOdI8ROc2FeAP6rBo",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJURpnA-dOdI8R2UzJD9kANbM",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJ8eAkB-dOdI8R-XAH8omsQm0",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJP5sCCudOdI8RPZ-rvX2oHlo",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJqRy9m-dOdI8RgeZgkF_SsRA",
+          "duration": "31s"
+        }, {
+          "placeId": "ChIJN7CgiOdOdI8Ruz5xvMjzOJc",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJx4akY91OdI8R-efSESl1h54",
+          "duration": "21s"
+        }, {
+          "placeId": "ChIJ_2OFbN1OdI8RsXJwTf6YFF0",
+          "duration": "21s"
+        }, {
+          "placeId": "ChIJ43FaFt1OdI8RcTpSNfXBdpo",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ03OtId1OdI8R-X86KfkFgHA",
+          "duration": "30s"
+        }, {
+          "placeId": "ChIJST_J3dxOdI8R-wjulUi_WW4",
+          "duration": "36s"
+        }, {
+          "placeId": "ChIJtzEDHt1OdI8RbdmNQMMIKo8",
+          "duration": "45s"
+        }, {
+          "placeId": "ChIJu1UBEN1OdI8RilLYPVJuaAA",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJhy2-DN1OdI8Rw2DRg9swSjw",
+          "duration": "25s"
+        }, {
+          "placeId": "ChIJz6uZgt1OdI8Rgi5IntsQ4lQ",
+          "duration": "25s"
+        }, {
+          "placeId": "ChIJldYTe-dOdI8RhFs5cQFQsz0",
+          "duration": "31s"
+        }, {
+          "placeId": "ChIJUWVqcudOdI8RNd--TI_69fM",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJIbstdedOdI8Rbs28ix0v9gU",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJQwSooedOdI8RUjny-9CizGM",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJzUTho-dOdI8RouD6Bw8MtPA",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJOSOZpOdOdI8RKDxl-VQoXi0",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJDWxPuudOdI8RAIROSrM0mwE",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJL_ruuedOdI8RJCt0JNPBiFE",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJ2ZsAyOdOdI8RZiwXOFnvaZE",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJXypqzudOdI8RoTnHXtBdUnw",
+          "duration": "1s"
+        }],
+        "distanceMeters": 3776.7748459314803,
+        "travelMode": "DRIVE",
+        "confidence": 0.9937978554320278
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114396114,
+          "lngE7": -858302383,
+          "accuracyMeters": 26,
+          "timestamp": "2023-01-07T18:46:16.372Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114393573,
+          "longitudeE7": -858258347,
+          "accuracyMetres": 124
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-07T18:54:16.355Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399719,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 78.57427,
+        "calibratedProbability": 64.78951
+      },
+      "duration": {
+        "startTimestamp": "2023-01-07T18:52:14.624Z",
+        "endTimestamp": "2023-01-13T21:39:12.775Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399616,
+      "centerLngE7": -858311166,
+      "visitConfidence": 88,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 3.3891094,
+        "calibratedProbability": 2.7945373
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 2.670779,
+        "calibratedProbability": 2.202228
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 2.6256046,
+        "calibratedProbability": 2.164979
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 1.603627,
+        "calibratedProbability": 1.3222929
+      }, {
+        "latitudeE7": 114393032,
+        "longitudeE7": -858272274,
+        "placeId": "ChIJk3XMOd1OdI8R17vtb-XqXy0",
+        "address": "Del Parque Central 1 cuadra al este y 1/2 al sur, Rivas 47000, Nicaragua",
+        "name": "Rivas Inn",
+        "locationConfidence": 1.0205855,
+        "calibratedProbability": 0.841538
+      }, {
+        "latitudeE7": 114393333,
+        "longitudeE7": -858265012,
+        "placeId": "ChIJxfkuACJPdI8Rwy40_q7gsQ0",
+        "address": "Esquina sur del parque central, cuadra y media al Este Rivas, Rivas 47000, Nicaragua",
+        "name": "Hotel Nueva Posada INN",
+        "locationConfidence": 0.80839276,
+        "calibratedProbability": 0.6665715
+      }, {
+        "latitudeE7": 114415888,
+        "longitudeE7": -858270828,
+        "placeId": "ChIJYcxDPRhPdI8RAOYEk2H1z4Y",
+        "address": "De la rotonda de Jesús del rescate 1c oeste y 2c sur, Rivas, Nicaragua",
+        "name": "ETJ RIVAS",
+        "locationConfidence": 0.6812619,
+        "calibratedProbability": 0.561744
+      }, {
+        "latitudeE7": 114395434,
+        "longitudeE7": -858258670,
+        "placeId": "ChIJHyc09sRPdI8Rgzj_Ta2Psmk",
+        "address": "C5QF+RM6, C. Central Este, Rivas, Nicaragua",
+        "name": "El Calvario church",
+        "locationConfidence": 0.58033407,
+        "calibratedProbability": 0.47852254
+      }, {
+        "latitudeE7": 114394140,
+        "longitudeE7": -858259506,
+        "placeId": "ChIJ37toulBPdI8RdZZHLqNlbms",
+        "address": "Bomberos Rivas 2 cuadras al, sur, Rivas, Nicaragua",
+        "name": "HANNERST FOOD",
+        "locationConfidence": 0.5311596,
+        "calibratedProbability": 0.43797502
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 63,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114396167,
+        "longitudeE7": -858309558,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114388194,
+        "longitudeE7": -858305185,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-13T21:39:12.775Z",
+        "endTimestamp": "2023-01-13T21:40:43.743Z"
+      },
+      "distance": 114,
+      "activityType": "WALKING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 81.72661066055298
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 9.57237258553505
+      }, {
+        "activityType": "STILL",
+        "probability": 3.8858547806739807
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.5410520136356354
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 1.3594256713986397
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.2053657323122025
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.2899644896388054
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.16589380102232099
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.1069908612407744
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.09785494767129421
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.018826925952453166
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.013127679994795471
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.010622939589666203
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.00603449771006126
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 7.001778357107469E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114396133,
+          "lngE7": -858309631
+        }, {
+          "latE7": 114383268,
+          "lngE7": -858294830
+        }, {
+          "latE7": 114383354,
+          "lngE7": -858294830
+        }, {
+          "latE7": 114413433,
+          "lngE7": -858306350
+        }, {
+          "latE7": 114412126,
+          "lngE7": -858308258
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 705.7985285466694,
+        "travelMode": "WALK",
+        "confidence": 0.9966904936551981
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114382906,
+          "lngE7": -858296280,
+          "accuracyMeters": 20,
+          "timestamp": "2023-01-13T21:45:11.206Z"
+        }]
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114382191,
+        "longitudeE7": -858295138,
+        "placeId": "ChIJb1BXy8JOdI8R9CTiYS8MRsk",
+        "address": "C5QC+75Q, Rivas, Nicaragua",
+        "name": "BDF",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 16.303053,
+        "calibratedProbability": 5.3203387
+      },
+      "duration": {
+        "startTimestamp": "2023-01-13T21:40:43.743Z",
+        "endTimestamp": "2023-01-13T21:47:12.296Z"
+      },
+      "placeConfidence": "LOW_CONFIDENCE",
+      "centerLatE7": 114386000,
+      "centerLngE7": -858301650,
+      "visitConfidence": 65,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114390383,
+        "longitudeE7": -858298443,
+        "placeId": "ChIJNQSZd8ROdI8RPMB9mTYAn0s",
+        "address": "C5QC+J36, Rivas, Nicaragua",
+        "name": "Palí",
+        "locationConfidence": 13.15097,
+        "calibratedProbability": 4.291688
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 12.390328,
+        "calibratedProbability": 4.04346
+      }, {
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 10.282842,
+        "calibratedProbability": 3.3557029
+      }, {
+        "latitudeE7": 114399700,
+        "longitudeE7": -858311157,
+        "semanticType": "TYPE_HOME",
+        "locationConfidence": 8.485602,
+        "calibratedProbability": 2.7691917
+      }, {
+        "latitudeE7": 114389713,
+        "longitudeE7": -858293444,
+        "placeId": "ChIJxZBjON1OdI8RNgZj19Hjh9s",
+        "address": "C5QC+H7J, 1ra Calle NO, Rivas, Nicaragua",
+        "name": "BANPRO | Nicaragua",
+        "locationConfidence": 6.6803823,
+        "calibratedProbability": 2.1800761
+      }, {
+        "latitudeE7": 114381428,
+        "longitudeE7": -858298131,
+        "placeId": "ChIJEaip0sJOdI8RpFWj2PI9VWg",
+        "address": "BDF 50 metros al Oeste, C. Central Oeste, Rivas, Nicaragua",
+        "name": "Service Compu",
+        "locationConfidence": 5.922715,
+        "calibratedProbability": 1.932819
+      }, {
+        "latitudeE7": 114387153,
+        "longitudeE7": -858305473,
+        "placeId": "ChIJu7MqKN1OdI8RmoM0ejKcAwM",
+        "address": "C5Q9+FQP, 3ra Av. NO, Rivas, Nicaragua",
+        "name": "Casa De La Limpieza Rivas Nicaragua",
+        "locationConfidence": 5.31305,
+        "calibratedProbability": 1.7338609
+      }, {
+        "latitudeE7": 114378691,
+        "longitudeE7": -858306777,
+        "placeId": "ChIJiTuwKcNOdI8RFHWD5myxXw4",
+        "address": "C5Q9+4PW, Rivas, Nicaragua",
+        "name": "LAFISE",
+        "locationConfidence": 5.009172,
+        "calibratedProbability": 1.6346933
+      }, {
+        "latitudeE7": 114388932,
+        "longitudeE7": -858305384,
+        "placeId": "ChIJN0Y22NxOdI8RRFpexW704gg",
+        "address": "3ra Av. NO,Costado Este Policía Nacional,, Rivas, Nicaragua",
+        "name": "El Verdugo Rivas",
+        "locationConfidence": 4.1000786,
+        "calibratedProbability": 1.3380197
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 6,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114391730,
+        "longitudeE7": -858298636,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114412262,
+        "longitudeE7": -858308364,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-13T21:47:12.296Z",
+        "endTimestamp": "2023-01-13T21:51:16.479Z"
+      },
+      "distance": 261,
+      "activityType": "WALKING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 83.60283970832825
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 9.83082726597786
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 2.3337118327617645
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.5999602153897285
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.2335910461843014
+      }, {
+        "activityType": "STILL",
+        "probability": 0.9484599344432354
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.2963641192764044
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.07688229670748115
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.0328573863953352
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.017137391841970384
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.012160729238530621
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.0064053849200718105
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.00551233533769846
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.003286534411017783
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 7.75386510554199E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114392061,
+          "lngE7": -858297424
+        }, {
+          "latE7": 114413433,
+          "lngE7": -858306350
+        }, {
+          "latE7": 114412126,
+          "lngE7": -858308258
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 313.6487759623931,
+        "travelMode": "WALK",
+        "confidence": 1.0
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 40.861046,
+        "calibratedProbability": 27.507109
+      },
+      "duration": {
+        "startTimestamp": "2023-01-13T21:51:16.479Z",
+        "endTimestamp": "2023-01-13T22:01:24.329Z"
+      },
+      "placeConfidence": "LOW_CONFIDENCE",
+      "centerLatE7": 114412650,
+      "centerLngE7": -858316017,
+      "visitConfidence": 89,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 18.924189,
+        "calibratedProbability": 12.73951
+      }, {
+        "latitudeE7": 114415857,
+        "longitudeE7": -858323451,
+        "placeId": "ChIJ-YmUYNxOdI8RrN6nkpQQdQo",
+        "address": "C5R9+J3J, Rivas, Nicaragua",
+        "name": "Rivas\u0027 Bus Station",
+        "locationConfidence": 17.485336,
+        "calibratedProbability": 11.770894
+      }, {
+        "latitudeE7": 114399700,
+        "longitudeE7": -858311157,
+        "semanticType": "TYPE_HOME",
+        "locationConfidence": 14.096493,
+        "calibratedProbability": 9.48957
+      }, {
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 2.0580688,
+        "calibratedProbability": 1.3854643
+      }, {
+        "latitudeE7": 114412400,
+        "longitudeE7": -858310774,
+        "placeId": "ChIJO9yk-NxOdI8RovZRkahd1i4",
+        "address": "C5R9+FHV, Rivas, Nicaragua",
+        "name": "Distribuidora Santo Domingo",
+        "locationConfidence": 1.7084498,
+        "calibratedProbability": 1.1501055
+      }, {
+        "latitudeE7": 114432875,
+        "longitudeE7": -858333301,
+        "placeId": "ChIJVZ4zF_xPdI8RhqQIuO2A4JU",
+        "address": "C5V8+8M7, 3a Av. Noroeste, Rivas, Nicaragua",
+        "name": "Batteries and More",
+        "locationConfidence": 1.0359921,
+        "calibratedProbability": 0.697416
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 0.7938805,
+        "calibratedProbability": 0.5344297
+      }, {
+        "latitudeE7": 114414141,
+        "longitudeE7": -858317223,
+        "placeId": "ChIJlR9JX9xOdI8RKzE4zIKbnhk",
+        "address": "semaforos del mercado 50 metros al norte, Rivas, Nicaragua",
+        "name": "Tienda El Buen Precio.",
+        "locationConfidence": 0.69458646,
+        "calibratedProbability": 0.46758628
+      }, {
+        "latitudeE7": 114406250,
+        "longitudeE7": -858315039,
+        "placeId": "ChIJ42xsX5FPdI8R71c4t4wlImE",
+        "address": "Mercado, 4ta Av. NO, Rivas, Nicaragua",
+        "name": "Matadero Cacique, Rivas",
+        "locationConfidence": 0.6372033,
+        "calibratedProbability": 0.4289567
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 33,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114412669,
+        "longitudeE7": -858317840,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114402114,
+        "longitudeE7": -858312126,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-13T22:01:24.329Z",
+        "endTimestamp": "2023-01-13T22:03:23.601Z"
+      },
+      "distance": 132,
+      "activityType": "WALKING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 89.24770951271057
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 5.257323011755943
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 1.978788711130619
+      }, {
+        "activityType": "STILL",
+        "probability": 1.2765351682901382
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.2601827271282673
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.8584374561905861
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.09763975394889712
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.01645384618313983
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.002581235457910225
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.002125438186340034
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.0016548099665669724
+      }, {
+        "activityType": "SAILING",
+        "probability": 3.235746817153995E-4
+      }, {
+        "activityType": "SKIING",
+        "probability": 1.3756712178292219E-4
+      }, {
+        "activityType": "FLYING",
+        "probability": 1.1303042128929519E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.4255504554583354E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114412927,
+          "lngE7": -858317489
+        }, {
+          "latE7": 114404973,
+          "lngE7": -858313217
+        }, {
+          "latE7": 114402141,
+          "lngE7": -858312072
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 135.16271739569856,
+        "travelMode": "WALK",
+        "confidence": 1.0
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399700,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 89.053246,
+        "calibratedProbability": 87.42155
+      },
+      "duration": {
+        "startTimestamp": "2023-01-13T22:03:23.601Z",
+        "endTimestamp": "2023-01-14T14:02:48.181Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399626,
+      "centerLngE7": -858311113,
+      "visitConfidence": 96,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 1.6892002,
+        "calibratedProbability": 1.6582495
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.8141326,
+        "calibratedProbability": 0.7992155
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 0.639575,
+        "calibratedProbability": 0.62785625
+      }, {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "locationConfidence": 0.5755261,
+        "calibratedProbability": 0.5649809
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 74,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114408757,
+        "longitudeE7": -858313801,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114278729,
+        "longitudeE7": -858100979,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-14T14:02:48.181Z",
+        "endTimestamp": "2023-01-14T14:10:56.371Z"
+      },
+      "distance": 3075,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 85.12845635414124
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 6.551527231931686
+      }, {
+        "activityType": "WALKING",
+        "probability": 5.597930774092674
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 1.5817360952496529
+      }, {
+        "activityType": "STILL",
+        "probability": 0.40498371236026287
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.400750245898962
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.07275694515556097
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.07216816884465516
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.07121143280528486
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.06514196284115314
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.030527962371706963
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.015734214684925973
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.004333457036409527
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.0027397676603868604
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 5.284461312982103E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114408378,
+          "lngE7": -858313522
+        }, {
+          "latE7": 114408378,
+          "lngE7": -858302459
+        }, {
+          "latE7": 114402914,
+          "lngE7": -858298721
+        }, {
+          "latE7": 114410552,
+          "lngE7": -858285064
+        }, {
+          "latE7": 114406633,
+          "lngE7": -858278121
+        }, {
+          "latE7": 114356641,
+          "lngE7": -858170471
+        }, {
+          "latE7": 114281206,
+          "lngE7": -858097763
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "30s"
+        }, {
+          "placeId": "ChIJoyMmAd1OdI8RYusvoUWh0gA",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJu1UBEN1OdI8RilLYPVJuaAA",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJhy2-DN1OdI8Rw2DRg9swSjw",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJz6uZgt1OdI8Rgi5IntsQ4lQ",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJt5kNgOdOdI8RnBdNaAyC8ng",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJmXb7hedOdI8RnB48PHhrOVs",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJt3rjnOdOdI8RlLZmC1J-034",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJ95ARp-dOdI8Ryn__jBcYL8w",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJk9k1B-dOdI8RyvHEgSUee3I",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ3zPI5OZOdI8Rqgk3gbnIN4c",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJEfHy7eZOdI8RFFlNuHR7Bi0",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJjfpo7OZOdI8RTbxBo-J58is",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJW5aciOZOdI8RC3g3Nt33F8w",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJy-3Lh-ZOdI8R2mbJcK-wGQA",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8R25My0-ZWEWc",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RK26niaKbgcA",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RS5WxIRl91o0",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXxzW7Qu0oN4",
+          "duration": "32s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPWiYyOS_hoo",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8Rx5oyuaU18-M",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rs42rdxHKs-M",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxyxsCRK6FYQ",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLQs8mDNUsRs",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8Ro4qbeUX2O8k",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RdpsI_Xe_XXo",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RU_9CFkYLhgI",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGQMpsy9_-mc",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RG3fC5t2dUCI",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROzg7aK_e-xs",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RM8jUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REj4oq3vPn7I",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RAREIzE9KstA",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8Ry4bJGTkL4t0",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdXLiOqwykuY",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RD0YecmxEF24",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJrS6PFIpOdI8Ro7KOqm4uztk",
+          "duration": "42s"
+        }],
+        "distanceMeters": 3253.2486121841466,
+        "travelMode": "DRIVE",
+        "confidence": 0.9990768334149885
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114403124,
+          "lngE7": -858298874,
+          "accuracyMeters": 2,
+          "timestamp": "2023-01-14T14:03:54.182Z"
+        }, {
+          "latE7": 114406290,
+          "lngE7": -858278961,
+          "accuracyMeters": 2,
+          "timestamp": "2023-01-14T14:04:42.183Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114277826,
+          "longitudeE7": -858101524,
+          "accuracyMetres": 80
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-14T14:12:41.929Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114282690,
+        "longitudeE7": -858100891,
+        "placeId": "ChIJV0PI_PROdI8RNz1s-WsVTnI",
+        "address": "Universidad Politécnica de Nicaragua, Rivas, Km 113 Carretera Panamericana, Carr. Panamericana, Nicaragua",
+        "name": "Polytechnic University of Nicaragua, Rivas",
+        "semanticType": "TYPE_WORK",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 84.74667,
+        "calibratedProbability": 79.881386
+      },
+      "duration": {
+        "startTimestamp": "2023-01-14T14:10:56.371Z",
+        "endTimestamp": "2023-01-14T18:44:10.037Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114276705,
+      "centerLngE7": -858103115,
+      "visitConfidence": 94,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114280004,
+        "longitudeE7": -858087587,
+        "placeId": "ChIJlYDCLgBPdI8RVkd3fsghlWo",
+        "address": "NIC-1, Nicaragua",
+        "name": "Pepsi Rivas",
+        "locationConfidence": 3.8404036,
+        "calibratedProbability": 3.6199267
+      }, {
+        "latitudeE7": 114281997,
+        "longitudeE7": -858119600,
+        "placeId": "ChIJ80BlKf9VcY8RFaEzL-UZTdA",
+        "address": "Km 113, Contiguo a Upoli, 1/2 Carr. Sur Vía Panamericana, Rivas, Nicaragua",
+        "name": "Colegio Pre-Universitario El Mesías",
+        "locationConfidence": 1.7518017,
+        "calibratedProbability": 1.6512312
+      }, {
+        "latitudeE7": 114279603,
+        "longitudeE7": -858117605,
+        "placeId": "ChIJZ8hl2F9PdI8RGgLnBmMmN1w",
+        "address": "C5HQ+57Q, Rivas, Nicaragua",
+        "name": "Escuela El Mesias",
+        "locationConfidence": 1.201128,
+        "calibratedProbability": 1.1321715
+      }, {
+        "latitudeE7": 115350384,
+        "longitudeE7": -853951964,
+        "placeId": "ChIJp-1idXOOdI8ROhmxM1N_1iQ",
+        "address": "Nicaragua",
+        "name": "Lake Nicaragua",
+        "locationConfidence": 0.47101918,
+        "calibratedProbability": 0.44397807
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 69,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114278324,
+        "longitudeE7": -858101221,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114399721,
+        "longitudeE7": -858311123,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-14T18:44:10.037Z",
+        "endTimestamp": "2023-01-14T18:52:11.123Z"
+      },
+      "distance": 2896,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "LOW",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 55.547356605529785
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 30.350399017333984
+      }, {
+        "activityType": "CYCLING",
+        "probability": 6.0494691133499146
+      }, {
+        "activityType": "WALKING",
+        "probability": 5.813565477728844
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.243329979479313
+      }, {
+        "activityType": "STILL",
+        "probability": 0.5873853340744972
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.16652221092954278
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.11566767934709787
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.07825458305887878
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.014226821076590568
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.013676124217454344
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.009784541180124506
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.008717150922166184
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.001649123805691488
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 3.561749783997925E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114281063,
+          "lngE7": -858097686
+        }, {
+          "latE7": 114379253,
+          "lngE7": -858196563
+        }, {
+          "latE7": 114399738,
+          "lngE7": -858311080
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJrS6PFIpOdI8RorKOqm4uztk",
+          "duration": "42s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RDkYecmxEF24",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdHLiOqwykuY",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8RyobJGTkL4t0",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RABEIzE9KstA",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REz4oq3vPn7I",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RMsjUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROjg7aK_e-xs",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RGnfC5t2dUCI",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGAMpsy9_-mc",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RUv9CFkYLhgI",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8Rd5sI_Xe_XXo",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8RooqbeUX2O8k",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLAs8mDNUsRs",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxixsCRK6FYQ",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rso2rdxHKs-M",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8RxpoyuaU18-M",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPGiYyOS_hoo",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXhzW7Qu0oN4",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RSpWxIRl91o0",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RKm6niaKbgcA",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8RmtJIOAWpWd8",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJHRosj-ZOdI8RYXqUFn-QFx0",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJRaUqieZOdI8RkDJZGfHHNos",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJi25M7eZOdI8RgjZDDK_dj80",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJtXYj6eZOdI8RVSJGKXWsYuQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJtVop4uZOdI8ROc2FeAP6rBo",
+          "duration": "21s"
+        }, {
+          "placeId": "ChIJURpnA-dOdI8R2UzJD9kANbM",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJ8eAkB-dOdI8R-XAH8omsQm0",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJP5sCCudOdI8RPZ-rvX2oHlo",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJqRy9m-dOdI8RgeZgkF_SsRA",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJN7CgiOdOdI8Ruz5xvMjzOJc",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJx4akY91OdI8R-efSESl1h54",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJ_2OFbN1OdI8RsXJwTf6YFF0",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJ43FaFt1OdI8RcTpSNfXBdpo",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJ03OtId1OdI8R-X86KfkFgHA",
+          "duration": "26s"
+        }, {
+          "placeId": "ChIJST_J3dxOdI8R-wjulUi_WW4",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "10s"
+        }],
+        "distanceMeters": 3159.1138408735155,
+        "travelMode": "DRIVE",
+        "confidence": 0.9979143309089574
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114399605,
+          "longitudeE7": -858311160,
+          "accuracyMetres": 80
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-14T18:55:07.878Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399700,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 83.114876,
+        "calibratedProbability": 83.99745
+      },
+      "duration": {
+        "startTimestamp": "2023-01-14T18:52:11.123Z",
+        "endTimestamp": "2023-01-19T13:56:46.184Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399607,
+      "centerLngE7": -858311104,
+      "visitConfidence": 94,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 3.103326,
+        "calibratedProbability": 3.1362796
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.8031776,
+        "calibratedProbability": 0.81170636
+      }, {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "locationConfidence": 0.42283294,
+        "calibratedProbability": 0.4273229
+      }, {
+        "latitudeE7": 114396286,
+        "longitudeE7": -858310346,
+        "placeId": "ChIJaw472dxOdI8RhnlrzMbHdjQ",
+        "address": "3ra Av. NO, Rivas, Nicaragua",
+        "name": "Gallo más Gallo",
+        "locationConfidence": 0.23581675,
+        "calibratedProbability": 0.23832083
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 68,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114408489,
+        "longitudeE7": -858313271,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114393329,
+        "longitudeE7": -858258288,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-19T13:56:46.184Z",
+        "endTimestamp": "2023-01-19T14:16:23.891Z"
+      },
+      "distance": 6531,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 80.65547943115234
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 6.805663555860519
+      }, {
+        "activityType": "WALKING",
+        "probability": 5.944076552987099
+      }, {
+        "activityType": "STILL",
+        "probability": 3.568243235349655
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.4076247811317444
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.064168382436037
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.19963926170021296
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.14225522754713893
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.10462577920407057
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.06170308915898204
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.018385927251074463
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.017267467046622187
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.009043491445481777
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.001821287878556177
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 2.3788699010651726E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114408531,
+          "lngE7": -858313293
+        }, {
+          "latE7": 114381198,
+          "lngE7": -858198776
+        }, {
+          "latE7": 114282426,
+          "lngE7": -858098754
+        }, {
+          "latE7": 114392986,
+          "lngE7": -858308410
+        }, {
+          "latE7": 114395618,
+          "lngE7": -858260269
+        }, {
+          "latE7": 114393033,
+          "lngE7": -858259048
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJ1_2zrd1OdI8RLS4loeNfV0o",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJX3VCut1OdI8R091vKMBHLJU",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJAxsc691OdI8RVQg9hgo7aEw",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJ1w69-d1OdI8RSPyLNyGdlTo",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJ-SeDVOdOdI8RVaamUSGixQA",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJFZKYTedOdI8R6YsqF7fyNMU",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJd6yztOBOdI8Rh1t8LhX5KS4",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJF6M4teBOdI8RKb3uzscs1HQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJZ8RQteBOdI8RaUU0FsyB8g0",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJOXtKNedOdI8RD1e9IKTTIbQ",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJSScry-BOdI8R-7r9CLNY92o",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJJ38iMudOdI8R61pdTHFi-Cc",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJacQ6JudOdI8Rq-71eZuXPGU",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJvSx-3eZOdI8R1YfZNpQwhDA",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJZ7Th6OZOdI8R633FGBOBVLQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJvdgZ7OZOdI8RU--sqv2hFdg",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJjfpo7OZOdI8RTbxBo-J58is",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJW5aciOZOdI8RC3g3Nt33F8w",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJy-3Lh-ZOdI8R2mbJcK-wGQA",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8R25My0-ZWEWc",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RK26niaKbgcA",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RS5WxIRl91o0",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXxzW7Qu0oN4",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPWiYyOS_hoo",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8Rx5oyuaU18-M",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rs42rdxHKs-M",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxyxsCRK6FYQ",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLQs8mDNUsRs",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8Ro4qbeUX2O8k",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RdpsI_Xe_XXo",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RU_9CFkYLhgI",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGQMpsy9_-mc",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RG3fC5t2dUCI",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROzg7aK_e-xs",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RM8jUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REj4oq3vPn7I",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RAREIzE9KstA",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8Ry4bJGTkL4t0",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJM68TUPROdI8Rebxmg6XLBvY",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJE9MiXfVOdI8RSMhQNYvJEdY",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJE9MiXfVOdI8ROXq2iaWw_Hg",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJHxJPYGBOdI8RYSdDZ4mws5Y",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJhYWrJmFOdI8Ro-VakeT11sw",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJlxvcOWROdI8R95MyahBCG1s",
+          "duration": "26s"
+        }, {
+          "placeId": "ChIJ5WB7XWNOdI8RkvrJgPlT0aY",
+          "duration": "58s"
+        }, {
+          "placeId": "ChIJrS6PFIpOdI8RorKOqm4uztk",
+          "duration": "308s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RDkYecmxEF24",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdHLiOqwykuY",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8RyobJGTkL4t0",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RABEIzE9KstA",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REz4oq3vPn7I",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RMsjUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROjg7aK_e-xs",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RGnfC5t2dUCI",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGAMpsy9_-mc",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RUv9CFkYLhgI",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8Rd5sI_Xe_XXo",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8RooqbeUX2O8k",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLAs8mDNUsRs",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxixsCRK6FYQ",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rso2rdxHKs-M",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8RxpoyuaU18-M",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPGiYyOS_hoo",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXhzW7Qu0oN4",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RSpWxIRl91o0",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RKm6niaKbgcA",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8RmtJIOAWpWd8",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJHRosj-ZOdI8RYXqUFn-QFx0",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJRaUqieZOdI8RkDJZGfHHNos",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJi25M7eZOdI8RgjZDDK_dj80",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJtXYj6eZOdI8RVSJGKXWsYuQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJtVop4uZOdI8ROc2FeAP6rBo",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJURpnA-dOdI8R2UzJD9kANbM",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ8eAkB-dOdI8R-XAH8omsQm0",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJP5sCCudOdI8RPZ-rvX2oHlo",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJqRy9m-dOdI8RgeZgkF_SsRA",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJN7CgiOdOdI8Ruz5xvMjzOJc",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJx4akY91OdI8R-efSESl1h54",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ_2OFbN1OdI8RsXJwTf6YFF0",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJ43FaFt1OdI8RcTpSNfXBdpo",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJ03OtId1OdI8R-X86KfkFgHA",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJST_J3dxOdI8R-wjulUi_WW4",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJtzEDHt1OdI8RbdmNQMMIKo8",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJu1UBEN1OdI8RilLYPVJuaAA",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJhy2-DN1OdI8Rw2DRg9swSjw",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJz6uZgt1OdI8Rgi5IntsQ4lQ",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJldYTe-dOdI8RhFs5cQFQsz0",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJUWVqcudOdI8RNd--TI_69fM",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJIbstdedOdI8Rbs28ix0v9gU",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJQwSooedOdI8RUjny-9CizGM",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJzUTho-dOdI8RouD6Bw8MtPA",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJOSOZpOdOdI8RKDxl-VQoXi0",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJDWxPuudOdI8RAIROSrM0mwE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJL_ruuedOdI8RJCt0JNPBiFE",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJ2ZsAyOdOdI8RZiwXOFnvaZE",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJXypqzudOdI8RoTnHXtBdUnw",
+          "duration": "0s"
+        }],
+        "distanceMeters": 11095.582438321442,
+        "travelMode": "DRIVE",
+        "confidence": 0.9953797895579442
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114278526,
+          "lngE7": -858103790,
+          "accuracyMeters": 44,
+          "timestamp": "2023-01-19T14:05:09.805Z"
+        }, {
+          "latE7": 114393482,
+          "lngE7": -858307495,
+          "accuracyMeters": 17,
+          "timestamp": "2023-01-19T14:10:18.856Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114393328,
+          "longitudeE7": -858258295,
+          "accuracyMetres": 108
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "FROM_RAW_LOCATION",
+        "timestamp": "2023-01-19T14:18:23.886Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114400705,
+        "longitudeE7": -858241412,
+        "placeId": "ChIJ30PNa-ZOdI8RYm3E3Ia1pf4",
+        "address": "C5RG+28H, C. Central Este, Rivas, Nicaragua",
+        "name": "Colegio Nuestra Señora de Fátima",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 16.067446,
+        "calibratedProbability": 7.7045712
+      },
+      "duration": {
+        "startTimestamp": "2023-01-19T14:16:23.891Z",
+        "endTimestamp": "2023-01-20T10:21:47.452Z"
+      },
+      "placeConfidence": "LOW_CONFIDENCE",
+      "centerLatE7": 114393200,
+      "centerLngE7": -858258200,
+      "visitConfidence": 93,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114393032,
+        "longitudeE7": -858272274,
+        "placeId": "ChIJk3XMOd1OdI8R17vtb-XqXy0",
+        "address": "Del Parque Central 1 cuadra al este y 1/2 al sur, Rivas 47000, Nicaragua",
+        "name": "Rivas Inn",
+        "locationConfidence": 15.255722,
+        "calibratedProbability": 7.315338
+      }, {
+        "latitudeE7": 114394140,
+        "longitudeE7": -858259506,
+        "placeId": "ChIJ37toulBPdI8RdZZHLqNlbms",
+        "address": "Bomberos Rivas 2 cuadras al, sur, Rivas, Nicaragua",
+        "name": "HANNERST FOOD",
+        "locationConfidence": 14.336616,
+        "calibratedProbability": 6.8746133
+      }, {
+        "latitudeE7": 114395434,
+        "longitudeE7": -858258670,
+        "placeId": "ChIJHyc09sRPdI8Rgzj_Ta2Psmk",
+        "address": "C5QF+RM6, C. Central Este, Rivas, Nicaragua",
+        "name": "El Calvario church",
+        "locationConfidence": 12.366789,
+        "calibratedProbability": 5.930053
+      }, {
+        "latitudeE7": 114415888,
+        "longitudeE7": -858270828,
+        "placeId": "ChIJYcxDPRhPdI8RAOYEk2H1z4Y",
+        "address": "De la rotonda de Jesús del rescate 1c oeste y 2c sur, Rivas, Nicaragua",
+        "name": "ETJ RIVAS",
+        "locationConfidence": 6.8627315,
+        "calibratedProbability": 3.2907784
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 6.229148,
+        "calibratedProbability": 2.986966
+      }, {
+        "latitudeE7": 114391823,
+        "longitudeE7": -858279214,
+        "placeId": "ChIJAbl49udOdI8RPlcWo0jej1o",
+        "address": "C5QC+MRG, Rivas 47000, Nicaragua",
+        "name": "Iglesia Parroquial de San Pedro",
+        "locationConfidence": 5.8718657,
+        "calibratedProbability": 2.815644
+      }, {
+        "latitudeE7": 114393181,
+        "longitudeE7": -858266580,
+        "placeId": "ChIJI1PnhfRPdI8ROe2qv7LYiiY",
+        "address": "C5QF+P8G, Rivas, Nicaragua",
+        "name": "Lotería Nacional Sucursal Rivas",
+        "locationConfidence": 5.2298794,
+        "calibratedProbability": 2.5078025
+      }, {
+        "latitudeE7": 114399667,
+        "longitudeE7": -858263822,
+        "placeId": "ChIJg0p-HydPdI8R4vUB82xYHE4",
+        "address": "C5QF+XCQ, NIC-72, Rivas, Nicaragua",
+        "name": "Iglesia Nazareno Rivas",
+        "locationConfidence": 5.0502687,
+        "calibratedProbability": 2.4216764
+      }, {
+        "latitudeE7": 114399681,
+        "longitudeE7": -858311157,
+        "semanticType": "TYPE_HOME",
+        "locationConfidence": 4.6642756,
+        "calibratedProbability": 2.2365873
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 6,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399681,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 75.99289,
+        "calibratedProbability": 68.211876
+      },
+      "duration": {
+        "startTimestamp": "2023-01-20T10:21:47.452Z",
+        "endTimestamp": "2023-01-21T13:54:00.550Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399603,
+      "centerLngE7": -858311101,
+      "visitConfidence": 96,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114393032,
+        "longitudeE7": -858272274,
+        "placeId": "ChIJk3XMOd1OdI8R17vtb-XqXy0",
+        "address": "Del Parque Central 1 cuadra al este y 1/2 al sur, Rivas 47000, Nicaragua",
+        "name": "Rivas Inn",
+        "locationConfidence": 8.807236,
+        "calibratedProbability": 7.9054513
+      }, {
+        "latitudeE7": 114395434,
+        "longitudeE7": -858258670,
+        "placeId": "ChIJHyc09sRPdI8Rgzj_Ta2Psmk",
+        "address": "C5QF+RM6, C. Central Este, Rivas, Nicaragua",
+        "name": "El Calvario church",
+        "locationConfidence": 3.3556845,
+        "calibratedProbability": 3.0120916
+      }, {
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 3.0223012,
+        "calibratedProbability": 2.712844
+      }, {
+        "latitudeE7": 114394140,
+        "longitudeE7": -858259506,
+        "placeId": "ChIJ37toulBPdI8RdZZHLqNlbms",
+        "address": "Bomberos Rivas 2 cuadras al, sur, Rivas, Nicaragua",
+        "name": "HANNERST FOOD",
+        "locationConfidence": 2.300601,
+        "calibratedProbability": 2.0650394
+      }, {
+        "latitudeE7": 114393333,
+        "longitudeE7": -858265012,
+        "placeId": "ChIJxfkuACJPdI8Rwy40_q7gsQ0",
+        "address": "Esquina sur del parque central, cuadra y media al Este Rivas, Rivas 47000, Nicaragua",
+        "name": "Hotel Nueva Posada INN",
+        "locationConfidence": 1.6281637,
+        "calibratedProbability": 1.4614539
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 0.9623602,
+        "calibratedProbability": 0.8638229
+      }, {
+        "latitudeE7": 114393181,
+        "longitudeE7": -858266580,
+        "placeId": "ChIJI1PnhfRPdI8ROe2qv7LYiiY",
+        "address": "C5QF+P8G, Rivas, Nicaragua",
+        "name": "Lotería Nacional Sucursal Rivas",
+        "locationConfidence": 0.878868,
+        "calibratedProbability": 0.7888795
+      }, {
+        "latitudeE7": 114399667,
+        "longitudeE7": -858263822,
+        "placeId": "ChIJg0p-HydPdI8R4vUB82xYHE4",
+        "address": "C5QF+XCQ, NIC-72, Rivas, Nicaragua",
+        "name": "Iglesia Nazareno Rivas",
+        "locationConfidence": 0.7274986,
+        "calibratedProbability": 0.65300906
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 61,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114409339,
+        "longitudeE7": -858311839,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114278807,
+        "longitudeE7": -858100874,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-21T13:54:00.550Z",
+        "endTimestamp": "2023-01-21T14:04:17.693Z"
+      },
+      "distance": 2929,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 86.98682188987732
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 5.587427690625191
+      }, {
+        "activityType": "WALKING",
+        "probability": 3.6606013774871826
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.8584679812192917
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.9389209561049938
+      }, {
+        "activityType": "STILL",
+        "probability": 0.5815983284264803
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.1105140196159482
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.10902468347921968
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.09975970024242997
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.028003702755086124
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.02238467859569937
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.0069040477683302015
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.005803753083455376
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.003771628689719364
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 6.334949453901118E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114409503,
+          "lngE7": -858311996
+        }, {
+          "latE7": 114390115,
+          "lngE7": -858271713
+        }, {
+          "latE7": 114390163,
+          "lngE7": -858271560
+        }, {
+          "latE7": 114381198,
+          "lngE7": -858198776
+        }, {
+          "latE7": 114281215,
+          "lngE7": -858097763
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "30s"
+        }, {
+          "placeId": "ChIJoyMmAd1OdI8RYusvoUWh0gA",
+          "duration": "39s"
+        }, {
+          "placeId": "ChIJWz3zGd1OdI8ReiNppfoYQTM",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJ0WmRPN1OdI8R8Hwk8NHkYC4",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJN5hKMd1OdI8RVu1hcbGid5M",
+          "duration": "25s"
+        }, {
+          "placeId": "ChIJWWeASt1OdI8R8u2fbvnmfkg",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJedIGTt1OdI8RvuTJnlaL00I",
+          "duration": "35s"
+        }, {
+          "placeId": "ChIJoyHm-edOdI8ROMjbgUPJfiU",
+          "duration": "30s"
+        }, {
+          "placeId": "ChIJL0IkwudOdI8RXn_7Fwl89z4",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJeZ1UyOdOdI8RCEwwIJwZGy4",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJOw4zP-ZOdI8RLkwIOiaYNPM",
+          "duration": "54s"
+        }, {
+          "placeId": "ChIJ7RSN5-VOdI8RTARw5_zdOFU",
+          "duration": "35s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXxzW7Qu0oN4",
+          "duration": "38s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPWiYyOS_hoo",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8Rx5oyuaU18-M",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rs42rdxHKs-M",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxyxsCRK6FYQ",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLQs8mDNUsRs",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8Ro4qbeUX2O8k",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RdpsI_Xe_XXo",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RU_9CFkYLhgI",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGQMpsy9_-mc",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RG3fC5t2dUCI",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROzg7aK_e-xs",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RM8jUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REj4oq3vPn7I",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RAREIzE9KstA",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8Ry4bJGTkL4t0",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdXLiOqwykuY",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RD0YecmxEF24",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJrS6PFIpOdI8Ro7KOqm4uztk",
+          "duration": "51s"
+        }],
+        "distanceMeters": 3189.0951139745785,
+        "travelMode": "DRIVE",
+        "confidence": 0.9840769433264024
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114389763,
+          "lngE7": -858271408,
+          "accuracyMeters": 30,
+          "timestamp": "2023-01-21T13:58:13.790Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114278691,
+          "longitudeE7": -858100799,
+          "accuracyMetres": 21
+        },
+        "method": "EXITING_VEHICLE_SIGNAL",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-21T14:06:41.605Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114282690,
+        "longitudeE7": -858100891,
+        "placeId": "ChIJV0PI_PROdI8RNz1s-WsVTnI",
+        "address": "Universidad Politécnica de Nicaragua, Rivas, Km 113 Carretera Panamericana, Carr. Panamericana, Nicaragua",
+        "name": "Polytechnic University of Nicaragua, Rivas",
+        "semanticType": "TYPE_WORK",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 85.352394,
+        "calibratedProbability": 71.47161
+      },
+      "duration": {
+        "startTimestamp": "2023-01-21T14:04:17.693Z",
+        "endTimestamp": "2023-01-21T18:46:50.711Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114278413,
+      "centerLngE7": -858100645,
+      "visitConfidence": 93,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114280004,
+        "longitudeE7": -858087587,
+        "placeId": "ChIJlYDCLgBPdI8RVkd3fsghlWo",
+        "address": "NIC-1, Nicaragua",
+        "name": "Pepsi Rivas",
+        "locationConfidence": 7.637346,
+        "calibratedProbability": 6.3952913
+      }, {
+        "latitudeE7": 114281997,
+        "longitudeE7": -858119600,
+        "placeId": "ChIJ80BlKf9VcY8RFaEzL-UZTdA",
+        "address": "Km 113, Contiguo a Upoli, 1/2 Carr. Sur Vía Panamericana, Rivas, Nicaragua",
+        "name": "Colegio Pre-Universitario El Mesías",
+        "locationConfidence": 3.268275,
+        "calibratedProbability": 2.7367585
+      }, {
+        "latitudeE7": 114279603,
+        "longitudeE7": -858117605,
+        "placeId": "ChIJZ8hl2F9PdI8RGgLnBmMmN1w",
+        "address": "C5HQ+57Q, Rivas, Nicaragua",
+        "name": "Escuela El Mesias",
+        "locationConfidence": 1.4696715,
+        "calibratedProbability": 1.2306601
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Rwpxbba6kCaM",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "VIVERO BELEN",
+        "locationConfidence": 0.724243,
+        "calibratedProbability": 0.60646
+      }, {
+        "latitudeE7": 115350384,
+        "longitudeE7": -853951964,
+        "placeId": "ChIJp-1idXOOdI8ROhmxM1N_1iQ",
+        "address": "Nicaragua",
+        "name": "Lake Nicaragua",
+        "locationConfidence": 0.49079588,
+        "calibratedProbability": 0.4109782
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Ru7Y_F2O1X90",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "Resturante Comilona",
+        "locationConfidence": 0.47865057,
+        "calibratedProbability": 0.40080807
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 70,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114277558,
+        "longitudeE7": -858101858,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114393052,
+        "longitudeE7": -858304810,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-21T18:46:50.711Z",
+        "endTimestamp": "2023-01-21T18:52:54.237Z"
+      },
+      "distance": 2951,
+      "activityType": "MOTORCYCLING",
+      "confidence": "LOW",
+      "activities": [{
+        "activityType": "MOTORCYCLING",
+        "probability": 48.36446940898895
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 44.84759569168091
+      }, {
+        "activityType": "WALKING",
+        "probability": 4.438871145248413
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.8508899249136448
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.6412100046873093
+      }, {
+        "activityType": "STILL",
+        "probability": 0.4596990067511797
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.2991865389049053
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.034649387816898525
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.033083814196288586
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.01736960984999314
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.0063270934333559126
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.005370888175093569
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.0012763208360411227
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 7.881077834781536E-6
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 5.3167337199511167E-8
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114280920,
+          "lngE7": -858097534
+        }, {
+          "latE7": 114408426,
+          "lngE7": -858272247
+        }, {
+          "latE7": 114394264,
+          "lngE7": -858305358
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 3024.5729855962063,
+        "travelMode": "TWO_WHEELER",
+        "confidence": 0.9931391310901171
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114399777,
+          "longitudeE7": -858311127,
+          "accuracyMetres": 80
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "FROM_RAW_LOCATION",
+        "timestamp": "2023-01-21T18:54:53.981Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399681,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 80.75633,
+        "calibratedProbability": 83.35885
+      },
+      "duration": {
+        "startTimestamp": "2023-01-21T18:52:54.237Z",
+        "endTimestamp": "2023-01-22T14:02:55.935Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399729,
+      "centerLngE7": -858310965,
+      "visitConfidence": 95,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 3.596979,
+        "calibratedProbability": 3.712898
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.788784,
+        "calibratedProbability": 0.814204
+      }, {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "locationConfidence": 0.7411121,
+        "calibratedProbability": 0.76499575
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 0.4606544,
+        "calibratedProbability": 0.4754998
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 65,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114399860,
+        "longitudeE7": -858311142,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114287549,
+        "longitudeE7": -858094208,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-22T14:02:55.935Z",
+        "endTimestamp": "2023-01-22T14:20:57.179Z"
+      },
+      "distance": 5849,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 77.6536226272583
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 15.262468159198761
+      }, {
+        "activityType": "WALKING",
+        "probability": 3.8907814770936966
+      }, {
+        "activityType": "STILL",
+        "probability": 1.2835131026804447
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.0636530816555023
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.2577889943495393
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.22651650942862034
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.2149572828784585
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.04469072155188769
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.04355374549049884
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.03765805158764124
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.01879568590084091
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.0019302597138448618
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 7.995618602762988E-5
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.8933896228645608E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114399862,
+          "lngE7": -858311157
+        }, {
+          "latE7": 114379253,
+          "lngE7": -858196563
+        }, {
+          "latE7": 114281053,
+          "lngE7": -858097686
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "63s"
+        }, {
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "71s"
+        }, {
+          "placeId": "ChIJ1_2zrd1OdI8RLS4loeNfV0o",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJX3VCut1OdI8R091vKMBHLJU",
+          "duration": "40s"
+        }, {
+          "placeId": "ChIJAxsc691OdI8RVQg9hgo7aEw",
+          "duration": "37s"
+        }, {
+          "placeId": "ChIJ1w69-d1OdI8RSPyLNyGdlTo",
+          "duration": "54s"
+        }, {
+          "placeId": "ChIJ-SeDVOdOdI8RVaamUSGixQA",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJFZKYTedOdI8R6YsqF7fyNMU",
+          "duration": "25s"
+        }, {
+          "placeId": "ChIJd6yztOBOdI8Rh1t8LhX5KS4",
+          "duration": "31s"
+        }, {
+          "placeId": "ChIJF6M4teBOdI8RKb3uzscs1HQ",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJZ8RQteBOdI8RaUU0FsyB8g0",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJOXtKNedOdI8RD1e9IKTTIbQ",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJSScry-BOdI8R-7r9CLNY92o",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJJ38iMudOdI8R61pdTHFi-Cc",
+          "duration": "31s"
+        }, {
+          "placeId": "ChIJacQ6JudOdI8Rq-71eZuXPGU",
+          "duration": "34s"
+        }, {
+          "placeId": "ChIJvSx-3eZOdI8R1YfZNpQwhDA",
+          "duration": "31s"
+        }, {
+          "placeId": "ChIJZ7Th6OZOdI8R633FGBOBVLQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJvdgZ7OZOdI8RU--sqv2hFdg",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJjfpo7OZOdI8RTbxBo-J58is",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJW5aciOZOdI8RC3g3Nt33F8w",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJy-3Lh-ZOdI8R2mbJcK-wGQA",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8R25My0-ZWEWc",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RK26niaKbgcA",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RS5WxIRl91o0",
+          "duration": "51s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXxzW7Qu0oN4",
+          "duration": "68s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPWiYyOS_hoo",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8Rx5oyuaU18-M",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rs42rdxHKs-M",
+          "duration": "25s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxyxsCRK6FYQ",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLQs8mDNUsRs",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8Ro4qbeUX2O8k",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RdpsI_Xe_XXo",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RU_9CFkYLhgI",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGQMpsy9_-mc",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RG3fC5t2dUCI",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROzg7aK_e-xs",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RM8jUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REj4oq3vPn7I",
+          "duration": "25s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RAREIzE9KstA",
+          "duration": "43s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8Ry4bJGTkL4t0",
+          "duration": "22s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdXLiOqwykuY",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RD0YecmxEF24",
+          "duration": "34s"
+        }, {
+          "placeId": "ChIJrS6PFIpOdI8Ro7KOqm4uztk",
+          "duration": "91s"
+        }],
+        "distanceMeters": 3330.7474329433217,
+        "travelMode": "DRIVE",
+        "confidence": 0.9999501104244751
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114282592,
+          "longitudeE7": -858104472,
+          "accuracyMetres": 31
+        },
+        "method": "EXITING_VEHICLE_SIGNAL",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-22T14:22:48.163Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114282690,
+        "longitudeE7": -858100891,
+        "placeId": "ChIJV0PI_PROdI8RNz1s-WsVTnI",
+        "address": "Universidad Politécnica de Nicaragua, Rivas, Km 113 Carretera Panamericana, Carr. Panamericana, Nicaragua",
+        "name": "Polytechnic University of Nicaragua, Rivas",
+        "semanticType": "TYPE_WORK",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 82.04483,
+        "calibratedProbability": 65.962555
+      },
+      "duration": {
+        "startTimestamp": "2023-01-22T14:20:57.179Z",
+        "endTimestamp": "2023-01-22T17:07:09.318Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114278949,
+      "centerLngE7": -858100520,
+      "visitConfidence": 86,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114280004,
+        "longitudeE7": -858087587,
+        "placeId": "ChIJlYDCLgBPdI8RVkd3fsghlWo",
+        "address": "NIC-1, Nicaragua",
+        "name": "Pepsi Rivas",
+        "locationConfidence": 7.2612762,
+        "calibratedProbability": 5.8379345
+      }, {
+        "latitudeE7": 114281997,
+        "longitudeE7": -858119600,
+        "placeId": "ChIJ80BlKf9VcY8RFaEzL-UZTdA",
+        "address": "Km 113, Contiguo a Upoli, 1/2 Carr. Sur Vía Panamericana, Rivas, Nicaragua",
+        "name": "Colegio Pre-Universitario El Mesías",
+        "locationConfidence": 2.5229025,
+        "calibratedProbability": 2.0283678
+      }, {
+        "latitudeE7": 115350384,
+        "longitudeE7": -853951964,
+        "placeId": "ChIJp-1idXOOdI8ROhmxM1N_1iQ",
+        "address": "Nicaragua",
+        "name": "Lake Nicaragua",
+        "locationConfidence": 0.8865781,
+        "calibratedProbability": 0.7127927
+      }, {
+        "latitudeE7": 114279603,
+        "longitudeE7": -858117605,
+        "placeId": "ChIJZ8hl2F9PdI8RGgLnBmMmN1w",
+        "address": "C5HQ+57Q, Rivas, Nicaragua",
+        "name": "Escuela El Mesias",
+        "locationConfidence": 0.5467454,
+        "calibratedProbability": 0.4395734
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Rwpxbba6kCaM",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "VIVERO BELEN",
+        "locationConfidence": 0.4755895,
+        "calibratedProbability": 0.38236535
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 67,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114280467,
+        "longitudeE7": -858094208,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114399790,
+        "longitudeE7": -858311075,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-22T17:07:09.318Z",
+        "endTimestamp": "2023-01-22T17:23:14.954Z"
+      },
+      "distance": 4269,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "LOW",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 54.44906949996948
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 29.850777983665466
+      }, {
+        "activityType": "WALKING",
+        "probability": 8.825888484716415
+      }, {
+        "activityType": "CYCLING",
+        "probability": 2.247011847794056
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 2.2091493010520935
+      }, {
+        "activityType": "STILL",
+        "probability": 1.6605349257588387
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.352846784517169
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.16325704054906964
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.14650389784947038
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.05091195926070213
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.016886119556147605
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.014683647896163166
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.011737064050976187
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 7.392092356894864E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 9.213509954975052E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114279632,
+          "lngE7": -858096618
+        }, {
+          "latE7": 114379253,
+          "lngE7": -858196563
+        }, {
+          "latE7": 114396963,
+          "lngE7": -858298873
+        }, {
+          "latE7": 114394922,
+          "lngE7": -858309173
+        }, {
+          "latE7": 114407806,
+          "lngE7": -858314361
+        }, {
+          "latE7": 114398603,
+          "lngE7": -858319625
+        }, {
+          "latE7": 114399776,
+          "lngE7": -858311080
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJrS6PFIpOdI8RorKOqm4uztk",
+          "duration": "71s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RDkYecmxEF24",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdHLiOqwykuY",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8RyobJGTkL4t0",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RABEIzE9KstA",
+          "duration": "29s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REz4oq3vPn7I",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RMsjUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROjg7aK_e-xs",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RGnfC5t2dUCI",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGAMpsy9_-mc",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RUv9CFkYLhgI",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8Rd5sI_Xe_XXo",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8RooqbeUX2O8k",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLAs8mDNUsRs",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxixsCRK6FYQ",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rso2rdxHKs-M",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8RxpoyuaU18-M",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPGiYyOS_hoo",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXhzW7Qu0oN4",
+          "duration": "49s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RSpWxIRl91o0",
+          "duration": "35s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RKm6niaKbgcA",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8RmtJIOAWpWd8",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJHRosj-ZOdI8RYXqUFn-QFx0",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJRaUqieZOdI8RkDJZGfHHNos",
+          "duration": "21s"
+        }, {
+          "placeId": "ChIJi25M7eZOdI8RgjZDDK_dj80",
+          "duration": "21s"
+        }, {
+          "placeId": "ChIJtXYj6eZOdI8RVSJGKXWsYuQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJtVop4uZOdI8ROc2FeAP6rBo",
+          "duration": "31s"
+        }, {
+          "placeId": "ChIJURpnA-dOdI8R2UzJD9kANbM",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJ8eAkB-dOdI8R-XAH8omsQm0",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJP5sCCudOdI8RPZ-rvX2oHlo",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJqRy9m-dOdI8RgeZgkF_SsRA",
+          "duration": "41s"
+        }, {
+          "placeId": "ChIJN7CgiOdOdI8Ruz5xvMjzOJc",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJx4akY91OdI8R-efSESl1h54",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJ_2OFbN1OdI8RsXJwTf6YFF0",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJ43FaFt1OdI8RcTpSNfXBdpo",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJ03OtId1OdI8R-X86KfkFgHA",
+          "duration": "39s"
+        }, {
+          "placeId": "ChIJST_J3dxOdI8R-wjulUi_WW4",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "61s"
+        }, {
+          "placeId": "ChIJxXfW8txOdI8RR89N9wp-5Ko",
+          "duration": "59s"
+        }, {
+          "placeId": "ChIJocNAldxOdI8Rcip9mhY4QfM",
+          "duration": "63s"
+        }, {
+          "placeId": "ChIJO8JDwtxOdI8RSCm4--MUDRg",
+          "duration": "53s"
+        }, {
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "15s"
+        }],
+        "distanceMeters": 3601.9856102123326,
+        "travelMode": "DRIVE",
+        "confidence": 0.5838830798849423
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114397898,
+          "lngE7": -858299026,
+          "accuracyMeters": 19,
+          "timestamp": "2023-01-22T17:13:13.949Z"
+        }, {
+          "latE7": 114409437,
+          "lngE7": -858312912,
+          "accuracyMeters": 31,
+          "timestamp": "2023-01-22T17:15:14.917Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114399793,
+          "longitudeE7": -858311079,
+          "accuracyMetres": 96
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "FROM_RAW_LOCATION",
+        "timestamp": "2023-01-22T17:25:15.038Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399681,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 21.728697,
+        "calibratedProbability": 11.251748
+      },
+      "duration": {
+        "startTimestamp": "2023-01-22T17:23:14.954Z",
+        "endTimestamp": "2023-01-26T13:55:27.651Z"
+      },
+      "placeConfidence": "LOW_CONFIDENCE",
+      "centerLatE7": 114393300,
+      "centerLngE7": -858258300,
+      "visitConfidence": 97,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114395434,
+        "longitudeE7": -858258670,
+        "placeId": "ChIJHyc09sRPdI8Rgzj_Ta2Psmk",
+        "address": "C5QF+RM6, C. Central Este, Rivas, Nicaragua",
+        "name": "El Calvario church",
+        "locationConfidence": 21.201744,
+        "calibratedProbability": 10.978877
+      }, {
+        "latitudeE7": 114393032,
+        "longitudeE7": -858272274,
+        "placeId": "ChIJk3XMOd1OdI8R17vtb-XqXy0",
+        "address": "Del Parque Central 1 cuadra al este y 1/2 al sur, Rivas 47000, Nicaragua",
+        "name": "Rivas Inn",
+        "locationConfidence": 14.417416,
+        "calibratedProbability": 7.4657555
+      }, {
+        "latitudeE7": 114394140,
+        "longitudeE7": -858259506,
+        "placeId": "ChIJ37toulBPdI8RdZZHLqNlbms",
+        "address": "Bomberos Rivas 2 cuadras al, sur, Rivas, Nicaragua",
+        "name": "HANNERST FOOD",
+        "locationConfidence": 9.228494,
+        "calibratedProbability": 4.7787814
+      }, {
+        "latitudeE7": 114391823,
+        "longitudeE7": -858279214,
+        "placeId": "ChIJAbl49udOdI8RPlcWo0jej1o",
+        "address": "C5QC+MRG, Rivas 47000, Nicaragua",
+        "name": "Iglesia Parroquial de San Pedro",
+        "locationConfidence": 9.220128,
+        "calibratedProbability": 4.7744493
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 8.390234,
+        "calibratedProbability": 4.344706
+      }, {
+        "latitudeE7": 114415888,
+        "longitudeE7": -858270828,
+        "placeId": "ChIJYcxDPRhPdI8RAOYEk2H1z4Y",
+        "address": "De la rotonda de Jesús del rescate 1c oeste y 2c sur, Rivas, Nicaragua",
+        "name": "ETJ RIVAS",
+        "locationConfidence": 4.2511935,
+        "calibratedProbability": 2.2013912
+      }, {
+        "latitudeE7": 114403807,
+        "longitudeE7": -858268375,
+        "placeId": "ChIJg17IvedOdI8Rb3t2fjOZmxw",
+        "address": "C5RF+573, Rivas, Nicaragua",
+        "name": "BAC CREDIMATIC",
+        "locationConfidence": 2.4038522,
+        "calibratedProbability": 1.2447844
+      }, {
+        "latitudeE7": 114399667,
+        "longitudeE7": -858263822,
+        "placeId": "ChIJg0p-HydPdI8R4vUB82xYHE4",
+        "address": "C5QF+XCQ, NIC-72, Rivas, Nicaragua",
+        "name": "Iglesia Nazareno Rivas",
+        "locationConfidence": 2.275013,
+        "calibratedProbability": 1.1780677
+      }, {
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 1.6983869,
+        "calibratedProbability": 0.879474
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.70148826,
+        "calibratedProbability": 0.70729935
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 0.3391564,
+        "calibratedProbability": 0.34196594
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 13,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114402207,
+        "longitudeE7": -858311360,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114399836,
+        "longitudeE7": -858311124,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-26T13:55:27.651Z",
+        "endTimestamp": "2023-01-26T14:11:48.911Z"
+      },
+      "distance": 2438,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 60.549938678741455
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 16.66695922613144
+      }, {
+        "activityType": "WALKING",
+        "probability": 14.725175499916077
+      }, {
+        "activityType": "CYCLING",
+        "probability": 2.962740510702133
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 2.2085510194301605
+      }, {
+        "activityType": "STILL",
+        "probability": 1.9103415310382843
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.37361152935773134
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.32124596182256937
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.15724824042990804
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.051479029934853315
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.024119520094245672
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.023659503494855016
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.022596691269427538
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.0023312146367970854
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 9.306414305854105E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114401969,
+          "lngE7": -858311996
+        }, {
+          "latE7": 114438571,
+          "lngE7": -858274307
+        }, {
+          "latE7": 114414129,
+          "lngE7": -858257675
+        }, {
+          "latE7": 114411487,
+          "lngE7": -858264617
+        }, {
+          "latE7": 114399843,
+          "lngE7": -858311157
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "48s"
+        }, {
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "75s"
+        }, {
+          "placeId": "ChIJ1_2zrd1OdI8RLS4loeNfV0o",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJX3VCut1OdI8R091vKMBHLJU",
+          "duration": "42s"
+        }, {
+          "placeId": "ChIJAxsc691OdI8RVQg9hgo7aEw",
+          "duration": "39s"
+        }, {
+          "placeId": "ChIJ1w69-d1OdI8RSPyLNyGdlTo",
+          "duration": "57s"
+        }, {
+          "placeId": "ChIJ-SeDVOdOdI8RVaamUSGixQA",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJFZKYTedOdI8R6YsqF7fyNMU",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJd6yztOBOdI8Rh1t8LhX5KS4",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJF6M4teBOdI8RKb3uzscs1HQ",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJZ8RQteBOdI8RaUU0FsyB8g0",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJOXtKNedOdI8RD1e9IKTTIbQ",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJSScry-BOdI8R-7r9CLNY92o",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJJ38iMudOdI8R61pdTHFi-Cc",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJacQ6JudOdI8Rq-71eZuXPGU",
+          "duration": "36s"
+        }, {
+          "placeId": "ChIJvSx-3eZOdI8R1YfZNpQwhDA",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJZ7Th6OZOdI8R633FGBOBVLQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJvdgZ7OZOdI8RU--sqv2hFdg",
+          "duration": "21s"
+        }, {
+          "placeId": "ChIJEfHy7eZOdI8RFVlNuHR7Bi0",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJU-2---ZOdI8RjSrL0ddFc3U",
+          "duration": "42s"
+        }, {
+          "placeId": "ChIJ8eAkB-dOdI8R-XAH8omsQm0",
+          "duration": "30s"
+        }, {
+          "placeId": "ChIJP5sCCudOdI8RPZ-rvX2oHlo",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJqRy9m-dOdI8RgeZgkF_SsRA",
+          "duration": "63s"
+        }, {
+          "placeId": "ChIJN7CgiOdOdI8Ruz5xvMjzOJc",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJx4akY91OdI8R-efSESl1h54",
+          "duration": "42s"
+        }, {
+          "placeId": "ChIJ_2OFbN1OdI8RsXJwTf6YFF0",
+          "duration": "42s"
+        }, {
+          "placeId": "ChIJ43FaFt1OdI8RcTpSNfXBdpo",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJ03OtId1OdI8R-X86KfkFgHA",
+          "duration": "60s"
+        }, {
+          "placeId": "ChIJST_J3dxOdI8R-wjulUi_WW4",
+          "duration": "72s"
+        }, {
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "48s"
+        }],
+        "distanceMeters": 1903.994263200373,
+        "travelMode": "DRIVE",
+        "confidence": 1.0
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114414625,
+          "lngE7": -858257904,
+          "accuracyMeters": 21,
+          "timestamp": "2023-01-26T13:59:28.792Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114399818,
+          "longitudeE7": -858311111,
+          "accuracyMetres": 105
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-26T14:16:19.070Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399662,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 81.75439,
+        "calibratedProbability": 66.380035
+      },
+      "duration": {
+        "startTimestamp": "2023-01-26T14:11:48.911Z",
+        "endTimestamp": "2023-01-26T17:08:11.996Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399841,
+      "centerLngE7": -858310800,
+      "visitConfidence": 85,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 5.3678403,
+        "calibratedProbability": 4.3583894
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 3.7754755,
+        "calibratedProbability": 3.0654771
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 0.3705714,
+        "calibratedProbability": 0.30088347
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.33285803,
+        "calibratedProbability": 0.2702623
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 66,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114401102,
+        "longitudeE7": -858300733,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114390462,
+        "longitudeE7": -858309388,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-26T17:08:11.996Z",
+        "endTimestamp": "2023-01-26T17:28:38.295Z"
+      },
+      "distance": 5751,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 72.65397906303406
+      }, {
+        "activityType": "STILL",
+        "probability": 9.434084594249725
+      }, {
+        "activityType": "WALKING",
+        "probability": 9.387508779764175
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 5.841892957687378
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.216363813728094
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.0374967008829117
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.21287021227180958
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.10372165124863386
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.04066420369781554
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.036686204839497805
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.015449589409399778
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.009538470476400107
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.00830515127745457
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.0014381143955688458
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 2.4748635141236264E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114401664,
+          "lngE7": -858301010
+        }, {
+          "latE7": 114381198,
+          "lngE7": -858198776
+        }, {
+          "latE7": 114281206,
+          "lngE7": -858097763
+        }, {
+          "latE7": 114318132,
+          "lngE7": -858237075
+        }, {
+          "latE7": 114318132,
+          "lngE7": -858237075
+        }, {
+          "latE7": 114314413,
+          "lngE7": -858285522
+        }, {
+          "latE7": 114320411,
+          "lngE7": -858286819
+        }, {
+          "latE7": 114335727,
+          "lngE7": -858290023
+        }, {
+          "latE7": 114391117,
+          "lngE7": -858307647
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJtzEDHt1OdI8RbdmNQMMIKo8",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJu1UBEN1OdI8RilLYPVJuaAA",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJhy2-DN1OdI8Rw2DRg9swSjw",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJz6uZgt1OdI8Rgi5IntsQ4lQ",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJldYTe-dOdI8RhFs5cQFQsz0",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJiUgvbOdOdI8Rsr_aZ5_Hujg",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJ-5pYFOdOdI8R6igPQhY6hTw",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJCbd8IedOdI8RCGGzjQYavwc",
+          "duration": "16s"
+        }, {
+          "placeId": "ChIJvSx-3eZOdI8R1YfZNpQwhDA",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJZ7Th6OZOdI8R633FGBOBVLQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJvdgZ7OZOdI8RU--sqv2hFdg",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJjfpo7OZOdI8RTbxBo-J58is",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJW5aciOZOdI8RC3g3Nt33F8w",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJy-3Lh-ZOdI8R2mbJcK-wGQA",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJyXX1feZOdI8R25My0-ZWEWc",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJbycG1uVOdI8RK26niaKbgcA",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJs3T3xOVOdI8RS5WxIRl91o0",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJS9Fsg-VOdI8RXxzW7Qu0oN4",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJX_rMh-9OdI8RPWiYyOS_hoo",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJYz7Vju9OdI8Rx5oyuaU18-M",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJ6as7jO9OdI8Rs42rdxHKs-M",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJ9fmA6O9OdI8RxyxsCRK6FYQ",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJ06lRJ_BOdI8RLQs8mDNUsRs",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJsYPQMfBOdI8Ro4qbeUX2O8k",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RdpsI_Xe_XXo",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJk_o3tPFOdI8RU_9CFkYLhgI",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJuVGgsfFOdI8RGQMpsy9_-mc",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJ-QTqpfFOdI8RG3fC5t2dUCI",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJId8TC_FOdI8ROzg7aK_e-xs",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJr_hybvFOdI8RM8jUH8P-4XE",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8REj4oq3vPn7I",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJsdOv_fNOdI8RAREIzE9KstA",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJQaaWQfROdI8Ry4bJGTkL4t0",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJM68TUPROdI8Rebxmg6XLBvY",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJE9MiXfVOdI8RSMhQNYvJEdY",
+          "duration": "29s"
+        }, {
+          "placeId": "ChIJE9MiXfVOdI8ROXq2iaWw_Hg",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJHxJPYGBOdI8RYSdDZ4mws5Y",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJhYWrJmFOdI8Ro-VakeT11sw",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJlxvcOWROdI8R95MyahBCG1s",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJ5WB7XWNOdI8RkvrJgPlT0aY",
+          "duration": "61s"
+        }, {
+          "placeId": "ChIJrS6PFIpOdI8RorKOqm4uztk",
+          "duration": "327s"
+        }, {
+          "placeId": "ChIJS9Jz-PROdI8RDkYecmxEF24",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJkT6CUPROdI8RdHLiOqwykuY",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJ4Wgqf_ROdI8RHWoW5fCTs6k",
+          "duration": "50s"
+        }, {
+          "placeId": "ChIJEfjTCvNOdI8R-RkmvOgCyBg",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJ-ecl5vJOdI8RG0clp0pOxpw",
+          "duration": "46s"
+        }, {
+          "placeId": "ChIJbaBkofJOdI8Rv5V4aFyf-y4",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ08kmG-1OdI8R7Y3fsS8rKYE",
+          "duration": "43s"
+        }, {
+          "placeId": "ChIJYeed_-xOdI8Ra2Ui4JdPrT4",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJwVU0DexOdI8RRxvOBtUj-cw",
+          "duration": "49s"
+        }, {
+          "placeId": "ChIJSWjZ5OtOdI8RH66EiBiaKqE",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJF2-t5etOdI8Rivq2OGAQu1s",
+          "duration": "7s"
+        }, {
+          "placeId": "ChIJfws2w-tOdI8R66P4YbL090c",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJr0spzetOdI8R5Z9kX8nGiWc",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJzw-RMOpOdI8RrwLI4gVwr9Y",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJO56jFepOdI8RA2adQRrzUvU",
+          "duration": "17s"
+        }, {
+          "placeId": "ChIJy5-wEupOdI8R_7UdLLNiZsI",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJy3lJdOpOdI8RG69kbShfMFw",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJ5_0T58FOdI8Rc3QxnNTfiZw",
+          "duration": "19s"
+        }, {
+          "placeId": "ChIJD3OG98FOdI8RpR6KgBVZLeg",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJv7LuEMJOdI8RH-37vqB8Wsg",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJr1O9a8JOdI8Rac6IX8orsl0",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJwdpNZ8JOdI8RYfdd4-jcOyw",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJXxpzYMJOdI8R3vmkeIOeBxg",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJc_i188JOdI8RLVH98xnmC1c",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJvyKE7sJOdI8R7HsmzfFUpek",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJYxumwsJOdI8RXbu_ltNAKUM",
+          "duration": "8s"
+        }, {
+          "placeId": "ChIJbRTQ0MJOdI8Rjd3uakGNHTY",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJf7qSKt1OdI8Rmb__HCxpIIM",
+          "duration": "11s"
+        }, {
+          "placeId": "ChIJPfPN2dxOdI8RexQJ012m-2g",
+          "duration": "11s"
+        }],
+        "distanceMeters": 10376.453365539834,
+        "travelMode": "DRIVE",
+        "confidence": 0.9831158431261061
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114278259,
+          "lngE7": -858101578,
+          "accuracyMeters": 23,
+          "timestamp": "2023-01-26T17:16:18.685Z"
+        }, {
+          "latE7": 114317827,
+          "lngE7": -858236008,
+          "accuracyMeters": 53,
+          "timestamp": "2023-01-26T17:22:32.657Z"
+        }, {
+          "latE7": 114317808,
+          "lngE7": -858284454,
+          "accuracyMeters": 21,
+          "timestamp": "2023-01-26T17:24:34.907Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114395105,
+          "longitudeE7": -858310213,
+          "accuracyMetres": 108
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-26T17:30:40.603Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399662,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 86.99738,
+        "calibratedProbability": 80.04848
+      },
+      "duration": {
+        "startTimestamp": "2023-01-26T17:28:38.295Z",
+        "endTimestamp": "2023-01-27T20:15:38.660Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399787,
+      "centerLngE7": -858310976,
+      "visitConfidence": 95,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 4.7050486,
+        "calibratedProbability": 4.3292336
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 1.7624223,
+        "calibratedProbability": 1.6216491
+      }, {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "locationConfidence": 1.0203917,
+        "calibratedProbability": 0.9388881
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.80682474,
+        "calibratedProbability": 0.7423797
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 72,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114391189,
+        "longitudeE7": -858307910,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114410810,
+        "longitudeE7": -858326665,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-27T20:15:38.660Z",
+        "endTimestamp": "2023-01-27T20:27:47.084Z"
+      },
+      "distance": 768,
+      "activityType": "WALKING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 78.51383090019226
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 13.460470736026764
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 2.785158157348633
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 2.4005157873034477
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.1773674748837948
+      }, {
+        "activityType": "STILL",
+        "probability": 1.0459576733410358
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.4202019888907671
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.07485804962925613
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.06376659730449319
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.02314979792572558
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.01509219000581652
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.008220875315601006
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.006957274308660999
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.004454690497368574
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 2.2341081873378243E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114391260,
+          "lngE7": -858307723
+        }, {
+          "latE7": 114383316,
+          "lngE7": -858294830
+        }, {
+          "latE7": 114383459,
+          "lngE7": -858294830
+        }, {
+          "latE7": 114393463,
+          "lngE7": -858297882
+        }, {
+          "latE7": 114411487,
+          "lngE7": -858303451
+        }, {
+          "latE7": 114411649,
+          "lngE7": -858316574
+        }, {
+          "latE7": 114410858,
+          "lngE7": -858326644
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 924.3052655078783,
+        "travelMode": "WALK",
+        "confidence": 1.0
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114383087,
+          "lngE7": -858296204,
+          "accuracyMeters": 14,
+          "timestamp": "2023-01-27T20:19:40.928Z"
+        }, {
+          "latE7": 114411526,
+          "lngE7": -858303299,
+          "accuracyMeters": 22,
+          "timestamp": "2023-01-27T20:23:43.728Z"
+        }]
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399662,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 57.133537,
+        "calibratedProbability": 35.99233
+      },
+      "duration": {
+        "startTimestamp": "2023-01-27T20:27:47.084Z",
+        "endTimestamp": "2023-01-27T20:47:52.969Z"
+      },
+      "placeConfidence": "MEDIUM_CONFIDENCE",
+      "centerLatE7": 114401971,
+      "centerLngE7": -858313071,
+      "visitConfidence": 84,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114414914,
+        "longitudeE7": -858333258,
+        "placeId": "ChIJAfnGhttOdI8R0WtEvzNbQrU",
+        "address": "Entrada al Mercado Municipal, C5R8+HMV, 4ta Av. NO, Rivas, Nicaragua",
+        "name": "E/S RIVAS",
+        "locationConfidence": 15.432027,
+        "calibratedProbability": 9.721691
+      }, {
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 4.631994,
+        "calibratedProbability": 2.9180102
+      }, {
+        "latitudeE7": 114395635,
+        "longitudeE7": -858326109,
+        "placeId": "ChIJ26QyaNtOdI8RcWr51G-l9wk",
+        "address": "Escuela Internacional de Agricultura, 1 cuadra al este, 1 ½ cuadra al norte, NIC-62, Rivas, Nicaragua",
+        "name": "Museum of History and Anthropology of Rivas",
+        "locationConfidence": 4.5657134,
+        "calibratedProbability": 2.8762558
+      }, {
+        "latitudeE7": 114415857,
+        "longitudeE7": -858323451,
+        "placeId": "ChIJ-YmUYNxOdI8RrN6nkpQQdQo",
+        "address": "C5R9+J3J, Rivas, Nicaragua",
+        "name": "Rivas\u0027 Bus Station",
+        "locationConfidence": 4.544606,
+        "calibratedProbability": 2.862959
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 2.8774283,
+        "calibratedProbability": 1.8126892
+      }, {
+        "latitudeE7": 114417841,
+        "longitudeE7": -858334178,
+        "placeId": "ChIJQ0jJ1cJOdI8RMvcCBmZFQBU",
+        "address": "Esq. SO del parque central, 2c sur, NIC-62, Rivas 47000, Nicaragua",
+        "name": "Correos de Nicaragua",
+        "locationConfidence": 2.8317423,
+        "calibratedProbability": 1.7839085
+      }, {
+        "latitudeE7": 114432875,
+        "longitudeE7": -858333301,
+        "placeId": "ChIJVZ4zF_xPdI8RhqQIuO2A4JU",
+        "address": "C5V8+8M7, 3a Av. Noroeste, Rivas, Nicaragua",
+        "name": "Batteries and More",
+        "locationConfidence": 1.3824005,
+        "calibratedProbability": 0.8708688
+      }, {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "locationConfidence": 1.3154852,
+        "calibratedProbability": 0.8287143
+      }, {
+        "latitudeE7": 114418351,
+        "longitudeE7": -858327860,
+        "placeId": "ChIJU7UPe9xOdI8RSf7d9J8sgo0",
+        "address": "Rivas, Nicaragua",
+        "name": "Sorbeterias La Terminal",
+        "locationConfidence": 1.153511,
+        "calibratedProbability": 0.7266756
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 46,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114408260,
+        "longitudeE7": -858318214,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114411180,
+        "longitudeE7": -858328716,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-27T20:47:52.969Z",
+        "endTimestamp": "2023-01-27T20:49:54.272Z"
+      },
+      "distance": 118,
+      "activityType": "WALKING",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 75.75549483299255
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 10.260304063558578
+      }, {
+        "activityType": "STILL",
+        "probability": 9.215348213911057
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 1.8336130306124687
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.596294343471527
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.0822741314768791
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.20921779796481133
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.0160850424435921
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.010623618436511606
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.008823665848467499
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.007452946010744199
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.0018454285964253359
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.0015383675417979248
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.0010667938113329
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 2.2189682624684792E-5
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114406204,
+          "lngE7": -858316726
+        }, {
+          "latE7": 114404392,
+          "lngE7": -858322601
+        }, {
+          "latE7": 114411287,
+          "lngE7": -858328552
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 188.3802104554517,
+        "travelMode": "WALK",
+        "confidence": 0.9934991318421421
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114414914,
+        "longitudeE7": -858333258,
+        "placeId": "ChIJAfnGhttOdI8R0WtEvzNbQrU",
+        "address": "Entrada al Mercado Municipal, C5R8+HMV, 4ta Av. NO, Rivas, Nicaragua",
+        "name": "E/S RIVAS",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 44.692863,
+        "calibratedProbability": 35.48903
+      },
+      "duration": {
+        "startTimestamp": "2023-01-27T20:49:54.272Z",
+        "endTimestamp": "2023-01-27T21:08:05.785Z"
+      },
+      "placeConfidence": "LOW_CONFIDENCE",
+      "centerLatE7": 114413790,
+      "centerLngE7": -858329890,
+      "visitConfidence": 94,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114395635,
+        "longitudeE7": -858326109,
+        "placeId": "ChIJ26QyaNtOdI8RcWr51G-l9wk",
+        "address": "Escuela Internacional de Agricultura, 1 cuadra al este, 1 ½ cuadra al norte, NIC-62, Rivas, Nicaragua",
+        "name": "Museum of History and Anthropology of Rivas",
+        "locationConfidence": 19.826906,
+        "calibratedProbability": 15.743848
+      }, {
+        "latitudeE7": 114415857,
+        "longitudeE7": -858323451,
+        "placeId": "ChIJ-YmUYNxOdI8RrN6nkpQQdQo",
+        "address": "C5R9+J3J, Rivas, Nicaragua",
+        "name": "Rivas\u0027 Bus Station",
+        "locationConfidence": 12.495062,
+        "calibratedProbability": 9.921888
+      }, {
+        "latitudeE7": 114399662,
+        "longitudeE7": -858311157,
+        "semanticType": "TYPE_HOME",
+        "locationConfidence": 6.0614295,
+        "calibratedProbability": 4.8131676
+      }, {
+        "latitudeE7": 114417841,
+        "longitudeE7": -858334178,
+        "placeId": "ChIJQ0jJ1cJOdI8RMvcCBmZFQBU",
+        "address": "Esq. SO del parque central, 2c sur, NIC-62, Rivas 47000, Nicaragua",
+        "name": "Correos de Nicaragua",
+        "locationConfidence": 5.96681,
+        "calibratedProbability": 4.738034
+      }, {
+        "latitudeE7": 114418351,
+        "longitudeE7": -858327860,
+        "placeId": "ChIJU7UPe9xOdI8RSf7d9J8sgo0",
+        "address": "Rivas, Nicaragua",
+        "name": "Sorbeterias La Terminal",
+        "locationConfidence": 4.284027,
+        "calibratedProbability": 3.4017951
+      }, {
+        "latitudeE7": 114432875,
+        "longitudeE7": -858333301,
+        "placeId": "ChIJVZ4zF_xPdI8RhqQIuO2A4JU",
+        "address": "C5V8+8M7, 3a Av. Noroeste, Rivas, Nicaragua",
+        "name": "Batteries and More",
+        "locationConfidence": 4.08752,
+        "calibratedProbability": 3.2457557
+      }, {
+        "latitudeE7": 114407646,
+        "longitudeE7": -858323978,
+        "placeId": "ChIJK1lCHGlPdI8Rny1L5t-cEWc",
+        "address": "de Rivas, Mercado, Mercado Municipal, 4ta Av. NO, Rivas 47000, Nicaragua",
+        "name": "Letiscosmeticos",
+        "locationConfidence": 0.97045255,
+        "calibratedProbability": 0.77060217
+      }, {
+        "latitudeE7": 114421926,
+        "longitudeE7": -858331750,
+        "placeId": "ChIJtW-0d9xOdI8R8r1BfN4khSw",
+        "address": "C5R8+VPG, Rivas, Nicaragua",
+        "name": "Ferromax Rivas",
+        "locationConfidence": 0.9501822,
+        "calibratedProbability": 0.75450623
+      }, {
+        "latitudeE7": 114411102,
+        "longitudeE7": -858331472,
+        "placeId": "ChIJI6HahbRPdI8RO3JmsqDxNa4",
+        "address": "505, Rivas, Nicaragua",
+        "name": "Ferretería Balmaceda Jr",
+        "locationConfidence": 0.5771389,
+        "calibratedProbability": 0.45828566
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 36,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "TRANSITIONAL"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114409908,
+        "longitudeE7": -858327525,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114405747,
+        "longitudeE7": -858317717,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-27T21:08:05.785Z",
+        "endTimestamp": "2023-01-27T21:10:07.256Z"
+      },
+      "distance": 116,
+      "activityType": "WALKING",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 77.27029323577881
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 11.315128952264786
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 4.622549936175346
+      }, {
+        "activityType": "CYCLING",
+        "probability": 2.431662753224373
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 2.124360576272011
+      }, {
+        "activityType": "STILL",
+        "probability": 1.3222647830843925
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.4044222179800272
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.3981970716267824
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.06609375705011189
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.01925921387737617
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.01695682294666767
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.004328579598222859
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.0031112660508370027
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.001368498124065809
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 3.6179550022552576E-6
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114409961,
+          "lngE7": -858327484
+        }, {
+          "latE7": 114404392,
+          "lngE7": -858322601
+        }, {
+          "latE7": 114405612,
+          "lngE7": -858317642
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 155.40585887092396,
+        "travelMode": "WALK",
+        "confidence": 1.0
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399662,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 79.29495,
+        "calibratedProbability": 71.61379
+      },
+      "duration": {
+        "startTimestamp": "2023-01-27T21:10:07.256Z",
+        "endTimestamp": "2023-01-28T13:59:04.192Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399729,
+      "centerLngE7": -858310685,
+      "visitConfidence": 96,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 15.601698,
+        "calibratedProbability": 14.090388
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 0.7775901,
+        "calibratedProbability": 0.7022663
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.7677036,
+        "calibratedProbability": 0.6933375
+      }, {
+        "latitudeE7": 114390383,
+        "longitudeE7": -858298443,
+        "placeId": "ChIJNQSZd8ROdI8RPMB9mTYAn0s",
+        "address": "C5QC+J36, Rivas, Nicaragua",
+        "name": "Palí",
+        "locationConfidence": 0.5975621,
+        "calibratedProbability": 0.53967726
+      }, {
+        "latitudeE7": 114396286,
+        "longitudeE7": -858310346,
+        "placeId": "ChIJaw472dxOdI8RhnlrzMbHdjQ",
+        "address": "3ra Av. NO, Rivas, Nicaragua",
+        "name": "Gallo más Gallo",
+        "locationConfidence": 0.46192393,
+        "calibratedProbability": 0.41717815
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 64,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114400517,
+        "longitudeE7": -858312450,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114277836,
+        "longitudeE7": -858101530,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-28T13:59:04.192Z",
+        "endTimestamp": "2023-01-28T14:06:34.750Z"
+      },
+      "distance": 3258,
+      "activityType": "MOTORCYCLING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "MOTORCYCLING",
+        "probability": 80.51702380180359
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 14.854443073272705
+      }, {
+        "activityType": "WALKING",
+        "probability": 3.024894930422306
+      }, {
+        "activityType": "STILL",
+        "probability": 0.45662177726626396
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.3928793128579855
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.3117160638794303
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.17575647216290236
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.13803826877847314
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.061191513668745756
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.05785308312624693
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.006540025060530752
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.002334967939532362
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 7.072082553349901E-4
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 3.907110635026356E-7
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.0117369164674983E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114400863,
+          "lngE7": -858311538
+        }, {
+          "latE7": 114415225,
+          "lngE7": -858238830
+        }, {
+          "latE7": 114280910,
+          "lngE7": -858097534
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 3321.1501435577643,
+        "travelMode": "TWO_WHEELER",
+        "confidence": 0.9928200859292581
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114277822,
+          "longitudeE7": -858101587,
+          "accuracyMetres": 80
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "FROM_RAW_LOCATION",
+        "timestamp": "2023-01-28T14:08:31.161Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114282690,
+        "longitudeE7": -858100891,
+        "placeId": "ChIJV0PI_PROdI8RNz1s-WsVTnI",
+        "address": "Universidad Politécnica de Nicaragua, Rivas, Km 113 Carretera Panamericana, Carr. Panamericana, Nicaragua",
+        "name": "Polytechnic University of Nicaragua, Rivas",
+        "semanticType": "TYPE_WORK",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 84.46444,
+        "calibratedProbability": 71.46455
+      },
+      "duration": {
+        "startTimestamp": "2023-01-28T14:06:34.750Z",
+        "endTimestamp": "2023-01-28T18:49:03.864Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114277917,
+      "centerLngE7": -858101485,
+      "visitConfidence": 92,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114280004,
+        "longitudeE7": -858087587,
+        "placeId": "ChIJlYDCLgBPdI8RVkd3fsghlWo",
+        "address": "NIC-1, Nicaragua",
+        "name": "Pepsi Rivas",
+        "locationConfidence": 5.6215506,
+        "calibratedProbability": 4.7563396
+      }, {
+        "latitudeE7": 114281997,
+        "longitudeE7": -858119600,
+        "placeId": "ChIJ80BlKf9VcY8RFaEzL-UZTdA",
+        "address": "Km 113, Contiguo a Upoli, 1/2 Carr. Sur Vía Panamericana, Rivas, Nicaragua",
+        "name": "Colegio Pre-Universitario El Mesías",
+        "locationConfidence": 3.5214472,
+        "calibratedProbability": 2.9794624
+      }, {
+        "latitudeE7": 114279603,
+        "longitudeE7": -858117605,
+        "placeId": "ChIJZ8hl2F9PdI8RGgLnBmMmN1w",
+        "address": "C5HQ+57Q, Rivas, Nicaragua",
+        "name": "Escuela El Mesias",
+        "locationConfidence": 2.0352895,
+        "calibratedProbability": 1.7220387
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Rwpxbba6kCaM",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "VIVERO BELEN",
+        "locationConfidence": 0.7558357,
+        "calibratedProbability": 0.63950527
+      }, {
+        "latitudeE7": 114302040,
+        "longitudeE7": -858107060,
+        "placeId": "ChIJ88JUUPROdI8Ru7Y_F2O1X90",
+        "address": "C5JQ+3PM, Carr. Panamericana, Rivas, Nicaragua",
+        "name": "Resturante Comilona",
+        "locationConfidence": 0.52962035,
+        "calibratedProbability": 0.44810665
+      }, {
+        "latitudeE7": 115350384,
+        "longitudeE7": -853951964,
+        "placeId": "ChIJp-1idXOOdI8ROhmxM1N_1iQ",
+        "address": "Nicaragua",
+        "name": "Lake Nicaragua",
+        "locationConfidence": 0.48062932,
+        "calibratedProbability": 0.40665582
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 69,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114278360,
+        "longitudeE7": -858101103,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114399785,
+        "longitudeE7": -858311010,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-28T18:49:03.864Z",
+        "endTimestamp": "2023-01-28T18:58:34.238Z"
+      },
+      "distance": 2888,
+      "activityType": "MOTORCYCLING",
+      "confidence": "LOW",
+      "activities": [{
+        "activityType": "MOTORCYCLING",
+        "probability": 48.389822244644165
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 40.445128083229065
+      }, {
+        "activityType": "WALKING",
+        "probability": 5.803263187408447
+      }, {
+        "activityType": "CYCLING",
+        "probability": 2.4443060159683228
+      }, {
+        "activityType": "STILL",
+        "probability": 1.1698585003614426
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 1.1595231480896473
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.2752730157226324
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.12358118547126651
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.10796866845339537
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.04761881718877703
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.013236557424534112
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.011696734873112291
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.008628953946754336
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 9.68758286035154E-5
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 9.960220204163761E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114281053,
+          "lngE7": -858097686
+        }, {
+          "latE7": 114381198,
+          "lngE7": -858198776
+        }, {
+          "latE7": 114399747,
+          "lngE7": -858311080
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 3139.0935518071146,
+        "travelMode": "TWO_WHEELER",
+        "confidence": 0.9459583888413458
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114401550,
+          "longitudeE7": -858304455,
+          "accuracyMetres": 88
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-28T19:01:30.393Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399662,
+        "longitudeE7": -858311157,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 71.39225,
+        "calibratedProbability": 57.768497
+      },
+      "duration": {
+        "startTimestamp": "2023-01-28T18:58:34.238Z",
+        "endTimestamp": "2023-01-30T13:48:02.725Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399815,
+      "centerLngE7": -858310948,
+      "visitConfidence": 91,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 4.050327,
+        "calibratedProbability": 3.2774048
+      }, {
+        "latitudeE7": 114393032,
+        "longitudeE7": -858272274,
+        "placeId": "ChIJk3XMOd1OdI8R17vtb-XqXy0",
+        "address": "Del Parque Central 1 cuadra al este y 1/2 al sur, Rivas 47000, Nicaragua",
+        "name": "Rivas Inn",
+        "locationConfidence": 3.6823218,
+        "calibratedProbability": 2.979626
+      }, {
+        "latitudeE7": 114395434,
+        "longitudeE7": -858258670,
+        "placeId": "ChIJHyc09sRPdI8Rgzj_Ta2Psmk",
+        "address": "C5QF+RM6, C. Central Este, Rivas, Nicaragua",
+        "name": "El Calvario church",
+        "locationConfidence": 3.5411012,
+        "calibratedProbability": 2.8653543
+      }, {
+        "latitudeE7": 114388908,
+        "longitudeE7": -858287677,
+        "placeId": "ChIJjZZ4Rd1OdI8R59LUHQj-6UU",
+        "address": "Carrito Douchi Eskimo, Rivas 47000, Nicaragua",
+        "name": "Ciudad de Rivas Central Park",
+        "locationConfidence": 2.9532244,
+        "calibratedProbability": 2.3896618
+      }, {
+        "latitudeE7": 114394140,
+        "longitudeE7": -858259506,
+        "placeId": "ChIJ37toulBPdI8RdZZHLqNlbms",
+        "address": "Bomberos Rivas 2 cuadras al, sur, Rivas, Nicaragua",
+        "name": "HANNERST FOOD",
+        "locationConfidence": 2.4003713,
+        "calibratedProbability": 1.9423095
+      }, {
+        "latitudeE7": 114393333,
+        "longitudeE7": -858265012,
+        "placeId": "ChIJxfkuACJPdI8Rwy40_q7gsQ0",
+        "address": "Esquina sur del parque central, cuadra y media al Este Rivas, Rivas 47000, Nicaragua",
+        "name": "Hotel Nueva Posada INN",
+        "locationConfidence": 2.2248156,
+        "calibratedProbability": 1.800255
+      }, {
+        "latitudeE7": 114399667,
+        "longitudeE7": -858263822,
+        "placeId": "ChIJg0p-HydPdI8R4vUB82xYHE4",
+        "address": "C5QF+XCQ, NIC-72, Rivas, Nicaragua",
+        "name": "Iglesia Nazareno Rivas",
+        "locationConfidence": 1.7411977,
+        "calibratedProbability": 1.4089257
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 1.7226614,
+        "calibratedProbability": 1.3939266
+      }, {
+        "latitudeE7": 114391823,
+        "longitudeE7": -858279214,
+        "placeId": "ChIJAbl49udOdI8RPlcWo0jej1o",
+        "address": "C5QC+MRG, Rivas 47000, Nicaragua",
+        "name": "Iglesia Parroquial de San Pedro",
+        "locationConfidence": 1.5276762,
+        "calibratedProbability": 1.2361504
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 57,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114399885,
+        "longitudeE7": -858311074,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114395972,
+        "longitudeE7": -858310133,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-30T13:48:02.725Z",
+        "endTimestamp": "2023-01-30T14:02:09.544Z"
+      },
+      "distance": 5778,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 82.72679448127747
+      }, {
+        "activityType": "STILL",
+        "probability": 12.108627706766129
+      }, {
+        "activityType": "WALKING",
+        "probability": 3.142787516117096
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 1.1311398819088936
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.446664122864604
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.26094343047589064
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.05943657015450299
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.043728770106099546
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.032324023777619004
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.030184732167981565
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.007520044891862199
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.005769998460891657
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.00308326052618213
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 9.930082342179958E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 3.719436425519973E-8
+      }],
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114411478,
+          "lngE7": -858303275,
+          "accuracyMeters": 82,
+          "timestamp": "2023-01-30T13:50:03.175Z"
+        }, {
+          "latE7": 114409889,
+          "lngE7": -858266034,
+          "accuracyMeters": 110,
+          "timestamp": "2023-01-30T13:52:04.374Z"
+        }, {
+          "latE7": 114277805,
+          "lngE7": -858101575,
+          "accuracyMeters": 42,
+          "timestamp": "2023-01-30T13:56:06.450Z"
+        }, {
+          "latE7": 114418904,
+          "lngE7": -858244294,
+          "accuracyMeters": 23,
+          "timestamp": "2023-01-30T14:00:07.802Z"
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 5849.4568197067565
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114399840,
+          "longitudeE7": -858311028,
+          "accuracyMetres": 88
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-30T14:04:30.251Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399691,
+        "longitudeE7": -858311081,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 84.132324,
+        "calibratedProbability": 60.489273
+      },
+      "duration": {
+        "startTimestamp": "2023-01-30T14:02:09.544Z",
+        "endTimestamp": "2023-01-30T16:13:28.322Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399877,
+      "centerLngE7": -858311032,
+      "visitConfidence": 68,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 4.169085,
+        "calibratedProbability": 2.9974794
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 0.53340733,
+        "calibratedProbability": 0.38350803
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.51111,
+        "calibratedProbability": 0.36747673
+      }, {
+        "latitudeE7": 114390383,
+        "longitudeE7": -858298443,
+        "placeId": "ChIJNQSZd8ROdI8RPMB9mTYAn0s",
+        "address": "C5QC+J36, Rivas, Nicaragua",
+        "name": "Palí",
+        "locationConfidence": 0.32050627,
+        "calibratedProbability": 0.23043689
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 69,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 114408040,
+        "longitudeE7": -858313729,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 114397263,
+        "longitudeE7": -858310520,
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        }
+      },
+      "duration": {
+        "startTimestamp": "2023-01-30T16:13:28.322Z",
+        "endTimestamp": "2023-01-30T16:27:34.908Z"
+      },
+      "distance": 5710,
+      "activityType": "IN_PASSENGER_VEHICLE",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 87.62254118919373
+      }, {
+        "activityType": "WALKING",
+        "probability": 6.456226855516434
+      }, {
+        "activityType": "STILL",
+        "probability": 3.9427466690540314
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.9186253882944584
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.5555933807045221
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.17055877251550555
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.13651099288836122
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.12038435088470578
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.03504604392219335
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.016847944061737508
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.015328517474699765
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.007817454752512276
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.0011694570275722072
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 6.072995802242076E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 5.4721699394022494E-8
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 114408159,
+          "lngE7": -858313827
+        }, {
+          "latE7": 114415225,
+          "lngE7": -858238830
+        }, {
+          "latE7": 114412956,
+          "lngE7": -858237991
+        }, {
+          "latE7": 114408712,
+          "lngE7": -858265838
+        }, {
+          "latE7": 114397401,
+          "lngE7": -858310165
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJkR5AVtxOdI8RMpcxD-ch5z4",
+          "duration": "59s"
+        }, {
+          "placeId": "ChIJ1_2zrd1OdI8RLS4loeNfV0o",
+          "duration": "12s"
+        }, {
+          "placeId": "ChIJX3VCut1OdI8R091vKMBHLJU",
+          "duration": "36s"
+        }, {
+          "placeId": "ChIJAxsc691OdI8RVQg9hgo7aEw",
+          "duration": "33s"
+        }, {
+          "placeId": "ChIJ1w69-d1OdI8RSPyLNyGdlTo",
+          "duration": "48s"
+        }, {
+          "placeId": "ChIJ-SeDVOdOdI8RVaamUSGixQA",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJFZKYTedOdI8R6YsqF7fyNMU",
+          "duration": "23s"
+        }, {
+          "placeId": "ChIJd6yztOBOdI8Rh1t8LhX5KS4",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJF6M4teBOdI8RKb3uzscs1HQ",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJZ8RQteBOdI8RaUU0FsyB8g0",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJOXtKNedOdI8RD1e9IKTTIbQ",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJSScry-BOdI8R-7r9CLNY92o",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJJ38iMudOdI8R61pdTHFi-Cc",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJacQ6JudOdI8Rq-71eZuXPGU",
+          "duration": "30s"
+        }, {
+          "placeId": "ChIJvSx-3eZOdI8R1YfZNpQwhDA",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJZ7Th6OZOdI8R633FGBOBVLQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJvdgZ7OZOdI8RU--sqv2hFdg",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJjfpo7OZOdI8RTbxBo-J58is",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJW5aciOZOdI8RC3g3Nt33F8w",
+          "duration": "15s"
+        }, {
+          "placeId": "ChIJdYPXYeZOdI8RaUP6e5FkBI0",
+          "duration": "38s"
+        }, {
+          "placeId": "ChIJ40rlUuZOdI8RFyxYHrhgLhw",
+          "duration": "64s"
+        }, {
+          "placeId": "ChIJOSOZpOdOdI8RKTxl-VQoXi0",
+          "duration": "28s"
+        }, {
+          "placeId": "ChIJzUTho-dOdI8Ro-D6Bw8MtPA",
+          "duration": "18s"
+        }, {
+          "placeId": "ChIJQwSooedOdI8RUzny-9CizGM",
+          "duration": "2s"
+        }, {
+          "placeId": "ChIJqRy9m-dOdI8RgeZgkF_SsRA",
+          "duration": "54s"
+        }, {
+          "placeId": "ChIJN7CgiOdOdI8Ruz5xvMjzOJc",
+          "duration": "10s"
+        }, {
+          "placeId": "ChIJx4akY91OdI8R-efSESl1h54",
+          "duration": "36s"
+        }, {
+          "placeId": "ChIJ_2OFbN1OdI8RsXJwTf6YFF0",
+          "duration": "36s"
+        }, {
+          "placeId": "ChIJ43FaFt1OdI8RcTpSNfXBdpo",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJ03OtId1OdI8R-X86KfkFgHA",
+          "duration": "51s"
+        }, {
+          "placeId": "ChIJST_J3dxOdI8R-wjulUi_WW4",
+          "duration": "61s"
+        }, {
+          "placeId": "ChIJFUOQ79xOdI8RyF8-bGpOQok",
+          "duration": "5s"
+        }],
+        "distanceMeters": 2049.271233649675,
+        "travelMode": "DRIVE",
+        "confidence": 0.0
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 114411335,
+          "lngE7": -858236923,
+          "accuracyMeters": 24,
+          "timestamp": "2023-01-30T16:17:30.350Z"
+        }]
+      },
+      "parkingEvent": {
+        "location": {
+          "latitudeE7": 114399093,
+          "longitudeE7": -858310894,
+          "accuracyMetres": 112
+        },
+        "method": "END_OF_ACTIVITY_SEGMENT",
+        "locationSource": "NOT_FROM_RAW_LOCATION",
+        "timestamp": "2023-01-30T16:30:26.370Z"
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 114399691,
+        "longitudeE7": -858311081,
+        "address": "",
+        "semanticType": "TYPE_HOME",
+        "sourceInfo": {
+          "deviceTag": 1924623016
+        },
+        "locationConfidence": 85.11716,
+        "calibratedProbability": 80.92293
+      },
+      "duration": {
+        "startTimestamp": "2023-01-30T16:27:34.908Z",
+        "endTimestamp": "2023-02-04T13:41:36.074Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 114399774,
+      "centerLngE7": -858310995,
+      "visitConfidence": 94,
+      "otherCandidateLocations": [{
+        "latitudeE7": 114399620,
+        "longitudeE7": -858306821,
+        "placeId": "ChIJ6X9Nfd1OdI8RlWIdy83Cf3Q",
+        "address": "C5Q9+XPP, NIC-62, Rivas, Nicaragua",
+        "name": "Alcaldía Municipal de Rivas",
+        "locationConfidence": 2.620831,
+        "calibratedProbability": 2.491687
+      }, {
+        "latitudeE7": 114408967,
+        "longitudeE7": -858294924,
+        "placeId": "ChIJRXIpdd1OdI8Ry46_LDMCoRM",
+        "address": "C5RC+962, 4ta Calle NO, Rivas, Nicaragua",
+        "name": "INSS(Instituto Nicaragüense De Seguridad Social)",
+        "locationConfidence": 2.6061509,
+        "calibratedProbability": 2.4777303
+      }, {
+        "latitudeE7": 114395992,
+        "longitudeE7": -858313299,
+        "placeId": "ChIJO0iU-0RPdI8RV300bcJZTIo",
+        "address": "47000, Rivas, Nicaragua",
+        "name": "Frutas y verduras Ana Guevara",
+        "locationConfidence": 0.7018803,
+        "calibratedProbability": 0.66729444
+      }, {
+        "latitudeE7": 114400044,
+        "longitudeE7": -858295047,
+        "placeId": "ChIJOf_C0mdPdI8R5rQdIGJvW5g",
+        "address": "C5RC+255, 1ra Av. NO, Rivas, Nicaragua",
+        "name": "Punto Frio Rivas",
+        "locationConfidence": 0.48466074,
+        "calibratedProbability": 0.46077862
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 70,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }]
+}

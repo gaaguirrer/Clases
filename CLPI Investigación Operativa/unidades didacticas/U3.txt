@@ -1,0 +1,284 @@
+3.1 Conceptos básicos
+La Programación Lineal (PL) es una técnica matemática utilizada para asignar recursos limitados de manera óptima entre actividades competitivas, tal como la define el pionero George B. Dantzig (1963). En el corazón de la PL se encuentra la modelación de problemas del mundo real a través de funciones lineales. Los elementos fundamentales son:
+
+Variables de Decisión: Símbolos que representan las cantidades que se desea determinar. En sistemas de información, podrían ser el número de servidores a desplegar, la cantidad de ancho de banda a asignar o el número de desarrolladores en un proyecto.
+
+Función Objetivo: Una función lineal que se debe maximizar (ganancias, eficiencia, rendimiento) o minimizar (costos, tiempo, latencia). Por ejemplo, minimizar el tiempo de respuesta de un centro de datos.
+
+Restricciones: Ecuaciones o inecuaciones lineales que limitan las posibles soluciones, representando la escasez de recursos (presupuesto, capacidad de procesamiento, almacenamiento). Por ejemplo, la capacidad máxima de un servidor o el presupuesto para licencias de software.
+
+Parámetros: Constantes fijas en el modelo, como el costo unitario de un recurso o la capacidad máxima de un sistema.
+
+Un modelo de PL asume proporcionalidad, aditividad, divisibilidad y certidumbre en sus parámetros (Hillier & Lieberman, 2010). En ingeniería de sistemas, la divisibilidad (variables continuas) a veces se relaja mediante técnicas de programación entera para representar decisiones discretas (comprar 1 o 2 servidores, sí o no).
+
+3.2 Región Factible. Solución óptima
+La región factible es el conjunto de todas las posibles combinaciones de valores de las variables de decisión que satisfacen todas las restricciones del modelo, incluidas las de no negatividad. Geométricamente, es un poliedro convexo en el espacio n-dimensional (Taha, 2017).
+
+La solución óptima es el punto (o puntos) dentro de la región factible que da el valor más favorable (máximo o mínimo) para la función objetivo. Un teorema fundamental de la PL establece que si existe una solución óptima única, se encuentra en un vértice (o punto extremo) de la región factible. Si existen múltiples soluciones óptimas, al menos dos de ellas serán vértices adyacentes, y cualquier combinación convexa de ellas también será óptima.
+
+En el contexto de sistemas, la región factible define todos los planes de acción viables dados los límites tecnológicos y presupuestarios. Encontrar la solución óptima equivale a identificar la configuración de sistema más eficiente.
+
+3.3 Modelo de un problema de programación lineal
+3.3.1 Función objetivo
+La función objetivo es la expresión matemática que cuantifica el desempeño del sistema que se desea optimizar. Para un problema de maximización de beneficio en la asignación de recursos de computación en la nube, podría ser:
+Maximizar Z = 15x₁ + 10x₂
+Donde x₁ y x₂ podrían representar las horas de uso de instancias de computación de alto y bajo rendimiento, respectivamente, y los coeficientes 15 y 10 representan el beneficio por hora de cada tipo de instancia.
+
+3.3.2 Restricciones
+Las restricciones definen los límites del problema. Para el ejemplo anterior:
+
+Restricción de Presupuesto: 50x₁ + 20x₂ ≤ 1000 (El costo total de las instancias no puede exceder $1000).
+
+Restricción de Ancho de Banda: 100x₁ + 50x₂ ≤ 5000 (El consumo total de ancho de banda no puede exceder los 5000 Mbps).
+
+Restricción de Almacenamiento: x₁ + x₂ ≥ 30 (Se necesitan al menos 30 horas totales de procesamiento).
+
+3.3.3 Restricciones de no negatividad
+Estas restricciones establecen que las variables de decisión no pueden ser negativas, ya que representan cantidades físicas (horas, número de servidores, cantidad de datos). x₁ ≥ 0, x₂ ≥ 0.
+
+3.4 Método Gráfico
+El método gráfico es una técnica de solución válida para problemas con dos variables de decisión. Permiente visualizar conceptos clave como región factible, solución óptima y casos especiales (soluciones no acotadas, infactibles o múltiples).
+
+Procedimiento:
+
+Graficar cada restricción como una línea recta.
+
+Identificar el semiplano factible para cada restricción.
+
+La intersección de todos los semiplanos factibles forma la región factible.
+
+Trazar rectas de la función objetivo para diferentes valores de Z (isocostos o isoutilidad).
+
+La solución óptima se encuentra en el punto donde la recta de la función objetivo abandona la región factible, tocando un vértice.
+
+Ejemplo (Ingeniería de Sistemas): Optimizar el uso de dos tipos de servidores (S1, S2) para procesar requests.
+
+Función Objetivo: Max Z = 300S1 + 200S2 (Throughput total)
+
+Restricciones:
+
+CPU: 2S1 + S2 ≤ 100 (100 núcleos disponibles)
+
+RAM: S1 + 2S2 ≤ 80 (80 GB disponibles)
+
+S1, S2 ≥ 0
+
+Al graficar, la región factible es un polígono. La solución óptima se encuentra en la intersección de las restricciones de CPU y RAM, resolviendo el sistema:
+2S1 + S2 = 100
+S1 + 2S2 = 80
+La solución es S1=40, S2=20, con Z = 300*40 + 200*20 = 16000 (Throughput máximo).
+
+3.5 Método Simplex Tabular
+El método Simplex, desarrollado por George Dantzig (1947), es un algoritmo iterativo y eficiente para resolver problemas de PL con cualquier número de variables. El formato tabular organiza los cálculos de manera sistemática.
+
+Conceptos Clave:
+
+Variables de Holgura/Exceso/Artificiales: Se añaden para convertir las desigualdades en igualdades y formar un sistema de ecuaciones lineales. Las variables de holgura (s_i) representan recursos no utilizados, las de exceso (e_i) representan el sobrepaso de un mínimo, y las artificiales (A_i) se usan en restricciones ≥ o = para obtener una solución inicial básica factible (SBF) en el método de la M grande.
+
+Solución Básica Factible (SBF): Una solución en un vértice de la región factible.
+
+Criterio de Optimalidad y Factibilidad: En cada iteración, el Simplex evalúa los costos reducidos (en la fila Z o C_j - Z_j) para decidir qué variable entra a la base (mejora más la función objetivo) y luego usa la regla de la mínima razón para decidir qué variable sale (manteniendo la factibilidad).
+
+Algoritmo (Maximización):
+
+Estandarizar el modelo: agregar variables de holgura/exceso/artificiales.
+
+Construir la tabla simplex inicial.
+
+Si C_j - Z_j ≤ 0 para todas las variables no básicas, STOP. La solución es óptima.
+
+Si no, elegir la variable con el C_j - Z_j más positivo para entrar a la base.
+
+Aplicar la regla de la mínima razón (θ = b_i / a_ij, para a_ij > 0) para elegir la variable que sale.
+
+Realizar operaciones de fila (pivoteo) para hacer que la columna pivote tenga un 1 en la posición del pivote y 0 en las demás filas.
+
+Repetir desde el paso 3.
+
+Ejemplo aplicado: Asignación óptima de tiempo de desarrollo entre dos módulos de software (M1, M2) para maximizar el valor entregado, sujeto a restricciones de horas-hombre y horas de testing. El método simplex tabular guía iterativamente hacia la asignación óptima de recursos.
+
+3.6 Método de la M grande o de Penalización
+Este método se utiliza cuando el modelo de PL incluye restricciones de tipo ≥ o =, que no permiten obtener una SBF inicial obvious al agregar solo variables de holgura.
+
+Procedimiento:
+
+Se agregan variables artificiales (A_i) al lado izquierdo de cada restricción ≥ o =.
+
+Se penaliza la inclusión de estas variables en la solución final asignándoles un coeficiente extremadamente negativo (-M para maximización, +M para minimización) en la función objetivo, donde M representa un número positivo muy grande.
+
+Se aplica el método simplex al problema aumentado. El algoritmo, al intentar optimizar la función objetivo, forzará a las variables artificiales a cero (si el problema es factible), eliminándolas de la base.
+
+Interpretación:
+
+Si en la solución óptima alguna variable artificial permanece en la base con valor positivo, el problema original no tiene solución factible.
+
+Este método es fundamental pero numéricamente inestable para M muy grandes. En la práctica, software moderno utiliza métodos de dos fases o puntos interiores.
+
+Aplicación en Sistemas: Modelar la necesidad de cumplir estrictamente un Service Level Agreement (SLA) (restricción de igualdad) o superar un umbral mínimo de rendimiento (restricción ≥).
+
+3.7 Modelo de Transporte
+El modelo de transporte es un caso especial de PL que busca determinar el plan de distribución de bienes (o datos, en nuestro contexto) desde m orígenes (fuentes) hasta n destinos (consumidores) al mínimo costo (o tiempo, o distancia), satisfaciendo la oferta en cada origen y la demanda en cada destino. Su estructura permite algoritmos más eficientes que el Simplex general.
+
+Formulación estándar:
+Minimizar Z = ΣΣ c_ij * x_ij
+Sujeto a:
+
+Σ x_ij = O_i para cada origen i (oferta)
+
+Σ x_ij = D_j para cada destino j (demanda)
+
+x_ij ≥ 0 para todo i, j
+
+Aplicación en Ingeniería de Sistemas:
+
+Distribución de cargas de trabajo en una red de servidores (orígenes) a usuarios/clusters (destinos).
+
+Almacenamiento de datos en diferentes discos/nodos de una red para optimizar el acceso.
+
+Planificación del tráfico en una red de comunicaciones.
+
+3.7.1 Heurístico de la Esquina Noroeste
+Este método encuentra una Solución Básica Factible Inicial (SBFI) sin considerar los costos.
+
+Algoritmo:
+
+Comenzar en la celda superior izquierda (esquina noroeste) de la tabla de transporte.
+
+Asignar el máximo valor posible x_ij = min(O_i, D_j).
+
+Ajustar la oferta O_i y la demanda D_j restando el valor asignado.
+
+Si la oferta se agota, moverse una fila hacia abajo. Si la demanda se satisface, moverse una columna a la derecha.
+
+Repetir hasta que se agoten todas las ofertas y demandas.
+
+Ventaja: Simple y rápido.
+Desventaja: Generalmente produce soluciones iniciales lejanas a la óptima porque ignora los costos.
+
+3.7.2 Heurístico del Costo Mínimo
+Este método busca una SBFI mejor al considerar los costos.
+
+Algoritmo:
+
+Identificar la celda con el costo unitario más bajo en toda la tabla.
+
+Asignar x_ij = min(O_i, D_j) a esa celda.
+
+Ajustar O_i y D_j y tachar la fila o columna satisfecha.
+
+Repetir los pasos 1-3 con las celdas restantes hasta completar la asignación.
+
+Ventaja: Generalmente produce una SBFI mejor (con menor costo total) que la Esquina Noroeste.
+Desventaja: Puede pasar por alto combinaciones favorables.
+
+3.7.3 Heurístico de Vogel
+Este método es más sofisticado y generalmente produce las mejores SBFI.
+
+Algoritmo:
+
+Para cada fila y columna, calcular la penalización (diferencia entre los dos costos más pequeños).
+
+Seleccionar la fila o columna con la penalización más grande.
+
+En la fila o columna seleccionada, asignar el máximo posible a la celda con el costo más bajo.
+
+Ajustar ofertas y demandas, y tachar la fila o columna satisfecha.
+
+Repetir los pasos 1-4 hasta terminar.
+
+Ventaja: Suele producir una SBFI muy cercana a la solución óptima, reduciendo el número de iteraciones needed por el método de stepping-stone o MODI para alcanzar el óptimo.
+Desventaja: Cálculamente más intensivo que los anteriores.
+
+3.8 Aplicación de "Linear and Integer Programming" del WinQSB y LINDO para la resolución de problemas de programación lineal contextualizados en la ingeniería de sistemas de información
+Las herramientas de software son esenciales para aplicar la PL a problemas reales de ingeniería, que suelen ser de gran escala.
+
+WinQSB (Quantitative Systems for Business): Incluye el módulo "Linear and Integer Programming" (LP-ILP). Su interfaz amigable permite introducir problemas de forma natural, resolverlos y analizar los resultados, incluyendo análisis de sensibilidad (precios sombra, rangos de optimalidad). Es ideal para aprendizaje y problemas de escala media.
+
+LINDO (Linear, Interactive, and Discrete Optimizer): Ofrece un lenguaje de modelado más potente (incluyendo LINDO API para integración en aplicaciones) y es capaz de resolver problemas muy grandes de PL y programación entera (IP). Es utilizado en entornos industriales y de investigación.
+
+Aplicación Contextualizada:
+
+Problema: Minimizar el costo de operación de una red de distribución de contenido (CDN), decidiendo cuántos GB de datos enviar desde cada centro de datos (origen) a cada región de usuarios (destino).
+
+Formulación: Es un clásico problema de transporte. Las variables x_ij representan los GB enviados desde el centro i a la región j. Las restricciones son la capacidad de salida de cada centro (oferta) y la demanda de datos de cada región.
+
+Resolución con Software:
+
+Se introducen los parámetros (costos c_ij, capacidades O_i, demandas D_j) en WinQSB o LINDO.
+
+El software resuelve el problema usando variantes del método simplex o de punto interior.
+
+El análisis de sensibilidad indica cómo cambios en la capacidad o demanda afectan el costo total (precios sombra), información crucial para la planificación de capacidad.
+
+Estas herramientas permiten al ingeniero de sistemas concentrarse en la formulación del modelo y el análisis de los resultados, liberándolo de los complejos cálculos manuales.
+
+Autoevaluaciones
+Autoevaluación 3.1-3.3: Conceptos y Modelación
+
+Defina con sus palabras: variable de decisión, función objetivo y restricción.
+
+¿Por qué las restricciones de no negatividad son esenciales en muchos modelos de IS?
+
+Formule un problema de PL para asignar 5 tareas de procesamiento a 2 servidores, minimizando el tiempo total. Defina variables, función objetivo y al menos 3 restricciones.
+
+Autoevaluación 3.4: Método Gráfico
+Dado el problema:
+Max Z = 3x1 + 2x2
+s.a.:
+2x1 + x2 ≤ 18
+x1 + x2 ≤ 12
+x1, x2 ≥ 0
+
+Grafique la región factible.
+
+Identifique las coordenadas de todos los vértices.
+
+Encuentre la solución óptima y el valor de Z.
+
+Autoevaluación 3.5-3.6: Simplex y Método M
+
+¿Cuál es el propósito de las variables de holgura y artificiales?
+
+Describa brevemente los criterios de entrada y salida en el simplex.
+
+¿Por qué se usa una penalización M en el método de la M grande?
+
+Autoevaluación 3.7: Modelo de Transporte
+Para la tabla de costos y asignaciones below:
+
+text
+        D1  D2  D3 Oferta
+   O1  | 5 | 7 | 8 | 20
+   O2  | 6 | 4 | 5 | 30
+Demanda|15 |20 |15 |
+Encuentre una SBFI usando el método de la Esquina Noroeste.
+
+Calcule el costo total para esta solución.
+
+Encuentre una SBFI usando el método del Costo Mínimo.
+
+Bibliografía y Webgrafía
+Dantzig, G. B. (1963). Linear Programming and Extensions. Princeton University Press.
+
+Hillier, F. S., & Lieberman, G. J. (2010). Introduction to Operations Research (9th ed.). McGraw-Hill.
+
+Taha, H. A. (2017). Operations Research: An Introduction (10th ed.). Pearson.
+
+WinQSB Software. (n.d.). Retrieved from https://www.winqsb.com/
+
+LINDO Systems. (n.d.). Retrieved from https://www.lindo.com/
+
+Glosario
+Región Factible: Conjunto de todas las soluciones que satisfacen todas las restricciones de un problema de PL.
+
+Solución Óptima: La solución factible que da el mejor valor posible de la función objetivo.
+
+Variable de Holgura: Variable añadida a una restricción ≤ para convertirla en igualdad, representando un recurso no utilizado.
+
+Variable Artificial: Variable añadida a una restricción ≥ o = para obtener una solución inicial básica factible en el método de la M grande o dos fases.
+
+Método Simplex: Algoritmo iterativo para resolver problemas de PL moviéndose entre vértices de la región factible.
+
+Heurístico: Procedimiento basado en reglas prácticas para encontrar una solución buena (pero no necesariamente óptima) de manera eficiente.
+
+Análisis de Sensibilidad: Estudio de cómo los cambios en los coeficientes de un modelo de PL afectan la solución óptima.

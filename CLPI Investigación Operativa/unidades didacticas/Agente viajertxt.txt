@@ -1,0 +1,320 @@
+Para los profesionales de logística, la eficiencia en los procesos no es solo un objetivo; es una necesidad que requiere la implementación de diversas estrategias y la resolución de múltiples desafíos.
+
+Entre estos, uno de los más significativos es la optimización de la planificación de rutas, donde resolver el Problema del Viajante (TSP) del agente viajero se convierte en una pieza clave para asegurar entregas puntuales y costos operativos reducidos.
+
+En este artículo, profundizamos en cómo enfrentar y superar el TSP, destacando su importancia y las soluciones innovadoras que pueden transformar este desafío en una ventaja competitiva para las operaciones logísticas.
+
+Qué es TSP problema del vendedor viajero
+
+¿Qué es el Problema del Viajante (TSP)?
+El Problema del Viajante, o travelling salesman problem (TSP, por sus siglas en inglés), es un desafío que trata de encontrar la ruta más corta para visitar varias ciudades y volver al inicio, pasando por cada ciudad solo una vez.
+
+A medida que se añaden más ciudades al recorrido, resolver este problema se hace más complicado. Esto representa un gran reto para quienes manejan la entrega de productos, ya que buscan hacerlo de la manera más eficiente posible.
+
+El TSP es importante no solo en teoría; en la práctica, juega un papel crucial en cómo se planifican las rutas de entrega. Por ejemplo, los camiones de reparto usan este principio para elegir el mejor camino que minimice el tiempo en carretera y el uso de combustible, lo que ayuda a reducir los gastos y a que los clientes estén más contentos.
+
+Con el mundo cada vez más conectado y el auge de las compras en línea, ser capaces de entregar rápidamente se ha vuelto esencial para el éxito de un negocio.
+
+Aunque antes el TSP se consideraba más un ejercicio mental, hoy en día, gracias a los avances tecnológicos y a programas de computadora avanzados, se ha hecho posible aplicarlo de forma práctica.
+
+Estos programas utilizan técnicas avanzadas como algoritmos y aprendizaje automático para planificar rutas de manera eficaz, ajustándose a las necesidades cambiantes de los negocios y lo que esperan los clientes.
+
+La Evolución del TSP en Logística
+Históricamente, el TSP se ha abordado a través de métodos matemáticos y algorítmicos, desde enfoques de fuerza bruta hasta técnicas más refinadas como el algoritmo del vecino más cercano y el método de inserción más cercana.
+
+Sin embargo, estos métodos tradicionales chocan con limitaciones cuando se aplican a la compleja red de requisitos de la logística de última milla actual, que incluye factores como ventanas de entrega específicas, restricciones de tráfico y la variabilidad en la capacidad de carga.
+
+Desafíos del TSP en la logística moderna
+El aumento del e-commerce y las expectativas de entregas rápidas han puesto a las empresas logísticas bajo una presión considerable para optimizar sus rutas de entrega.
+
+El TSP se complica aún más por factores como el tráfico, las ventanas de entrega, las restricciones de peso y volumen, y la necesidad de adaptarse a cambios de última hora, todos los cuales deben ser considerados para lograr la optimización de rutas.
+
+La creciente complejidad de las redes de suministro internacionales agrega un nivel de dificultad en la resolución del TSP. Las empresas deben planificar rutas eficientes que conecten destinos dentro de ciudades o regiones y a través de fronteras internacionales. Esta planificación requiere una visión integrada que abarque operaciones locales e internacionales, garantizando entregas eficientes que, al mismo tiempo, cumplan con las regulaciones y requisitos aduaneros de diversos países.
+
+Además, la sostenibilidad ambiental representa un desafío crítico. En un mundo que valora cada vez más la reducción de la huella de carbono, las empresas logísticas buscan optimizar sus rutas para minimizar el impacto ambiental. Seleccionar rutas eficientes no es suficiente; también deben ser las más respetuosas con el medio ambiente. La tecnología desempeña un papel esencial, ofreciendo herramientas para evaluar y elegir opciones de ruta que equilibren la eficiencia, el costo y la sostenibilidad
+
+Por último, la evolución constante de la tecnología y las expectativas de los consumidores demanda que las soluciones al TSP sean flexibles y capaces de adaptarse rápidamente a nuevos desafíos. Esto significa que las herramientas y estrategias utilizadas para resolver el TSP hoy pueden necesitar ser reevaluadas y actualizadas con regularidad, para mantenerse alineadas con las mejores prácticas de la industria y las expectativas del mercado.
+
+La capacidad de una empresa para adaptarse y responder a estos cambios con soluciones innovadoras será clave para su éxito en el competitivo mundo de la logística moderna.
+
+Las soluciones innovadoras de DispatchTrack
+Ante estos desafíos, DispatchTrack se posiciona como un líder en la oferta de soluciones tecnológicas avanzadas para la logística. A través de la utilización de algoritmos de optimización de rutas y aprendizaje automático, DispatchTrack supera los retos presentados por el TSP, ofreciendo a las empresas una herramienta poderosa para mejorar la eficiencia de sus operaciones logísticas.
+
+Optimización dinámica de rutas
+DispatchTrack no se limita a ofrecer una solución estática al TSP; su tecnología permite adaptarse dinámicamente a los cambios en tiempo real, considerando variables como el tráfico, cancelaciones de última hora y ajustes en las ventanas de entrega. Esto asegura que las rutas de entrega sean siempre óptimas, incluso en las condiciones más desafiantes.
+
+Personalización y flexibilidad
+Reconociendo que cada empresa logística tiene necesidades únicas, DispatchTrack ofrece soluciones personalizadas que se adaptan a los requisitos específicos de cada cliente. Ya sea que se trate de la entrega de paquetería, distribución de alimentos frescos, o cualquier otro tipo de producto, DispatchTrack configura sus algoritmos para ofrecer las mejores rutas posibles.
+
+Integración y análisis de datos
+Además de optimizar las rutas de entrega, DispatchTrack proporciona a las empresas herramientas avanzadas para el análisis de datos, permitiéndoles monitorear el rendimiento, identificar áreas de mejora y tomar decisiones basadas en datos. Esta integración de la optimización de rutas con el análisis de datos representa un enfoque holístico para enfrentar los desafíos logísticos del siglo XXI.
+
+Gestión de la experiencia del cliente
+Una innovación clave de DispatchTrack es su enfoque en la experiencia del cliente final. La plataforma ofrece soluciones que permiten a las empresas rastrear las entregas en tiempo real y también comunicarse efectivamente con los clientes sobre el estado de sus pedidos. Esto mejora significativamente la satisfacción del cliente y fomenta la lealtad hacia la marca.
+
+Sostenibilidad ambiental
+DispatchTrack también aborda el creciente desafío de la sostenibilidad ambiental. Sus soluciones de optimización de rutas no solo buscan la eficiencia y la reducción de costos sino también la minimización del impacto ambiental de las operaciones logísticas. Al optimizar las rutas para reducir la distancia total recorrida y el tiempo de entrega, DispatchTrack ayuda a las empresas a disminuir su huella de carbono, alineándose con objetivos de sostenibilidad y responsabilidad social empresarial.
+
+Caso de Éxito de Coca Cola Andina: Transformando la Logística con DispatchTrack
+A través de estudios de caso concretos, DispatchTrack ha demostrado su capacidad para transformar las operaciones de logística de sus clientes. Empresas que enfrentaban desafíos significativos en la gestión de sus rutas de entrega han visto mejoras notables en eficiencia, reducción de costos y aumento en la satisfacción del cliente después de implementar las soluciones de DispatchTrack.
+
+Un ejemplo de esto es Coca-Cola Andina, reconocida por su producción y distribución en Chile y que ha transformado su logística de última milla para su tienda e-commerce, miCoca-cola.cl, gracias a DispatchTrack. Esta colaboración ha permitido a Coca-Cola Andina abordar el Problema del Viajante (TSP), encontrando la ruta más corta y, al mismo tiempo, la más eficiente para llegar a un destino, lo que resulta crucial para cumplir con las expectativas de entrega rápida de los consumidores.
+
+
+ 
+
+La implementación de DispatchTrack ha marcado un antes y un después en cómo Coca-Cola Andina planifica sus entregas. La tecnología de DispatchTrack optimiza las rutas en tiempo real, permitiendo un monitoreo constante que ha elevado el nivel de servicio al cliente. Bastián Seguel, ingeniero de distribución en Coca-Cola Andina, destaca que en tan solo tres meses de uso, los software de DispatchTrack impulsaron sus indicadores de concreción al 99,4%.
+
+Además, la optimización de rutas ha permitido a la compañía reducir en un 40% la dispersión de las rutas, generando ahorros significativos en costos y contribuyendo a una logística más verde. Juan Carlos Martínez, jefe de Transporte E-commerce en Coca-Cola Andina, valora a DispatchTrack no solo por mejorar la eficiencia y reducir costos sino también por convertirse en un aliado estratégico esencial para el futuro.
+
+Este avance demuestra cómo la tecnología de DispatchTrack puede revolucionar la logística, ofreciendo soluciones eficientes que benefician tanto a la empresa como a sus clientes, resaltando la importancia de una planificación y ejecución de rutas optimizadas en el mundo del comercio electrónico actual.
+
+Problema del agente viajero
+Alejandro Fuentes Penna[a]
+
+Resumen
+El presente artículo tiene como objetivo presentar un ensayo referente al problema del agente viajero – Travel Salesman Problem (TSP por sus siglas en inglés) cuya representación ha resuelto múltiples problemas que pueden ser modelados con base en las características del algoritmo base de TSP o de sus múltiples variables.
+
+Se presenta una introducción donde se describe el origen de TSP; en la sección de desarrollo se muestra el algoritmo base y una descripción de TSP con base en las características que han propuesto diferentes autores, y la aplicación de TSP como simulación a problemas reales con. Por último, en la conclusión se aborda el tema de TSP como un paradigma que se puede emplear en situaciones donde se involucran puntos de control (nodos) y costo entre los nodos.
+
+
+Palabras clave: Problema del Agente Viajero, Problema de Optimización Combinatoria, Optimización basada en Colonia de Hormigas, Inteligencia de Enjambre, Inteligencia Artificial
+
+Abstract
+The main target is to introduce an essay of the traveling salesman problem (TSP) whose structure has solved many problems that can be modeled based on base- algorithm or its multiple variables.
+
+An introduction describes the origin of TSP, in the development section the basic algorithm and the TSP description are presented based on different viewpoints of some authors, and the TSP implementation on real problems based on simulation. Finally, in the conclusion the issue of TSP as a paradigm that can be used in situations which involve control points (nodes) and cost between nodes.
+
+
+Keywords: Travel Salesman Problem (TSP), Combinatorial Optimization Problem (COP), Ant Colony Optimization (ACO), Swarm Intelligence, Artificial Intelligence.
+
+Introducción
+La primera solución reportada para resolver el problema del Agente Viajero fue en 1954, cuando George Dantzig, Ray Fulkerson, y Selmer Johnson  publicaron la descripción de un método de solución del PAV (Problema del Agente Viaje o sus siglas en inglés TSP – Travel Sailsman Problem) titulado “Solutions of a large scale traveling salesman problem“ (Soluciones de gran escala para el problema del agente viajero) para resolver una instancia de 49 ciudades donde un agente viajero desea visitar un conjunto de ciudades, asignándoles un costo por visitar ciudades contiguas (distancia de traslado entre dos ciudades). Para esta solución se propusieron 2 condiciones: regresar a      la misma ciudad de la cual partió y no repetir ciudades con el objetivo de encontrar una ruta o un camino con el menor costo posible.
+
+Desarrollo
+Descripción de TSP
+Se tiene un número de nodos (ciudades, localidades, tiendas, empresas, etc.) que deben ser visitados por una entidad (persona, agente viajero, automotor, avión, autobús, etc.), sin visitar 2 veces el mismo nodo. Si tenemos 3 nodos (a, b y c) por visitar, entonces tendríamos una función de combinaciones sin repetición c(3,2), es decir, tendríamos 6 posibles soluciones: abc, acb, bac, bca, cab, cba, para el caso de 4 nodos tendríamos 12 combinaciones, para 10 nodos tendríamos 90  combinaciones, para 100 ciudades tendríamos 9,900 combinaciones y así sucesivamente. Como ejemplo en el problema del Ulises de Homero que intenta visitar las ciudades descritas en la Odisea exactamente una vez (16 ciudades) donde existen múltiples conexiones entre las diferentes ciudades, Grötschel y Padberg (1993) llegó a la conclusión de que existen 653,837’184,000 rutas distintas para la solución de este problema.
+
+Algoritmo base
+El Problema del Agente Viajero (TSP), es considerado como un conjunto de grafos cuyas aristas son los posibles caminos que puede seguir la entidad para visitar todos los nodos (Öncan et al., 2009), y cuyo algoritmo se puede representar de la siguiente manera:
+
+Definir el número de nodos, su posición y el costo por cada arista (i, j) donde i = ciudad 1 y j = ciudad 2
+
+Elegir el nodo inicial i
+
+Hacer
+
+Si el nodo más cercano no se ha visitado
+
+Visitar nodo j
+
+Actualizar lista de nodos visitados
+
+Costo_total = costo_total + costoij
+
+Nodo i = nodo j
+
+Hasta haber visitado todos los nodos
+
+Características de TSP
+TSP se encuentra clasificado como Problema de optimización Combinatoria, es decir, es un problema donde intervienen cierto número de variables donde cada variable puede tener N diferentes valores y cuyo número de combinaciones es de carácter exponencial, lo que da lugar a múltiples soluciones óptimas (soluciones que se calculan en un tiempo finito) para una instancia.
+
+TSP es un problema considerado difícil de resolver, denominándose en lenguaje computacional NP-Completo, es decir, es un problema para el que no podemos garantizar que se encontrará la mejor solución en un tiempo de cómputo razonable. Para dar solución se emplean diferentes métodos, entre los cuales, los principales se denominan heurísticas cuyo objetivo es generar soluciones de buena calidad en tiempos de cómputo mucho más pequeños (soluciones óptimas tiempo – respuesta).
+
+Las variables que han sido empleadas por la mayoría de los investigadores que dan solución a TSP son:
+
+Tiempo de recorrido entre ciudades: horas, minutos, días, semanas, etc.
+Distancia de recorrido entre ciudades: metros, kilómetros, millas, milímetros, etc.
+Costo de traslado: dinero, desgaste de las piezas, gasto de energía, etc.
+Las variables que se pueden adoptar dependen de cada problema, por ejemplo:
+
+Circuitos electrónicos: cantidad de soldadura utilizada, menor espacio entre los puntos de soldadura de los circuitos, evitar el cruce entre las líneas de soldadura, tiempo de fabricación, distribución de los circuitos, entre otras.
+Control de semáforos: Número de semáforos (nodos), tiempo de traslado entre semáforos, cantidad de autos que pasan por un punto, entre otras variables.
+Previsión del tránsito terrestre: puntos en una ciudad, cantidad de vehículos, tiempo de traslado, tipos de vehículos, horas pico, correlación entre variables, regresión lineal, etc.
+Entrega de productos: Peso de las entregas, número de entregas, nodos (domicilios) a visitar, recorridos, tiempos de traslado, tipo de vehículo, etc.
+Estaciones de trabajo: secuencia de actividades, lugar de las herramientas (nodos), Tipo de herramientas, tiempo de uso, etc.
+Edificación: puntos de edificación (construcciones), distancia entre las construcciones y los insumos, vehículos (grúas, camiones de volteo, etc.), cantidad de combustible que emplean, etc.
+Entre otras variables
+Aplicación de TSP
+TSP se puede emplear en cualquier situación que requiere seleccionar nodos en cierto orden que reduzca los costos:
+
+Reparto de productos. Mejorar una ruta de entrega para seguir la más corta.
+Transporte. Mejorar el recorrido de caminos buscando la menor longitud (figura 1).
+Robótica. Resolver problemas de fabricación para minimizar el número de desplazamientos al realizar una serie de perforaciones en un circuito impreso.
+Turismo y agencias de viajes. Aun cuando los agentes de viajes no tienen un conocimiento explícito del Problema del Agente Viajero, las compañías dedicadas a este giro utilizan un software que hace todo el trabajo. Estos paquetes son capaces de resolver instancias pequeñas del TSP.
+Horarios de transportes laborales y/o escolares. Estandarizar los horarios de los transportes es claramente una de sus aplicaciones, tanto que existen empresas que se especializan en ayudar a las escuelas a programarlos para optimizarlos en base a una solución del TSP.
+Inspecciones a sitios remotos. Ordenar los lugares que deberá visitar un inspector en el menor tiempo.
+Secuencias. Se refiere al orden en el cual n trabajos tienen que ser procesados de tal forma que se minimice el costo total de producción.
+
+Figura 1. Mapa de la región de Tlahuelilpan, Hidalgo
+Fuente: Google maps
+
+Algoritmos propuestos para dar solución a TSP
+El Problema del Agente Viajero puede resolverse de diferentes maneras:
+
+Enumeración de todas las soluciones factibles. Es decir, enlistar todas las posibles soluciones al problema, calcular sus costos asociados, e identificar, por comparación, cuál es la solución con el costo más conveniente.
+Métodos exactos. También llamados algoritmos óptimos, intentan descartar familias enteras de posibles soluciones, tratando así de acelerar la búsqueda y llegar a una óptima. Los que más se usan para resolver el TSP son Ramificación y Acotamiento, y Ramificación y Corte.
+Heurísticas. Son métodos obtienen buenas soluciones en tiempos de cómputo muy cortos, aunque sin garantizar la solución única.
+En la actualidad investigadores han propuesto diferentes estrategias para dar solución a TSP, de las cuales se pueden mencionar algunas técnicas empleadas:
+
+Algoritmos genéticos: la solución consiste en encontrar un individuo cuya combinación de genes (cada gen es una variable), den solución al problema de visitar todas las ciudades una vez. Otra solución es que cada gen es una ciudad y cuyo orden dependerá del orden en que serán visitadas.
+Redes neuronales: Una red neuronal simula las conexiones entre los nodos (lugares por visitar), y cada recorrido por las diferentes neuronas genera al final un camino que involucra el tour por todas las ciudades visitadas una sola vez.
+Colonia de hormigas (ACO): las hormigas encuentran el camino más corto entre 2 puntos; para TSP, se considera el punto de inicio como el punto final, el mismo nodo; de esta manera, las hormigas deben recorrer todas las ciudades en un circuito, sin pasar 2 veces por la misma ciudad.
+Project  Scheduling Problem (PSP): Buscar la solución considerando principalmente el uso mínimo de recursos durante cada recorrido.
+Búsqueda Tabú: consiste en buscar el vecino próximo cuyos costos de traslado del nodo actual al siguiente, sea el de menor costo en cuanto al uso de recursos
+Combinación de propuestas: Las técnicas de Inteligencia Artificial se pueden combinar para crear meta heurísticas, conformando diferentes soluciones tales como: algoritmos genéticos con redes neuronales, PSP con ACO, PSP con redes neuronales, etc.
+Entre otras soluciones.
+Simulación de TSP
+En Fuentes-Penna and González-Ramírez (2013) se presenta una simulación del Problema del Agente Viajero (TSP por sus siglas en inglés), donde se tienen 100 ciudades que deberán ser visitadas en el menor tiempo y con el menor costo de traslado. Se asigna de manera aleatoria la distancia y el costo entre los nodos con un máximo de 10 nodos colindantes. El Algoritmo propuesto se denomina Scheduling Project Ant Colony Optimization (SPANCO) y se comparan los resultados con una solución aleatoria y con el algoritmo basado en Optimización de Colonia de Hormigas (ACO por sus siglas en inglés). En este artículo se muestra que el algoritmo SPANCO reduce el costo total y la distancia total del recorrido en un rango del 3% al 8%. La simulación se relación con el software AIMMS para modelado matemático y de optimización (AIMMS, 2013). Las áreas de aplicación de AIMMS son:
+
+Planificación estratégica de la producción
+Optimización de redes de distribución
+Programación y mezcla de crudo
+Modelado y optimización de procesos
+Planificación de la utilización de plantas de generación eléctrica
+Gestión estratégica de bosques
+Optimización de aprovisionamientos
+Gestión de riesgo financiero
+Optimización en el diseño de productos
+Planificación de la cartera de I+D y asignación de recursos
+
+Figura 2. Simulación de TSP
+Fuente: Fuentes-Penna y González-Ramírez (2013)
+
+Conclusiones
+El problema del Agente Viajero (TSP) es un problema cuya solución ha sido estudiada desde los inicios de la Inteligencia Artificial considerando que su aplicación puede ser en cualquier área de estudio cuyos problemas reflejen una situación donde se tienen diferentes puntos a visitar con un costo considerado en el enlace entre dichos puntos (costo: recursos empleados como distancia, tiempo, monto económico, etc.). Cada autor ha propuesto soluciones para ciertas instancias de TSP, cada uno con una perspectiva diferente empleando técnicas que no son repetibles pero que, en determinado momento, se pueden emplear para dar lugar a nuevas soluciones; de las técnicas empleadas la más común es el uso de redes neuronales dada su similitud, donde cada neurona es un nodo a visitar y las relaciones entre neuronas es el vector que representa el costo.
+
+Problema del agente viajero en logística: calcular lo imposible
+Bartosz Ziółkowski | Publicado: 23. May 2023 | Actualizado: 24. Jun 2025
+Es bien sabido que, gracias al desarrollo de las tecnologías de la información (TI), las empresas obtienen cada vez mejores resultados de ventas, por no hablar de que pueden funcionar gracias a soluciones informáticas. Además, las personas pueden gestionar cada vez más asuntos o trabajar a través de Internet. Sin embargo, no todo el mundo sabe que incluso la informática tiene sus límites y no puede dar una respuesta exacta a todo.
+
+ 
+
+Dentro del campo de la informática, existen desde hace años cuestiones y problemas para los que aún no se han propuesto soluciones eficientes y fundamentales. Uno de ellos es el problema de optimización denominado problema del agente viajero, estrechamente relacionado con el sector de la TSL (Logística de Transporte y Expedición). Siga leyendo para saber más sobre él. Quizás sea usted el afortunado que resuelva este problema.
+
+ 
+
+Problema del vendedor ambulante en logística
+
+ 
+
+¿Cómo surgió el «problema del agente viajero»?
+Es difícil precisar la persona que anunció por primera vez la dificultad de indicar un conjunto de instrucciones para resolver el problema del agente viajero (TSP – Travelling Salesman Problem). Las primeras menciones al mismo se remontan a la década de 1830 y los primeros intentos de resolverlo se realizaron unos 100 años más tarde al tratar de encontrar la ruta óptima para un autobús escolar. Dejaremos el análisis del problema basado en complejas leyes y expresiones matemáticas a los científicos. Por eso me centraré en su esencia presentándolo de forma fácilmente comprensible.
+
+¿Cuál es el problema del TSP?
+Supongamos que hay un viajante que empieza y termina su trabajo en Boston. Un día tiene que entregar paquetes en direcciones de Nueva York, Denver, Los Ángeles, Austin, Portland y Chicago. El problema del agente viajero consiste en encontrar la ruta más corta que permita al viajante visitar todas estas ciudades. No tiene por qué tratarse sólo de la longitud de la ruta, ya que también puede centrarse en encontrar el camino más barato o más rápido. En nuestro ejemplo, el número de rutas posibles es de 5040..
+
+¿Cómo afrontan las empresas el problema del TSP?
+Si buscamos la ruta más corta para varias ciudades, encontrar la solución óptima puede llevar segundos o unos minutos en un ordenador normal. Sin embargo, cuando hablamos, por ejemplo, de 52 ciudades, se utilizan diversos algoritmos y la informática paralela y distribuida para encontrar soluciones aproximadas – suficientes para la logística-, porque comprobar todas las rutas posibles es prácticamente imposible. Probablemente no le sorprenderá que la inteligencia artificial (IA) desempeñe un papel en esto.
+
+Aplicaciones del problema del agente viajero
+El problema del agente viajero tiene muchas aplicaciones prácticas. La principal, y el motivo de escribir este artículo, es la optimización de rutas para flotas de vehículos, barcos o aviones, minimizando los costes y el tiempo de entrega. Otra aplicación es la planificación de rutas para robots en almacenes o centros logísticos. La TSP también se utiliza en el diseño de redes de telecomunicaciones para garantizar una calidad óptima de la señal y minimizar los costes.
+
+Le ayudaremos a optimizar su carga
+Aunque no podamos resolver el problema del agente viajero y encontrar la ruta óptima para cualquier número de ciudades, disponemos de un programa para la planificación de la carga de mercancías llamado EasyCargo. Además de crear un plan óptimo para la disposición de las mercancías (se pueden agrupar por lugares de descarga) y la distribución de la carga, permite generar informes en formato Excel o PDF. Incluso, dispone de un enlace público para colaborar con colegas en el trabajo de carga.
+
+Adicionalmente, puede integrar EasyCargo con el software de su empresa u otros programas como el sistema de telemetría FleetUp utilizando nuestra API. Puede obtener más información detallada en este enlace.
+
+ 
+
+Blog del desarrollador
+
+En realidad, se podría decir que, para el sector de TSL, el problema del agente viajero está dejando poco a poco de ser una preocupación gracias al desarrollo de la inteligencia artificial y el Big Data. Todo tipo de software de optimización de rutas de reparto ofrece una ruta que no se desvía significativamente de la más favorable y la ajusta dinámicamente en tiempo real en función de las condiciones de las carreteras.
+
+viajante
+[latexpage]
+
+Travelling Salesman
+Photo by Andy Beales on Unsplash
+El problema del viajante
+El problema del viajante (por sus siglas en inglés TSP) consiste en encontrar el camino único más corto que, dada una lista de ciudades y las distancias entre ellas, visita todas las ciudades una sola vez y regresa a la ciudad de origen.
+
+Su origen no está claro. Un manual alemán para viajantes de 1832 menciona el problema e incluye viajes de ejemplo por Alemania y Suiza, pero no cubre sus matemáticas.
+
+La primera formulación matemática fue realizada en el siglo XIX por W.R. Hamilton y Thomas Kirkman. El juego icosiano de Hamilton era un rompecabezas recreativo basado en encontrar un ciclo hamiltoniano, que en realidad es una solución al problema de TSP en un grafo (nota: el TSP es el ciclo hamiltoniano de menor longitud en un grafo conexo).
+
+El TSP se puede formular como un modelo de Programación Lineal Entera. Aunque se conocen varias formulaciones para resolver este problema, dos de ellas son las más destacadas: la propuesta por Miller, Tucker y Zemlin, y la propuesta por Dantzig, Fulkerson y Johnson.
+
+En teoría, estos métodos pueden devolver una solución óptima al problema, pero como éste se considera un problema NP-difícil, pueden ser demasiado costosos tanto en potencia de cálculo como en tiempo.
+
+Con el fin de obtener buenas soluciones en un tiempo más corto, se ha realizado un gran esfuerzo para intentar resolver este problema con una variedad de métodos heurísticos. De todo este grupo de heurísticas, nos gustaría destacar las inspiradas en la biología: Optimización por Colonia de Hormigas y Algoritmos Genéticos (GA).
+
+Programación Lineal Entera
+Como mencionamos, existen dos formulaciones principales para el TSP, el propuesto Miller, Tucker y Zemlin (MTZ) y el Dantzig, Fulkerson y Johnson (DFJ). Aunque la formulación DFJ es más fuerte, la formulación MTZ puede ser útil.
+
+Formulación MTZ
+La formulación matemática propuesta por Miller, Tucker y Zemlin es la siguiente:
+
+
+Usando este conjunto, las dos variables y el parámetro, podemos formular el problema como:
+
+$$min \sum_{i=1}^{n}\sum_{j\neq i,j=1}^{n}c_{ij}x_{ij}$$
+
+Sujeto a:
+
+
+La primera y la segunda ecuaciones refuerzan el tipo de las diferentes variables, la tercera y la cuarta ecuaciones aseguran que cada nodo sea alcanzado y abandonado solo una vez, mientras que las dos últimas ecuaciones imponen que solo una ruta cruce todos los nodos.
+
+Formulación DFJ
+En la formulación propuesta por Dantzig, Fulkerson y Johnson partimos de la misma variable x_ {ij} y parámetro c_ {ij}> 0 para que la formulación se pueda completar con:
+
+$$min \sum_{i=1}^{n} \sum_{j \neq i, j=1}^{n} c_{ij}x_{ij}$$
+
+Sujeto a:
+
+
+Las tres primeras ecuaciones son las mismas que en la formulación anterior, y la nueva restricción (la última) asegura que no haya sub-recorridos, por lo que la solución devuelta es un recorrido único y no la combinación de recorridos más pequeños. Debido a que esto conduce a un número exponencial de posibles restricciones, en la práctica se resuelve con una generación de columnas retrasada.
+
+En el siguiente gráfico podemos ver la solución óptima para un problema de 100 nodos.
+
+solución para el TSP de 100 nodos mediante DFJ
+Solución óptima para el problema del viajante de 100 nodos utilizando la formulación MTZ
+Optimización por Colonia de Hormigas
+También conocido como Ant Colony System (ACS) o Ant System (AS), es una técnica probabilística o heurística utilizada para resolver problemas que se pueden reducir a encontrar buenos caminos sobre grafos. Este método fue propuesto inicialmente por Marco Dorigo en 1992 en su tesis doctoral.
+
+En la siguiente animación se puede ver cómo esta heurística funciona para un problema y evoluciona mejorando la solución con el tiempo.
+
+Evolución de ACO sobre el problema del viajante
+Evolución de ACO sobre el problema del viajante
+En la animación, las sombras rojas representan la cantidad de feromonas depositadas por las hormigas durante los cálculos.
+
+¿Quieres estar al día con blogs como este? Suscríbete a nuestro Newsletter bimensual.
+
+
+Algoritmos Genéticos
+Los Algoritmos Genéticos (GA) son heurísticos inspirados en el proceso de evolución de los seres vivos. Cada solución es un cromosoma compuesto por genes que representan los diferentes valores de las variables de la solución.
+
+Comenzando con una población inicial, podemos hacer que las soluciones “evolucionen” en iteraciones. El proceso consiste en seleccionar la mejor mitad de la población de la que elegimos al azar pares de cromosomas (soluciones) para el apareamiento. En estos apareamientos intercambiamos genes de ambas soluciones para generar nuevas soluciones (hijos).
+
+Después del proceso de apareamiento, aplicamos mutaciones al azar en los hijos resultantes para explorar más a fondo el espacio de la solución.
+
+Finalmente seleccionamos los mejores 50 individuos de la población (el inicial más los hijos) y continuamos el proceso hasta que convergemos en una solución.
+
+En la siguiente animación podemos ver cómo evoluciona el Algoritmo Genético para el mismo problema de 100 puntos.
+
+Iteraciones de algoritmos genéticos sobre el problema del viajante
+Iteraciones del Algoritmo Genético sobre el problema del viajante
+Comparación
+Como se puede ver en los gráficos anteriores, cada heurístico proporciona una solución al problema, aunque algunas mejores que otras. Cuando probamos estos tres métodos en más conjuntos de datos, podemos encontrar los siguientes resultados:
+
+LP	LP	ACO	ACO	GA	GA
+Nodes	Perf.	Time	Perf.	Time	Perf.	Time
+5	–	0.06s	–	0.04s	–	0.08s
+10	–	0.17s	3.22%	0.2s	–	0.1s
+25	–	0.72s	23.68%	1.09s	28.94%	0.17s
+50	–	1.75s	26.42%	4.04s	66.04%	0.24s
+75	–	3.04s	14.67%	11.61s	84.00%	0.33s
+100	–	6.43s	11%	16.32s	96.00%	0.44s
+150	–	16.73s	6.67%	180.69s	70.00%	2.78s
+200	–	56.17s	5.00%	267.42s	92.50%	3.47s
+250	–	252.06s	3.60%	503.31s	90.80%	7.58s
+El rendimiento se calcula como la desviación entre la solución proporcionada por cada método y la mejor solución encontrada para esa instancia.
+
+En instancias muy pequeñas, todos los métodos alcanzan la solución óptima, pero a medida que las instancias se hacen más grandes, los heurísticos comienzan a desviarse de la mejor solución encontrada por el programa lineal de enteros. Aunque el Algoritmo Genético muestra una mayor desviación de la solución óptima, aún puede proporcionar una solución en un tiempo más corto que los otros métodos. Probablemente, si tuviéramos que aumentar la población para explorar mejor el espacio de la solución, podríamos obtener mejores resultados sin sacrificar el tiempo de procesamiento.
+
+ACO es la heurística (y la diseñada exclusivamente para este problema) que puede seguir el modelo exacto, pero tarda más en llegar a una solución.
+
+Para resolver el modelo lineal de enteros necesitamos un solver matemático, que puede ser gratuito o comercial. Para esta publicación utilizamos un solver comercial que en realidad mejora el rendimiento exponencialmente en comparación con los gratuitos. Esta ventaja es lo que hace que el problema lineal de enteros sea más rápido que ACO. Si tuviéramos que probar el software libre, ACO proporcionaría mejores soluciones en menos tiempo, utilizando un lenguaje de código abierto (Python).
+
+
+

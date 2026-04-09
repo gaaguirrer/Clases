@@ -1,0 +1,7 @@
+pyforms-web>=4.9
+numpy>=1.24
+matplotlib>=3.7
+PyQt5>=5.15
+
+# Si no funciona o tienes problemas con pyforms, instala pyforms-web en su lugar
+# pyforms-web>=4.9
