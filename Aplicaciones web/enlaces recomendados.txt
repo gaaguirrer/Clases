@@ -1,0 +1,5 @@
+Visitar enlaces recomendados
+
+Diagrama entidad relación: https://www.lucidchart.com/pages/es/que-es-un-diagrama-entidad-relacion
+Diccionario de datos: https://www.youtube.com/watch?v=w8ADYP6uVqI
+Normalización: https://www.youtube.com/watch?v=bO18omSzeR4
