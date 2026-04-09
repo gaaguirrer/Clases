@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gráfica de voltajes</title>
+    <style>
+      /* Define los estilos para la gráfica */
+      .chart {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        height: 500px;
+      }
+      .bar {
+        width: 10px;
+        background-color: #000;
+      }
+      .low {
+        height: 5%;
+        background-color: #f00;
+      }
+      .high {
+        height: 40%;
+        background-color: #0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gráfica de voltajes</h1>
+    <div class="chart"></div>
+    <script>
+      // Generar los valores aleatorios de voltaje
+      const voltageLowMin = 0;
+      const voltageLowMax = 2.5;
+      const voltageHighMin = 2.5;
+      const voltageHighMax = 5;
+      const numClockCycles = 100;
+      const voltageValues = [];
+      
+      for (let i = 0; i < numClockCycles; i++) {
+        voltageValues.push(Math.random() * (voltageHighMax - voltageLowMin) + voltageLowMin);
+      }
+      
+      // Dibujar la gráfica
+      const chart = document.querySelector('.chart');
+      
+      for (let i = 0; i < numClockCycles; i++) {
+        const bar = document.createElement('div');
+        bar.classList.add('bar');
+        
+        if (voltageValues[i] >= voltageLowMin && voltageValues[i] < voltageLowMax) {
+          bar.classList.add('low');
+        } else {
+          bar.classList.add('high');
+        }
+        
+        chart.appendChild(bar);
+      }
+    </script>
+  </body>
+</html>
+

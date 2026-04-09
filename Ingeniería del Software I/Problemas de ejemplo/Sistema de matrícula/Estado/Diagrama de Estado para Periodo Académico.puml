@@ -1,0 +1,36 @@
+@startuml Diagrama Estado Periodo
+
+skinparam state {
+  BackgroundColor LightBlue
+  StartColor Navy
+  EndColor DarkRed
+  BorderColor #444444
+}
+
+title Estados del Período de Matrícula
+
+[*] -> Inactivo
+Inactivo --> Activo : abrirPeriodo()\n/notificarEstudiantes()
+Activo --> Cerrado : cerrarPeriodo()\n/bloquearModificaciones()
+
+state Activo {
+  [*] -> ModificacionHabilitada
+  ModificacionHabilitada --> ModificacionRestringida : [últimos 3 días]
+  ModificacionRestringida : - Máx 2 cambios\n- Sin nuevas asignaturas
+}
+
+Cerrado --> [*] : archivar()
+
+note right of Inactivo
+  Acciones administrativas:
+  - Definir fechas
+  - Habilitar asignaturas
+end note
+
+note left of Cerrado
+  Post-cierre:
+  - Generar reportes finales
+  - Sincronizar con historial
+end note
+
+@enduml

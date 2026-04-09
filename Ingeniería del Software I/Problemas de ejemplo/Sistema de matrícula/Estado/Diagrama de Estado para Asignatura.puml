@@ -1,0 +1,43 @@
+@startuml Diagrama Estado Asignatura
+
+skinparam state {
+  BackgroundColor #FFE4C4
+  StartColor Sienna
+  EndColor Crimson
+  BorderColor Chocolate
+}
+
+title Estados de una Asignatura
+
+state Asignatura <<Course>> {
+  [*] -> Configuracion
+  Configuracion : - Sin horario\n- Sin docente
+  
+  Configuracion --> Disponible : publicar()\n[cupos > 0]
+  Disponible --> NoDisponible : cupos = 0\n/notificarListaEspera()
+  NoDisponible --> Disponible : liberarCupo()\n/notificarEstudiantes()
+  
+  Disponible --> Deshabilitada : deshabilitar()\n[mantenimiento]
+  Deshabilitada --> Disponible : habilitar()
+  
+  state Disponible {
+    [*] -> Abierta
+    Abierta --> EnListaEspera : cupos llenos\ncon preinscripción
+  }
+}
+
+note right of Configuracion
+  Requiere:
+  - Código válido
+  - Docente asignado
+  - Horario definido
+end note
+
+note left of Deshabilitada
+  Razones comunes:
+  - Cambio docente
+  - Conflictos de horario
+  - Ajustes curriculares
+end note
+
+@enduml

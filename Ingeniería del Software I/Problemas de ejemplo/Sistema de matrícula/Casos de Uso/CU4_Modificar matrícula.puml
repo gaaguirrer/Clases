@@ -1,0 +1,25 @@
+@startuml Modificar Matricula
+left to right direction
+actor Estudiante
+
+rectangle "Sistema de Matrículas" {
+    usecase "Autenticarse en el sistema" as UC1
+    usecase "Matricular asignaturas" as UC2
+    usecase "Modificar matrícula" as UC3
+    usecase "Informar: período de modificación cerrado" as UC4
+}
+
+Estudiante --> UC3
+
+' Include necesarios
+UC3 .> UC1 : <<include>>
+UC3 .> UC2 : <<include>>
+
+' Extend para flujo alternativo
+UC3 .> UC4 : <<extend>>
+
+' Organización visual
+UC1 -[hidden]-> UC2
+UC2 -[hidden]-> UC3
+UC3 -[hidden]-> UC4
+@enduml

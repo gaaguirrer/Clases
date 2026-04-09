@@ -1,0 +1,37 @@
+@startuml
+left to right direction
+actor Estudiante
+actor Docente
+actor Administrador
+actor "Jefe de Área" as JefeArea
+
+usecase "UC1: Autenticarse" as UC1
+
+' Casos de uso que INCLUYEN autenticación
+usecase "UC2: Gestionar Estudiantes" as UC2
+usecase "UC3: Gestionar Grupos" as UC3
+usecase "UC4: Asignar Est. Externo" as UC4
+usecase "UC5: Definir Calendario" as UC5
+usecase "UC6: Ajustar Sesiones" as UC6
+usecase "UC7: Registrar Asistencia" as UC7
+usecase "UC8: Generar Informe" as UC8
+usecase "UC9: Gestionar Docentes" as UC9
+usecase "UC10: Gestionar Fechas" as UC10
+
+' Relaciones de actor
+Estudiante --> UC1
+Docente --> UC1
+Administrador --> UC1
+JefeArea --> UC1
+
+' Relaciones de inclusión
+UC1 <.. UC2 : include
+UC1 <.. UC3 : include
+UC1 <.. UC4 : include
+UC1 <.. UC5 : include
+UC1 <.. UC6 : include
+UC1 <.. UC7 : include
+UC1 <.. UC8 : include
+UC1 <.. UC9 : include
+UC1 <.. UC10 : include
+@enduml

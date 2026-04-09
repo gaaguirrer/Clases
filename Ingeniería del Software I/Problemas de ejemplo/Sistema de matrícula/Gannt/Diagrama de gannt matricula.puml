@@ -1,0 +1,117 @@
+@startgantt
+Project starts on 2025-03-03
+saturday are closed
+sunday are closed
+printscale daily
+scale 1.0
+title
+<size:18><color:#2F4F4F>Universidad Centroamericana de Tecnología (UCAT)
+<size:14>Sistema de Matrículas - Proyecto 2025</size></color>
+endtitle
+
+' ===== ESTILOS =====
+<style>
+ganttDiagram {
+    timeline {
+        FontSize 12
+        FontColor #2F4F4F
+    }
+    task {
+        FontName Arial
+        FontSize 10
+        BackGroundColor Pastel
+        LineColor #444
+    }
+    milestone {
+        BackGroundColor #FFA07A     
+        LineColor #2F4F4F           
+        FontColor #2F4F4F           
+        FontStyle bold
+    }
+    closed {
+        BackGroundColor #F0F0F0      
+        LineColor Silver
+    }
+}
+</style>
+
+' ===== TAREAS Y HITOS =====
+[Kick-Off] starts 2025-03-03 and ends 2025-03-04
+[Kick-Off] is colored in #4682B4
+
+[Diseño de encuestas] starts 2025-03-05 and ends 2025-03-09
+[Diseño de encuestas] is colored in #87CEEB
+
+[Diseño de entrevistas] starts 2025-03-05 and ends 2025-03-08
+[Diseño de entrevistas] is colored in #87CEEB
+
+[Prueba piloto encuestas] starts 2025-03-10 and ends 2025-03-12
+[Prueba piloto encuestas] is colored in #98FB98
+
+[Prueba piloto entrevistas] starts 2025-03-10 and ends 2025-03-12
+[Prueba piloto entrevistas] is colored in #98FB98
+
+[Recolección documental] starts 2025-03-17 and ends 2025-03-21
+[Recolección documental] is colored in #DDA0DD
+
+[Entrevistas finales] starts 2025-03-17 and ends 2025-03-21
+[Entrevistas finales] is colored in #DDA0DD
+
+[Requisitos no funcionales] starts 2025-03-24 and ends 2025-03-27
+[Requisitos no funcionales] is colored in #FFA07A
+
+[Revisión Cliente #1] happens on 2025-03-28
+[Revisión Cliente #2] happens on 2025-04-11
+[Entrega Final] happens on 2025-06-27
+
+[Aplicación encuestas] starts 2025-03-31 and ends 2025-04-06
+[Aplicación encuestas] is colored in #DDA0DD
+
+[Evaluación legal] starts 2025-04-07 and ends 2025-04-10
+[Evaluación legal] is colored in #FF4500
+
+[Requisitos funcionales] starts 2025-04-14 and ends 2025-04-19
+[Requisitos funcionales] is colored in #FFA07A
+
+[Evaluación técnica] starts 2025-04-21 and ends 2025-04-25
+[Evaluación técnica] is colored in #FF4500
+
+[Evaluación operativa] starts 2025-04-21 and ends 2025-04-24
+[Evaluación operativa] is colored in #FF4500
+
+[Evaluación económica] starts 2025-04-21 and ends 2025-04-25
+[Evaluación económica] is colored in #FF4500
+
+[Diagrama casos de uso] starts 2025-04-28 and ends 2025-04-30
+[Diagrama casos de uso] is colored in #9370DB
+
+[Diagrama de clases] starts 2025-05-01 and ends 2025-05-04
+[Diagrama de clases] is colored in #9370DB
+
+[Diagrama de secuencia] starts 2025-05-05 and ends 2025-05-07
+[Diagrama de secuencia] is colored in #9370DB
+
+[Diagrama de estado] starts 2025-05-08 and ends 2025-05-09
+[Diagrama de estado] is colored in #9370DB
+
+[Documentación] starts 2025-05-12 and ends 2025-05-16
+[Documentación] is colored in #32CD32
+
+' ===== LEYENDA CON CARÁCTER ▓ (▓ Código ASCII: Alt+178) =====
+legend right
+|<color:#4682B4>▓</color> Inicio|  
+|<color:#87CEEB>▓</color> Diseño|
+|<color:#98FB98>▓</color> Pruebas|
+|<color:#DDA0DD>▓</color> Recolección|
+|<color:#FFA07A>▓</color> Requisitos|
+|<color:#FF4500>▓</color> Evaluación|
+|<color:#9370DB>▓</color> UML|
+|<color:#32CD32>▓</color> Documentación|
+|<color:#2F4F4F>▓</color> Hitos|
+|<color:#F0F0F0>▓</color> Fin de semana|
+end legend
+
+footer
+<size:10>Fecha Límite: 27-jun-2025 | Coordinación UCAT</size>
+endfooter
+@endgantt

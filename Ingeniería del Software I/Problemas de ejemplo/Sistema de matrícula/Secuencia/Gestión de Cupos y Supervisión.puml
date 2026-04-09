@@ -1,0 +1,43 @@
+@startuml Diagrama Secuencia Jefe de Carrera
+
+actor JefeCarrera as JC
+participant Asignatura as Asig
+participant Reporte
+participant Matricula
+
+autonumber "<b>[000]"
+title Gestión Académica - Flujo Jefe de Carrera
+
+JC -> Asig: AsignarCupos(código, cupos)
+activate Asig
+alt Cupos >= Preinscritos
+    Asig -> Asig: ActualizarCuposDisponibles()
+    Asig --> JC: ConfirmaciónCupos
+else Cupos < Preinscritos
+    Asig --> JC: Alerta("Cupo menor a preinscritos")
+end
+deactivate Asig
+
+JC -> Reporte: Generar(criterios: asignatura, sección)
+activate Reporte
+Reporte -> Matricula: ObtenerRegistros()
+activate Matricula
+Matricula --> Reporte: ListaMatriculados
+deactivate Matricula
+Reporte -> Asig: ObtenerDetalles()
+activate Asig
+Asig --> Reporte: DatosAsignatura
+deactivate Asig
+Reporte --> JC: VisualizarReporteInteractivo()
+deactivate Reporte
+
+JC -> Asignatura: ModificarHorario(código, nuevo_horario)
+activate Asignatura
+Asignatura --> JC: HorarioActualizado
+deactivate Asignatura
+
+note right of Asig: Validaciones:\n- Cupos no negativos\n- Docente asignado
+note left of Reporte: Filtros avanzados:\n- Estudiantes en riesgo\n- Ratio ocupación
+note over Matricula: Datos anonimizados\npara reportes
+
+@enduml

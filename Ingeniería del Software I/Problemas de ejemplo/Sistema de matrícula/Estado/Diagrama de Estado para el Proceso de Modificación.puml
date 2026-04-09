@@ -1,0 +1,38 @@
+@startuml Diagrama Estado Modificación
+
+skinparam state {
+  BackgroundColor #F0F8FF
+  StartColor SteelBlue
+  EndColor DarkSlateGray
+}
+
+title Flujo de Modificación de Matrícula
+
+state Modificacion {
+  [*] -> Validacion
+  Validacion : - Verificar período\n- Validar cupos
+  
+  Validacion --> Adicion : agregarAsignatura()\n[cupo disponible]
+  Validacion --> Retiro : eliminarAsignatura()\n[sin deudas]
+  
+  Adicion --> Confirmacion : [límite no excedido]
+  Retiro --> Confirmacion : [mínimo 1 asignatura]
+  
+  Confirmacion --> [*] : confirmarCambios()
+  Confirmacion --> Rechazada : [fuera de plazo]
+}
+
+note right of Validacion
+  Reglas:
+  - Máx 3 modificaciones
+  - No eliminar obligatorias
+end note
+
+note left of Rechazada
+  Causas:
+  - Período cerrado
+  - Cupos agotados
+  - Conflictos académicos
+end note
+
+@enduml

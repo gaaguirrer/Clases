@@ -1,0 +1,48 @@
+@startuml Diagrama Secuencia Administrativo
+
+actor Administrativo as Admin
+participant Periodo
+participant Reporte
+participant "OfertaAcademica" as OA
+participant Asignatura as Asig
+
+autonumber "<b>[000]"
+title Gestión Académica - Flujo Administrativo
+
+Admin -> Periodo: AbrirPeríodo(inicio, fin)
+activate Periodo
+alt Fechas válidas
+    Periodo -> Periodo: ValidarConsistenciaFechas()
+    Periodo --> Admin: ConfirmaciónApertura
+else Fechas inconsistentes
+    Periodo --> Admin: Error("Fechas inválidas")
+end
+deactivate Periodo
+
+Admin -> OA: HabilitarAsignatura(código)
+activate OA
+OA -> Asig: Activar()
+activate Asig
+Asig --> OA: ConfirmaciónActivación
+deactivate Asig
+OA --> Admin: ResultadoOperación
+deactivate OA
+
+Admin -> Reporte: Generar(criterios: carrera, sede)
+activate Reporte
+Reporte -> OA: ObtenerMatriculados()
+activate OA
+OA --> Reporte: DatosMatriculas
+deactivate OA
+Reporte -> Asig: ObtenerCupos()
+activate Asig
+Asig --> Reporte: ListaCupos
+deactivate Asig
+Reporte --> Admin: Exportar(formato: PDF/Excel)
+deactivate Reporte
+
+note right of Periodo: Estados del período:\n- Inactivo\n- Activo\n- Cerrado
+note left of Reporte: Criterios comunes:\n- Por carrera\n- Por ciclo\n- Por sede
+note over OA,Asig: Integración con histórico\nacadémico para reportes
+
+@enduml

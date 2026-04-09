@@ -1,0 +1,110 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'###### CLASE PADRE ######
+class Usuario {
+  - id: String
+  - nombre: String
+  - genero: String
+  + autenticar()
+}
+
+'###### SUBCLASES (HERENCIA) ######
+class Estudiante {
+  - carrera: Carrera
+  - recinto: Recinto
+  - materiasInscritas: List<Materia>
+  + validarCarga() : boolean
+}
+
+class Docente {
+  - especialidad: String
+  - materiasAsignadas: List<Materia>
+}
+
+class Administrativo {
+  - departamento: String
+}
+
+'###### ENTIDADES ACADÉMICAS ######
+class Carrera {
+  - id: String
+  - nombre: String
+  - estudiantes: List<Estudiante>
+}
+
+class Recinto {
+  - id: String
+  - nombre: String
+  - ubicacion: String
+  - estudiantes: List<Estudiante>
+}
+
+class Materia {
+  - id: String
+  - nombre: String
+  - tipo: String {ENCUENTRO | REGULAR}
+  - estudiantes: List<Estudiante>
+  - docente: Docente
+  + calcularDuracion() : int
+  + agregarEstudiante()
+}
+
+class Grupo {
+  - id: String
+  - estudiantes: List<Estudiante>
+  - materias: List<Materia>
+  + validarMaterias() : boolean
+}
+
+class Asistencia {
+  - fecha: Date
+  - estado: String {PRESENTE | AUSENTE}
+  - estudiante: Estudiante
+}
+
+class Calendario {
+  - fechaInicio: Date
+  - fechaFin: Date
+  + ajustarFecha()
+}
+
+class FechaEfectiva {
+  - fecha: Date
+  - motivo: String
+}
+
+class Reporte {
+  - totalHombres: int
+  - totalMujeres: int
+  - asistencias: int
+  - ausencias: int
+  + generar()
+}
+
+'###### HERENCIA (USUARIO -> ROLES) ######
+Usuario <|-- Estudiante
+Usuario <|-- Docente
+Usuario <|-- Administrativo
+
+'###### RELACIONES ACADÉMICAS ######
+Estudiante "1" *-- "1" Carrera
+Estudiante "1" *-- "1" Recinto
+Estudiante "1" -- "*" Materia: "inscrito en"
+Estudiante "1" -- "*" Grupo: "pertenece a"
+Estudiante "1" -- "*" Asistencia: "tiene"
+
+Grupo "1" -- "*" Materia: "contiene (0-6)"
+Grupo "1" -- "*" Estudiante
+
+Materia "1" *-- "1" Carrera
+Materia "1" *-- "1" Docente: "impartida por"
+Materia "1" *-- "1" Calendario
+Materia "1" -- "*" Asistencia: "registra"
+
+Calendario "1" *-- "*" FechaEfectiva: "afectado por"
+
+'###### RELACIÓN DE REPORTES ######
+Administrativo "1" -- "*" Reporte: "solicita"
+Reporte "1" -- "1" Materia: "generado para"
+@enduml

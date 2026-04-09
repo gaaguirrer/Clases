@@ -1,0 +1,16 @@
+@startuml prueba
+left to right direction
+actor Estudiante
+actor Administrativo
+actor "Jefe de Carrera" as Jefe
+
+rectangle "Sistema de Matrículas" {
+    usecase "Autenticarse en el sistema" as UC1
+    usecase "Mostrar mensaje de error" as UC2
+}
+
+Estudiante --> UC1
+Administrativo --> UC1
+Jefe --> UC1
+UC1 .> UC2 : <<extend>>
+@enduml

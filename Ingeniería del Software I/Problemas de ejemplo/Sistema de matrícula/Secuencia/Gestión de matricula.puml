@@ -1,0 +1,78 @@
+@startuml Gestion de matricula
+header Proceso de Matrícula
+footer Universidad Centroamericana de Tecnología
+
+actor Estudiante as Est
+participant "OfertaAcademica" as OA
+participant Asignatura as Asig
+participant Matricula as Mat
+participant Periodo
+participant JefeCarrera as JC
+participant Administrativo as Admin
+
+autonumber "<b>[000]"
+
+Est -> Usuario: Autenticar(credenciales)
+activate Usuario
+Usuario --> Est: Resultado Autenticación
+deactivate Usuario
+
+alt Autenticación exitosa
+    Est -> OA: ConsultarOferta(carrera, sede)
+    activate OA
+    OA -> Asig: VerificarDisponibilidad()
+    activate Asig
+    Asig --> OA: ListaDisponibles
+    deactivate Asig
+    OA --> Est: MostrarOferta(Asignaturas)
+    deactivate OA
+
+    loop Hasta confirmación
+        Est -> Asig: Seleccionar(código)
+        activate Asig
+        alt Cupo disponible
+            Asig -> Mat: AgregarAsignatura()
+            activate Mat
+            Mat --> Asig: Confirmación
+            deactivate Mat
+            Asig --> Est: CupoReservado
+        else Sin cupos
+            Asig --> Est: Error("Sin cupos")
+        end
+        deactivate Asig
+    end
+    
+    Est -> Mat: Confirmar()
+    activate Mat
+    Mat -> Periodo: ValidarVigencia()
+    activate Periodo
+    Periodo --> Mat: PeriodoActivo
+    deactivate Periodo
+    alt Confirmación exitosa
+        Mat --> Est: ConstanciaMatricula
+    else Error validación
+        Mat --> Est: ErrorConfirmación
+    end
+    deactivate Mat
+
+else Error autenticación
+    Usuario --> Est: ErrorCredenciales
+end
+
+group Gestión Administrativa
+    Admin -> Periodo: Gestionar(fechas)
+    activate Periodo
+    Periodo --> Admin: ConfirmaciónCambios
+    deactivate Periodo
+    
+    JC -> Asig: AsignarCupos(cupos)
+    activate Asig
+    Asig --> JC: CuposActualizados
+    deactivate Asig
+end
+
+note right of Mat: Implementa:\n- agregarAsignatura()\n- confirmar()
+note left of OA: Consulta asignaturas\npor carrera/sede
+note over Asig: Responsable de:\n- Gestión de cupos\n- Horarios
+note over Periodo: Controla estado\ndel período académico
+@enduml

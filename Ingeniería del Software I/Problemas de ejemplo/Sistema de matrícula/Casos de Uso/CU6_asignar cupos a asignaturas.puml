@@ -1,0 +1,21 @@
+@startuml AsignarCupos
+
+left to right direction
+actor "Jefe de Carrera" as Jefe
+
+rectangle "Sistema de Matrículas" {
+    usecase "Autenticarse en el sistema" as UC1
+    usecase "Asignar cupos a asignaturas" as UC2
+    usecase "Alerta: cupo menor que preinscritos" as UC3
+}
+
+Jefe --> UC2
+
+UC2 .> UC1 : <<include>>
+UC2 .> UC3 : <<extend>>
+
+' Organización visual
+UC1 -[hidden]-> UC2
+UC2 -[hidden]-> UC3
+
+@enduml

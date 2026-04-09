@@ -1,0 +1,19 @@
+@startuml GenerarReportes
+
+actor "Administrativo de Registro Académico" as Adm
+actor "Jefe de Carrera" as Jefe
+
+rectangle "Sistema de Matrículas" {
+    usecase "Generar reportes de matrícula" as UC2
+    usecase "Autenticarse en el sistema" as UC1
+    usecase "Mostrar mensaje: No existen registros" as UC3
+}
+
+Adm --> UC2
+Jefe --> UC2
+
+' Organizar explícitamente las posiciones
+UC2 -right-> UC1 : <<include>>
+UC2 -down-> UC3 : <<extend>>
+
+@enduml

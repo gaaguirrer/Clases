@@ -1,0 +1,110 @@
+@startuml Diagrama de clases Sistema de Matricula
+
+' Skinparam configurations for better visualization
+skinparam class {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor #444444
+  FontName Helvetica
+}
+skinparam classFontStyle bold
+skinparam stereotypeCBackgroundColor #DDDDDD
+
+' Abstract classes (marked with {abstract} or abstract keyword)
+abstract class Usuario {
+  {abstract} -id : String
+  {abstract} -contraseña : String
+  {abstract} -rol : String
+  {abstract} +autenticar() : Boolean
+}
+
+' Final classes (marked with <<final>> stereotype)
+class Asignatura <<final>> {
+  -código : String
+  -nombre : String
+  -horario : String
+  -docente : String
+  -cupos : int
+  +verificarCupo() : Boolean
+}
+
+class Periodo <<final>> {
+  -fecha_inicio : Date
+  -fecha_cierre : Date
+  -tipo : String
+}
+
+class Reporte <<final>> {
+  -criterios : Map<String, String>
+  -formato : String
+  +exportar() : void
+}
+
+' Concrete classes
+class Estudiante {
+  -carrera : String
+  -sede : String
+  +consultarOferta() : List<Asignatura>
+  +matricular() : Matricula
+}
+
+class Administrativo {
+  -permisos : List<String>
+  +gestionarPeriodo(inicio: Date, fin: Date) : void
+  +generarReporte(criterios: Map) : Reporte
+}
+
+class JefeCarrera {
+  -carrera_asignada : String
+  +asignarCupos(asignatura: Asignatura, cupos: int) : void
+}
+
+class Matricula {
+  -fecha : Date
+  -estado : String
+  +agregarAsignatura(asignatura: Asignatura) : void
+  +confirmar() : Boolean
+}
+
+class OfertaAcademica {
+  -ciclo : String
+  -carrera : String
+  -sede : String
+  +obtenerAsignaturas() : List<Asignatura>
+}
+
+' Relationships with proper syntax
+Usuario <|-- Estudiante
+Usuario <|-- Administrativo
+Usuario <|-- JefeCarrera
+
+OfertaAcademica "1" *-- "0..*" Asignatura : contiene >
+Matricula "1" o-- "1..*" Asignatura : incluye >
+Estudiante "1" --> "0..*" Matricula : realiza >
+JefeCarrera "1" --> "0..*" Asignatura : asigna cupos >
+Administrativo "1" --> "0..*" Periodo : gestiona >
+Administrativo "1" --> "0..*" Reporte : genera >
+
+' Association class example
+Estudiante "1" -- "0..*" OfertaAcademica
+(Estudiante, OfertaAcademica) .. Consulta
+
+class Consulta {
+  -fecha: Date
+  +registrar()
+}
+
+' Notes and annotations
+note top of Usuario : Clase abstracta que representa\na todos los usuarios del sistema
+
+note right of Matricula : Puede estar en estados:\n- Pendiente\n- Confirmada\n- Cancelada
+
+note as N1
+  <b>Importante:</b>
+  Las relaciones de agregación (*--) indican que
+  las asignaturas pueden existir
+  independientemente de la oferta académica.
+end note
+OfertaAcademica .. N1
+
+@enduml

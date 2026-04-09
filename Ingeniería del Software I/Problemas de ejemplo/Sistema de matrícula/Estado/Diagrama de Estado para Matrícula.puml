@@ -1,0 +1,43 @@
+@startuml Diagrama Estado Matrícula
+
+skinparam state {
+  BackgroundColor PaleGreen
+  StartColor DarkGreen
+  EndColor FireBrick
+  BorderColor Navy
+  FontName Arial
+}
+
+title Ciclo de Vida de una Matrícula
+
+state Matricula {
+  [*] -> Pendiente : Nueva solicitud
+  Pendiente : - Asignaturas seleccionadas\n- Fecha creación
+  
+  Pendiente --> Confirmada : confirmar()\n/validarCupos()
+  Pendiente --> Cancelada : cancelar()\n[antes del cierre]
+  
+  Confirmada : - Fecha confirmación\n- Constancia generada
+  Confirmada --> Cancelada : cancelar()\n[dentro de período]
+  
+  Cancelada : - Motivo cancelación\n- Fecha cancelación
+  Cancelada --> [*] : cleanup()
+}
+
+Confirmada --> [*] : Finalización ciclo
+Cancelada --> [*] : cleanup()
+
+note right of Pendiente
+  Validaciones:
+  - Cupos disponibles
+  - Límite 6 asignaturas
+  - Sin deudas (futuro)
+end note
+
+note left of Confirmada
+  Eventos post-confirmación:
+  - Actualización en historial
+  - Notificación al estudiante
+end note
+
+@enduml
