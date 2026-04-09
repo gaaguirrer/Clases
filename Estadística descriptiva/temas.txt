@@ -1,0 +1,94 @@
+Unidad I: Organización de datos y representación gráfica 11h (4 Sem)
+Undiad II: Medidas de tendencia central, variedad y posición 10h (4 Sem)
+Undiad III: Datos bivariados: Regresión Lineal  6h (2 Sem)
+Undiad IV: Calculo de Probabilidades 10h (3 Sem)
+Undiad V: Distribución de probabilidades: Binomial, Poisson y Normal 11h (3 Sem)
+***************
+Unidad I: Organización de datos y representación gráfica
+• Comprender el concepto de	estadística, la posibilidad de encontrar o generar datos en cualquier entorno , y  conocer los métodos de recolección de datos.		
+•  Organizar  adecuadamente  la  información  contenida  en  variables  categóricas  y cuantitativas , mediante tabla de frecuencia y gráficos.			
+•   Despertar  el  razonamiento  crítico  para  valorar  el  análisis  más  adecuado  a  cada situación  e   interpreta ción correcta   de   los   resultados   obtenidos   de   los   análisis estadísticos y presentarlos de forma clara, concisa y lógica.	
+
+Undiad II: Medidas de tendencia central, variedad y posición
+• Identificar las diferentes medidas de resumen estadístico para variables cuantitativas relacionadas a una investigación social o económica. 
+• Calcular diversas medidas de resumen estadístico para un conjunto de datos agrupados ó no agrupados. 
+• Interpretar los resultados obtenidos de las medidas estadísticas de la variable de interés en una investigación social o económica. 
+
+Undiad III: Datos bivariados: Regresión Lineal
+• Identificar la asociación entre variables de cualquier nivel de medición en distribuciones bivariados de datos proveniente de una investigación social o económica. 
+• Calcular los coeficientes y los parámetros del modelo lineal simple. 
+• Analizar los resultados obtenidos de los coeficientes, al igual que del modelo de regresión lineal para disponer de estimaciones robustas y fiables que den repuesta a supuestos establecidos en la investigación que den aportes oportunos para la toma de decisión. 
+
+Undiad IV: Calculo de Probabilidades
+Identificarla probabilidad, como una medida de la ocurrencia de un evento aleatorio verificando sus propiedades en ejemplos concretos. 
+Aplicar correctamente los conceptos de probabilidad condicional y eventos independientes. Interpretar el valor de la probabilidad, obtenida en diversos problemas de la vida cotidiana. 
+
+
+Undiad V: Distribución de probabilidades: Binomial, Poisson y Normal
+• Construir la distribución de probabilidad de una variable aleatoria discreta asociada a una investigación social o económica. 
+• Caracterizar de manera adecuada las variables asociadas a un modelo binomial o poisson, en ejemplos de la vida cotidiana 
+• Comprender la relevancia de la distribución de probabilidad normal, su diferencia contra la distribución Normal discreta, así como conceptos y teorema principal. 
+• Analizar los resultados obtenidos de las distribuciones probabilística asociadas a una investigación social o económica. 
+
+**************************
+Unidad I: Organización de datos y representación gráfica
+1. Introducción a la estadística
+2. La estadística: Definición y Utilidad
+4. Clasificación de la estadística
+3. Conceptos básicos: Población, Muestra, Unidad de análisis, Cobertura de Información, Variable, parámetro, porcentaje e índice.
+5. Clasificación y nivel de medición de las variables
+6. Organización de los datos
+7. Datos estadísticos
+8. Rango de datos
+9. Ordenación y tabulación de los datos para variables cualitativa y cuantitativa.
+10. Tablas de distribución de frecuencia: Frecuencia, frecuencia relativa, frecuencia porcentual, relativa y acumulada
+11. Representación gráfica de los datos
+12. Normas de construcción de gráficos
+13. Histograma
+14. Polígono de frecuencia
+15. Gráfica acumulativa (ojiva)
+16. Barra
+17. Sectorial o pastel
+
+Undiad II: Medidas de tendencia central, variedad y posición
+1. Medidas de tendencia central
+1.1 Media aritmética
+1.1.1  Propiedades de la media aritmética
+1.2 Mediana
+1.3 Moda
+1.4 Media Geométrica
+2 Medidas de Variabilidad
+2.1 Desviación media
+2.2 Varianza
+2.3 Desviación Estándar
+2.3.1 Propiedades de la Desviación Estándar
+2.4 Coeficiente de Variación
+3 Medidas de posición
+3.1 Cuartiles y Percentiles
+3.2 Rango semi-intercualílico
+
+Undiad III: Datos bivariados: Regresión Lineal
+1. Conceptos básicos de regresión lineal bivariable (análisis de dos variables)
+2. Coeficiente de Correlación (R-Pearson)
+3. Coeficiente de determinación
+4. Obtención de la ecuación de regresión por el método de los mínimos cuadrados
+5. Diagrama de dispersión
+6. Estimación de un valor esperado de Y para un valor de X
+
+Undiad IV: Calculo de Probabilidades
+1. Origen e importancia de las probabilidades
+2. Conceptos básicos
+3. Tipos de Probabilidad
+4. Reglas de probabilidades: Adición y Multiplicación
+5. Probabilidad condicional
+6. Independencia estadística
+7. Teorema de Bayes
+
+Undiad V: Distribución de probabilidades: Binomial, Poisson y Normal
+
+1. Distribución de Probabilidad
+2. Variable aleatorias
+3. Esperanza matemática
+4. Distribución Binomial
+5. Distribución de Poisson
+6. Distribución Normal: Propiedades, Tipificación, uso de la tabla de distribución de probabilidad e normal
