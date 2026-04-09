@@ -1,5 +1,5 @@
-﻿$repoPath = "c:\Users\ingga\OneDrive\Documentos\Nueva carpeta\clases"
-$intervalSeconds = 300  # Cada 5 minutos
+$repoPath = "c:\Users\ingga\OneDrive\Documentos\Nueva carpeta\clases"
+$intervalSeconds = 600  # Cada 10 minutos
 
 Write-Host "[AUTO-PULL] Iniciando monitoreo del repositorio..."
 Write-Host "[AUTO-PULL] Repositorio: $repoPath"
