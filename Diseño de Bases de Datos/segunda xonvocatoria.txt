@@ -1,0 +1,61 @@
+Tabla: Pokémon
+PokémonID (Clave primaria)
+Nombre
+TipoID (Clave externa referenciando la tabla Tipos)
+RegionID (Clave externa referenciando la tabla Regiones)
+
+Tabla: Tipos
+TipoID (Clave primaria)
+Nombre
+
+Tabla: Regiones
+RegionID (Clave primaria)
+Nombre
+
+Enunciado del examen:
+Considera la base de datos de Pokémon descrita anteriormente. Utiliza la siguiente información para responder a las preguntas.
+
+Datos:
+
+Pokémon:
+
+Pikachu, Tipo: Eléctrico, Región: Kanto
+Bulbasaur, Tipo: Planta/Veneno, Región: Kanto
+Charmander, Tipo: Fuego, Región: Kanto
+Squirtle, Tipo: Agua, Región: Kanto
+Snorlax, Tipo: Normal, Región: Johto
+Gyarados, Tipo: Agua/Volador, Región: Johto
+
+Tipos:
+1: Eléctrico
+2: Planta
+3: Veneno
+4: Fuego
+5: Agua
+6: Volador
+7: Normal
+
+Regiones:
+1: Kanto
+2: Johto
+
+Preguntas:
+
+Consulta básica:
+Escribe una consulta para mostrar todos los Pokémon de la Región de Kanto.
+
+Subconsulta:
+Utiliza una subconsulta para encontrar todos los Pokémon de tipo Agua.
+
+Uso de WHERE y JOIN:
+Escribe una consulta que muestre los Pokémon junto con sus tipos y regiones. Solo incluye aquellos cuyo tipo sea "Eléctrico" o "Agua" y que pertenezcan a la Región de "Kanto".
+
+Consulta avanzada:
+Escribe una consulta que devuelva los Pokémon que comparten tipos con Pikachu, pero que no pertenecen a la misma región.
+
+Recuerde: Puede Modificar las tablas y los datos si es necesario para un mejor desempeño de la base de datos
+
+Criterios de evaluación
+Código de la creación de tablas y sus relaciones: 20%
+Código de inserción de datos: 20%
+Cada una de las 4 preguntas, 15%, por las preguntas un totl de 60%

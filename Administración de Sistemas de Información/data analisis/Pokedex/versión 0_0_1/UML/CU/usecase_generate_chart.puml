@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor "Usuario" as User
+rectangle "Generar gráfico de estadísticas" {
+  usecase "Seleccionar Pokémon" as UC1
+  usecase "Extraer stats" as UC2
+  usecase "Generar radar chart" as UC3
+  usecase "Renderizar gráfico" as UC4
+}
+User --> UC1
+UC1 --> UC2
+UC2 --> UC3
+UC3 --> UC4
+@enduml

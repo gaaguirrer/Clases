@@ -1,0 +1,90 @@
+Unidad 1: Pronósticos de Conversión
+• Explicar la importancia que tienen los pronósticos como una herramienta útil en las operaciones de una empresa de manufacturas y de servicios, para pronosticar sus proyecciones. 
+• Establecer la diferencia entre modelos cualitativos y cuantitativos, para elegir el modelo adecuado, tomando en cuenta el horizonte de planeación. 
+• Aplicar la técnica adecuada de pronóstico según las necesidades de la empresa.de producción y de servicio para conocer las proyecciones futuras de ventas. 
+• Calcular los errores de pronósticos, para minimizar el margen de error en ellos.
+
+Contenido: 
+1.1 Introducción de pronósticos y predicción 
+1.1.1 Aplicación de los pronósticos 
+1.1.2 Características de los pronósticos 
+1.1.3 Clasificación de pronósticos 
+1.1.4 Selección del modelo de pronóstico 
+
+1.2 Series de tiempo: 
+1.2.1 Media móvil simple. 
+1.2.2 Promedio móvil simple.
+ 1.2.3 Promedio móvil ponderado. 
+1.2.4 Suavizado exponencial. 
+1.2.5 Gráficas de series de tiempo. 
+
+1.3 Errores de pronóstico: 
+1.3.1 cálculo de la MAD y el Sesgo.
+1.4 Modelos causales: 
+1.4.1 Regresión Lineal y Correlación. 
+1.4.2 Cálculo del Coeficiente de Determinación y de Correlación. 
+1.5 Pronósticos de Tendencia no Lineal. 
+1.5.1 Gráficos de la curva de proyección. 
+
+Unidad II: Diseño de Productos y de Procesos 
+• Diferenciar las etapas del ciclo de vida de un producto y el de una industria. 
+• Establecer la diferencia entre el diseño del producto y de servicios. 
+• Elaborar diagramas de flujos de procesos para productos y servicios, empleando la simbología adecuada. 
+• Determinar el tipo de tecnología que se requiere para los diferentes procesos de producción. 
+• Analizar los diferentes tipos de reingeniería a utilizar, para los procesos de producción.
+ 
+2.1 Introducción al diseño de nuevos productos. 
+2.1.1 Ciclo de vida de los productos. 
+
+2.2 Diseño del proceso. 
+2.3 Procesos de producción. 
+
+2.4 Diagramas de proceso (de operaciones, Flujo, recorrido etc.). 
+2.4.1 uso de la simbología ASME.
+2.4.2 cursograma Analítico. 
+
+2.5. Selección de la Tecnología. 
+
+2.6 Reingeniería de Procesos. 
+2.6.1 Tipos de Reingeniería. 
+
+2.7 Diseño del Servicio. 
+2.7.1 Uso de la simbología ANSI. 
+
+Unidad III: Administración de la Capacidad 
+• Identificar los factores que determinan la capacidad de producción de una empresa.
+• Calcular la eficiencia de un sistema productivo, para conocer si la empresa está produciendo conforme a lo planificado
+• Utilizar adecuadamente las herramientas para determinar la capacidad productiva de una empresa, a través de modelos matemáticos. 
+• Aplicar correctamente los modelos matemáticos para determinar punto de equilibrio, la planeación de la capacidad de producción y/ de servicios. 
+
+3.1 Definición de capacidad. 
+3.2. Medidas de la capacidad. 
+3.3 Factores de capacidad. 
+3.4 Decisiones sobre instalaciones para la capacidad. 
+3.5 Estrategias acerca de la capacidad. 
+3.6 Eficiencia del sistema productivo. 
+3.7 Administración de la capacidad. 
+3.8 Modelos matemáticos para determinar la capacidad: 
+3.8.1 Punto de equilibrio. 
+3.9 Planeación de la capacidad para servicios. 
+
+Unidad IV: Ubicación de las Instalaciones y Distribución de la Planta 
+• Valorar la importancia estratégica de la ubicación de las instalaciones de una planta. • Enumerar los factores elementales que se requieren para la localización de las instalaciones productivas. 
+• Aplicar adecuadamente los métodos de ubicación de las instalaciones para el análisis y selección de la localización de la planta. 
+• Establecer diferencias entre cada uno de los tipos de distribución de planta, para su respectiva aplicación. 
+• Aplicar las técnicas de blanceo de línea para equilibrar las cargas de trabajo en el área de producción. 
+
+4.1- Introducción a las instalaciones. 
+4.2- Necesidad de planear la ubicación de las instalaciones. 
+4.3-Factores que afectan la decisión de localización. 
+4.4- Métodos de ubicación de instalaciones: 
+4.4.1 Factores Ponderados. 
+4.4.2 Centro de gravedad. 
+4.4.3 Modelos de transporte. 
+4.5 Distribución de planta: 
+4.5.1 Concepto. 
+4.6. Tipos de distribución de planta. 
+4.6.1 Distribución por posición fija. 
+4.6.2 Distribución por proceso. 
+4.6.3 Distribución por producto. 
+4.7 Balanceo de líneas de ensamble de producción. 

@@ -1,0 +1,44 @@
+/* Clase para la tarjeta principal (Card) utilizada en la interfaz */
+.my-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    margin-bottom: 20px;
+    border-left: 5px solid #FF4B4B; /* Borde izquierdo distintivo Streamlit */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto visual al pasar el ratón (Hover) */
+.my-card:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.my-card-title {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #31333F;
+}
+
+.my-card-text {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Soporte para modo oscuro (Automático según preferencia de Streamlit/OS) */
+@media (prefers-color-scheme: dark) {
+    .my-card {
+        background-color: #262730;
+        color: #FAFAFA;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+    .my-card-title {
+        color: #FAFAFA;
+    }
+    .my-card-text {
+        color: #CCCCCC;
+    }
+}

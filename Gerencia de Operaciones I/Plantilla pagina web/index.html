@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planta de Producción | Proyecto Industrial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Banner (Carrusel) -->
+    <div class="banner">
+        <img src="https://images.unsplash.com/photo-1581091215367-0dfc79c7f7b9?auto=format&fit=crop&w=1200&q=80" alt="Maquinaria" class="active">
+        <img src="https://images.unsplash.com/photo-1608500211410-f097c3d7a0f0?auto=format&fit=crop&w=1200&q=80" alt="Proceso de producción">
+        <img src="https://images.unsplash.com/photo-1590650516494-0c7d89f9c98a?auto=format&fit=crop&w=1200&q=80" alt="Equipo humano">
+    </div>
+
+    <!-- Menú -->
+    <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#equipos">Equipos</a>
+        <a href="#costos">Costos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- Productos -->
+    <section class="productos">
+        <div class="producto">
+            <img src="https://images.unsplash.com/photo-1614280938270-c45f7b8418c3?auto=format&fit=crop&w=300&q=80" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>Descripción breve del producto.</p>
+            <p class="precio">$45.00</p>
+        </div>
+        <div class="producto">
+            <img src="https://images.unsplash.com/photo-1611080626919-dcde005b5b72?auto=format&fit=crop&w=300&q=80" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>Descripción breve del producto.</p>
+            <p class="precio">$38.50</p>
+        </div>
+        <!-- Añadir más productos aquí -->
+    </section>
+
+    <!-- Script para el carrusel -->
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.banner img');
+
+        function rotateBanner() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(rotateBanner, 3000); // Cambia cada 3 segundos
+    </script>
+</body>
+</html>

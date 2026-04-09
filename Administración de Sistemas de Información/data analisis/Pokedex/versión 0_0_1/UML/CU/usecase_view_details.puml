@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+actor "Usuario" as User
+rectangle "Ver detalles de Pokémon" {
+  usecase "Seleccionar Pokémon" as UC1
+  usecase "Cargar datos del Pokémon" as UC2
+  usecase "Renderizar tarjeta de detalles" as UC3
+}
+User --> UC1
+UC1 --> UC2
+UC2 --> UC3
+@enduml

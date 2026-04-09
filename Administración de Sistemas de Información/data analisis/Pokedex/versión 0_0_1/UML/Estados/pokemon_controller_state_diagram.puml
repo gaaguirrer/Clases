@@ -1,0 +1,25 @@
+@startuml Estado PokemonController
+[*] --> Idle
+Idle --> Validando : manejar_busqueda() evento
+Validando : validar_entrada
+Validando --> ConsultandoModelo : entrada_valida
+Validando --> ErrorValidacion : entrada_invalida
+ConsultandoModelo : llamar a PokemonModel
+ConsultandoModelo --> ResultadoEncontrado : datos_recuperados
+ConsultandoModelo --> ResultadoNoEncontrado : pokemon_no_existe
+ResultadoEncontrado --> ActualizarHistorial : agregar_history
+ActualizarHistorial --> Idle : fin_proceso
+ResultadoNoEncontrado --> ErrorBusqueda : generar_mensaje
+ErrorBusqueda --> Idle : ready
+
+state FavFlow {
+  [*] --> IdleFav
+  IdleFav --> Añadiendo : alternar_favorito(pokemon)
+  Añadiendo --> Guardando : guardar_favorites
+  Guardando --> IdleFav : listo
+  Añadiendo --> Eliminando : si_existe
+  Eliminando --> Guardando : guardar_favorites
+}
+
+Idle --> FavFlow : toggle_favorito
+@enduml

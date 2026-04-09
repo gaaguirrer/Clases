@@ -1,0 +1,85 @@
+Pronóstico y estimación de ventas
+1.1 ¿Qué es pronosticar?
+1.2 Horizontes de tiempo en los pronósticos
+1.3 Enfoques para pronosticar
+
+1.4 Repaso de los métodos cualitativos
+1.4.1. Jurado de opinión ejecutiva o consenso del comité ejecutivo
+1.4.2. Método DELPHIS
+1.4.3. Estructura de la fuerza de ventas
+1.4.4. Encuesta a los clientes
+
+1.5 Repaso de los métodos cuantitativos
+1.5.1 Pasos para determinar un sistema de pronóstico
+1.5.2 Pronósticos de series de tiempo
+1.5.3 Descomposición de una serie de tiempo
+
+1.5.4 Pronósticos de serie de Tiempo
+1.5.4.1 Promedio Simplista
+1.5.4. 2 Promedios Móviles
+1.5.4.3 Promedios móviles ponderados
+
+1.5.4.4 Suavización Exponencial
+1.5.5.5 Proyecciones con tendencia
+1.5.5 Método de pronóstico causal- análisis de regresión
+1.5.6 Ejercicios de repaso y pronósticos de estimación de ventas
+
+Planeación
+2.1 Significado de Planeación
+2.2 Objetivos de la Planeación
+2.3 Jerarquía de la Planeación
+2.3.1 Planeación a corto plazo
+2.3.2 Planeación a mediano plazo
+2.3.3 Planeación a largo plazo
+
+2.4 Planeación Agregada
+2.4.1 Información necesaria
+2.4.2 Resultados de la Planeación Agregada
+2.4.3 Métodos gráficos o prueba y error
+2.4.4 Estrategias básicas y puras de la Planeación Agregada
+2.4.5 Método de Transporte de Programación Lineal
+
+2.4.6 Aplicación de la planeación Agregada. Ejercicios Propuestos
+
+Parcial
+
+2.5 PMP- Programación Maestra de Producción
+2.5.1 Disgregación
+2.5.2 Objetivos del PMP
+2.5.3 Funciones del PMP
+2.5.4 Lineamientos de la Programación Maestra de Producción
+2.5.5 Horizontes del PMP
+2.5.6 Método de Programación Maestra
+2.5.7 Aplicaciones del PMP
+
+2.6 PRM-Planeación de Requerimiento de Materiales
+2.6.1 Objetivos del PRM
+2.6.2 Terminología
+2.6.3 Entradas y salidas del PRM
+2.6.5 Lógica del PRM
+2.6.6 Aplicaciones del PRM
+
+2.7 Planeación de Requerimiento de Capacidad
+2.7.1 Análisis de capacidad
+2.7.2 Definiciones y modelos matemáticos
+2.7.3 Diseño y capacidad del sistema
+2.7.4 Entradas y Salidas del PRC
+2.7.5 Actividades de PRC: Cargas infinitas y finitas
+
+2.7.6 Un ejemplo de aplicación del PRC y otros ejercicios de aplicación para cargas infinitas y finitas
+
+Programación y Control de las Actividades de Producción
+3.1 Prioridad y Control de la Capacidad
+3.2 Objetivos del CAP y Datos Requeridos
+3.3 Estrategias y Lineamientos de Programación
+3.4 Programación hacia adelante vs Programación hacia atrás
+3.5 Cartas y Gráficas de Programación
+
+3.6 Reglas de Decisión de Prioridad
+3.6.1 Reglas de prioridad: n trabajos, un centro de trabajo
+3.6.2 Regla de Johnson, n Trabajos, dos centros de trabajo
+3.6.3 Regla de Johnson: n Trabajos, tres centros de trabajo
+3.6.4 Regla prioridad Dinámica: la razón crítica (RC)
+3.6.5 Herramienta de propósito general aplicada a la Programación – El Método de Asignación
+
+3.7. Aplicación para la programación y control de las actividades de producción

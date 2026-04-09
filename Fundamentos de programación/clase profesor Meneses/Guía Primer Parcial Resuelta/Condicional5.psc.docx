@@ -1,0 +1,27 @@
+Proceso Postulante
+	Definir total_preg, preg_correctas Como Entero;
+	Definir porcentaje Como Real;
+	Escribir "Escriba el total de preguntas";
+	Leer total_preg;
+	Escribir  "Escriba la cantidad de preguntas correctas";
+	Leer preg_correctas;
+	Si total_preg < preg_correctas Entonces
+		Escribir "Las preguntas correctas superan las totales";
+	SiNo
+		porcentaje <- 100 * preg_correctas / total_preg;
+		Si porcentaje >= 90 Entonces
+			Escribir "Nivel máximo";
+		SiNo
+			Si porcentaje >= 75  Y porcentaje < 90 Entonces
+				Escribir "Nivel medio";
+			SiNo
+				Si porcentaje >= 50 y porcentaje < 75 Entonces
+					Escribir "Nivel regular";
+				SiNo
+					Escribir "Fuera de nivel";
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+FinProceso

@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+actor "Usuario" as User
+rectangle "Ver historial de búsquedas" {
+  usecase "Buscar Pokémon" as UC1
+  usecase "Guardar entrada en history.json" as UC2
+  usecase "Mostrar historial" as UC3
+}
+User --> UC1
+UC1 --> UC2
+UC3 --> UC2
+User --> UC3
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor "Usuario" as User
+rectangle "Agregar/Eliminar Favorito" {
+  usecase "Ver estado favorito" as UC1
+  usecase "Hacer clic en botón" as UC2
+  usecase "Actualizar favorites.json" as UC3
+  usecase "Actualizar UI favoritos" as UC4
+}
+User --> UC2
+UC2 --> UC1
+UC2 --> UC3
+UC3 --> UC4
+@enduml

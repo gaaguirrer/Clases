@@ -1,0 +1,24 @@
+## Recordatorio funciones de listas
+
+| Función de lista | Descripción                                                                                             | Sintaxis                                       | Ejemplo práctico                                                                                         |
+| ----------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| append()          | Agrega un elemento al final de la lista                                                                  | `lista.append(elemento)`                     | `numeros = [1, 2, 3]<br>``numeros.append(4)<br>``print(numeros)<br>`Resultado:`[1, 2, 3, 4]`          |
+| insert()          | Agrega un elemento en una posición específica de la lista                                              | `lista.insert(posición, elemento)`          | `numeros = [1, 2, 4, 5]<br>``numeros.insert(2, 3)<br>``print(numeros)<br>`Resultado:`[1, 2, 3, 4, 5]` |
+| remove()          | Elimina el primer elemento de la lista que coincide con el elemento especificado                         | `lista.remove(elemento)`                     | `numeros = [1, 2, 3, 4]<br>``numeros.remove(3)<br>``print(numeros)<br>`Resultado:`[1, 2, 4]`          |
+| pop()             | Elimina y devuelve el último elemento de la lista, o el elemento de la posición especificada           | `lista.pop()<br>``lista.pop(posición)`      | `numeros = [1, 2, 3]<br>``numeros.pop()<br>``print(numeros)<br>`Resultado:`[1, 2]`                    |
+| clear()           | Elimina todos los elementos de la lista                                                                  | `lista.clear()`                              | `numeros = [1, 2, 3]<br>``numeros.clear()<br>``print(numeros)<br>`Resultado:`[]`                      |
+| index()           | Devuelve la posición del primer elemento de la lista que coincide con el elemento especificado          | `lista.index(elemento)`                      | `numeros = [1, 2, 3, 4]<br>``print(numeros.index(3))<br>`Resultado:`2`                                |
+| count()           | Devuelve la cantidad de veces que aparece un elemento en la lista                                        | `lista.count(elemento)`                      | `numeros = [1, 2, 2, 3, 3, 3]<br>``print(numeros.count(3))<br>`Resultado:`3`                          |
+| sort()            | Ordena los elementos de la lista de menor a mayor (o de mayor a menor si se especifica `reverse=True`) | `lista.sort()<br>``lista.sort(reverse=True)` | `numeros = [3, 1, 4, 2]<br>``numeros.sort()<br>``print(numeros)<br>`Resultado:`[1, 2, 3, 4]`          |
+| reverse()         | Invierte el orden de los elementos de la lista                                                           | `lista.reverse()`                            | `numeros = [1, 2, 3]<br>``numeros.reverse()<br>``print(numeros)<br>`Resultado:`[3, 2, 1]`             |
+| copy()            | Devuelve una copia de la lista                                                                           | `nueva_lista = lista.copy()`                 | `numeros = [1, 2, 3]<br>``nuevos_numeros = numeros.copy()<br>``print(nuevos_numeros)`<br                |
+| `split()`       | Divide una cadena de texto en una lista de subcadenas utilizando un separador dado                       | `cadena.split(separador)`                    | `cadena = "Hola,como,estas"<br>`                                                                        |
+| startswith()      | Devuelve True si la cadena comienza con el prefijo especificado, de lo contrario devuelve False          | cadena.startswith(prefijo)                     | palabra = "Python" comienza_con_p = palabra.startswith("P") # comienza_con_p será True                   |
+
+## Ejercicios
+
+1. Escribe un programa que pida al usuario una lista de números enteros separados por comas y muestre por pantalla el mayor de ellos. max(lista), cadena.split(separador),
+2. Escribe un programa que pida al usuario una lista de palabras separadas por comas y muestre por pantalla aquellas que empiecen por una letra determinada. cadena.split(separador), cadena.startswith(prefijo)
+3. Escribe un programa que pida al usuario una lista de números enteros separados por comas y muestre por pantalla cuántos de ellos son mayores que 10 y cuántos son menores o iguales que 10.cadena.split(separador), lista.count(elemento)
+4. Crea un programa que reciba una lista de nombres y devuelva una nueva lista con los nombres que empiezan por "A". Utiliza la función `startswith()`.
+5. Crea un programa que reciba una lista de números enteros y devuelva una nueva lista con los números pares de la lista original. Utiliza el operador módulo `%`. lista.append(elemento)

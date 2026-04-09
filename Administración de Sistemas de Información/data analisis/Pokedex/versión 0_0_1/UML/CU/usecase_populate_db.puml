@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor "Desarrollador" as Dev
+rectangle "Poblar base de datos" {
+  usecase "Ejecutar populate_db.py" as UC1
+  usecase "Consultar PokéAPI" as UC2
+  usecase "Guardar en data/db.json" as UC3
+  usecase "Verificar datos" as UC4
+}
+Dev --> UC1
+UC1 --> UC2
+UC2 --> UC3
+UC3 --> UC4
+@enduml

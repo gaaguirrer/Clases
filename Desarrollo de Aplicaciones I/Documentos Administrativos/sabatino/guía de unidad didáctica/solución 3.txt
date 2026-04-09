@@ -1,0 +1,43 @@
+Eliminar elementos duplicados de una lista:
+lista = [1, 2, 3, 1, 2, 3, 4, 5]
+lista_sin_duplicados = list(dict.fromkeys(lista))
+print("Lista sin duplicados:", lista_sin_duplicados)
+
+
+*************************************
+Calcular la suma de los elementos de una lista
+lista = [1, 2, 3, 4, 5]
+suma = sum(lista)
+print("La suma de los elementos de la lista es:", suma)
+
+
+*******************************************
+Encontrar el valor máximo y mínimo en una tupla:
+tupla = (10, 20, 5, 30, 15)
+maximo = max(tupla)
+minimo = min(tupla)
+print("El valor máximo de la tupla es:", maximo)
+print("El valor mínimo de la tupla es:", minimo)
+
+**************************************************
+Contar la frecuencia de elementos en una tupla:
+tupla = (1, 2, 3, 1, 2, 3, 4, 5)
+frecuencia = {}
+for elemento in tupla:
+    frecuencia[elemento] = frecuencia.get(elemento, 0) + 1
+print("Frecuencia de elementos en la tupla:", frecuencia)
+
+
+****************************************************
+Registro de votos en una elección:
+votos = {}
+while True:
+    nombre = input("Ingrese el nombre del votante (o 'fin' para terminar): ")
+    if nombre.lower() == 'fin':
+        break
+    eleccion = input("Ingrese la elección del votante: ")
+    votos[eleccion] = votos.get(eleccion, 0) + 1
+
+print("Resumen de votos:")
+for candidato, cantidad_votos in votos.items():
+    print(f"{candidato}: {cantidad_votos} votos")

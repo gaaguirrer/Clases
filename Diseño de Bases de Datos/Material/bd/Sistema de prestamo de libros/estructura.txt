@@ -1,0 +1,22 @@
+Tengo la base de datos de un sistema de prestamo de libros, tiene las siguientes tablas
+**Generos**: id_genero(PK), nombre, descripción
+
+**Autores**: id_autor(PK), nombre, apellido
+
+**Libros**: isbn(PK), título, cnt_páginas,  ubicacion, id_genero(FK),  id_autor(FK), 
+
+**DetalleLibro**: id_genero(FK), id_libro(FK)
+
+**Turnos**: id_turno(PK), turno
+
+**Bibliotecarios**: dni(PK), nombre, apellido, telefono, e_mail, id_turno(FK)
+
+**DetalleTurno**: id_turno(FK), id_bibliotecario(FK)
+
+**Carreras**: id_carrera(PK), carrera
+
+**Estudiantes**: carnet(PK), nombre, apellido, direccion, telefono, e_mail, id_carrera(FK)
+
+**Prestamos**: id_libro(FK), id_bibliotecario(FK), id_estudiante(FK), fecha_prestamo, fecha_devolución
+
+Escribe el código para sql server que permita crear la base de datos, y las tablas

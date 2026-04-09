@@ -1,0 +1,24 @@
+@startuml Estado Favorites/History
+package FavoritesModel {
+  [*] --> Cargando
+  Cargando --> Listo : load_favorites()
+  Listo --> Añadiendo : add_favorite(pokemon)
+  Listo --> Eliminando : remove_favorite(pokemon_id)
+  Añadiendo --> Guardando : save_favorites()
+  Eliminando --> Guardando : save_favorites()
+  Guardando --> Listo : confirm_save
+  Guardando --> Error : falla_escritura
+  Error --> Listo : reintentar
+}
+
+package HistoryModel {
+  [*] --> Idle
+  Idle --> AñadiendoHistorial : add_to_history(busqueda)
+  AñadiendoHistorial --> GuardandoHistorial : persistir
+  GuardandoHistorial --> Idle : guardado_exitoso
+  GuardandoHistorial --> ErrorHistorial : falla
+  ErrorHistorial --> Idle : reintentar
+  Idle --> Popular : get_popular_pokemon(limite)
+  Popular --> Idle : resultado
+}
+@enduml

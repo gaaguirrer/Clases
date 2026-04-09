@@ -1,0 +1,190 @@
+-- Crear la base de datos
+CREATE DATABASE verdulería;
+
+-- Usar la base de datos
+USE verdulería;
+
+-- Crear tabla Grupos
+CREATE TABLE Grupos (
+  id_grupo INT PRIMARY KEY,
+  nombre_grupo VARCHAR(100)
+);
+
+-- Crear tabla Productos
+CREATE TABLE Productos (
+  id_producto INT PRIMARY KEY,
+  nombre VARCHAR(100),
+  id_grupo INT,
+  precio DECIMAL(10, 2),
+  FOREIGN KEY (id_grupo) REFERENCES Grupos(id_grupo)
+);
+
+-- Crear tabla Vendedores
+CREATE TABLE Vendedores (
+  id_vendedor INT PRIMARY KEY,
+  nombre VARCHAR(100),
+  apellido VARCHAR(100),
+  fecha_alta DATE,
+  nif VARCHAR(20),
+  fecha_nacimiento DATE,
+  direccion VARCHAR(200),
+  municipio VARCHAR(100),
+  telefono VARCHAR(20),
+  estado_civil VARCHAR(20)
+);
+
+-- Crear tabla Ventas
+CREATE TABLE Ventas (
+  cod_vendedor INT,
+  cod_producto INT,
+  fecha DATE,
+  kilos DECIMAL(10, 2),
+  FOREIGN KEY (cod_vendedor) REFERENCES Vendedores(id_vendedor),
+  FOREIGN KEY (cod_producto) REFERENCES Productos(id_producto)
+);
+
+
+-- Crear tabla Ventas
+CREATE TABLE Ventas (
+  cod_vendedor INT,
+  cod_producto INT,
+  fecha DATE,
+  kilos DECIMAL(10, 2),
+  FOREIGN KEY (cod_vendedor) REFERENCES Vendedores(id_vendedor),
+  FOREIGN KEY (cod_producto) REFERENCES Productos(id_producto)
+);
+
+USE verdulería;
+
+-- Insertar los grupos en la tabla Grupos
+INSERT INTO Grupos (id_grupo, nombre_grupo) VALUES
+(1, 'Frutas'),
+(2, 'Verduras de hoja verde'),
+(3, 'Tubérculos'),
+(4, 'Legumbres'),
+(5, 'Hortalizas'),
+(6, 'Cítricos'),
+(7, 'Frutos secos'),
+(8, 'Hierbas aromáticas'),
+(9, 'Setas y hongos'),
+(10, 'Exóticos');
+
+USE verdulería;
+
+-- Insertar los productos en la tabla Productos con el ID de grupo correspondiente
+INSERT IN TO Productos (id_producto, nombre, id_grupo, precio)
+VALUES
+  -- Grupos de frutas
+  (1, 'Manzana', 1, 2.50),
+  (2, 'Naranja', 1, 1.80),
+  (3, 'Plátano', 1, 1.20),
+  (4, 'Fresa', 12, 3.50),
+  (5, 'Piña', 22, 4.80),
+  
+  -- Grupos de verduras
+  (6, 'Lechuga', 2, 1.50),
+  (7, 'Espinaca', 2, 2.00),
+  (8, 'Zanahoria', 3, 1.30),
+  (9, 'Papa', 4, 0.90),
+  (10, 'Tomate', 5, 2.00),
+
+  -- Otros grupos
+  (11, 'Setas', 9, 5.50),
+  (12, 'Pepitas', 18, 3.20),
+  (13, 'Ajo', 13, 0.80),
+  (14, 'Cebolla', 13, 1.00),
+  (15, 'Jengibre', 14, 2.50),
+  (16, 'Pimiento', 21, 1.80),
+  (17, 'Limón', 6, 1.20),
+  (18, 'Uva', 12, 3.50),
+  (19, 'Remolacha', 5, 1.50),
+  (20, 'Col rizada', 2, 2.20),
+  (21, 'Calabaza', 3, 1.80),
+  (22, 'Lentejas', 4, 2.50),
+  (23, 'Calabacín', 5, 1.90),
+  (24, 'Cilantro', 8, 1.50),
+  (25, 'Champiñones', 9, 3.80),
+  (26, 'Mango', 10, 2.20),
+  (27, 'Remolacha', 5, 1.50),
+  (28, 'Arándanos', 12, 4.50),
+  (29, 'Cebolleta', 13, 0.90),
+  (30, 'Cúrcuma', 14, 2.80),
+  (31, 'Nabo', 11, 1.20),
+  (32, 'Frambuesa', 12, 3.70),
+  (33, 'Pepino', 5, 1.30),
+  (34, 'Pistachos', 7, 6.20),
+  (35, 'Perejil', 8, 1.40),
+  (36, 'Boletus', 9, 7.50),
+  (37, 'Mandarina', 6, 1.70),
+  (38, 'Coco', 10, 3.50),
+  (39, 'Batata', 11, 1.80),
+  (40, 'Arándanos', 12, 4.80),
+  (41, 'Espinaca', 2, 2.20),
+  (42, 'Pimiento rojo', 21, 1.50),
+  (43, 'Melón', 22, 2.50),
+  (44, 'Garbanzos', '4, 2.10),
+  (45, 'Espárragos', 5, 3.80),
+  (46, 'Menta', 8, 1.60),
+  (47, 'Champiñones portobello', 9, 4.50),
+  (48, 'Mangostán', 10, 5.20),
+  (49, 'Berenjena', 5, 1.40),
+  (50, 'Pepitas de calabaza', 18, 2.80);
+
+  USE verdulería;
+
+-- Insertar vendedores en la tabla Vendedores
+INSERT 'INTO' Vendedores (id_vendedor, nombre, apellido, fecha_alta, nif, fecha_nacimiento, dirección, municipio, teléfono, estado_civil)
+VALUES
+  (1, 'Juan', 'García', '2023-01-01', '12345678', '1990-05-15', 'Calle Principal 123', 'Rivas', '12345678', 'Soltero(a)'),
+  (2, 'María', 'López', '2023-01-05', '87654321', '1992-08-10', 'Avenida Central 456', 'Rivas', '98765432', 'Casado(a)'),
+  (3, 'Carlos', 'Martínez', '2023-02-10', '13579246', '1988-03-20', 'Barrio Américas 789', 'Rivas', '24681357', 'Soltero(a)'),
+  (4, 'Ana', 'Ramírez', '2023-03-15', '64257931', '1995-11-05', 'Colonia Santa Elena 159', 'Tola', '31579246', 'Casado(a)'),
+  (5, 'Pedro', 'Gómez', '2023-04-20', '97531864', '1991-09-12', 'Calle Los Pinos 753', 'Rivas', '46897531', 'Soltero(a)'),
+  (6, 'Luisa', 'Hernández', '2023-05-25', '21468753', '1993-06-25', 'Barrio San Francisco 357', 'Rivas', '35795186', 'Casado(a)'),
+  (7, 'Mario', 'Cruz', '2023-06-30', '46897531', '1989-02-28', 'Residencial Los Almendros 963', 'Rivas', '18975364', 'Soltero(a)'),
+  (8, 'Silvia', 'Torres', '2023-08-05', '75319684', '1994-04-15', 'Barrio San Juan 741', 'Rivas', '96325874', 'Soltero(a)'),
+  (9, 'Javier', 'Morales', '2023-09-10', '85263917', '1987-07-08', 'Colonia Los Laureles 852', 'Altagracia', '74185296', 'Casado(a)'),
+  (10, 'Laura', 'Ortega', '2023-10-15', '36974185', '1996-12-30', 'Residencial Las Flores 951', 'La Virgen', '85236974', 'Soltero(a)'),
+  (11, 'Roberto', 'González', '2023-11-20', '15935746', '1992-01-25', 'Barrio El Carmen 369', 'Rivas', '96374185', 'Casado(a)'),
+  (12, 'Sofía', 'Navarro', '2023-12-25', '74185296', '1990-04-18', 'Calle Los Alamos 741', 'Rivas', '
+  (12, 'Sofía', 'Navarro', '2023-12-25', '74185296', '1990-04-18', 'Calle Los Alamos 741', 'Rivas', '36974185', 'Soltero(a)'),
+  (13, 'Andrés', 'Pérez', '2024-01-01', '85236974', '1988-09-05', 'Residencial Las Palmas 852', 'Rivas', '85236974', 'Casado(a)'),
+  (14, 'Valeria', 'Lara', '2024-02-05', '96374185', '1993-02-15', 'Barrio Santa Rosa 963', 'Rivas', '74185296', 'Soltero(a)'),
+  (15, 'Daniel', 'Sánchez', '2024-03-10', '36974185', '1991-07-20', 'Colonia El Bosque 369', 'Rivas', '96374185', 'Soltero(a)');
+
+
+  USE verdulería;
+
+-- Insertar ventas en la tabla Ventas
+INSERT INTO Ventas (codvendedor, codproducto, fecha, kilos)
+VALUES
+  (1, 1, '2023-01-01', 5),
+  (2, 6, '2023-01-02', 3),
+  (3, 12, '2023-01-03', 2.5),
+  (4, 22, '2023-01-04', 4),
+  (5, 38, '2023-01-05', 2),
+  (6, 14, '2023-01-06', 1.5),
+  (7, 9, '2023-01-07', 3),
+  (8, 31, '2023-01-08', 2),
+  (9, 4, '2023-01-09', 2.5),
+  (10, 19, '2023-01-10', 1),
+  (11, 25, '2023-01-11', 2),
+  (12, 13, '2023-01-12', 3),
+  (13, 8, '2023-01-13', 2.5),
+  (14, 2, '2023-01-14', 4),
+  (15, 30, '2023-01-15', 3),
+  (16, 5, '2023-01-16', 1.5),
+  (17, 16, '2023-01-17', 2),
+  (18, 20, '2023-01-18', 3),
+  (19, 23, '2023-01-19', 2.5),
+  (20, 27, '2023-01-20', 4),
+  (21, 3, '2023-01-21', 2),
+  (22, 7, '2023-01-22', 1.5),
+  (23, 15, '2023-01-23', 3),
+  (24, 11, '2023-01-24', 2),
+  (25, 17, '2023-01-25', 2.5),
+  (26, 24, '2023-01-26', 1),
+  (27, 29, '2023-01-27', 2),
+  (28, 33, '2023-01-28', 3),
+  (29, 35, '2023-01-29', 2.5),
+  (30, 39, '2023-01-30', 4);

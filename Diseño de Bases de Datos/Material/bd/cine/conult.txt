@@ -1,0 +1,66 @@
+USE verdulería
+--Ejercico1
+
+SELECT p.nombre AS nombre_producto, v.kilos, ve.nombre AS nombre_vendedor, ve.apellido AS apellido_vendedor 
+FROM Ventas v INNER JOIN Productos p ON v.cod_producto = p.id_producto INNER JOIN Vendedores ve ON v.cod_vendedor = ve.id_vendedor;
+
+--Ejercicio2
+SELECT p.nombre AS nombre_producto, v.cod_producto, v.kilos, g.nombre_grupo 
+fROM Ventas v INNER JOIN Productos p ON v.cod_producto = p.id_producto 
+INNER JOIN Grupos g ON p.id_grupo= g.id_grupo;
+
+--Ejercico3
+SELECT a.nombre, a.apellido, f.fecha AS 'fecha venta' 
+FROM Vendedores a INNER JOIN Ventas f ON id_vendedor = cod_vendedor 
+WHERE fecha BETWEEN '2023-01-01' AND '2023-01-30';
+
+--Ejercicio 4
+SELECT P.nombre, G.nombre_grupo  
+FROM Productos P LEFT JOIN Grupos G ON P.id_grupo = G.id_grupo;
+
+--Ejercicio 5
+SELECT V.id_vendedor, V.nombre, V.apellido,
+COUNT(VT.cod_producto) AS total_ventas
+FROM Vendedores V LEFT JOIN Ventas VT ON V.id_vendedor = VT.cod_vendedor 
+GROUP BY V.id_vendedor, V.nombre, V.apellido;
+
+--Ejercicio6
+SELECT G.id_grupo, G.nombre_grupo,
+COUNT(V.cod_producto) AS total_ventas
+FROM Grupos G
+LEFT JOIN Productos P ON G.id_grupo = P.id_grupo
+LEFT JOIN Ventas V ON P.id_producto = V.cod_producto
+GROUP BY G.id_grupo, G.nombre_grupo;
+
+--Ejercicio7
+SELECT  g.nombre_grupo, p.nombre AS 'nombre producto' 
+FROM Grupos g 
+RIGHT JOIN Productos p ON p.id_grupo = g.id_grupo ORDER BY G.id_grupo;
+
+--Ejercicio8
+SELECT V.fecha, V.kilos, P.nombre AS nombre_producto, VD.nombre, VD.apellido
+FROM Ventas V
+JOIN Productos P ON V.cod_producto = P.id_producto
+RIGHT JOIN Vendedores VD ON V.cod_vendedor = VD.id_vendedor
+ORDER BY V.fecha;
+
+--Ejercicio9
+SELECT VD.nombre, VD.apellido, COUNT (*) AS total_ventas
+FROM Vendedores VD
+RIGHT JOIN Ventas V ON VD.id_vendedor = V.cod_vendedor
+GROUP BY VD.nombre, VD.apellido
+
+--Ejercicio10
+SELECT P.id_producto, P.nombre, G.id_grupo, G.nombre_grupo
+FROM Productos P
+FULL JOIN Grupos G ON P.id_grupo = G.id_grupo;
+
+--Ejercicio11
+SELECT VT.*, V.nombre, V.apellido
+FROM Ventas VT 
+FULL JOIN Vendedores V ON VT.cod_vendedor = V.id_vendedor;
+
+--Ejercicio12
+SELECT P.*, VT.*
+FROM Productos P
+FULL JOIN Ventas VT ON  P.id_producto = VT.cod_producto;

@@ -1,0 +1,89 @@
+-- Crear la base de datos
+CREATE DATABASE CineDB;
+
+-- Usar la base de datos
+USE CineDB;
+
+-- Crear tabla Peliculas
+CREATE TABLE Peliculas (
+  PeliculaID INT PRIMARY KEY,
+  Titulo VARCHAR(100),
+  Duracion INT,
+  GeneroID INT,
+  FOREIGN KEY (GeneroID) REFERENCES Generos(GeneroID)
+);
+
+-- Crear tabla Salas
+CREATE TABLE Salas (
+  SalaID INT PRIMARY KEY,
+  Nombre VARCHAR(100),
+  Capacidad INT
+);
+
+-- Crear tabla Horarios
+CREATE TABLE Horarios (
+  HorarioID INT PRIMARY KEY,
+  Hora TIME,
+  Fecha DATE
+);
+
+-- Crear tabla Generos
+CREATE TABLE Generos (
+  GeneroID INT PRIMARY KEY,
+  Nombre VARCHAR(100)
+);
+
+-- Crear tabla Boletos
+CREATE TABLE Boletos (
+  BoletoID INT PRIMARY KEY,
+  PeliculaID INT,
+  SalaID INT,
+  HorarioID INT,
+  Asiento VARCHAR(10),
+  Precio DECIMAL(8, 2),
+  FOREIGN KEY (PeliculaID) REFERENCES Peliculas(PeliculaID),
+  FOREIGN KEY (SalaID) REFERENCES Salas(SalaID),
+  FOREIGN KEY (HorarioID) REFERENCES Horarios(HorarioID)
+);
+
+
+-- Insertar películas
+INSERT INTO Peliculas (PeliculaID, Titulo, Duracion, GeneroID)
+VALUES
+  (1, 'Pelicula 1', 120, 1),
+  (2, 'Pelicula 2', 110, 2),
+  (3, 'Pelicula 3', 95, 3),
+  -- Agrega aquí las 17 películas restantes
+
+-- Insertar géneros
+INSERT INTO Generos (GeneroID, Nombre)
+VALUES
+  (1, 'Acción'),
+  (2, 'Comedia'),
+  (3, 'Drama'),
+  -- Agrega aquí los 4 géneros restantes
+
+-- Insertar horarios
+INSERT INTO Horarios (HorarioID, Hora, Fecha)
+VALUES
+  (1, '14:00', '2023-06-20'),
+  (2, '17:30', '2023-06-20'),
+  (3, '20:00', '2023-06-20'),
+  (4, '21:30', '2023-06-20');
+
+-- Insertar salas
+INSERT INTO Salas (SalaID, Nombre, Capacidad)
+VALUES
+  (1, 'Sala 1', 100),
+  (2, 'Sala 2', 80),
+  (3, 'Sala 3', 120),
+  (4, 'Sala 4', 90),
+  (5, 'Sala 5', 110);
+
+-- Insertar boletos
+INSERT INTO Boletos (BoletoID, PeliculaID, SalaID, HorarioID, Asiento, Precio)
+VALUES
+  (1, 1, 1, 1, 'A1', 10.50),
+  (2, 1, 1, 1, 'A2', 10.50),
+  (3, 2, 2, 2, 'B1', 12.00),
+  -- Agrega aquí los 27 boletos restantes

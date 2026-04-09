@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplos de SELECT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        #codigo {
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex-basis: 48%;
+        }
+
+        .column h3 {
+            margin-top: 0;
+        }
+
+        .column a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function mostrarCodigo(codigo) {
+            var divCodigo = document.getElementById('codigo');
+            divCodigo.innerText = codigo;
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejemplos de SELECT</h1>
+
+    <div id="codigo"></div>
+
+    <div class="container">
+        <div class="column">
+            <h3>Seleccionar todos los registros de la tabla "Grupos":</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT * FROM Grupos;')">Mostrar código</a>
+
+            <h3>Obtener el nombre de todos los grupos de la tabla "Grupos":</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT nombre_grupo FROM Grupos;')">Mostrar código</a>
+
+            <h3>Obtener los nombres de los vendedores de la tabla "Vendedores" que estén casados:</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT nombre FROM Vendedores WHERE estado_civil = Casado(a);')">Mostrar código</a>
+
+            <h3>Mostrar la cantidad de kilos vendidos en cada venta de la tabla "Ventas":</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT kilos FROM Ventas;')">Mostrar código</a>
+
+            <!-- Agrega más ejemplos de SELECT aquí -->
+        </div>
+
+        <div class="column">
+            <h3>Obtener los productos vendidos por un vendedor específico (por ejemplo, vendedor con ID 3):</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT p.nombre FROM Productos p JOIN Ventas v ON p.id_producto = v.cod_producto WHERE v.cod_vendedor = 3;')">Mostrar código</a>
+
+            <h3>Mostrar los nombres y fechas de alta de los vendedores ordenados por fecha de alta:</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT nombre, fecha_alta FROM Vendedores ORDER BY fecha_alta;')">Mostrar código</a>
+
+            <h3>Obtener el total de kilos vendidos en todas las ventas:</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT SUM(kilos) AS total_kilos FROM Ventas;')">Mostrar código</a>
+
+            <h3>SELECT * FROM Vendedores WHERE fecha_alta < '2023-01-01';</h3>
+            <a href="#" onclick="mostrarCodigo('SELECT * FROM Vendedores WHERE fecha_alta < '2023-01-01';">Mostrar código</a>
+
+            <!-- Agrega más ejemplos de SELECT aquí -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

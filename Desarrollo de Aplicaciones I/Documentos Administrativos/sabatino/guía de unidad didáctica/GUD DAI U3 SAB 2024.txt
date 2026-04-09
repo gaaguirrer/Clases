@@ -1,0 +1,48 @@
+total_ventas = 0
+num_articulos = int(input("Ingrese el número de artículos vendidos hoy: "))
+for i in range(1, num_articulos + 1):
+    precio = float(input("Ingrese el precio del artículo {}: ".format(i)))
+    cantidad = int(input("Ingrese la cantidad vendida del artículo {}: ".format(i)))
+    total_ventas += precio * cantidad
+print("El total de ventas del día es:", total_ventas)
+
+*********************************************
+
+salario_por_hora = float(input("Ingrese el salario por hora del empleado: "))
+horas_trabajadas = 0
+for dia in range(1, 8):
+    horas_dia = int(input("Ingrese las horas trabajadas el día {}: ".format(dia)))
+    horas_trabajadas += horas_dia
+salario_total = salario_por_hora * horas_trabajadas
+print("El salario total del empleado esta semana es:", salario_total)
+
+*************************************************
+
+costo_total = 0
+num_productos = int(input("Ingrese el número de productos a reabastecer: "))
+for i in range(1, num_productos + 1):
+    precio = float(input("Ingrese el precio del producto {}: ".format(i)))
+    cantidad = int(input("Ingrese la cantidad a reabastecer del producto {}: ".format(i)))
+    costo_total += precio * cantidad
+print("El costo total de reabastecer el inventario es:", costo_total)
+
+*************************************************
+salario_por_hora = float(input("Ingrese el salario por hora del empleado: "))
+horas_trabajadas_mes = 0
+for semana in range(1, 5):
+    for dia in range(1, 8):
+        horas_dia = int(input("Ingrese las horas trabajadas el día {} de la semana {}: ".format(dia, semana)))
+        horas_trabajadas_mes += horas_dia
+salario_mensual = salario_por_hora * horas_trabajadas_mes
+print("El salario mensual del empleado es:", salario_mensual)
+
+********************************************************
+
+costo_total = 0
+num_productos = int(input("Ingrese el número de productos comprados: "))
+for i in range(1, num_productos + 1):
+    precio = float(input("Ingrese el precio del producto {}: ".format(i)))
+    cantidad = int(input("Ingrese la cantidad comprada del producto {}: ".format(i)))
+    costo_total += precio * cantidad
+print("El costo total de la compra es:", costo_total)
+
