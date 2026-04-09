@@ -1,0 +1,29 @@
+# Excluir submódulos de git anidados
+Administración de Sistemas de Información/data analisis/CrytoDSS/
+Desarrollo de Aplicaciones I/material/Python/
+Ingeniería del Software II/Ayuda/Ayuda/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos pesados que causan problemas con Git
+*.mp4
+*.exe
+*.rar
+*.zip
+*.7z
+*.tar.gz
+*.iso
+*.dmg
+
+# Archivos temporales de Office
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
