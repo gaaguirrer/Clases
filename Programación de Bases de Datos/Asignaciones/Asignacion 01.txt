@@ -1,0 +1,43 @@
+Cree una nueva tabla "Usuario" en la base de datos "verdulería", sus campos serán: clave y correo
+La tabla anterior debe estar relacionada con la tabla Vendedor
+Cree un procedimiento almacenado que dado el id del vendedor, agregue el registro correspondiente a ese vendedor, en la tabla Usuario (debe agregar un correo y una contraseña en la tabla usuario para el vendedor al cual corresponde el id)
+Los requisitos del correo son: Primeras dos letras del nombre del vendedor, luego debe seguir un punto(.), y posteriormente las últimas dos letras del apellido del vendedor, con la diferencia entre el mes de la la fecha de nacimiento con el mes de la fecha de alta, para finalizar se debe concatenar todo con "@verduleria.com"
+Los requisitos de la contraseña son: La primera letra del apellido en mayúsculas, luego se le agrega, la diferencia entre día de la fecha nacimiento y el de la fecha de alta, y para finalizar se agrega un guion bajo y el nombre completo en minúsculas.
+
+SOLUCIÓN
+
+-- Crear tabla Usuario
+CREATE TABLE Usuario (
+  id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+  clave VARCHAR(100),
+  correo VARCHAR(100)
+);
+
+-- Crear procedimiento almacenado
+DELIMITER //
+CREATE PROCEDURE AgregarUsuario(id_vendedor INT)
+BEGIN
+  DECLARE v_nombre VARCHAR(100);
+  DECLARE v_apellido VARCHAR(100);
+  DECLARE v_fecha_nacimiento DATE;
+  DECLARE v_fecha_alta DATE;
+  DECLARE v_mes_nacimiento INT;
+  DECLARE v_mes_alta INT;
+  DECLARE v_correo VARCHAR(100);
+  DECLARE v_clave VARCHAR(100);
+  
+  SELECT nombre, apellido, fecha_nacimiento, fecha_alta INTO v_nombre, v_apellido, v_fecha_nacimiento, v_fecha_alta
+  FROM Vendedores
+  WHERE id_vendedor = id_vendedor;
+  
+  SET v_mes_nacimiento = MONTH(v_fecha_nacimiento);
+  SET v_mes_alta = MONTH(v_fecha_alta);
+  
+  SET v_correo = CONCAT(LEFT(v_nombre, 2), '.', RIGHT(v_apellido, 2), '@verduleria.com');
+  SET v_clave = CONCAT(UCASE(LEFT(v_apellido, 1)), DATEDIFF(v_fecha_nacimiento, v_fecha_alta), '_', LCASE(CONCAT(v_nombre, ' ', v_apellido)));
+  
+  INSERT INTO Usuario (clave, correo)
+  VALUES (v_clave, v_correo);
+END;
+//
+DELIMITER ;
