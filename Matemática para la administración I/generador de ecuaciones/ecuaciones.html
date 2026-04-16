@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ecuaciones de grado</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Ecuaciones de grado</h1>
+		<form>
+			<label for="grado">Grado de la ecuación:</label>
+			<select id="grado">
+				<option value="1">Primer grado</option>
+				<option value="2">Segundo grado</option>
+				<option value="3">Tercer grado</option>
+			</select>
+			<br>
+			<div id="coefficients"></div>
+			<div id="variables"></div>
+			<input type="submit" value="Generar ecuación">
+		</form>
+		<div id="resultado"></div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
