@@ -1,6 +1,0 @@
-{
-  "codePusher.timeGapInMinutes": 10,
-  "codePusher.remoteName": "origin",
-  "codePusher.branchName": "master",
-  "CodeGPT.apiKey": "DeepSeek"
-}
