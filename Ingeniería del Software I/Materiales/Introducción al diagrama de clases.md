@@ -1,10 +1,14 @@
 # 1. ¿Qué es un diagrama de clases? La vista estática del sistema
 
-Si el diagrama de casos de uso nos cuenta las historias que el sistema debe protagonizar junto a sus actores, el diagrama de clases nos revela la anatomía interna de los protagonistas de esas historias. Es el modelo que captura la estructura estática del software: las clases que lo componen, los datos que almacenan, los comportamientos que exponen y las relaciones que tejen entre ellas. En esencia, mientras los casos de uso responden a la pregunta *¿qué hace el sistema?*, el diagrama de clases responde a *¿cómo está construido internamente para poder hacerlo?*.
+Llevo más de veinte años trabajando en análisis y diseño de sistemas, y si hay un diagrama que nunca falta en mis proyectos, ese es el diagrama de clases. No es casualidad: es la herramienta más poderosa que tenemos los ingenieros de software para responder a la pregunta fundamental de todo sistema: *¿cómo está construido?*
+
+Si el diagrama de casos de uso nos cuenta las historias que el sistema debe contar junto a sus actores, el diagrama de clases nos revela la anatomía interna de los protagonistas de esas historias. Es el modelo que captura la estructura estática del software: las clases que lo componen, los datos que almacenan, los comportamientos que exponen y las relaciones que tejen entre ellas. En esencia, mientras los casos de uso responden a *¿qué hace el sistema?*, el diagrama de clases responde a *¿cómo está construido internamente para poder hacerlo?*.
 
 En este primer tema sobre el modelado estructural, exploraremos el propósito del diagrama de clases dentro de UML, su naturaleza estática frente a los diagramas de comportamiento, los elementos fundamentales que aparecen en él y cómo PlantUML nos proporciona una sintaxis sencilla e intuitiva para dibujarlo y, sobre todo, para mantenerlo sincronizado con el resto de la documentación del proyecto.
 
 ## 1.1. El rol del diagrama de clases en UML
+
+Cuando empecé en esta profesión, recuerdo que los equipos de desarrollo dibujaban diagramas en pizarras que se borraban al terminar la reunión. No había trazabilidad, no había versiones, no había rigor. Con la adopción de UML y, más tarde, de herramientas basadas en texto como PlantUML, el modelado estructural dejó de ser un ejercicio efímero para convertirse en un artefacto de ingeniería.
 
 UML (Lenguaje Unificado de Modelado) organiza sus diagramas en dos grandes familias: los **diagramas de comportamiento** (casos de uso, secuencia, actividades, estados) y los **diagramas de estructura** (clases, objetos, componentes, despliegue, paquetes). El diagrama de clases es, sin duda, el más emblemático de los diagramas estructurales.
 
@@ -16,7 +20,7 @@ Para un ingeniero de software, es crucial distinguir la perspectiva estática de
 
 Ambas vistas se complementan. Un caso de uso como "Realizar Pedido" especifica una secuencia de interacciones entre un actor y el sistema. Cuando analizamos esa especificación textual para derivar el diagrama de clases, nos preguntamos: *¿qué objetos necesito para que esta historia sea posible?* Surgirán entonces clases como `Pedido`, `Cliente`, `Producto`, `Dirección`, `Pago`. Cada una de ellas aparecerá como un rectángulo en el diagrama de clases. Los atributos de esas clases (por ejemplo, `fechaPedido`, `total`) provienen de los datos que el caso de uso menciona o manipula. Los métodos (`calcularTotal()`, `confirmar()`) se corresponden con las acciones que el sistema debe ejecutar en los pasos del flujo.
 
-Esta derivación desde el análisis funcional (casos de uso) hacia el modelo estructural (clases) es una de las habilidades más importantes que desarrollarán como ingenieros de software, y la abordaremos en profundidad en el tema 4 de este bloque. Por ahora, quédense con la idea de que el diagrama de clases no se inventa de la nada; debe surgir como respuesta a las necesidades funcionales documentadas en los casos de uso.
+Esta derivación desde el análisis funcional (casos de uso) hacia el modelo estructural (clases) es una de las habilidades más importantes que desarrollarán como ingenieros de software, y la abordaremos en profundidad en el tema 5 de este bloque. Por ahora, quédense con la idea de que el diagrama de clases no se inventa de la nada; debe surgir como respuesta a las necesidades funcionales documentadas en los casos de uso.
 
 ## 1.3. Elementos básicos de un diagrama de clases
 
@@ -56,9 +60,31 @@ Cliente "1" -- "*" Pedido : realiza
 
 En este fragmento, definimos dos clases con sus atributos y métodos, y las vinculamos mediante una asociación con multiplicidad. La herramienta generará automáticamente el diagrama correspondiente. Como la especificación está en texto, cualquier miembro del equipo puede modificarla sin necesidad de instalar software gráfico, y los cambios quedan registrados en el sistema de control de versiones.
 
+> **UML estándar vs. PlantUML:** Es importante distinguir entre la notación UML (el estándar) y la sintaxis de PlantUML (una implementación concreta). En UML estándar, una clase se dibuja como un rectángulo con tres compartimentos y la asociación como una línea simple con etiquetas. En PlantUML *escribimos* `Cliente "1" -- "*" Pedido : realiza` y la herramienta genera automáticamente el rectángulo, los compartimentos y la línea. La sintaxis de PlantUML es una codificación textual del estándar UML, no UML en sí misma. Esto significa que los conceptos que aprendan (multiplicidad, visibilidad, tipos de relación) son transferibles a cualquier otra herramienta UML (Enterprise Architect, Visual Paradigm, etc.).
+
+## 1.6. Niveles de abstracción: análisis vs. diseño
+
+Una distinción fundamental que debe acompañarlos desde el primer día es comprender que un diagrama de clases puede dibujarse en diferentes niveles de abstracción, y que cada nivel tiene un propósito y una audiencia distintos:
+
+- **Diagrama de clases de dominio (análisis):** También llamado modelo conceptual, se centra en las entidades del negocio y sus relaciones, sin ningún detalle técnico. Las clases reflejan conceptos del mundo real (como `Cliente`, `Pedido`, `Producto`) y se omiten tipos de datos precisos, visibilidad, métodos de infraestructura y cualquier referencia a la tecnología de implementación. Es el modelo que se discute con los expertos del negocio para validar la comprensión del dominio. Ejemplo: una clase `Cliente` con un atributo `nombre` (sin tipo) y un método `realizarPedido()` (sin firma exacta).
+
+- **Diagrama de clases de diseño:** Incluye tipos concretos (`String`, `int`, `double`), visibilidad (`+`, `-`, `#`), métodos con parámetros y retornos definidos, y clases técnicas como controladores, repositorios o servicios. Es el modelo que guía a los desarrolladores durante la implementación. Ejemplo: `Cliente` con `- nombre: String` y `+ realizarPedido(productos: List<Producto>): Pedido`.
+
+- **Diagrama de clases de arquitectura:** Muestra solo los paquetes principales y sus dependencias, omitiendo el detalle de las clases individuales. Es útil para discutir la estructura de alto nivel del sistema con arquitectos y stakeholders técnicos.
+
+A lo largo de este bloque trabajaremos principalmente en los niveles de análisis y diseño. Cuando vean un ejemplo sin tipos ni visibilidad, estarán en modo análisis; cuando aparezcan `+`, `-` y tipos concretos, estarán en modo diseño. Elegir el nivel adecuado en cada momento evita sobrecargar prematuramente el modelo y mantiene la comunicación centrada en lo esencial.
+
 Durante los próximos temas, profundizaremos en cada uno de los componentes del diagrama de clases: la riqueza de las relaciones, la semántica de la agregación y la composición, el papel de las interfaces y las clases abstractas, y, muy especialmente, el proceso de derivación desde los casos de uso. Al final de este bloque, serán capaces de leer y escribir diagramas de clases con soltura, y habrán incorporado a su caja de herramientas una técnica esencial para el diseño de software robusto y bien comunicado.
 
+### Actividades propuestas — Tema 1
+
+1. **Identificar clases:** Lea la siguiente descripción: "En una biblioteca, los socios pueden tomar prestados libros. Cada libro tiene un título, autor y número de ejemplares. Un socio puede tener hasta 5 libros prestados simultáneamente." Identifique las clases candidatas, sus posibles atributos y las relaciones entre ellas. ¿Esto es análisis o diseño? Justifique.
+2. **UML vs. PlantUML:** Tome el ejemplo mínimo de la sección 1.5 y modifique el nombre de la asociación, la multiplicidad y añada una tercera clase. Dibuje el diagrama resultante en su cabeza primero (notación UML estándar) y luego escríbalo en PlantUML para verificar.
+3. **Nivel de abstracción:** Para el caso de "Restaurante — Comanda — Plato", dibuje dos versiones: una de dominio (solo nombres de clases y relaciones) y otra de diseño (con atributos, tipos y visibilidad).
+
 # 2. Clases, atributos y métodos: los bloques de construcción del modelo estructural
+
+A lo largo de los años he visto a muchos estudiantes y desarrolladores novatos lanzarse a dibujar diagramas de clases sin tener claros los fundamentos. Se centran en las relaciones —que es lo más vistoso— y descuidan lo esencial: definir correctamente qué es cada clase, qué datos guarda y qué sabe hacer. Es como construir una casa sin tener claros los ladrillos. En este tema vamos a cimentar bien esos fundamentos.
 
 Si el diagrama de clases es el plano del sistema, las clases son sus ladrillos, y los atributos y métodos, las vetas y la argamasa que les dan consistencia y propósito. Cada clase encapsula un concepto del dominio —una entidad, un rol, un proceso— y lo dota de estado (atributos) y comportamiento (métodos). Dominar su notación y su semántica es el primer paso para construir modelos estructurales que sean fieles a la realidad del negocio y útiles para quienes deben implementarlos.
 
@@ -116,6 +142,19 @@ class Producto {
 
 Aquí `codigo` es privado, de tipo `String`, obligatorio y de solo lectura. `precio` es un `double` con valor por defecto 0.0. `etiquetas` es una lista ordenada de cadenas. La guía de PlantUML permite omitir cualquier parte que no sea relevante en el nivel de abstracción en que estemos modelando; en fases tempranas de diseño, podemos mostrar solo los nombres de los atributos sin preocuparnos aún por los tipos.
 
+Además de `{ordered}`, `{unique}` y `{readOnly}`, UML permite otras restricciones en atributos y asociaciones que enriquecen la semántica del modelo:
+
+| Restricción | Significado | Ejemplo en atributo | Ejemplo en asociación |
+|-------------|-------------|---------------------|----------------------|
+| `{ordered}` | Los elementos mantienen un orden específico | `- etiquetas: String [*] {ordered}` | `0..* {ordered}` en el extremo de una asociación |
+| `{unique}` | No se permiten elementos duplicados | `- codigosUnicos: String [*] {unique}` | `* {unique}` en una colección de elementos |
+| `{readOnly}` | El valor no puede modificarse tras la creación | `- fechaCreacion: Date {readOnly}` | No aplica |
+| `{bag}` | Colección que permite duplicados pero sin orden | `- elementos: String [*] {bag}` | Asociación con semántica de bolsa |
+| `{sequence}` | Colección ordenada que permite duplicados | `- pasos: String [*] {sequence}` | `0..* {sequence}` en listas con repetición |
+| `{subset}` | Un conjunto es subconjunto de otro | No aplica directamente | `{subset=propietarios}` sobre `usuarios` |
+
+Estas restricciones no son meros adornos: tienen impacto directo en la implementación. `{ordered}` sugiere una `List` en Java o un array ordenado; `{unique}` sugiere un `Set`; `{readOnly}` se traduce en un campo `final` o `const`. Incluirlas en el modelo convierte el diagrama en un contrato más preciso para los desarrolladores.
+
 ## 2.3. Métodos: el comportamiento que transforma
 
 Los métodos especifican lo que una clase sabe *hacer*. Pueden verse como las operaciones que el sistema ejecuta cuando un actor dispara un caso de uso, pero a diferencia de los pasos de un flujo de interacción, aquí se definen de manera abstracta, sin detallar el algoritmo interno. Solo importa su firma: nombre, parámetros, tipo de retorno y visibilidad.
@@ -134,6 +173,8 @@ class CalculadoraImpuestos {
 Observen cómo `calcular` es público y devuelve un `double`, mientras que `validarCodigoPostal` es privado (quizás solo se usa internamente) y devuelve un booleano. La distinción entre métodos públicos y privados es esencial para encapsular la lógica interna y exponer solo lo que otras clases necesitan conocer.
 
 ## 2.4. Visibilidad: controlando el acceso a los miembros
+
+Uno de los errores que más he corregido en revisiones de diseño es el abuso de la visibilidad pública. Durante años, muchos desarrolladores novatos hacen públicos todos los atributos por pereza, rompiendo el encapsulamiento. En el mundo real, la visibilidad no es un adorno: es una decisión de diseño que afecta directamente a la mantenibilidad del sistema.
 
 UML define cuatro niveles de visibilidad para atributos y métodos, y PlantUML los representa con los siguientes caracteres:
 
@@ -191,9 +232,39 @@ Los datos que se mencionan en el flujo —"nombre del cliente", "precio del prod
 
 Esta conexión asegura que el modelo de clases no sea una invención arbitraria, sino un reflejo fiel de lo que el sistema necesita hacer. Y puesto que tanto los casos de uso como el diagrama de clases se escriben en PlantUML, ambos artefactos pueden versionarse conjuntamente y mantenerse sincronizados sin fricción.
 
+## 2.8. Los cuatro pilares de la programación orientada a objetos
+
+El diagrama de clases es la expresión visual de los principios fundamentales de la programación orientada a objetos (POO). Comprender estos principios es esencial para modelar correctamente, porque cada elemento del diagrama —clase, atributo, método, relación— es una manifestación de uno o más de estos pilares:
+
+### 2.8.1. Abstracción
+
+La abstracción consiste en capturar las características esenciales de un concepto del mundo real, ignorando los detalles irrelevantes para el propósito del sistema. En el diagrama de clases, cada clase es una abstracción: `Cliente` no modela todos los aspectos de una persona real, solo aquellos que interesan al sistema (nombre, email, pedidos). Los atributos y métodos representan el estado y comportamiento relevantes, omitiendo todo lo demás.
+
+### 2.8.2. Encapsulamiento
+
+El encapsulamiento agrupa datos (atributos) y operaciones (métodos) dentro de una clase, y controla el acceso a ellos mediante la visibilidad. Los atributos privados (`-`) solo son accesibles desde la propia clase, protegiendo la integridad del estado interno. Los métodos públicos (`+`) definen la interfaz mediante la cual otras clases interactúan con ella. En el diagrama de clases, la visibilidad (`+`, `-`, `#`, `~`) es la representación directa de este pilar.
+
+### 2.8.3. Herencia
+
+La herencia permite que una clase (subclase) reutilice y extienda la estructura y el comportamiento de otra (superclase). En el diagrama de clases, se representa con la relación `<|--` (o la palabra `extends` en PlantUML). La herencia modela relaciones "es-un": `Coche` es un `Vehiculo`, `Factura` es un `DocumentoPago`. Promueve la reutilización de código y facilita la organización jerárquica de los conceptos.
+
+### 2.8.4. Polimorfismo
+
+El polimorfismo permite que objetos de diferentes clases respondan al mismo mensaje de maneras específicas para cada clase. En el diagrama de clases, se manifiesta a través de las interfaces y las clases abstractas: una interfaz `IPagable` declara el método `calcularImporte()`, y cada clase que la realiza (`Factura`, `Recibo`, `NotaCredito`) proporciona su propia implementación. El código cliente puede tratar objetos de todas estas clases de manera uniforme a través de la interfaz.
+
+Estos cuatro pilares no son conceptos teóricos aislados; se reflejan directamente en la notación que están aprendiendo. Cuando dibujan una clase con atributos privados y métodos públicos, están aplicando encapsulamiento. Cuando usan herencia o realización de interfaces, están aplicando herencia y polimorfismo. Cuando deciden qué incluir y qué omitir en una clase, están aplicando abstracción. El diagrama de clases es, en este sentido, el plano arquitectónico de la POO.
+
 Con este dominio de las clases, sus atributos y métodos, estamos listos para abordar el tejido que une unas clases con otras: las relaciones estructurales, que son el tema al que dedicaremos la siguiente sección.
 
+### Actividades propuestas — Tema 2
+
+1. **Modelar una clase:** Dado el concepto "Factura" con los datos: número, fecha, cliente, base imponible, IVA, total, y las operaciones: calcular total, emitir, anular. Modele la clase en PlantUML con visibilidad, tipos y al menos un miembro estático (p. ej., un contador de facturas).
+2. **Identificar miembros:** Para la clase `CuentaBancaria`, determine qué atributos y métodos debería tener. ¿Cuáles deben ser públicos? ¿Cuáles privados? ¿Tiene algún miembro estático? Modele su respuesta en PlantUML.
+3. **4 pilares de POO:** Explique con sus propias palabras cómo se reflejan la abstracción, el encapsulamiento, la herencia y el polimorfismo en la siguiente clase PlantUML: `class Vehiculo { - velocidad: int; + acelerar(): void }` y `class Coche extends Vehiculo { + abrirMaletero(): void }`.
+
 # 3. Relaciones entre clases: el tejido estructural del sistema
+
+He dedicado buena parte de mi carrera a revisar diagramas de clases de equipos de desarrollo, y si hay una lección que he aprendido es esta: la mayoría de los errores de diseño no están en las clases, sino en las relaciones que se establecen entre ellas. Una relación mal elegida puede generar acoplamientos indebidos, problemas de persistencia y un mantenimiento costoso. Por eso dedico un tema entero a este asunto.
 
 Si las clases son los nodos de nuestra red conceptual, las relaciones son los hilos que las unen y les dan sentido colectivo. Una clase aislada no basta; lo que convierte un conjunto de clases en un modelo de software es precisamente la manera en que se vinculan entre sí. UML define varios tipos de relaciones, cada una con una semántica precisa que va mucho más allá de "hay una línea entre A y B". Como ingenieros, debemos elegir la relación correcta para cada vínculo del dominio, porque esa decisión condiciona cómo se generará el código, cómo se gestionará la persistencia y cómo evolucionará el sistema ante cambios futuros.
 
@@ -216,6 +287,39 @@ Cliente "1" -- "*" Pedido : realiza
 ???
 
 En este ejemplo, la multiplicidad `1` junto a `Cliente` indica que un pedido está asociado exactamente a un cliente. La multiplicidad `*` junto a `Pedido` significa que un cliente puede estar asociado a cero o más pedidos. La etiqueta `realiza` es opcional y aclara la naturaleza de la asociación. La guía de PlantUML (página 59) muestra que también podemos invertir la dirección de lectura añadiendo `>` o `<` a la etiqueta, lo que ayuda a entender quién actúa sobre quién.
+
+Además de la multiplicidad y la etiqueta, las asociaciones pueden llevar **roles** en los extremos. Un rol es un nombre que describe cómo participa una clase en la asociación desde la perspectiva de la otra. Por ejemplo, en la asociación entre `Cliente` y `Pedido`, el rol del cliente podría ser "comprador" y el del pedido "pedidos realizados". Los roles mejoran la legibilidad del modelo y aclaran la semántica de la relación, especialmente en asociaciones complejas o cuando una clase se asocia consigo misma (asociación reflexiva).
+
+En PlantUML, los roles se colocan entre comillas junto a la multiplicidad, antes del nombre de la clase:
+
+???
+@startuml
+class Cliente
+class Pedido
+Cliente "1" -- "realizador" "*" Pedido : realiza
+@enduml
+???
+
+Aquí, el rol "realizador" en el extremo de `Cliente` indica que un pedido es realizado por un cliente con ese rol. También podríamos poner un rol en el extremo de `Pedido`:
+
+???
+@startuml
+class Cliente
+class Pedido
+Cliente "cliente" "1" -- "realizador" "*" Pedido : realiza
+@enduml
+???
+
+Los roles son especialmente útiles cuando una clase se relaciona consigo misma (asociación reflexiva). Por ejemplo, un empleado que tiene un supervisor que también es empleado:
+
+???
+@startuml
+class Empleado
+Empleado "supervisor" "0..1" -- "subordinados" "*" Empleado : supervisa
+@enduml
+???
+
+Incluir roles en el modelo no solo mejora la comunicación, sino que también sirve como documentación de diseño: el nombre del rol puede convertirse en el nombre del atributo de referencia en el código generado.
 
 La asociación no implica dependencia de existencia: un pedido puede existir sin un cliente asociado (si la multiplicidad fuese `0..1`), y un cliente puede existir sin pedidos. Esta independencia es lo que diferencia la asociación simple de la agregación y la composición, como veremos a continuación.
 
@@ -332,6 +436,28 @@ ControladorPedido ..> ServicioEmail : usa
 
 En este ejemplo, `ControladorPedido` usa `ServicioEmail` probablemente dentro del método `confirmar`, pero no mantiene una referencia permanente a él; puede crearlo, llamarlo y descartarlo. La dependencia se satisface a nivel de método, no a nivel de instancia. La guía de PlantUML (página 58) recoge esta notación y la distingue claramente de la asociación.
 
+Para reforzar la diferencia entre dependencia y asociación, veamos un contraste directo:
+
+???
+@startuml
+class ControladorPedido {
+  + confirmar(p: Pedido): void
+}
+class ValidadorStock {
+  + validar(p: Pedido): boolean
+}
+class RepositorioPedido {
+  + guardar(p: Pedido): void
+}
+ControladorPedido ..> ValidadorStock : usa (dependencia)
+ControladorPedido --> RepositorioPedido : consulta (asociación)
+@enduml
+???
+
+`ControladorPedido` tiene una **dependencia** con `ValidadorStock` porque lo utiliza solo dentro del método `confirmar()` —posiblemente lo instancia o lo recibe como parámetro, lo llama y lo descarta. No guarda ninguna referencia a él como atributo. En cambio, `ControladorPedido` tiene una **asociación** con `RepositorioPedido`: mantiene una referencia permanente (un atributo) para poder invocar `guardar()` cada vez que necesita persistir un pedido. Si el controlador dejara de existir, el repositorio sigue existiendo; si el repositorio cambiara, habría que modificar el controlador. La asociación es un vínculo estructural; la dependencia es un vínculo de uso puntual.
+
+En la práctica, una pista para distinguirlos: pregúntense si la clase A tiene un **atributo** del tipo B. Si la respuesta es sí, es asociación. Si solo aparece como variable local, parámetro o retorno, es dependencia.
+
 ## 3.6. Multiplicidad y navegabilidad: afinando las conexiones
 
 Tanto las asociaciones como las agregaciones y composiciones pueden —y deben— precisarse con multiplicidad en cada extremo. La multiplicidad indica cuántas instancias de una clase se relacionan con cuántas de la otra. Los valores posibles incluyen números concretos (`1`, `2`), rangos (`0..1`, `3..5`), el asterisco (`*` significa cero o muchos) y combinaciones (`1..*`).
@@ -352,6 +478,8 @@ La flecha a la derecha de la línea indica que `Cliente` puede navegar hacia `Hi
 
 ## 3.7. Cómo elegir la relación correcta: una guía práctica
 
+Esta es, probablemente, la pregunta que más me han hecho en formaciones a equipos de desarrollo: "¿Cómo sé qué relación usar?" No se preocupen si al principio dudan; es completamente normal. Con la práctica, la elección se vuelve casi instintiva. Yo mismo sigo usando esta pequeña guía cuando tengo dudas:
+
 Frente a un caso de uso concreto, la elección de la relación adecuada surge de preguntarse:
 
 - ¿A necesita una referencia permanente a B? → **Asociación**.
@@ -363,21 +491,227 @@ Frente a un caso de uso concreto, la elección de la relación adecuada surge de
 
 No hay una respuesta única, pero sí hay malas decisiones que generan acoplamientos indeseados o modelos que no reflejan la realidad del negocio. Debatir estas relaciones en equipo, con el diagrama de clases en la pizarra o en el editor de PlantUML, es una de las actividades más productivas que pueden tener como ingenieros de software.
 
-## 3.8. Versatilidad de la notación PlantUML para todas las relaciones
+## 3.8. Tabla resumen de relaciones UML y su correspondencia en PlantUML
+
+A modo de guía visual rápida, la siguiente tabla resume cada tipo de relación, su símbolo UML, la sintaxis PlantUML y cuándo aplicarla:
+
+| Relación | Símbolo UML | Sintaxis PlantUML | Cuándo usarla |
+|----------|-------------|-------------------|---------------|
+| Asociación | Línea continua | `A -- B` | Vínculo estructural permanente entre clases independientes |
+| Asociación con navegabilidad | Flecha abierta | `A --> B` | Asociación recorrible solo en un sentido |
+| Agregación | Rombo blanco | `A o-- B` | Relación todo-parte donde la parte sobrevive sin el todo |
+| Composición | Rombo negro | `A *-- B` | Relación todo-parte donde la parte no existe sin el todo |
+| Herencia (generalización) | Triángulo hueco | `A <|-- B` o `A extends B` | Relación "es-un" entre una clase y su superclase |
+| Realización (interfaz) | Triángulo hueco punteado | `A <|.. B` o `A implements B` | Una clase cumple el contrato de una interfaz |
+| Dependencia | Flecha punteada | `A ..> B` | Uso temporal o puntual, sin referencia permanente |
+
+Además de esta tabla, la siguiente matriz de decisión les ayudará a elegir la relación correcta durante el modelado:
+
+```
+¿A necesita una referencia permanente a B?
+├── Sí → ¿Es una relación todo-parte?
+│   ├── Sí → ¿La parte sobrevive sin el todo?
+│   │   ├── Sí → AGREGACIÓN (o--)
+│   │   └── No → COMPOSICIÓN (*--)
+│   └── No → ASOCIACIÓN (--)
+└── No → ¿A es un tipo de B?
+    ├── Sí → HERENCIA (<|--)
+    └── No → ¿A usa a B solo temporalmente?
+        ├── Sí → DEPENDENCIA (..>)
+        └── No → ¿A implementa un contrato de B?
+            └── Sí → REALIZACIÓN (<|..)
+```
+
+## 3.9. Versatilidad de la notación PlantUML para todas las relaciones
 
 La guía de referencia (páginas 58-60 y secciones posteriores) documenta la sintaxis completa para cada tipo de relación. Además, PlantUML permite personalizar el estilo de las líneas con colores, grosores y patrones (punteado, discontinuo, etc.) usando las notaciones con corchetes `[#color,thickness=n]` o los estereotipos de línea `[bold]`, `[dashed]`, `[dotted]`, `[hidden]` y `[plain]`. Esto puede ser muy útil para diferenciar visualmente la criticidad de ciertas asociaciones o para diagramas orientados a la presentación ejecutiva.
 
-Con este conocimiento de las relaciones estructurales, estamos en condiciones de abordar el verdadero desafío: cómo extraer este modelo de clases a partir de los casos de uso. Ese será precisamente el tema central de la siguiente sección.
+También es posible controlar la **dirección de las flechas** en PlantUML para mejorar la legibilidad del diagrama. Por defecto, PlantUML usa el motor Graphviz para disponer las clases automáticamente, pero podemos sugerir direcciones con sufijos como `-down->`, `-up->`, `-left->` y `-right->`. Por ejemplo, `Cliente -down-> Pedido` dibuja la asociación orientada hacia abajo. Esto resulta especialmente útil en diagramas grandes donde las líneas se cruzan, o cuando queremos que el flujo de lectura siga una dirección concreta (por ejemplo, de arriba abajo para capas arquitectónicas).
 
-# 4. Del caso de uso al diagrama de clases: identificando clases a partir del análisis funcional
+Con este conocimiento de las relaciones estructurales, tenemos ya los mimbres para construir modelos de clases sólidos. Antes de lanzarnos a derivar clases desde los casos de uso, necesitamos aprender a afinar las conexiones entre clases con multiplicidades y navegabilidades. Ese será el foco del próximo tema; la derivación práctica llegará inmediatamente después.
 
-Hemos consolidado ya los dos pilares del modelado UML: sabemos capturar las funcionalidades del sistema mediante casos de uso y conocemos la sintaxis y la semántica de los diagramas de clases. Ahora ha llegado el momento de tender el puente entre ambas vistas. Este es, desde mi experiencia como director de proyecto, el proceso intelectual más determinante en la fase de análisis y diseño: **derivar el modelo estructural del sistema a partir de las necesidades funcionales expresadas en los casos de uso**.
+### Actividades propuestas — Tema 3
 
-Si se realiza correctamente, el diagrama de clases resultante no será un invento arbitrario del arquitecto de software, sino un reflejo fiel de lo que los actores esperan que el sistema haga. Cada clase tendrá una razón de ser vinculada a una historia de usuario; cada atributo estará justificado por un dato que fluye en algún caso de uso; cada método responderá a una acción que el sistema debe ejecutar; cada relación entre clases será la materialización de una colaboración necesaria entre objetos para cumplir un objetivo del actor.
+1. **Identificar relaciones:** Dado el siguiente dominio: "Un hospital tiene múltiples departamentos. Cada departamento tiene varios médicos. Un médico puede atender a varios pacientes. Cada paciente tiene un historial médico que contiene varias entradas." Identifique qué tipo de relación corresponde a cada vínculo y escríbalo en PlantUML.
+2. **Tabla resumen:** Sin mirar el documento, dibuje la tabla de relaciones UML (símbolo, nombre y cuándo usarla) y compárela con la sección 3.8.
+3. **Roles y multiplicidad:** Modele la relación entre `Persona` y la clase `Persona` (autorreferencial) donde una persona puede ser mentor de otra. Use roles y multiplicidad.
+4. **Dependencia vs. asociación:** Escriba un ejemplo PlantUML donde una clase `Informe` tenga una asociación con `BaseDatos` y una dependencia con `Impresora`. Explique la diferencia en un comentario (`'`) en el código.
+
+# 4. Multiplicidad y navegabilidad: afinando las conexiones entre clases
+
+Recuerdo una anécdota de mis primeros años como consultor: un equipo había diseñado un sistema de gestión de pedidos con un diagrama de clases impecable a primera vista. Cuando pregunté "¿cuántos pedidos puede tener un cliente?", me miraron con dudas. No lo habían especificado. El desarrollador asumió que solo uno, el analista de negocio asumió que muchos. El resultado fue un retraso de tres semanas para rehacer media base de datos. Desde entonces, tengo una regla que nunca rompo: toda asociación debe llevar multiplicidad en ambos extremos, o no está terminada.
+
+Hemos construido el esqueleto de nuestro modelo estructural: tenemos clases, atributos, métodos y sabemos cómo relacionarlas mediante asociaciones, agregaciones, composiciones, herencias y dependencias. Pero ese esqueleto aún es tosco. Decir que un `Cliente` está asociado con un `Pedido` es un avance, pero no responde a preguntas cruciales para el desarrollador: ¿un cliente puede tener muchos pedidos o solo uno? ¿un pedido pertenece obligatoriamente a un cliente? ¿desde un pedido puedo obtener directamente el cliente que lo realizó, o solo desde el cliente puedo llegar a sus pedidos? La **multiplicidad** y la **navegabilidad** son las herramientas que UML nos proporciona para refinar esas conexiones hasta convertirlas en instrucciones precisas de diseño.
+
+En este tema desgranaremos ambos conceptos con la profundidad que merecen, veremos cómo expresarlos en PlantUML y cómo derivarlos del análisis funcional de los casos de uso. Una vez que dominen la multiplicidad y la navegabilidad, sus diagramas de clases dejarán de ser meros bocetos y se transformarán en auténticos planos de implementación.
+
+## 4.1. Multiplicidad: cuántos objetos participan en la relación
+
+La multiplicidad (también llamada cardinalidad) especifica el número de instancias de una clase que pueden estar vinculadas a una instancia de la otra clase en una asociación determinada. Se indica en cada extremo de la línea de asociación, junto a la clase correspondiente, y se lee en dirección contraria a la clase: si junto a `Pedido` aparece `1`, significa que un `Pedido` está asociado exactamente a un `Cliente`.
+
+Los valores de multiplicidad que permite UML son:
+
+- `1` : exactamente uno.
+- `0..1` : cero o uno (opcional).
+- `0..*` o simplemente `*` : cero o muchos.
+- `1..*` : al menos uno, puede ser muchos.
+- `n` : un número fijo (por ejemplo, `2` para los dos titulares de una cuenta mancomunada).
+- `n..m` : un rango concreto (por ejemplo, `3..5`).
+
+PlantUML acepta estas notaciones directamente, colocándolas entre comillas en el extremo correspondiente de la relación, como vimos en el tema anterior. Veamos algunos ejemplos aplicados a nuestro dominio de comercio electrónico.
+
+???
+@startuml
+class Cliente
+class Pedido
+class Producto
+class LineaPedido
+class DireccionEnvio
+
+Cliente "1" -- "0..*" Pedido : realiza
+Pedido "1" *-- "1..*" LineaPedido : contiene
+LineaPedido "1" -- "1" Producto : referencia
+Cliente "1" -- "0..1" DireccionEnvio : tiene
+@enduml
+???
+
+Interpretemos cada multiplicidad:
+
+- `Cliente "1" -- "0..*" Pedido` : un pedido pertenece exactamente a un cliente; un cliente puede tener cero o más pedidos. La multiplicidad `0..*` junto a `Pedido` significa que un cliente recién registrado no tiene aún pedidos, y puede acumular muchos.
+- `Pedido "1" *-- "1..*" LineaPedido` : una línea de pedido pertenece exactamente a un pedido (composición); un pedido debe tener al menos una línea (porque un pedido vacío no tiene sentido) y puede tener muchas.
+- `LineaPedido "1" -- "1" Producto` : una línea de pedido referencia exactamente un producto; un producto puede ser referenciado por muchas líneas de pedido (multiplicidad `*` en el otro extremo se omite por claridad, pero implícitamente es `*` si no se indica).
+- `Cliente "1" -- "0..1" DireccionEnvio` : un cliente puede tener una dirección de envío por defecto, o ninguna (si aún no la ha proporcionado). La dirección pertenece a un cliente en concreto.
+
+La multiplicidad no es un adorno: define restricciones que el sistema debe hacer cumplir. Si indicamos que un `Pedido` debe tener al menos una `LineaPedido`, el código deberá impedir la creación de pedidos vacíos. Si un `Cliente` puede tener como máximo una `DireccionEnvio`, la interfaz no debería permitir añadir una segunda sin antes eliminar la primera.
+
+## 4.2. Cómo derivar la multiplicidad desde los casos de uso
+
+Los casos de uso nos dan pistas valiosas sobre las multiplicidades. Frases como "el cliente puede consultar todos sus pedidos" sugieren que un cliente puede tener múltiples pedidos (multiplicidad `0..*`). "Cada pedido incluye al menos un producto" sugiere `1..*` en el extremo de `LineaPedido`. "Un cliente puede guardar una dirección de envío preferida" apunta a `0..1`.
+
+Las postcondiciones también ayudan. Si al finalizar "Realizar Pedido" se indica que "el pedido queda registrado con un cliente asociado", confirmamos que la asociación `Cliente-Pedido` tiene multiplicidad `1` en el extremo del cliente.
+
+No existe un algoritmo infalible, pero la combinación de sentido común, conocimiento del dominio y discusión en equipo permite establecer multiplicidades realistas. Y como todo en PlantUML, si más adelante se descubre que una multiplicidad era incorrecta, se modifica en el archivo `.puml` y el diagrama se actualiza al instante.
+
+## 4.3. Navegabilidad: la dirección del conocimiento
+
+La navegabilidad es uno de esos conceptos que parecen sencillos sobre el papel, pero que en la práctica generan discusiones muy interesantes en el equipo. La regla que siempre recomiendo es: por defecto, asuman navegabilidad en ambos sentidos y luego pregunten "¿realmente necesitamos esta referencia inversa?". Si la respuesta es no, conviértanla en unidireccional. Así evitan acoplamientos innecesarios sin perder flexibilidad.
+
+Si la multiplicidad responde a "¿cuántos?", la navegabilidad responde a "¿quién conoce a quién?". En una asociación entre dos clases, podemos decidir que el vínculo sea recorrible en un solo sentido, en ambos, o en ninguno (asociación no navegable, rara en la práctica). La navegabilidad se representa con una punta de flecha en el extremo de la línea, apuntando hacia la clase que "es conocida".
+
+En PlantUML, la navegabilidad se indica añadiendo `>` o `<` en la definición de la línea. Así, `ClaseA --> ClaseB` dibuja una flecha desde A hacia B, significando que desde A se puede acceder a B, pero no necesariamente al revés. Si se desea navegabilidad bidireccional, se omite la punta de flecha (solo `--`).
+
+Veamos un ejemplo:
+
+???
+@startuml
+class Pedido
+class Cliente
+class LineaPedido
+class Producto
+
+Pedido "1" --> "1" Cliente : pertenece a
+Pedido "1" *--> "1..*" LineaPedido : contiene
+LineaPedido "1" --> "1" Producto : referencia
+@enduml
+???
+
+En este modelo, desde un `Pedido` puedo navegar hacia su `Cliente` (la flecha apunta a `Cliente`), pero no al revés: un `Cliente` no tiene una referencia directa a sus pedidos; si necesito obtener los pedidos de un cliente, tendré que buscarlos mediante una consulta. Esto es una decisión de diseño: desacoplamos `Cliente` de `Pedido` para que `Cliente` no acumule una colección potencialmente enorme.
+
+Desde `Pedido` navego hacia `LineaPedido` (composición con navegabilidad unidireccional), y desde `LineaPedido` hacia `Producto`. De nuevo, un `Producto` no conoce todas las líneas de pedido que lo referencian; esa información se obtiene por otra vía si es necesario.
+
+Si quisiéramos navegabilidad bidireccional entre `Pedido` y `Cliente`, omitiríamos la flecha:
+
+???
+@startuml
+class Pedido
+class Cliente
+Pedido "1" -- "1" Cliente : pertenece a
+@enduml
+???
+
+Esto implica que tanto `Pedido` conoce a su `Cliente` como `Cliente` conoce sus `Pedido`s. Ambas clases tendrán referencias mutuas en el código.
+
+## 4.4. Derivación de la navegabilidad desde los casos de uso
+
+El caso de uso nos permite responder a la pregunta: en un paso dado, ¿qué objeto necesita acceder a cuál? En "Realizar Pedido", cuando el sistema debe "mostrar el historial de pedidos de un cliente", necesitamos navegar desde `Cliente` a `Pedido`; eso sugiere navegabilidad de `Cliente` hacia `Pedido`. Pero si más adelante otro caso de uso requiere que, dado un pedido, se localice al cliente para enviarle una notificación, entonces necesitamos navegabilidad inversa. La decisión puede ser bidireccional para simplificar, o unidireccional si queremos minimizar acoplamiento.
+
+En la práctica, muchos diseñadores optan por navegabilidad bidireccional en las asociaciones del dominio (por ejemplo, entre `Pedido` y `LineaPedido`, o entre `Cliente` y `Pedido`) porque la navegación suele ser necesaria en ambos sentidos. La navegabilidad unidireccional es más común en dependencias hacia servicios técnicos o en relaciones de uso puntual, donde el objeto usado no necesita conocer a quien lo usa.
+
+## 4.5. Combinando multiplicidad y navegabilidad
+
+Ambos conceptos se combinan en la misma notación. La multiplicidad se coloca junto al extremo de la clase, la navegabilidad se deduce de la punta de flecha. Un extremo puede tener flecha o no, y llevar una multiplicidad. PlantUML permite expresar todo junto con claridad:
+
+???
+@startuml
+class Departamento
+class Empleado
+Departamento "1" o--> "5..*" Empleado : agrega
+@enduml
+???
+
+Aquí, un `Departamento` agrega de cinco a muchos `Empleado`s (agregación), y desde `Departamento` se puede navegar hacia sus empleados (flecha), pero no al revés. Un empleado no conoce directamente su departamento (quizás se obtiene mediante un repositorio).
+
+Otro ejemplo con navegabilidad bidireccional:
+
+???
+@startuml
+class CuentaBancaria
+class Titular
+CuentaBancaria "1" -- "1..2" Titular : pertenece
+@enduml
+???
+
+Una cuenta bancaria puede tener uno o dos titulares, y la asociación es navegable en ambos sentidos: desde la cuenta puedo acceder a los titulares, y desde un titular puedo acceder a sus cuentas.
+
+## 4.6. Buenas prácticas en multiplicidad y navegabilidad
+
+- **No sobrecargar de flechas**: si todas las asociaciones son bidireccionales, el diagrama puede volverse confuso. Reserven las flechas para indicar restricciones de diseño conscientes.
+- **La multiplicidad debe reflejar las reglas de negocio**: antes de escribir `0..*` o `1..*`, pregúntense qué permite el negocio. Un pedido sin líneas quizás sea válido como borrador; entonces `0..*` en `Pedido-LineaPedido` sería correcto. Si no, debe ser `1..*`.
+- **Revisar las multiplicidades con los stakeholders**: un analista de negocio puede confirmar si realmente un cliente puede tener un número ilimitado de pedidos o si hay un límite.
+- **Documentar las decisiones**: si optan por navegabilidad unidireccional para reducir acoplamiento, anótenlo en una nota en el diagrama o en la documentación de diseño. Otros desarrolladores lo agradecerán.
+- **Actualizar el modelo con cada nuevo caso de uso**: un nuevo caso de uso puede requerir navegabilidad inversa o modificar una multiplicidad. El diagrama de clases debe evolucionar con el proyecto.
+
+## 4.7. Representación en PlantUML: detalles avanzados
+
+La guía de PlantUML ofrece variantes para personalizar la visualización de las relaciones (páginas 83-86), incluyendo líneas de estilo `[bold]`, `[dashed]`, `[dotted]`, colores y grosores. Esto puede usarse para resaltar asociaciones con multiplicidades restrictivas o navegabilidades importantes. Por ejemplo:
+
+???
+@startuml
+class Pedido
+class Cliente
+Pedido "1" -[bold]-> "1" Cliente : pertenece
+@enduml
+???
+
+Aunque no es necesario para la comprensión del modelo, en presentaciones ejecutivas puede ayudar a dirigir la atención hacia las relaciones críticas.
+
+## 4.8. Más allá del diagrama: impacto en la implementación
+
+La multiplicidad y la navegabilidad tienen consecuencias directas en el código. Si entre `Pedido` y `LineaPedido` definimos composición con multiplicidad `1..*` y navegabilidad unidireccional desde `Pedido`, el código resultante tendrá en `Pedido` una colección de `LineaPedido` que se inicializa en el constructor, y posiblemente métodos `agregarLinea` y `eliminarLinea`. No existirá una referencia inversa desde `LineaPedido` a `Pedido`. Si más adelante se necesita, se puede añadir sin romper el modelo, pero es más costoso.
+
+Por eso es importante tomar estas decisiones con criterio durante el diseño. PlantUML, al ser código, nos permite simular estos escenarios antes de implementarlos: si vemos que un diagrama resulta incómodo porque hay que añadir muchas flechas bidireccionales, quizás sea una señal de que el diseño está demasiado acoplado y conviene repensarlo.
+
+Con esto completamos el afinamiento de las conexiones entre clases. Ahora que sabemos cómo se relacionan las clases y con qué precisión (multiplicidades, navegabilidades, roles), estamos listos para el verdadero desafío: extraer todo este modelo directamente de los casos de uso. Eso es lo que abordaremos en el próximo tema.
+
+### Actividades propuestas — Tema 4
+
+1. **Determinar multiplicidades:** Para la relación entre `Avión` y `Vuelo`, determine las multiplicidades sabiendo que: un avión puede tener muchos vuelos a lo largo de su vida, pero cada vuelo usa exactamente un avión. Un vuelo puede tener varios pilotos asignados, y un piloto puede volar en muchos vuelos. Modele en PlantUML.
+2. **Navegabilidad:** Dado el modelo `Escuela "1" --> "*" Estudiante : matricula` y `Estudiante "1" --> "*" Curso : inscrito`, ¿qué navegabilidades elegiría y por qué? ¿Cambiaría alguna a bidireccional? Justifique su respuesta.
+3. **Caso práctico:** Modele en PlantUML la relación entre `Proyecto`, `Tarea` y `Empleado` considerando: un proyecto tiene muchas tareas, una tarea es asignada a un empleado, un empleado puede estar en varios proyectos. Decida multiplicidades, navegabilidad y tipo de relación.
+
+# 5. Del caso de uso al diagrama de clases: identificando clases a partir del análisis funcional
+
+De todas las habilidades que he tenido que enseñar a lo largo de mi carrera —y he enseñado a cientos de ingenieros—, esta es, sin duda, la que marca la diferencia entre un analista mediocre y uno excelente. Cualquiera puede dibujar un diagrama de clases bonito. Pero saber *de dónde vienen* cada clase, cada atributo y cada relación, y poder justificarlos ante un cliente o un desarrollador, eso es lo que convierte a un ingeniero en un profesional completo.
+
+Hemos consolidado ya los pilares del modelado: sabemos capturar las funcionalidades del sistema mediante casos de uso y conocemos la sintaxis y la semántica de los diagramas de clases, incluyendo las multiplicidades y navegabilidades que acabamos de estudiar. Ahora ha llegado el momento de tender el puente entre ambas vistas. Este es, desde mi experiencia, el proceso intelectual más determinante en la fase de análisis y diseño: **derivar el modelo estructural del sistema a partir de las necesidades funcionales expresadas en los casos de uso**.
+
+Si se realiza correctamente, el diagrama de clases resultante no será un invento arbitrario, sino un reflejo fiel de lo que los actores esperan que el sistema haga. Cada clase tendrá una razón de ser vinculada a una historia de usuario; cada atributo estará justificado por un dato que fluye en algún caso de uso; cada método responderá a una acción que el sistema debe ejecutar; cada relación entre clases será la materialización de una colaboración necesaria entre objetos para cumplir un objetivo del actor.
 
 En este tema, recorreremos un método sistemático para extraer clases, atributos, métodos y relaciones a partir de la especificación textual de los casos de uso. Utilizaremos como base la especificación de "Realizar Pedido" que ya conocemos y mostraremos, paso a paso, cómo se transforma en un modelo de clases expresado en PlantUML.
 
-## 4.1. La esencia del método: escuchar al caso de uso
+## 5.1. La esencia del método: escuchar al caso de uso
+
+Cuando enseño esta técnica, siempre pongo la misma analogía: leer un caso de uso para extraer clases es como leer una novela policíaca para encontrar pistas. El autor no te dice directamente quién es el culpable; tienes que leer entre líneas, identificar los personajes recurrentes, las acciones significativas y las relaciones entre ellos. El caso de uso es nuestra novela, y las clases son los personajes que debemos descubrir.
 
 La especificación textual de un caso de uso describe, en lenguaje natural, una secuencia de interacciones entre actores y sistema. Si leemos con atención, encontraremos tres categorías lingüísticas que nos orientan en la identificación de elementos del modelo estructural:
 
@@ -385,7 +719,7 @@ La especificación textual de un caso de uso describe, en lenguaje natural, una 
 - **Verbos**: suelen corresponder a métodos o, si son acciones que el sistema realiza como un todo, a responsabilidades de una clase.
 - **Frases posesivas o de pertenencia** ("el pedido del cliente", "las líneas del pedido"): sugieren relaciones estructurales entre clases, a menudo asociaciones, agregaciones o composiciones.
 
-La técnica no es mágica ni completamente automática, pero aplicada con criterio y discusión en equipo produce modelos notablemente alineados con el dominio del problema.
+La técnica no es mágica ni completamente automática, pero aplicada con criterio y discusión en equipo produce modelos notablemente alineados con el dominio del problema. Y créanme, después de haber aplicado esta técnica en decenas de proyectos, puedo asegurarles que el esfuerzo merece la pena.
 
 Analicemos un fragmento del flujo básico de "Realizar Pedido" que ya usamos en el bloque de casos de uso:
 
@@ -398,7 +732,7 @@ Analicemos un fragmento del flujo básico de "Realizar Pedido" que ya usamos en 
 
 A lo largo de este tema, este fragmento nos servirá de ejemplo conductor.
 
-## 4.2. Identificación de clases candidatas a partir de los sustantivos
+## 5.2. Identificación de clases candidatas a partir de los sustantivos
 
 El primer paso consiste en extraer todos los sustantivos y sintagmas nominales que aparecen en los flujos del caso de uso (básico, alternativos y de excepción). No todos se convertirán en clases; algunos serán atributos de otras clases, otros serán actores externos y otros serán conceptos irrelevantes para el sistema. Pero una lista inicial exhaustiva nos da la materia prima para la discusión.
 
@@ -420,7 +754,7 @@ Del fragmento anterior obtenemos:
 
 Tras esta primera criba, los candidatos a clase que suelen consolidarse son: `Pedido`, `Producto`, `Carrito`, `Pago`, `Cliente` (si se almacenan sus datos), `LineaPedido` (surge al refinar la relación entre Pedido y Producto con cantidad), y posiblemente `Inventario` y `ServicioCorreo`. No todos pasarán el filtro final, pero vamos a analizar cada uno con rigor.
 
-## 4.3. Identificación de atributos
+## 5.3. Identificación de atributos
 
 Una vez tenemos las clases candidatas, las enriquecemos buscando en el caso de uso los datos que se mencionan explícitamente. En el flujo de "Realizar Pedido" aparecen: "cantidad", "dirección de envío", "precio", "total", "fecha del pedido", "email del cliente", "estado del pedido". Estos datos se asignan a las clases correspondientes.
 
@@ -446,7 +780,7 @@ Por ejemplo, `Pedido` tendrá atributos como:
 
 Una práctica sana es revisar también las postcondiciones, porque suelen mencionar el estado final persistente. Si la postcondición dice "el inventario se ha actualizado", eso sugiere que `Producto` quizás deba llevar un atributo `stock: int`.
 
-## 4.4. Identificación de métodos
+## 5.4. Identificación de métodos
 
 Los verbos de acción del caso de uso —especialmente aquellos que describen lo que el sistema *hace* en respuesta a una acción del actor— se convierten en métodos de las clases adecuadas. Asignar un método a la clase correcta es una decisión de diseño que debe basarse en el principio de **experto en información**: el método debe residir en la clase que posee los datos necesarios para llevarlo a cabo.
 
@@ -461,7 +795,7 @@ Analicemos algunas acciones del flujo y su asignación:
 
 Observen cómo cada acción se traduce en un método responsable, y cómo surgen nuevas clases de soporte (como `ServicioPago` o `ServicioCorreo`) que no son entidades del dominio puro, sino servicios técnicos necesarios para completar el caso de uso. Esto es perfectamente válido en un diagrama de clases de diseño.
 
-## 4.5. Identificación de relaciones
+## 5.5. Identificación de relaciones
 
 Con las clases, atributos y métodos sobre la mesa, el siguiente paso es conectarlas mediante las relaciones adecuadas. Recurrimos de nuevo al caso de uso: las frases que indican posesión, pertenencia o colaboración nos guían.
 
@@ -474,7 +808,68 @@ Con las clases, atributos y métodos sobre la mesa, el siguiente paso es conecta
 
 También podemos identificar herencias o interfaces. Si en el caso de uso aparecen múltiples formas de pago (tarjeta, PayPal, transferencia), podemos modelar una interfaz `MetodoPago` realizada por clases concretas `PagoTarjeta`, `PagoPayPal`, etc. El caso de uso nos da la pista de que el comportamiento varía en un punto de extensión.
 
-## 4.6. Representación en PlantUML del modelo derivado
+## 5.6. Trazabilidad explícita: tabla de derivación caso de uso → modelo
+
+Para que el proceso de derivación sea verdaderamente sistemático y reproducible, conviene documentar explícitamente la trazabilidad entre los elementos del caso de uso y los del diagrama de clases. La siguiente tabla aplica esta técnica al flujo completo de "Realizar Pedido":
+
+| Paso del caso de uso | Sustantivo → Clase/Atributo | Verbo → Método | Frase preposicional → Relación |
+|----------------------|----------------------------|----------------|-------------------------------|
+| 1. El Cliente solicita iniciar un nuevo pedido | `Cliente` (clase), `Pedido` (clase) | `solicitar()` → `Pedido.crear()` | "del Cliente" → `Cliente -- Pedido` |
+| 2. El Sistema muestra el catálogo de productos disponibles | `Catalogo` (clase), `Producto` (clase) | `mostrar()` → `Catalogo.mostrarProductos()` | – |
+| 3. El Cliente selecciona productos y cantidades | `cantidad` (atributo de `LineaPedido`) | `seleccionar()` → `Carrito.agregarProducto()` | – |
+| 4. El Sistema agrega productos al carrito | `Carrito` (clase) | `agregar()` → `Carrito.agregarProducto()` | "al carrito" → `Carrito o-- Producto` |
+| 5. El Sistema calcula el total | `total` (atributo de `Pedido`) | `calcular()` → `Pedido.calcularTotal()` | – |
+| 6. El Sistema procesa el pago | `Pago` (clase) | `procesar()` → `Pago.procesar()` | "asociado a" → `Pedido -- Pago` |
+| 7. El Sistema actualiza el inventario | `stock` (atributo de `Producto`) | `actualizar()` → `Producto.decrementarStock()` | – |
+| 8. El Sistema envía correo de confirmación | `ServicioCorreo` (clase) | `enviar()` → `ServicioCorreo.enviarConfirmacion()` | – |
+| 9. El Sistema registra las líneas del pedido | `LineaPedido` (clase) | `registrar()` → `Pedido.agregarLinea()` | "del pedido" → `Pedido *-- LineaPedido` |
+
+Esta tabla no solo documenta el proceso, sino que permite validar que cada elemento del modelo tiene una justificación funcional. Si una clase o método no aparece en ninguna fila, probablemente sea innecesario. Si un paso del caso de uso no genera ninguna entrada en el modelo, quizás hemos olvidado modelar algo importante.
+
+## 5.7. Refinamiento iterativo: del modelo inicial al detallado
+
+El modelo de clases no surge completo en una sola pasada. Una estrategia muy efectiva es empezar con un **modelo inicial** que contenga solo los nombres de las clases, y luego **refinarlo iterativamente** añadiendo atributos, métodos y relaciones a medida que se revisan los flujos alternativos y las postcondiciones.
+
+**Paso 1 — Modelo inicial (solo clases):**
+
+???
+@startuml
+class Cliente
+class Pedido
+class Producto
+class Carrito
+class Pago
+class Catalogo
+@enduml
+???
+
+Este primer bocazo captura los conceptos fundamentales que aparecen en el flujo básico. Todavía no hay atributos, métodos ni relaciones. Es suficiente para confirmar con el experto de negocio que hemos identificado las entidades correctas.
+
+**Paso 2 — Añadir relaciones tras revisar el flujo básico:**
+
+???
+@startuml
+class Cliente
+class Pedido
+class Producto
+class Carrito
+class Pago
+class Catalogo
+
+Cliente -- Pedido : realiza
+Pedido -- Pago : asociado a
+Carrito o-- Producto : contiene
+Catalogo ..> Producto : consulta
+@enduml
+???
+
+**Paso 3 — Refinar con multiplicidades, atributos y métodos al revisar flujos alternativos:**
+
+Al analizar el flujo alternativo "El cliente puede especificar cantidades de cada producto", descubrimos la necesidad de `LineaPedido` como clase asociativa entre `Pedido` y `Producto`. Al leer la postcondición "El inventario se actualiza", añadimos `stock` a `Producto` y `decrementarStock()`. El resultado final es el diagrama completo que veremos en la siguiente sección.
+
+Este enfoque iterativo —clases → relaciones → detalles— evita la parálisis por análisis y permite validar el modelo en cada etapa con los stakeholders, reduciendo el riesgo de llegar al final con un modelo incorrecto.
+
+## 5.8. Representación en PlantUML del modelo derivado
 
 Voy a plasmar ahora, en un solo diagrama de clases de PlantUML, el resultado del análisis anterior. Incluiré las clases, atributos, métodos y relaciones que hemos identificado, usando la notación y símbolos que ya dominamos.
 
@@ -546,7 +941,7 @@ Algunas anotaciones sobre este diagrama:
 - `Carrito` es un contenedor temporal con una relación de agregación hacia `Producto`, ya que los productos pueden existir sin el carrito.
 - Las multiplicidades reflejan lo analizado: un cliente puede tener cero o más pedidos; un pedido tiene una o más líneas; cada línea referencia exactamente un producto; un pedido tiene exactamente un pago asociado.
 
-## 4.7. Refinamiento con estereotipos
+## 5.9. Refinamiento con estereotipos
 
 Dependiendo de la metodología que empleemos (por ejemplo, un enfoque de arquitectura en capas o el uso de estereotipos del Proceso Unificado), podemos añadir estereotipos como `<<entity>>`, `<<boundary>>` o `<<control>>` para clarificar el rol de cada clase. En PlantUML, los estereotipos se colocan entre `<<` y `>>` antes del nombre de la clase, o se definen con el comando `class Nombre <<Estereotipo>>`.
 
@@ -561,7 +956,7 @@ class "Catalogo" <<boundary>>
 
 Aunque no es obligatorio, ayuda a distinguir visualmente las clases que modelan el dominio de aquellas que gestionan la interfaz o la lógica de aplicación. Sin embargo, no debemos abusar; en muchos proyectos, un modelo de clases de dominio sin estereotipos es perfectamente suficiente.
 
-## 4.8. Iteración y validación con los casos de uso
+## 5.10. Iteración y validación con los casos de uso
 
 El modelo de clases no se termina en la primera pasada. Al revisar otros casos de uso del sistema, el modelo se enriquece. Por ejemplo, si existiese un caso de uso "Consultar Historial de Pedidos", añadiríamos probablemente un método `obtenerPedidosPorCliente(): List<Pedido>` en la clase `Cliente` o en un controlador. Si apareciera "Cancelar Pedido", añadiríamos un método `cancelar()` en `Pedido` y modificaríamos el atributo `estado`. 
 
@@ -569,7 +964,9 @@ Cada nuevo caso de uso puede hacer crecer atributos y métodos, o incluso revela
 
 Este ir y venir entre la vista funcional y la vista estructural es el latido del análisis y diseño orientado a objetos. PlantUML lo facilita porque ambos tipos de diagramas se escriben en archivos de texto plano que pueden versionarse y actualizarse sincronizadamente. Cuando un caso de uso cambia, el diagrama de clases puede modificarse en el mismo commit, manteniendo la coherencia de la documentación.
 
-## 4.9. Errores frecuentes en la derivación
+## 5.11. Errores frecuentes en la derivación
+
+Si hay una parte de este bloque que quiero que memoricen, es esta. He visto estos errores una y otra vez en proyectos reales, y prevenirlos les ahorrará horas de discusiones y refactorizaciones. Tomen nota:
 
 A lo largo de los años he visto algunos tropiezos recurrentes que conviene evitar:
 
@@ -578,165 +975,21 @@ A lo largo de los años he visto algunos tropiezos recurrentes que conviene evit
 - **Composición donde basta asociación**: recordar que la composición implica destrucción en cascada. Si no hay esa dependencia existencial, usen agregación o asociación simple.
 - **Olvidar las restricciones de multiplicidad**: omitir la multiplicidad conduce a ambigüedades. Un desarrollador podría asumir que un pedido tiene un solo producto en lugar de muchos, o que un cliente solo puede tener un pedido. Las multiplicidades documentan decisiones de diseño importantes.
 
-## 4.10. Cierre del proceso
+## 5.12. Cierre del proceso
 
 Hemos recorrido el camino completo: desde la lectura atenta del caso de uso, pasando por la identificación de sustantivos, verbos y frases de pertenencia, asignándolos a clases, atributos, métodos y relaciones, y plasmándolos finalmente en un diagrama de clases de PlantUML. Este es, en esencia, el proceso que siguen los ingenieros de software cuando pasan del *qué* al *cómo*. 
 
 En los siguientes temas de este bloque, completaremos el modelo de clases con las nociones de interfaces, clases abstractas y organización en paquetes, y repasaremos las buenas prácticas de notación y mantenimiento. Pero el corazón del análisis estructural ya lo tienen: se trata de escuchar a los casos de uso y traducir sus historias en la arquitectura que las hará posibles.
 
-# 5. Multiplicidad y navegabilidad: afinando las conexiones entre clases
+### Actividades propuestas — Tema 5
 
-Hemos construido el esqueleto de nuestro modelo estructural: tenemos clases, atributos, métodos y sabemos cómo relacionarlas mediante asociaciones, agregaciones, composiciones, herencias y dependencias. Pero ese esqueleto aún es tosco. Decir que un `Cliente` está asociado con un `Pedido` es un avance, pero no responde a preguntas cruciales para el desarrollador: ¿un cliente puede tener muchos pedidos o solo uno? ¿un pedido pertenece obligatoriamente a un cliente? ¿desde un pedido puedo obtener directamente el cliente que lo realizó, o solo desde el cliente puedo llegar a sus pedidos? La **multiplicidad** y la **navegabilidad** son las herramientas que UML nos proporciona para refinar esas conexiones hasta convertirlas en instrucciones precisas de diseño.
-
-En este tema desgranaremos ambos conceptos con la profundidad que merecen, veremos cómo expresarlos en PlantUML y cómo derivarlos del análisis funcional de los casos de uso. Una vez que dominen la multiplicidad y la navegabilidad, sus diagramas de clases dejarán de ser meros bocetos y se transformarán en auténticos planos de implementación.
-
-## 5.1. Multiplicidad: cuántos objetos participan en la relación
-
-La multiplicidad (también llamada cardinalidad) especifica el número de instancias de una clase que pueden estar vinculadas a una instancia de la otra clase en una asociación determinada. Se indica en cada extremo de la línea de asociación, junto a la clase correspondiente, y se lee en dirección contraria a la clase: si junto a `Pedido` aparece `1`, significa que un `Pedido` está asociado exactamente a un `Cliente`.
-
-Los valores de multiplicidad que permite UML son:
-
-- `1` : exactamente uno.
-- `0..1` : cero o uno (opcional).
-- `0..*` o simplemente `*` : cero o muchos.
-- `1..*` : al menos uno, puede ser muchos.
-- `n` : un número fijo (por ejemplo, `2` para los dos titulares de una cuenta mancomunada).
-- `n..m` : un rango concreto (por ejemplo, `3..5`).
-
-PlantUML acepta estas notaciones directamente, colocándolas entre comillas en el extremo correspondiente de la relación, como vimos en el tema anterior. Veamos algunos ejemplos aplicados a nuestro dominio de comercio electrónico.
-
-???
-@startuml
-class Cliente
-class Pedido
-class Producto
-class LineaPedido
-class DireccionEnvio
-
-Cliente "1" -- "0..*" Pedido : realiza
-Pedido "1" *-- "1..*" LineaPedido : contiene
-LineaPedido "1" -- "1" Producto : referencia
-Cliente "1" -- "0..1" DireccionEnvio : tiene
-@enduml
-???
-
-Interpretemos cada multiplicidad:
-
-- `Cliente "1" -- "0..*" Pedido` : un pedido pertenece exactamente a un cliente; un cliente puede tener cero o más pedidos. La multiplicidad `0..*` junto a `Pedido` significa que un cliente recién registrado no tiene aún pedidos, y puede acumular muchos.
-- `Pedido "1" *-- "1..*" LineaPedido` : una línea de pedido pertenece exactamente a un pedido (composición); un pedido debe tener al menos una línea (porque un pedido vacío no tiene sentido) y puede tener muchas.
-- `LineaPedido "1" -- "1" Producto` : una línea de pedido referencia exactamente un producto; un producto puede ser referenciado por muchas líneas de pedido (multiplicidad `*` en el otro extremo se omite por claridad, pero implícitamente es `*` si no se indica).
-- `Cliente "1" -- "0..1" DireccionEnvio` : un cliente puede tener una dirección de envío por defecto, o ninguna (si aún no la ha proporcionado). La dirección pertenece a un cliente en concreto.
-
-La multiplicidad no es un adorno: define restricciones que el sistema debe hacer cumplir. Si indicamos que un `Pedido` debe tener al menos una `LineaPedido`, el código deberá impedir la creación de pedidos vacíos. Si un `Cliente` puede tener como máximo una `DireccionEnvio`, la interfaz no debería permitir añadir una segunda sin antes eliminar la primera.
-
-## 5.2. Cómo derivar la multiplicidad desde los casos de uso
-
-Los casos de uso nos dan pistas valiosas sobre las multiplicidades. Frases como "el cliente puede consultar todos sus pedidos" sugieren que un cliente puede tener múltiples pedidos (multiplicidad `0..*`). "Cada pedido incluye al menos un producto" sugiere `1..*` en el extremo de `LineaPedido`. "Un cliente puede guardar una dirección de envío preferida" apunta a `0..1`.
-
-Las postcondiciones también ayudan. Si al finalizar "Realizar Pedido" se indica que "el pedido queda registrado con un cliente asociado", confirmamos que la asociación `Cliente-Pedido` tiene multiplicidad `1` en el extremo del cliente.
-
-No existe un algoritmo infalible, pero la combinación de sentido común, conocimiento del dominio y discusión en equipo permite establecer multiplicidades realistas. Y como todo en PlantUML, si más adelante se descubre que una multiplicidad era incorrecta, se modifica en el archivo `.puml` y el diagrama se actualiza al instante.
-
-## 5.3. Navegabilidad: la dirección del conocimiento
-
-Si la multiplicidad responde a "¿cuántos?", la navegabilidad responde a "¿quién conoce a quién?". En una asociación entre dos clases, podemos decidir que el vínculo sea recorrible en un solo sentido, en ambos, o en ninguno (asociación no navegable, rara en la práctica). La navegabilidad se representa con una punta de flecha en el extremo de la línea, apuntando hacia la clase que "es conocida".
-
-En PlantUML, la navegabilidad se indica añadiendo `>` o `<` en la definición de la línea. Así, `ClaseA --> ClaseB` dibuja una flecha desde A hacia B, significando que desde A se puede acceder a B, pero no necesariamente al revés. Si se desea navegabilidad bidireccional, se omite la punta de flecha (solo `--`).
-
-Veamos un ejemplo:
-
-???
-@startuml
-class Pedido
-class Cliente
-class LineaPedido
-class Producto
-
-Pedido "1" --> "1" Cliente : pertenece a
-Pedido "1" *--> "1..*" LineaPedido : contiene
-LineaPedido "1" --> "1" Producto : referencia
-@enduml
-???
-
-En este modelo, desde un `Pedido` puedo navegar hacia su `Cliente` (la flecha apunta a `Cliente`), pero no al revés: un `Cliente` no tiene una referencia directa a sus pedidos; si necesito obtener los pedidos de un cliente, tendré que buscarlos mediante una consulta. Esto es una decisión de diseño: desacoplamos `Cliente` de `Pedido` para que `Cliente` no acumule una colección potencialmente enorme.
-
-Desde `Pedido` navego hacia `LineaPedido` (composición con navegabilidad unidireccional), y desde `LineaPedido` hacia `Producto`. De nuevo, un `Producto` no conoce todas las líneas de pedido que lo referencian; esa información se obtiene por otra vía si es necesario.
-
-Si quisiéramos navegabilidad bidireccional entre `Pedido` y `Cliente`, omitiríamos la flecha:
-
-???
-@startuml
-class Pedido
-class Cliente
-Pedido "1" -- "1" Cliente : pertenece a
-@enduml
-???
-
-Esto implica que tanto `Pedido` conoce a su `Cliente` como `Cliente` conoce sus `Pedido`s. Ambas clases tendrán referencias mutuas en el código.
-
-## 5.4. Derivación de la navegabilidad desde los casos de uso
-
-El caso de uso nos permite responder a la pregunta: en un paso dado, ¿qué objeto necesita acceder a cuál? En "Realizar Pedido", cuando el sistema debe "mostrar el historial de pedidos de un cliente", necesitamos navegar desde `Cliente` a `Pedido`; eso sugiere navegabilidad de `Cliente` hacia `Pedido`. Pero si más adelante otro caso de uso requiere que, dado un pedido, se localice al cliente para enviarle una notificación, entonces necesitamos navegabilidad inversa. La decisión puede ser bidireccional para simplificar, o unidireccional si queremos minimizar acoplamiento.
-
-En la práctica, muchos diseñadores optan por navegabilidad bidireccional en las asociaciones del dominio (por ejemplo, entre `Pedido` y `LineaPedido`, o entre `Cliente` y `Pedido`) porque la navegación suele ser necesaria en ambos sentidos. La navegabilidad unidireccional es más común en dependencias hacia servicios técnicos o en relaciones de uso puntual, donde el objeto usado no necesita conocer a quien lo usa.
-
-## 5.5. Combinando multiplicidad y navegabilidad
-
-Ambos conceptos se combinan en la misma notación. La multiplicidad se coloca junto al extremo de la clase, la navegabilidad se deduce de la punta de flecha. Un extremo puede tener flecha o no, y llevar una multiplicidad. PlantUML permite expresar todo junto con claridad:
-
-???
-@startuml
-class Departamento
-class Empleado
-Departamento "1" o--> "5..*" Empleado : agrega
-@enduml
-???
-
-Aquí, un `Departamento` agrega de cinco a muchos `Empleado`s (agregación), y desde `Departamento` se puede navegar hacia sus empleados (flecha), pero no al revés. Un empleado no conoce directamente su departamento (quizás se obtiene mediante un repositorio).
-
-Otro ejemplo con navegabilidad bidireccional:
-
-???
-@startuml
-class CuentaBancaria
-class Titular
-CuentaBancaria "1" -- "1..2" Titular : pertenece
-@enduml
-???
-
-Una cuenta bancaria puede tener uno o dos titulares, y la asociación es navegable en ambos sentidos: desde la cuenta puedo acceder a los titulares, y desde un titular puedo acceder a sus cuentas.
-
-## 5.6. Buenas prácticas en multiplicidad y navegabilidad
-
-- **No sobrecargar de flechas**: si todas las asociaciones son bidireccionales, el diagrama puede volverse confuso. Reserven las flechas para indicar restricciones de diseño conscientes.
-- **La multiplicidad debe reflejar las reglas de negocio**: antes de escribir `0..*` o `1..*`, pregúntense qué permite el negocio. Un pedido sin líneas quizás sea válido como borrador; entonces `0..*` en `Pedido-LineaPedido` sería correcto. Si no, debe ser `1..*`.
-- **Revisar las multiplicidades con los stakeholders**: un analista de negocio puede confirmar si realmente un cliente puede tener un número ilimitado de pedidos o si hay un límite.
-- **Documentar las decisiones**: si optan por navegabilidad unidireccional para reducir acoplamiento, anótenlo en una nota en el diagrama o en la documentación de diseño. Otros desarrolladores lo agradecerán.
-- **Actualizar el modelo con cada nuevo caso de uso**: un nuevo caso de uso puede requerir navegabilidad inversa o modificar una multiplicidad. El diagrama de clases debe evolucionar con el proyecto.
-
-## 5.7. Representación en PlantUML: detalles avanzados
-
-La guía de PlantUML ofrece variantes para personalizar la visualización de las relaciones (páginas 83-86), incluyendo líneas de estilo `[bold]`, `[dashed]`, `[dotted]`, colores y grosores. Esto puede usarse para resaltar asociaciones con multiplicidades restrictivas o navegabilidades importantes. Por ejemplo:
-
-???
-@startuml
-class Pedido
-class Cliente
-Pedido "1" -[bold]-> "1" Cliente : pertenece
-@enduml
-???
-
-Aunque no es necesario para la comprensión del modelo, en presentaciones ejecutivas puede ayudar a dirigir la atención hacia las relaciones críticas.
-
-## 5.8. Más allá del diagrama: impacto en la implementación
-
-La multiplicidad y la navegabilidad tienen consecuencias directas en el código. Si entre `Pedido` y `LineaPedido` definimos composición con multiplicidad `1..*` y navegabilidad unidireccional desde `Pedido`, el código resultante tendrá en `Pedido` una colección de `LineaPedido` que se inicializa en el constructor, y posiblemente métodos `agregarLinea` y `eliminarLinea`. No existirá una referencia inversa desde `LineaPedido` a `Pedido`. Si más adelante se necesita, se puede añadir sin romper el modelo, pero es más costoso.
-
-Por eso es importante tomar estas decisiones con criterio durante el diseño. PlantUML, al ser código, nos permite simular estos escenarios antes de implementarlos: si vemos que un diagrama resulta incómodo porque hay que añadir muchas flechas bidireccionales, quizás sea una señal de que el diseño está demasiado acoplado y conviene repensarlo.
-
-Con esto completamos el afinamiento de las conexiones entre clases. En el próximo tema abordaremos las clases abstractas, las interfaces y la organización en paquetes, que nos permitirán elevar nuestro modelo estructural al nivel de abstracción que los sistemas complejos exigen.
+1. **Tabla de trazabilidad:** Tome el siguiente fragmento de caso de uso: "El usuario selecciona productos del catálogo, el sistema calcula el total con impuestos, aplica el descuento si es cliente VIP y genera la factura." Cree una tabla de trazabilidad como la de la sección 5.6 identificando clases, atributos, métodos y relaciones candidatos.
+2. **Refinamiento iterativo:** Partiendo de las clases `Usuario`, `Producto` y `Factura`, añada progresivamente atributos, métodos y relaciones. Muestre tres versiones: inicial (solo clases), intermedia (con relaciones), final (con detalles completos).
+3. **Derivación completa:** Dado el caso de uso "Gestionar reservas de un hotel" (el cliente busca habitaciones disponibles, selecciona fechas, confirma la reserva, el sistema registra el pago y envía confirmación), derive el diagrama de clases completo en PlantUML.
 
 # 6. Clases abstractas, interfaces y paquetes: elevando la abstracción del modelo estructural
+
+Cuando empecé a enseñar modelado, mis alumnos solían preguntarme: "¿Y cuándo usamos todo esto en proyectos reales?" Mi respuesta siempre era la misma: cuando el sistema tiene más de veinte clases. Hasta ese momento, un modelo plano funciona. Pero en el mundo profesional, los sistemas tienen cientos o miles de clases, y ahí es donde los mecanismos de abstracción que vamos a ver en este tema marcan la diferencia entre un modelo que ayuda y un modelo que abruma.
 
 Hasta ahora, nuestro modelo de clases se ha construido con clases concretas, atributos y métodos perfectamente definidos, y relaciones que reflejan el tejido del dominio. Pero a medida que el sistema crece, aparecen patrones que exigen un nivel superior de abstracción: comportamientos comunes que queremos garantizar sin obligar a una implementación única, o agrupaciones lógicas que eviten que el diagrama se convierta en un catálogo interminable. UML, y por tanto PlantUML, nos proporcionan tres mecanismos para manejar esta complejidad: las **clases abstractas**, las **interfaces** y los **paquetes**.
 
@@ -901,6 +1154,58 @@ Interfaz ..> Servicios : usa
 
 Esta vista arquitectónica de alto nivel comunica las dependencias entre subsistemas sin entrar en el detalle de cada clase. Es un magnífico punto de partida para discutir la estructura del código con el equipo.
 
+### 6.4.1. Organización en capas con paquetes anidados
+
+Esta es, en mi opinión, una de las lecciones más importantes que puedo transmitirles. He trabajado con equipos que tenían un modelo de dominio excelente, pero que no sabían organizar las clases en capas, y el resultado era siempre el mismo: un código imposible de mantener. La organización en capas no es un lujo; es una necesidad en cualquier sistema que pretenda vivir más de seis meses.
+
+En proyectos reales, los paquetes suelen reflejar una **arquitectura en capas**. La organización más habitual divide el sistema en cuatro capas, cada una con sus propias responsabilidades:
+
+1. **Presentación (Interfaz):** controladores, vistas, DTOs. Depende de Aplicación y Dominio.
+2. **Aplicación:** servicios de aplicación, casos de uso orquestados. Depende de Dominio.
+3. **Dominio:** entidades, objetos de valor, repositorios (interfaces). Es la capa más estable.
+4. **Infraestructura:** repositorios (implementaciones), acceso a datos, servicios externos. Depende de Dominio.
+
+En PlantUML, esto se modela con paquetes anidados y dependencias entre paquetes:
+
+???
+@startuml
+package "SistemaComercio" {
+  package "Presentacion" {
+    class ControladorPedido
+    class CatalogoVista
+  }
+  package "Aplicacion" {
+    class ServicioPedido
+  }
+  package "Dominio" {
+    class Pedido
+    class Producto
+    class Cliente
+    interface RepositorioPedido
+  }
+  package "Infraestructura" {
+    class RepositorioPedidoSQL
+    class ServicioCorreoSMTP
+  }
+}
+
+' Dependencias entre capas
+Presentacion ..> Aplicacion : usa
+Presentacion ..> Dominio : usa
+Aplicacion ..> Dominio : usa
+Infraestructura ..> Dominio : implementa
+RepositorioPedidoSQL ..|> RepositorioPedido : realiza
+@enduml
+???
+
+Esta organización en capas con paquetes anidados ofrece múltiples ventajas:
+- **Separación de responsabilidades:** cada capa tiene un rol bien definido.
+- **Dirección de dependencias:** las capas superiores dependen de las inferiores, nunca al revés (principio de inversión de dependencias).
+- **Escalabilidad:** cuando el sistema crece, cada paquete puede dividirse en subpaquetes manteniendo la estructura.
+- **Paralelismo de desarrollo:** distintos equipos pueden trabajar en diferentes capas de forma independiente, siempre que respeten los contratos (interfaces) definidos en la capa de dominio.
+
+Al documentar la arquitectura en el diagrama de clases, incluyan siempre una breve leyenda que explique la convención de capas que están usando. Esto evita confusiones y facilita la incorporación de nuevos miembros al equipo.
+
 ## 6.5. Cómo se derivan estos elementos desde los casos de uso
 
 Llegados a este punto, podemos cerrar el círculo con los casos de uso. Las clases abstractas y las interfaces no suelen aparecer directamente en la especificación textual, sino que surgen durante el diseño como abstracciones que unifican conceptos dispersos. Si en varios casos de uso aparece la necesidad de pagar de diferentes formas, deducimos una interfaz `MetodoPago`. Si varias clases comparten atributos y métodos idénticos, extraemos una clase abstracta.
@@ -911,7 +1216,15 @@ De nuevo, la trazabilidad es la clave: cada clase, interfaz o paquete del diagra
 
 Dominar las clases abstractas, las interfaces y los paquetes completa su capacidad para modelar la estructura de cualquier sistema. En el último tema de este bloque, recopilaremos las buenas prácticas de notación, mantenimiento y evolución que garantizan que sus diagramas de clases sigan siendo un activo valioso a lo largo de todo el ciclo de vida del software.
 
+### Actividades propuestas — Tema 6
+
+1. **Interfaz vs. clase abstracta:** Diseñe un modelo para un sistema de notificaciones donde existan `NotificacionEmail`, `NotificacionSMS` y `NotificacionPush`. Decida si usa una interfaz o una clase abstracta y justifique. Modele en PlantUML.
+2. **Paquetes en capas:** Organice las clases del tema 5 (`Cliente`, `Pedido`, `LineaPedido`, `Producto`, `Pago`, `ServicioCorreo`, `ServicioPago`, `Catalogo`, `Carrito`) en una arquitectura de cuatro capas (Presentación, Aplicación, Dominio, Infraestructura) usando paquetes anidados de PlantUML. Añada las dependencias entre capas.
+3. **Extensión del modelo:** Añada una interfaz `MetodoPago` realizada por `PagoTarjeta`, `PagoPayPal` y `PagoTransferencia` al modelo de comercio electrónico del tema 5. Integre las nuevas clases respetando la organización en paquetes.
+
 # 7. Buenas prácticas y cierre: el arte de mantener vivo el modelo estructural
+
+Permítanme serles sincero: he visto más diagramas de clases abandonados que diagramas vivos. En mis años de consultoría, he entrado a proyectos donde el diagrama de clases era un archivo PDF amarillento que nadie había tocado en dos años, mientras el código había evolucionado por completo. Eso no debería pasar. Y la buena noticia es que no tiene que pasar. Un diagrama de clases bien mantenido es uno de los activos más valiosos que un equipo de desarrollo puede tener.
 
 Hemos recorrido un camino exhaustivo por el modelado estructural con UML y PlantUML. Desde la definición de clases, atributos y métodos, pasando por la riqueza de las relaciones, la derivación metódica desde los casos de uso, hasta el afinamiento con multiplicidades, navegabilidades, clases abstractas, interfaces y paquetes. Ahora, antes de poner punto final a este bloque, es imprescindible consolidar una serie de buenas prácticas que aseguren que el diagrama de clases no se convierta en un adorno que se abandona tras la primera iteración, sino en un artefacto vivo, útil y respetado por todo el equipo.
 
@@ -936,7 +1249,7 @@ La notación UML es un lenguaje, y como todo lenguaje, tiene dialectos y variant
 
 ## 7.3. Derivar, no inventar: la trazabilidad con los casos de uso
 
-Ya insistí en esto en el tema 4, pero es tan importante que merece su lugar en las buenas prácticas. Todo elemento del diagrama de clases —clase, atributo, método, relación— debe poder rastrearse hasta uno o varios casos de uso. Esta trazabilidad:
+Ya insistí en esto en el tema 5, pero es tan importante que merece su lugar en las buenas prácticas. Todo elemento del diagrama de clases —clase, atributo, método, relación— debe poder rastrearse hasta uno o varios casos de uso. Esta trazabilidad:
 
 - Justifica la existencia de cada clase frente a los stakeholders.
 - Facilita la estimación de impacto cuando un caso de uso cambia.
@@ -985,7 +1298,28 @@ El diagrama de clases es un artefacto de software más, y como tal, debe someter
 La guía de PlantUML nos brinda herramientas que, bien empleadas, mejoran sustancialmente la presentación:
 
 - **Separadores y títulos dentro de clases** (`..`, `==`, `--`, `__`): usar para agrupar atributos y métodos lógicamente, en lugar de presentar una lista plana interminable.
-- **Notas y comentarios**: tanto en el código fuente (con `'`) como en el diagrama (con `note`), para explicar decisiones de diseño, restricciones o enlaces a la especificación de casos de uso.
+- **Notas y comentarios como parte del modelo vivo**: las notas no son simples adornos; son el lugar natural para documentar decisiones de diseño, restricciones de negocio, enlaces a casos de uso o advertencias técnicas. PlantUML permite adjuntar notas a una clase (`note left of`, `note right of`, `note top of`, `note bottom of`) o a una relación (`note on link`). Ejemplo:
+
+???
+@startuml
+class Pedido {
+  - estado: String
+  + confirmar(): void
+}
+note left of Pedido
+  Traza: CU-01 Realizar Pedido
+  Restricción: estado solo puede ser
+  "pendiente", "confirmado" o "enviado"
+end note
+
+note right of Pedido::confirmar()
+  Invoca a ServicioCorreo y a Pago.
+  Diseño: se dispara tras validar stock.
+end note
+@enduml
+???
+
+Las notas también pueden documentar el **porqué** de una decisión de diseño, no solo el **qué**. Por ejemplo, explicar por qué se eligió agregación en lugar de composición, o por qué una clase tiene cierta multiplicidad. Esta información es invaluable para los desarrolladores que mantendrán el sistema meses o años después.
 - **Estilos globales**: definir un estilo base con `skinparam` y aplicarlo consistentemente en todos los diagramas del proyecto. Esto comunica profesionalidad y coherencia.
 - **Dirección del diagrama**: `left to right direction` o `top to bottom direction` según convenga. Probar ambas para ver cuál aprovecha mejor el espacio.
 
@@ -1002,10 +1336,18 @@ Recojo aquí, a modo de lista de verificación, los errores más habituales que 
 
 ## 7.10. Reflexión final: el diagrama de clases como lenguaje común
 
-Llegamos al final de este bloque sobre modelado estructural. Hemos construido, paso a paso, la capacidad de plasmar la anatomía de un sistema software en un diagrama preciso, mantenible y comunicativo. Pero no quiero que se vayan con la idea de que el diagrama de clases es un fin en sí mismo. Es una herramienta, un lenguaje que permite a los ingenieros de software debatir, acordar y documentar la arquitectura interna de un sistema antes de escribir código, y también después, para recordar por qué se tomaron ciertas decisiones.
+Llegamos al final de este bloque sobre modelado estructural. Permítanme compartir una reflexión personal. Durante más de veinte años he visto tecnologías ir y venir: lenguajes que prometían revolucionar el desarrollo, frameworks que quedaron obsoletos en dos años, metodologías que pasaron de moda. Pero el diagrama de clases sigue ahí. ¿Por qué? Porque no es una tecnología: es una forma de pensar. Es la manera en que los ingenieros de software organizamos mentalmente la complejidad antes de escribir una sola línea de código.
+
+Hemos construido, paso a paso, la capacidad de plasmar la anatomía de un sistema software en un diagrama preciso, mantenible y comunicativo. Pero no quiero que se vayan con la idea de que el diagrama de clases es un fin en sí mismo. Es una herramienta, un lenguaje que permite a los ingenieros de software debatir, acordar y documentar la arquitectura interna de un sistema antes de escribir código, y también después, para recordar por qué se tomaron ciertas decisiones.
 
 Cuando modelan con PlantUML, están haciendo algo más que dibujar: están escribiendo un texto que es simultáneamente documentación y fuente de generación de imágenes. Están aplicando prácticas de ingeniería (control de versiones, modularidad, revisión por pares) al diseño del software. Están, en definitiva, tratando el diseño como código.
 
-Les animo a que practiquen. Tomen los casos de uso que modelaron en el bloque anterior. Deriven sus clases. Discutan con sus compañeros si una relación es composición o agregación. Rompan el diagrama, modifíquenlo, compárenlo con el código que escriben en sus proyectos. Solo así, con la práctica deliberada y la reflexión constante, se convertirán en los arquitectos de software que la industria necesita.
+Les animo a que practiquen. Tomen los casos de uso que modelaron en el bloque anterior. Deriven sus clases. Discutan con sus compañeros si una relación es composición o agregación. Rompan el diagrama, modifíquenlo, compárenlo con el código que escriben en sus proyectos. Y recuerden siempre esta lección que aprendí con los años: un diagrama de clases no está terminado hasta que puedes entregárselo a un desarrollador que no ha participado en el análisis y este es capaz de entender el sistema sin hacerte una sola pregunta.
 
 El diagrama de clases es suyo ahora. Úsenlo con criterio, manténganlo vivo y verán cómo se transforma en uno de los aliados más poderosos para construir sistemas robustos y bien comunicados.
+
+### Actividades propuestas — Tema 7
+
+1. **Revisión crítica:** A continuación se muestra un diagrama con errores. Identifique al menos 5 violaciones de las buenas prácticas vistas en este tema: `class Cliente { - id: int }; class Pedido { - id: int }; Cliente -- Pedido; class Gestor {}; class Procesador {}; Gestor --> Procesador`. Corrija el diagrama en PlantUML.
+2. **Trazabilidad:** Para la clase `Reserva` en un sistema de hotel, escriba una nota en PlantUML que documente su traza con el caso de uso "CU-05: Confirmar Reserva", la restricción de negocio "una reserva no puede solaparse con otra del mismo cliente" y la decisión de diseño "se usa composición con Pago porque el pago no existe sin la reserva".
+3. **Autoevaluación:** Revise el diagrama de clases que creó en la actividad del tema 5. Aplique las buenas prácticas del tema 7: ¿cumple con la granularidad adecuada? ¿Las multiplicidades son correctas? ¿Los nombres siguen CamelCase? ¿Cada clase tiene una justificación funcional? Refínelo hasta que pase su propia revisión.
