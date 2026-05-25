@@ -43,7 +43,7 @@ La sintaxis de PlantUML para diagramas de clases es notablemente sencilla e intu
 
 Un ejemplo mínimo:
 
-???
+```
 @startuml
 class Cliente {
   - id: int
@@ -56,7 +56,7 @@ class Pedido {
 }
 Cliente "1" -- "*" Pedido : realiza
 @enduml
-???
+```
 
 En este fragmento, definimos dos clases con sus atributos y métodos, y las vinculamos mediante una asociación con multiplicidad. La herramienta generará automáticamente el diagrama correspondiente. Como la especificación está en texto, cualquier miembro del equipo puede modificarla sin necesidad de instalar software gráfico, y los cambios quedan registrados en el sistema de control de versiones.
 
@@ -96,15 +96,15 @@ En UML, una clase se representa como un rectángulo dividido en tres compartimen
 
 La declaración más simple de una clase es simplemente escribir su nombre:
 
-???
+```
 @startuml
 class Cliente
 @enduml
-???
+```
 
 Esto dibuja un rectángulo con el nombre "Cliente" y los compartimentos de atributos y métodos vacíos. Sin embargo, rara vez querremos una clase sin contenido. La guía de PlantUML (páginas 60-63) detalla varias maneras de añadir miembros a una clase: usando dos puntos para declaraciones sueltas, o bien llaves `{}` para agrupar atributos y métodos de forma más ordenada.
 
-???
+```
 @startuml
 class Cliente {
   - id: int
@@ -113,7 +113,7 @@ class Cliente {
   + setNombre(n: String): void
 }
 @enduml
-???
+```
 
 ## 2.2. Atributos: el estado que perdura
 
@@ -130,7 +130,7 @@ En PlantUML, los atributos se declaran dentro de las llaves de la clase o bien c
 
 Ejemplo de un atributo completo:
 
-???
+```
 @startuml
 class Producto {
   - codigo: String [1] {readOnly}
@@ -138,7 +138,7 @@ class Producto {
   - etiquetas: String [*] {ordered}
 }
 @enduml
-???
+```
 
 Aquí `codigo` es privado, de tipo `String`, obligatorio y de solo lectura. `precio` es un `double` con valor por defecto 0.0. `etiquetas` es una lista ordenada de cadenas. La guía de PlantUML permite omitir cualquier parte que no sea relevante en el nivel de abstracción en que estemos modelando; en fases tempranas de diseño, podemos mostrar solo los nombres de los atributos sin preocuparnos aún por los tipos.
 
@@ -161,14 +161,14 @@ Los métodos especifican lo que una clase sabe *hacer*. Pueden verse como las op
 
 La notación en PlantUML es similar a la de los atributos, pero incluye paréntesis después del nombre del método (incluso si no hay parámetros) y, opcionalmente, el tipo de retorno tras dos puntos.
 
-???
+```
 @startuml
 class CalculadoraImpuestos {
   + calcular(importe: double): double
   - validarCodigoPostal(cp: String): boolean
 }
 @enduml
-???
+```
 
 Observen cómo `calcular` es público y devuelve un `double`, mientras que `validarCodigoPostal` es privado (quizás solo se usa internamente) y devuelve un booleano. La distinción entre métodos públicos y privados es esencial para encapsular la lógica interna y exponer solo lo que otras clases necesitan conocer.
 
@@ -191,14 +191,14 @@ La guía de PlantUML (páginas 61-62) explica que, por defecto, los iconos de vi
 
 Dentro de una clase pueden existir miembros que pertenecen a la clase en sí misma y no a sus instancias (estáticos), o miembros que carecen de implementación y deben ser definidos por las subclases (abstractos). PlantUML nos permite marcarlos con los modificadores `{static}` y `{abstract}` (páginas 62-63). El modificador `{classifier}` es sinónimo de `{static}`.
 
-???
+```
 @startuml
 class Contador {
   {static} -total: int
   {abstract} +incrementar(): void
 }
 @enduml
-???
+```
 
 En este ejemplo, `total` es un atributo de clase (compartido por todas las instancias) y `incrementar()` es un método abstracto que deberán implementar las subclases. La notación UML tradicional mostraría los miembros abstractos en cursiva y los estáticos subrayados, pero PlantUML utiliza las etiquetas entre llaves para que no haya ambigüedad.
 
@@ -206,7 +206,7 @@ En este ejemplo, `total` es un atributo de clase (compartido por todas las insta
 
 A medida que una clase acumula atributos y métodos, conviene agruparlos para facilitar la lectura. PlantUML permite insertar separadores dentro de la definición de la clase usando líneas con `--`, `..`, `==` o `__` (páginas 62-64). Cada separador puede ir seguido de un título que describa el grupo.
 
-???
+```
 @startuml
 class Usuario {
   .. Datos personales ..
@@ -220,7 +220,7 @@ class Usuario {
   + autenticar(credenciales: Credenciales): boolean
 }
 @enduml
-???
+```
 
 Esta técnica es especialmente útil para clases complejas, como las entidades de un modelo de dominio, donde hay decenas de atributos y métodos. Los separadores guían al lector hacia la información relevante sin tener que escrutar una lista interminable.
 
@@ -262,7 +262,7 @@ Con este dominio de las clases, sus atributos y métodos, estamos listos para ab
 2. **Identificar miembros:** Para la clase `CuentaBancaria`, determine qué atributos y métodos debería tener. ¿Cuáles deben ser públicos? ¿Cuáles privados? ¿Tiene algún miembro estático? Modele su respuesta en PlantUML.
 3. **4 pilares de POO:** Explique con sus propias palabras cómo se reflejan la abstracción, el encapsulamiento, la herencia y el polimorfismo en la siguiente clase PlantUML: `class Vehiculo { - velocidad: int; + acelerar(): void }` y `class Coche extends Vehiculo { + abrirMaletero(): void }`.
 
-# 3. Relaciones entre clases: el tejido estructural del sistema
+# 3. Relaciones entre clases
 
 He dedicado buena parte de mi carrera a revisar diagramas de clases de equipos de desarrollo, y si hay una lección que he aprendido es esta: la mayoría de los errores de diseño no están en las clases, sino en las relaciones que se establecen entre ellas. Una relación mal elegida puede generar acoplamientos indebidos, problemas de persistencia y un mantenimiento costoso. Por eso dedico un tema entero a este asunto.
 
@@ -278,13 +278,13 @@ Por ejemplo, si decimos que un `Cliente` realiza `Pedido`s, estamos afirmando qu
 
 La notación PlantUML para la asociación simple emplea dos guiones `--`. Podemos añadir un nombre a la asociación, especificar la dirección de lectura con un triángulo `>` o `<`, e indicar la multiplicidad en cada extremo.
 
-???
+```
 @startuml
 class Cliente
 class Pedido
 Cliente "1" -- "*" Pedido : realiza
 @enduml
-???
+```
 
 En este ejemplo, la multiplicidad `1` junto a `Cliente` indica que un pedido está asociado exactamente a un cliente. La multiplicidad `*` junto a `Pedido` significa que un cliente puede estar asociado a cero o más pedidos. La etiqueta `realiza` es opcional y aclara la naturaleza de la asociación. La guía de PlantUML (página 59) muestra que también podemos invertir la dirección de lectura añadiendo `>` o `<` a la etiqueta, lo que ayuda a entender quién actúa sobre quién.
 
@@ -292,32 +292,32 @@ Además de la multiplicidad y la etiqueta, las asociaciones pueden llevar **role
 
 En PlantUML, los roles se colocan entre comillas junto a la multiplicidad, antes del nombre de la clase:
 
-???
+```
 @startuml
 class Cliente
 class Pedido
 Cliente "1" -- "realizador" "*" Pedido : realiza
 @enduml
-???
+```
 
 Aquí, el rol "realizador" en el extremo de `Cliente` indica que un pedido es realizado por un cliente con ese rol. También podríamos poner un rol en el extremo de `Pedido`:
 
-???
+```
 @startuml
 class Cliente
 class Pedido
 Cliente "cliente" "1" -- "realizador" "*" Pedido : realiza
 @enduml
-???
+```
 
 Los roles son especialmente útiles cuando una clase se relaciona consigo misma (asociación reflexiva). Por ejemplo, un empleado que tiene un supervisor que también es empleado:
 
-???
+```
 @startuml
 class Empleado
 Empleado "supervisor" "0..1" -- "subordinados" "*" Empleado : supervisa
 @enduml
-???
+```
 
 Incluir roles en el modelo no solo mejora la comunicación, sino que también sirve como documentación de diseño: el nombre del rol puede convertirse en el nombre del atributo de referencia en el código generado.
 
@@ -331,13 +331,13 @@ En muchos dominios existen relaciones "todo-parte": un pedido se compone de lín
 
 La agregación es una relación todo-parte en la que la parte **puede existir independientemente** del todo. Se representa con una línea que lleva un rombo vacío en el extremo del todo. En PlantUML, el símbolo es `o--`.
 
-???
+```
 @startuml
 class Departamento
 class Empleado
 Departamento "1" o-- "*" Empleado : pertenece a
 @enduml
-???
+```
 
 Aquí, un `Empleado` puede pertenecer a un `Departamento`, pero si el departamento se disuelve, el empleado no desaparece; simplemente se queda sin departamento o se reasigna a otro. La metáfora es: el todo "agrega" las partes, pero éstas conservan su identidad y ciclo de vida propios.
 
@@ -347,13 +347,13 @@ Otro ejemplo típico: un `Equipo` de proyecto agrega `Ingeniero`s. Si el proyect
 
 La composición es una relación todo-parte más fuerte que la agregación. En ella, la parte **no puede existir sin el todo**. Se representa con un rombo relleno en el extremo del todo. En PlantUML, el símbolo es `*--`.
 
-???
+```
 @startuml
 class Pedido
 class LineaPedido
 Pedido "1" *-- "*" LineaPedido : se compone de
 @enduml
-???
+```
 
 En este caso, las líneas de pedido no tienen sentido fuera del pedido al que pertenecen. Si se elimina un pedido, sus líneas asociadas también deben desaparecer. La composición indica que la responsabilidad del ciclo de vida de las partes recae sobre el todo: el objeto compuesto crea, gestiona y destruye sus componentes.
 
@@ -365,7 +365,7 @@ La herencia —también llamada generalización— es el mecanismo que permite a
 
 En UML, la herencia se representa con una línea continua y una punta de flecha hueca (triángulo vacío) que apunta desde la subclase hacia la superclase. En PlantUML, el símbolo es `<|--`.
 
-???
+```
 @startuml
 class Vehiculo {
   - matricula: String
@@ -379,19 +379,19 @@ class Moto extends Vehiculo {
   - tieneSidecar: boolean
 }
 @enduml
-???
+```
 
 Observen que `Coche` y `Moto` heredan `matricula` y `acelerar()` de `Vehiculo`, pero cada una añade sus propias particularidades. La herencia permite tratar objetos de las subclases como si fueran del tipo padre (polimorfismo), lo que es uno de los pilares del diseño orientado a objetos.
 
 La guía de PlantUML (páginas 58-59) también permite usar la palabra clave `extends` en lugar del símbolo `<|--`, lo que puede resultar más legible para quienes prefieren una sintaxis más cercana al código:
 
-???
+```
 @startuml
 class Vehiculo
 class Coche extends Vehiculo
 class Moto extends Vehiculo
 @enduml
-???
+```
 
 Ambas notaciones producen el mismo diagrama.
 
@@ -401,7 +401,7 @@ La realización es la relación que existe entre una clase y la interfaz que imp
 
 En PlantUML, la interfaz se puede declarar con la palabra `interface` o con el símbolo de círculo (notación "lollipop"). La relación de realización se dibuja con una línea discontinua y una punta de flecha hueca: `<|..`.
 
-???
+```
 @startuml
 interface IPagable {
   + calcularImporte(): double
@@ -410,7 +410,7 @@ interface IPagable {
 class Factura implements IPagable
 class Recibo implements IPagable
 @enduml
-???
+```
 
 Aquí, `Factura` y `Recibo` realizan la interfaz `IPagable`. Cualquier cliente que trabaje con `IPagable` podrá tratar indistintamente con facturas y recibos, sin preocuparse de la implementación concreta. Esto es especialmente útil para desacoplar módulos y aplicar el principio de inversión de dependencias.
 
@@ -422,7 +422,7 @@ La dependencia es la relación más efímera y sutil de UML. Se produce cuando u
 
 En PlantUML, la dependencia se dibuja con una línea discontinua y una flecha abierta: `..>`.
 
-???
+```
 @startuml
 class ControladorPedido {
   + confirmar(p: Pedido): void
@@ -432,13 +432,13 @@ class ServicioEmail {
 }
 ControladorPedido ..> ServicioEmail : usa
 @enduml
-???
+```
 
 En este ejemplo, `ControladorPedido` usa `ServicioEmail` probablemente dentro del método `confirmar`, pero no mantiene una referencia permanente a él; puede crearlo, llamarlo y descartarlo. La dependencia se satisface a nivel de método, no a nivel de instancia. La guía de PlantUML (página 58) recoge esta notación y la distingue claramente de la asociación.
 
 Para reforzar la diferencia entre dependencia y asociación, veamos un contraste directo:
 
-???
+```
 @startuml
 class ControladorPedido {
   + confirmar(p: Pedido): void
@@ -452,7 +452,7 @@ class RepositorioPedido {
 ControladorPedido ..> ValidadorStock : usa (dependencia)
 ControladorPedido --> RepositorioPedido : consulta (asociación)
 @enduml
-???
+```
 
 `ControladorPedido` tiene una **dependencia** con `ValidadorStock` porque lo utiliza solo dentro del método `confirmar()` —posiblemente lo instancia o lo recibe como parámetro, lo llama y lo descarta. No guarda ninguna referencia a él como atributo. En cambio, `ControladorPedido` tiene una **asociación** con `RepositorioPedido`: mantiene una referencia permanente (un atributo) para poder invocar `guardar()` cada vez que necesita persistir un pedido. Si el controlador dejara de existir, el repositorio sigue existiendo; si el repositorio cambiara, habría que modificar el controlador. La asociación es un vínculo estructural; la dependencia es un vínculo de uso puntual.
 
@@ -466,13 +466,13 @@ PlantUML coloca la multiplicidad entre comillas en el extremo correspondiente de
 
 La navegabilidad, por su parte, indica en qué dirección es posible recorrer la asociación. Una flecha en el extremo de la línea señala que desde esa clase se puede acceder a la otra, pero no necesariamente al revés. Si no hay puntas de flecha, la asociación es navegable en ambos sentidos. En PlantUML, añadir `>` o `<` en la línea determina la navegabilidad.
 
-???
+```
 @startuml
 class Cliente
 class HistorialPedidos
 Cliente "1" --> "1" HistorialPedidos : consulta
 @enduml
-???
+```
 
 La flecha a la derecha de la línea indica que `Cliente` puede navegar hacia `HistorialPedidos` (es decir, desde un cliente puedo llegar a su historial), pero no al revés a menos que se explicite.
 
@@ -560,7 +560,7 @@ Los valores de multiplicidad que permite UML son:
 
 PlantUML acepta estas notaciones directamente, colocándolas entre comillas en el extremo correspondiente de la relación, como vimos en el tema anterior. Veamos algunos ejemplos aplicados a nuestro dominio de comercio electrónico.
 
-???
+```
 @startuml
 class Cliente
 class Pedido
@@ -573,7 +573,7 @@ Pedido "1" *-- "1..*" LineaPedido : contiene
 LineaPedido "1" -- "1" Producto : referencia
 Cliente "1" -- "0..1" DireccionEnvio : tiene
 @enduml
-???
+```
 
 Interpretemos cada multiplicidad:
 
@@ -602,7 +602,7 @@ En PlantUML, la navegabilidad se indica añadiendo `>` o `<` en la definición d
 
 Veamos un ejemplo:
 
-???
+```
 @startuml
 class Pedido
 class Cliente
@@ -613,7 +613,7 @@ Pedido "1" --> "1" Cliente : pertenece a
 Pedido "1" *--> "1..*" LineaPedido : contiene
 LineaPedido "1" --> "1" Producto : referencia
 @enduml
-???
+```
 
 En este modelo, desde un `Pedido` puedo navegar hacia su `Cliente` (la flecha apunta a `Cliente`), pero no al revés: un `Cliente` no tiene una referencia directa a sus pedidos; si necesito obtener los pedidos de un cliente, tendré que buscarlos mediante una consulta. Esto es una decisión de diseño: desacoplamos `Cliente` de `Pedido` para que `Cliente` no acumule una colección potencialmente enorme.
 
@@ -621,13 +621,13 @@ Desde `Pedido` navego hacia `LineaPedido` (composición con navegabilidad unidir
 
 Si quisiéramos navegabilidad bidireccional entre `Pedido` y `Cliente`, omitiríamos la flecha:
 
-???
+```
 @startuml
 class Pedido
 class Cliente
 Pedido "1" -- "1" Cliente : pertenece a
 @enduml
-???
+```
 
 Esto implica que tanto `Pedido` conoce a su `Cliente` como `Cliente` conoce sus `Pedido`s. Ambas clases tendrán referencias mutuas en el código.
 
@@ -641,25 +641,25 @@ En la práctica, muchos diseñadores optan por navegabilidad bidireccional en la
 
 Ambos conceptos se combinan en la misma notación. La multiplicidad se coloca junto al extremo de la clase, la navegabilidad se deduce de la punta de flecha. Un extremo puede tener flecha o no, y llevar una multiplicidad. PlantUML permite expresar todo junto con claridad:
 
-???
+```
 @startuml
 class Departamento
 class Empleado
 Departamento "1" o--> "5..*" Empleado : agrega
 @enduml
-???
+```
 
 Aquí, un `Departamento` agrega de cinco a muchos `Empleado`s (agregación), y desde `Departamento` se puede navegar hacia sus empleados (flecha), pero no al revés. Un empleado no conoce directamente su departamento (quizás se obtiene mediante un repositorio).
 
 Otro ejemplo con navegabilidad bidireccional:
 
-???
+```
 @startuml
 class CuentaBancaria
 class Titular
 CuentaBancaria "1" -- "1..2" Titular : pertenece
 @enduml
-???
+```
 
 Una cuenta bancaria puede tener uno o dos titulares, y la asociación es navegable en ambos sentidos: desde la cuenta puedo acceder a los titulares, y desde un titular puedo acceder a sus cuentas.
 
@@ -675,13 +675,13 @@ Una cuenta bancaria puede tener uno o dos titulares, y la asociación es navegab
 
 La guía de PlantUML ofrece variantes para personalizar la visualización de las relaciones (páginas 83-86), incluyendo líneas de estilo `[bold]`, `[dashed]`, `[dotted]`, colores y grosores. Esto puede usarse para resaltar asociaciones con multiplicidades restrictivas o navegabilidades importantes. Por ejemplo:
 
-???
+```
 @startuml
 class Pedido
 class Cliente
 Pedido "1" -[bold]-> "1" Cliente : pertenece
 @enduml
-???
+```
 
 Aunque no es necesario para la comprensión del modelo, en presentaciones ejecutivas puede ayudar a dirigir la atención hacia las relaciones críticas.
 
@@ -832,7 +832,7 @@ El modelo de clases no surge completo en una sola pasada. Una estrategia muy efe
 
 **Paso 1 — Modelo inicial (solo clases):**
 
-???
+```
 @startuml
 class Cliente
 class Pedido
@@ -841,13 +841,13 @@ class Carrito
 class Pago
 class Catalogo
 @enduml
-???
+```
 
 Este primer bocazo captura los conceptos fundamentales que aparecen en el flujo básico. Todavía no hay atributos, métodos ni relaciones. Es suficiente para confirmar con el experto de negocio que hemos identificado las entidades correctas.
 
 **Paso 2 — Añadir relaciones tras revisar el flujo básico:**
 
-???
+```
 @startuml
 class Cliente
 class Pedido
@@ -861,7 +861,7 @@ Pedido -- Pago : asociado a
 Carrito o-- Producto : contiene
 Catalogo ..> Producto : consulta
 @enduml
-???
+```
 
 **Paso 3 — Refinar con multiplicidades, atributos y métodos al revisar flujos alternativos:**
 
@@ -873,7 +873,7 @@ Este enfoque iterativo —clases → relaciones → detalles— evita la paráli
 
 Voy a plasmar ahora, en un solo diagrama de clases de PlantUML, el resultado del análisis anterior. Incluiré las clases, atributos, métodos y relaciones que hemos identificado, usando la notación y símbolos que ya dominamos.
 
-???
+```
 @startuml
 class Cliente {
   - id: int
@@ -932,7 +932,7 @@ Carrito "1" o-- "0..*" Producto : agrega
 Pedido ..> ServicioCorreo : usa para notificar
 Catalogo ..> Producto : consulta
 @enduml
-???
+```
 
 Algunas anotaciones sobre este diagrama:
 
@@ -945,14 +945,14 @@ Algunas anotaciones sobre este diagrama:
 
 Dependiendo de la metodología que empleemos (por ejemplo, un enfoque de arquitectura en capas o el uso de estereotipos del Proceso Unificado), podemos añadir estereotipos como `<<entity>>`, `<<boundary>>` o `<<control>>` para clarificar el rol de cada clase. En PlantUML, los estereotipos se colocan entre `<<` y `>>` antes del nombre de la clase, o se definen con el comando `class Nombre <<Estereotipo>>`.
 
-???
+```
 @startuml
 class "Cliente" <<entity>>
 class "Pedido" <<entity>>
 class "Carrito" <<control>>
 class "Catalogo" <<boundary>>
 @enduml
-???
+```
 
 Aunque no es obligatorio, ayuda a distinguir visualmente las clases que modelan el dominio de aquellas que gestionan la interfaz o la lógica de aplicación. Sin embargo, no debemos abusar; en muchos proyectos, un modelo de clases de dominio sin estereotipos es perfectamente suficiente.
 
@@ -1005,7 +1005,7 @@ En UML, una clase abstracta se distingue visualmente porque su nombre y, a menud
 
 Veamos cómo se expresa esto en PlantUML:
 
-???
+```
 @startuml
 abstract class Notificador {
   - destinatario: String
@@ -1021,19 +1021,19 @@ class NotificadorSMS extends Notificador {
   + formatearMensaje(): String
 }
 @enduml
-???
+```
 
 En este ejemplo, `Notificador` es abstracta (su nombre está en cursiva) y declara un método abstracto `formatearMensaje()`. Las subclases `NotificadorEmail` y `NotificadorSMS` heredan el atributo `destinatario` y el método `enviarResumenDiario()` ya implementado, pero deben proporcionar su propia versión de `formatearMensaje()`. Cualquier intento de instanciar `Notificador` directamente será rechazado por el compilador.
 
 La guía de PlantUML (página 66) también permite usar la palabra reservada `abstract` antes del nombre de la clase, sin necesidad de las llaves `{abstract}` en cada método, lo cual es más compacto:
 
-???
+```
 @startuml
 abstract class Notificador
 class NotificadorEmail extends Notificador
 class NotificadorSMS extends Notificador
 @enduml
-???
+```
 
 Ambas notaciones son válidas y producen el estilo visual adecuado.
 
@@ -1047,7 +1047,7 @@ PlantUML soporta ambas representaciones (páginas 67 y 76). La declaración con 
 
 Un ejemplo clásico es la interfaz `IPagable` en un sistema de facturación:
 
-???
+```
 @startuml
 interface IPagable {
   + calcularImporte(): double
@@ -1058,13 +1058,13 @@ class Factura implements IPagable
 class Recibo implements IPagable
 class NotaCredito implements IPagable
 @enduml
-???
+```
 
 `Factura`, `Recibo` y `NotaCredito` son clases muy diferentes entre sí, posiblemente con distintas jerarquías de herencia, pero todas comparten la obligación de saber calcular su importe y procesar su pago. La interfaz `IPagable` les exige cumplir ese contrato sin imponerles ninguna estructura interna.
 
 La notación de "lollipop" es especialmente útil cuando queremos mostrar la interfaz de forma compacta, sin ocupar un rectángulo completo. En PlantUML, se consigue definiendo la interfaz con `()` y conectándola con la relación de realización:
 
-???
+```
 @startuml
 () IPagable
 class Factura
@@ -1072,7 +1072,7 @@ class Recibo
 Factura ..|> IPagable
 Recibo ..|> IPagable
 @enduml
-???
+```
 
 Esta vista es frecuente en diagramas de componentes o de despliegue, pero también puede emplearse en diagramas de clases muy poblados para ahorrar espacio.
 
@@ -1101,7 +1101,7 @@ En PlantUML, los paquetes se declaran con la palabra reservada `package`, y su c
 
 Veamos un ejemplo que organiza nuestro modelo de comercio electrónico:
 
-???
+```
 @startuml
 package "Dominio" {
   class Cliente
@@ -1129,13 +1129,13 @@ Pedido ..> ServicioPago
 Catalogo ..> Producto
 Carrito o--> Producto
 @enduml
-???
+```
 
 Aquí, el modelo se ha dividido en tres paquetes que reflejan una arquitectura en capas simplificada. Las clases de dominio contienen la lógica de negocio y las entidades; los servicios encapsulan integraciones externas; la interfaz agrupa los controladores que median entre el usuario y el dominio. Esta organización no solo clarifica el diagrama, sino que también prefigura la estructura de directorios del código fuente.
 
 Los paquetes pueden relacionarse entre sí mediante dependencias (`..>`), indicando que un paquete necesita elementos de otro. Por ejemplo:
 
-???
+```
 @startuml
 package "Interfaz" {
   class Catalogo
@@ -1150,7 +1150,7 @@ package "Servicios" {
 Interfaz ..> Dominio : usa
 Interfaz ..> Servicios : usa
 @enduml
-???
+```
 
 Esta vista arquitectónica de alto nivel comunica las dependencias entre subsistemas sin entrar en el detalle de cada clase. Es un magnífico punto de partida para discutir la estructura del código con el equipo.
 
@@ -1167,7 +1167,7 @@ En proyectos reales, los paquetes suelen reflejar una **arquitectura en capas**.
 
 En PlantUML, esto se modela con paquetes anidados y dependencias entre paquetes:
 
-???
+```
 @startuml
 package "SistemaComercio" {
   package "Presentacion" {
@@ -1196,7 +1196,7 @@ Aplicacion ..> Dominio : usa
 Infraestructura ..> Dominio : implementa
 RepositorioPedidoSQL ..|> RepositorioPedido : realiza
 @enduml
-???
+```
 
 Esta organización en capas con paquetes anidados ofrece múltiples ventajas:
 - **Separación de responsabilidades:** cada capa tiene un rol bien definido.
@@ -1300,7 +1300,7 @@ La guía de PlantUML nos brinda herramientas que, bien empleadas, mejoran sustan
 - **Separadores y títulos dentro de clases** (`..`, `==`, `--`, `__`): usar para agrupar atributos y métodos lógicamente, en lugar de presentar una lista plana interminable.
 - **Notas y comentarios como parte del modelo vivo**: las notas no son simples adornos; son el lugar natural para documentar decisiones de diseño, restricciones de negocio, enlaces a casos de uso o advertencias técnicas. PlantUML permite adjuntar notas a una clase (`note left of`, `note right of`, `note top of`, `note bottom of`) o a una relación (`note on link`). Ejemplo:
 
-???
+```
 @startuml
 class Pedido {
   - estado: String
@@ -1317,7 +1317,7 @@ note right of Pedido::confirmar()
   Diseño: se dispara tras validar stock.
 end note
 @enduml
-???
+```
 
 Las notas también pueden documentar el **porqué** de una decisión de diseño, no solo el **qué**. Por ejemplo, explicar por qué se eligió agregación en lugar de composición, o por qué una clase tiene cierta multiplicidad. Esta información es invaluable para los desarrolladores que mantendrán el sistema meses o años después.
 - **Estilos globales**: definir un estilo base con `skinparam` y aplicarlo consistentemente en todos los diagramas del proyecto. Esto comunica profesionalidad y coherencia.
