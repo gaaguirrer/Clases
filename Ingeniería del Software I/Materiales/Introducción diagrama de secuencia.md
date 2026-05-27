@@ -1,4 +1,4 @@
-# 1. ¿Qué es un diagrama de secuencia? La coreografía de los objetos en el tiempo
+# 1. ¿Qué es un diagrama de secuencia?
 
 En los bloques anteriores de este curso hemos aprendido a capturar las necesidades funcionales de un sistema mediante casos de uso y a modelar su estructura estática mediante diagramas de clases. Pero entre el *qué* y el *quién* queda un vacío: el *cómo*. ¿Cómo se comunican los objetos entre sí para que un caso de uso se convierta en realidad? ¿En qué orden se pasan los mensajes? ¿Qué objeto asume cada responsabilidad? El diagrama de secuencia es la herramienta UML que responde precisamente a estas preguntas. Es, sin exagerar, el artefacto donde el diseño cobra vida.
 
@@ -22,7 +22,7 @@ El diagrama de secuencia conecta los otros dos de manera directa y verificable. 
 
 Esta regla de coherencia —que el manual de PlantUML nos permite aplicar con rigor— es una de las disciplinas más saludables que pueden imponerse en un proyecto. Si durante la construcción de un diagrama de secuencia detectamos que necesitamos una clase que no está en el diagrama de clases, no debemos inventarla sobre la marcha; debemos volver al modelo estructural, justificarla desde los casos de uso y añadirla formalmente. Si un mensaje invoca un método que no existe en la clase destino, hay que revisar el diseño: o falta el método en la clase, o la responsabilidad está mal asignada.
 
-## 1.3. Anatomía visual del diagrama de secuencia
+## 1.3. Elementos visuales del diagrama de secuencia
 
 Aunque dedicaremos temas completos a cada elemento, conviene presentar aquí un mapa rápido de los componentes que encontraremos en un diagrama de secuencia, tal como los describe la guía de PlantUML (páginas 1 a 44):
 
@@ -50,7 +50,7 @@ La limpieza y legibilidad de esta notación textual es una de las razones por la
 
 ## 1.4. El rol de los objetos: derivación estricta desde el diagrama de clases
 
-Aquí debo hacer hincapié en uno de los principios que he impuesto en todos mis equipos y que considero irrenunciable para mantener la integridad del diseño: **toda línea de vida de un diagrama de secuencia que no sea un actor debe corresponder exactamente a una clase definida en el diagrama de clases**. No hay excepciones. No existe un "objeto Sistema" genérico que recibe mensajes como si fuera un monolito. El sistema es la suma de sus partes, y el diagrama de secuencia debe mostrar esa colaboración distribuida.
+Aquí debo hacer hincapié en uno de los principios que he impuesto en todos mis equipos y que considero irrenunciable para mantener la integridad del diseño: **toda línea de vida de un diagrama de secuencia que no sea un actor debe corresponder exactamente a una clase definida en el diagrama de clases**. No hay excepciones. No existe un "objeto Sistema" genérico que recibe mensajes como si fuera un monolito. El sistema es más que la suma de sus partes, y el diagrama de secuencia debe mostrar esa colaboración distribuida.
 
 En su lugar, el diagrama de secuencia se puebla con instancias de las clases que ya hemos modelado: objetos de frontera (`<<boundary>>`) que gestionan la interacción con el usuario; objetos de control (`<<control>>`) que orquestan la lógica del caso de uso; objetos de entidad (`<<entity>>`) que representan los datos del dominio; y servicios externos o de infraestructura que también deben estar representados en el modelo de clases.
 

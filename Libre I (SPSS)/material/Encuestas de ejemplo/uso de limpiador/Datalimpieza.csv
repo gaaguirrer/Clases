@@ -1,0 +1,199 @@
+Frecuencia_limpieza,Area_favorita,Producto_actual,Aspectos_valorados,Caracteristicas_nuevo,Forma_aplicacion,Aroma_preferido,Envases_reciclables,Tipo_producto,Rango_precio,Tamano_envase,Uso_exteriores,Sugerencia
+Semanalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Multiusos,$5 - $10,Mediano,No,
+Diariamente,Baño,Productos caseros,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$10 - $15,Pequeño,Sí,"Mejor sin químicos"
+Mensualmente,Sala,Marca,Precio,Acción rápida,Toallitas,Frescura del océano,No,Específico,Menos de $5,Grande,No,
+Ocasionalmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Multiusos,$15 - $20,Mediano,No,
+Semanalmente,Cocina,Productos caseros,Eficiencia,Ecológico,Gel,Cítricos,Sí,Multiusos,$5 - $10,Pequeño,Sí,"Envase más grande"
+Diariamente,Baño,Marca,Naturalidad,Desinfectante,Rociador,Lavanda,No,Específico,$10 - $15,Mediano,No,
+Semanalmente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,Sí,Multiusos,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,No,Específico,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,"Aroma más suave"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,Sí,Multiusos,$15 - $20,Grande,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Rociador,Frescura del océano,No,Específico,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Que no deje residuos"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,"Más duración"
+Diariamente,Sala,Marca,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,"Ideal para mascotas"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,"Rociador ajustable"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,"Menos espuma"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Envase recargable"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,"Aroma cítrico más fuerte"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,"Que sea biodegradable"
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,"Sin ftalatos"
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Más práctico"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Rendimiento concentrado"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,"Que no manche"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,"Durabilidad"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Fácil de enjuagar"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,"Aroma a hierbas"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,"Rendimiento en frío"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Poco olor residual"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,"Formato spray grande"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Más opciones ecológicas"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Rápida evaporación"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No
+Semanalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Multiusos,$5 - $10,Mediano,No,
+Diariamente,Baño,Productos caseros,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$10 - $15,Pequeño,Sí,"Sin químicos agresivos"
+Mensualmente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Específico,Menos de $5,Grande,No,
+Ocasionalmente,Dormitorio,Marca,Fragancia,Aroma fresco,Rociador,Pino,Sí,Multiusos,$15 - $20,Mediano,No,
+Semanalmente,Cocina,Productos caseros,Eficiencia,Ecológico,Gel,Cítricos,Sí,Multiusos,$5 - $10,Pequeño,Sí,"Envase recargable"
+Diariamente,Baño,Marca,Naturalidad,Desinfectante,Rociador,Lavanda,No,Específico,$10 - $15,Mediano,No,
+Semanalmente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,Sí,Multiusos,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,No,Específico,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,"Aroma duradero"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,Sí,Multiusos,$15 - $20,Grande,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Rociador,Frescura del océano,No,Específico,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Que no deje residuos"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,"Más concentrado"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Ideal para mascotas"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,"Rociador ajustable"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,"Sin ftalatos"
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,"Menos espuma"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Envase biodegradable"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,"Aroma a lavanda natural"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Que sea antialérgico"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,"Rendimiento en frío"
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,"Fácil de enjuagar"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Que no manche"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,"Poco olor residual"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,"Formato spray grande"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Más duración"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,"Que sea biodegradable"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,"Aroma a hierbas"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Rápida evaporación"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,"Sin colorantes"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No,"Que mate bacterias"
+Ocasionalmente,Cocina,Productos caseros,Eficiencia,Desinfectante,Toallitas,Cítricos,No,Multiusos,$10 - $15,Pequeño,Sí,
+Semanalmente,Baño,Marca,Naturalidad,Ecológico,Gel,Lavanda,Sí,Multiusos,$15 - $20,Mediano,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Rociador,Frescura del océano,Sí,Específico,Menos de $5,Grande,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Toallitas,Pino,No,Multiusos,$5 - $10,Pequeño,No,"Tamaño de viaje"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Gel,Cítricos,Sí,Multiusos,$10 - $15,Mediano,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Rociador,Lavanda,Sí,Específico,$15 - $20,Grande,No,
+Diariamente,Sala,Otro,Precio,Acción rápida,Toallitas,Frescura del océano,No,Multiusos,Menos de $5,Pequeño,Sí,
+Mensualmente,Dormitorio,Productos caseros,Fragancia,Aroma fresco,Gel,Pino,Sí,Multiusos,$5 - $10,Mediano,No,"Más opciones ecológicas"
+Ocasionalmente,Cocina,Marca,Eficiencia,Desinfectante,Rociador,Cítricos,Sí,Específico,$10 - $15,Grande,Sí,
+Semanalmente,Baño,Productos caseros,Naturalidad,Ecológico,Toallitas,Lavanda,No,Multiusos,$15 - $20,Pequeño,No,
+Diariamente,Sala,Marca,Precio,Acción rápida,Gel,Frescura del océano,Sí,Multiusos,Menos de $5,Mediano,Sí,
+Mensualmente,Dormitorio,Otro,Fragancia,Aroma fresco,Rociador,Pino,Sí,Específico,$5 - $10,Grande,No

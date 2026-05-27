@@ -14,9 +14,9 @@ ___
 
 Si los casos de uso son las historias de valor que el sistema ofrece, los actores son los protagonistas (y antagonistas) de esas historias. Un actor no es simplemente "un usuario"; es un rol que una entidad externa —persona, sistema o dispositivo— desempeña en relación con nuestro software. Comprender a los actores en profundidad equivale a trazar el mapa social y técnico del sistema, y como Project Manager, ese mapa me indica *con quién debo hablar*, *qué dependencias externas existen* y *cómo organizar las pruebas de aceptación*.
 
-## 2.1. Más allá de la figura de palitos: definición formal y clasificación
+## 2.1. Definición formal y clasificación
 
-En UML, un actor es una entidad externa al sistema que interactúa con él a través del envío y recepción de mensajes. La palabra "externo" es clave: nunca modelamos como actor un componente interno de nuestro software. El actor está fuera de la frontera del sistema, y su comportamiento no está bajo nuestro control; solo podemos controlar cómo el sistema responde a sus estímulos.
+En UML, un **actor** es una entidad externa al sistema que interactúa con él a través del envío y recepción de mensajes. La palabra "externo" es clave: nunca modelamos como actor un componente interno de nuestro software. El actor está fuera de la frontera del sistema, y su comportamiento no está bajo nuestro control; solo podemos controlar cómo el sistema responde a sus estímulos.
 
 La clasificación de actores que utilizo en mis proyectos va más allá del binomio primario/secundario, distingo al menos cuatro categorías que condicionan la planificación:
 
@@ -36,14 +36,22 @@ Esta distinción tiene consecuencias prácticas en la gestión del proyecto. Cua
 
 En PlantUML, esta abstracción se refleja en la posibilidad de dar nombres descriptivos a los actores, e incluso alias para referenciarlos en relaciones sin repetir su nombre completo (guía, sección 1.2 y 1.4, páginas 2-4). Por ejemplo:
 
+
+
 ```plantuml
 @startuml
 :Cliente Registrado: as Cliente
 :Sistema de Facturación Electrónica: as SFE
+
+rectangle "Sistema de Facturación" {
+    (Emitir Factura)
+}
+
 Cliente --> (Emitir Factura)
 (Emitir Factura) --> SFE : comunica
 @enduml
 ```
+
 
 Aquí `Cliente` y `SFE` son alias que simplifican el código sin perder legibilidad. La guía también permite declarar actores con la palabra `actor` seguida de un nombre o de dos puntos, ofreciendo flexibilidad sintáctica.
 
@@ -55,11 +63,17 @@ La guía de PlantUML que estamos utilizando dedica las páginas 44 a 46 a la def
 
 Si en una relación aparece un nombre que no ha sido declarado previamente como actor, PlantUML asume que se trata de un actor y lo dibuja automáticamente con la figura de palitos por defecto. Esto es útil para diagramas rápidos, aunque yo prefiero siempre declarar explícitamente los actores para tener control sobre sus alias y estilos.
 
+
+
 ```plantuml
 @startuml
+rectangle "Sistema Bancario" {
+    (Consultar Saldo)
+}
 Usuario --> (Consultar Saldo)
 @enduml
 ```
+
 
 En este ejemplo, `Usuario` se convierte automáticamente en un actor sin necesidad de declararlo antes.
 
@@ -67,14 +81,23 @@ En este ejemplo, `Usuario` se convierte automáticamente en un actor sin necesid
 
 La sintaxis `:Nombre del Actor:` produce la representación de palitos, mientras que `actor Nombre` tiene el mismo efecto visual. Ambas permiten definir alias con `as`, lo que facilita referenciar al actor en múltiples relaciones.
 
+
+
 ```plantuml
 @startuml
 :Cliente Premium: as CP
 actor "Administrador del Sistema" as Admin
+
+rectangle "Sistema" {
+    (Solicitar Crédito)
+    (Gestionar Usuarios)
+}
+
 CP --> (Solicitar Crédito)
 Admin --> (Gestionar Usuarios)
 @enduml
 ```
+
 
 Observen cómo encerrar el nombre entre comillas permite incluir espacios y caracteres especiales. Esto es especialmente útil cuando el nombre del actor contiene tildes, eñes o cualquier carácter Unicode (guía, página 537). En proyectos internacionales, donde los actores pueden describirse en varios idiomas, esta flexibilidad es indispensable.
 
@@ -86,15 +109,24 @@ Una funcionalidad que me resulta muy práctica para presentaciones ejecutivas es
 - **`awesome`**: una figura humana más detallada y estilizada, que resulta más profesional en presentaciones a stakeholders no técnicos.
 - **`hollow`**: similar a `awesome` pero sin relleno, dibujando solo el contorno de la figura.
 
+
+
 ```plantuml
 @startuml
 skinparam actorStyle awesome
 :Cliente: as C
 :Administrador: as A
+
+rectangle "Sistema" {
+    (Comprar)
+    (Auditar)
+}
+
 C --> (Comprar)
 A --> (Auditar)
 @enduml
 ```
+
 
 Este simple cambio de estilo puede marcar la diferencia entre un diagrama que el cliente entiende de un vistazo y uno que percibe como "demasiado técnico". Como Project Manager, adapto el estilo según la audiencia: `stick` para el equipo de desarrollo, `awesome` para los patrocinadores del proyecto.
 
@@ -102,14 +134,25 @@ Este simple cambio de estilo puede marcar la diferencia entre un diagrama que el
 
 La guía (páginas 54-55) introduce el concepto de *Business Actor*, que se representa añadiendo una barra diagonal `/` después del nombre del actor. Este actor de negocio pertenece al dominio del problema y no necesariamente interactúa con el sistema software, sino con los procesos de negocio en general. Es útil cuando estamos modelando el contexto organizacional más amplio.
 
+
+
 ```plantuml
 @startuml
-:Cliente Bancario/ as CB
-:Regulador/ as Reg
+left to right direction
+
+:ClienteBancario:/ as CB
+:Regulador:/ as Reg
+
+rectangle "Sistema Bancario" {
+    (Solicitar Préstamo)
+    (Supervisar Operaciones)
+}
+
 CB --> (Solicitar Préstamo)
 Reg --> (Supervisar Operaciones)
 @enduml
 ```
+
 
 La barra diagonal cruza el icono del actor, indicando visualmente que se trata de un rol de negocio. En fases tempranas del proyecto, cuando estamos definiendo el alcance funcional con los analistas de negocio, este tipo de actor me ayuda a distinguir entre quien usa el software y quien simplemente participa en el proceso global.
 
@@ -117,14 +160,23 @@ La barra diagonal cruza el icono del actor, indicando visualmente que se trata d
 
 En ocasiones, el nombre del actor necesita incluir información adicional (departamento, ubicación, etc.). La guía permite usar `\n` para insertar saltos de línea en el nombre. También se puede declarar el actor en varias líneas usando la palabra reservada `as` para asignar un alias corto al mismo tiempo (páginas 3-4).
 
+
+
 ```plantuml
 @startuml
-actor "Cliente\n(Sucursal Norte)" as CN
-:Analista de\nCréditos: as AC
+actor "Cliente\\n(Sucursal Norte)" as CN
+:Analista de\\nCréditos: as AC
+
+rectangle "Sistema" {
+    (Consultar Expediente)
+    (Aprobar Préstamo)
+}
+
 CN --> (Consultar Expediente)
 AC --> (Aprobar Préstamo)
 @enduml
 ```
+
 
 Esta capacidad de formato es crucial cuando el diagrama se incluye en documentos de especificación que requieren identificar con precisión a los actores sin saturar el gráfico con texto excesivamente largo en una sola línea.
 
@@ -132,33 +184,29 @@ Esta capacidad de formato es crucial cuando el diagrama se incluye en documentos
 
 La guía muestra que podemos cambiar el color de fondo de un actor usando la notación `#color` después de su declaración (página 3). También podemos añadir estereotipos con `<< >>` para clasificar actores según su naturaleza (humano, sistema, dispositivo) o según su criticidad.
 
+
+
 ```plantuml
 @startuml
-actor "Cliente VIP" #Gold <<Humano>>
-actor "Pasarela de Pago" #LightBlue <<Sistema>>
-:Auditor Externo: #LightGreen <<Humano>>
+left to right direction
+
+actor "Cliente VIP" as CVIP <<Humano>> #Gold
+actor "Pasarela de Pago" as PP <<Sistema>> #LightBlue
+actor "Auditor Externo" as AE <<Humano>> #LightGreen
+
+rectangle "Sistema Bancario" {
+    (Solicitar Préstamo)
+    (Supervisar Operaciones)
+    (Realizar Pago)
+}
+
+CVIP --> (Solicitar Préstamo)
+PP --> (Realizar Pago)
+AE --> (Supervisar Operaciones)
 @enduml
 ```
 
-Combinado con `skinparam`, podemos definir esquemas de color consistentes para cada tipo de actor, lo que aporta coherencia visual a toda la documentación del proyecto.
-
-## 2.4. Actores y la planificación del Gantt: el puente entre el análisis y la ejecución
-
-Cerremos esta sección retomando el hilo conductor de nuestro curso. La identificación de actores tiene un impacto directo y mensurable en el diagrama de Gantt del proyecto:
-
-1. **Dependencias de integración**: Cada actor sistema (una API externa, un servicio de terceros) se traduce en tareas de integración en el Gantt. Debo planificar sprints o fases específicas para desarrollar los conectores, probar la comunicación con entornos de sandbox y manejar las contingencias si el servicio externo no está disponible durante el desarrollo.
-
-2. **Pruebas de aceptación por rol**: Los actores humanos definen los perfiles de prueba. Si tengo tres roles de usuario distintos (Cliente, Administrador, Auditor), mi plan de pruebas debe incluir sesiones de aceptación con representantes de cada rol. Esto requiere coordinar agendas y, a menudo, formación previa, que también se convierten en barras del Gantt.
-
-3. **Documentación y formación**: Los actores humanos necesitan manuales de usuario, ayuda contextual y, en muchos casos, sesiones de formación. Si mi proyecto tiene como actores a cajeros de sucursal bancaria y gestores de oficina central, debo planificar materiales específicos para cada perfil, y esas tareas deben aparecer en el cronograma.
-
-4. **Seguridad y perfiles de acceso**: La definición de actores guía la matriz de permisos del sistema. Implementar la autenticación, la autorización basada en roles y el cumplimiento de normativas (GDPR, SOX) son tareas que se derivan directamente de los actores identificados y que consumen tiempo de desarrollo.
-
-En nuestro proyecto modelo de 10 actividades, no detallamos los actores porque nos centramos en la mecánica PERT/CPM. Pero en un proyecto real, cada una de esas actividades (A a J) correspondería a la implementación de casos de uso específicos, y cada caso de uso estaría vinculado a actores concretos. La tarea A "Definición de requisitos" implicaría entrevistas con los actores humanos; la tarea H "Integración con pasarela de pago" involucraría al actor sistema correspondiente. El Gantt, por tanto, es un reflejo temporal de un entramado funcional que se origina en los actores y los casos de uso.
-
-Dominar el concepto de actor no es solo saber dibujar monigotes en un diagrama UML; es entender quién se relaciona con nuestro sistema, qué espera de él y cómo nuestra planificación debe acomodar esas expectativas. En la próxima sección, veremos cómo se representa visualmente un caso de uso y cómo se relaciona con los actores dentro de la frontera del sistema.
-
-# 3. El Caso de Uso como Objetivo: La Elipse
+# 3. El Caso de Uso como Objetivo
 
 Ya conocemos a los actores, los protagonistas de nuestras historias de software. Ahora toca entender dónde ocurren esas historias y qué forma tienen. En un diagrama UML de casos de uso, la escena se compone de tres elementos fundamentales: la **frontera del sistema** (el "escenario"), los **casos de uso** (los "actos" que el sistema sabe ejecutar) y los **actores** (quienes inician esos actos). En esta sección nos centramos en los dos primeros: el contenedor y la elipse.
 
@@ -174,6 +222,8 @@ Todo sistema de software tiene un límite. Ese límite separa lo que el sistema 
 
 Un ejemplo mínimo con `rectangle`:
 
+
+
 ```plantuml
 @startuml
 rectangle "Sistema de E-Commerce" {
@@ -183,6 +233,7 @@ rectangle "Sistema de E-Commerce" {
 :Cliente: --> (Realizar Pedido)
 @enduml
 ```
+
 
 La guía de PlantUML (páginas 46-47) utiliza el `rectangle` como contenedor del sistema, aunque también se pueden usar `package` o simplemente dejar las elipses sueltas sin frontera visible.
 
@@ -201,19 +252,28 @@ En PlantUML tenemos dos formas de declarar un caso de uso:
 
 La primera forma es la más breve: escribes el nombre entre paréntesis y PlantUML genera la elipse. La segunda forma te da control adicional: puedes asignar un alias con `as` para referenciarlo en relaciones sin repetir el nombre, y puedes incluir saltos de línea con `\n` o descripciones largas con separadores visuales (`--`, `==`, `..`).
 
+
+
 ```plantuml
 @startuml
-(Realizar Pedido)
-usecase "Consultar\nHistorial de Compras" as CH
-usecase "Autenticar Usuario" as AU
+rectangle "Sistema de E-Commerce" {
+  (Realizar Pedido)
+  (Consultar Catálogo)
+}
+
+:Cliente: --> (Realizar Pedido)
+:Cliente: --> (Consultar Catálogo)
 @enduml
 ```
+
 
 > **UML estándar vs. PlantUML:** En UML estándar, la elipse es la *única* notación para un caso de uso. En PlantUML, los paréntesis `( )` son azúcar sintáctico que se transforma en una elipse al renderizar. Lo importante es que el concepto UML subyacente es idéntico.
 
 ### 3.2.2. Nomenclatura: verbo + sustantivo
 
 Un caso de uso se nombra con un **verbo en infinitivo + sustantivo**: "Realizar Pedido", "Consultar Saldo", "Generar Informe". El verbo indica la acción que el sistema ejecuta; el sustantivo indica el objeto de esa acción. Esta convención no es caprichosa: garantiza que cualquier lector —técnico o de negocio— entienda de un vistazo qué valor produce el caso de uso.
+
+
 
 ```plantuml
 @startuml
@@ -225,6 +285,7 @@ rectangle "Sistema" {
 @enduml
 ```
 
+
 **Antipatrón CRUD:** Un error frecuente es crear casos de uso como "Gestionar X" o "Administrar Y", que terminan siendo contenedores de operaciones CRUD (Crear, Leer, Actualizar, Eliminar). "Gestionar Usuarios" no es un objetivo de valor; es un cajón donde metemos "Registrar Usuario", "Modificar Usuario", "Eliminar Usuario" y "Consultar Usuario". Cada una de esas operaciones es un caso de uso independiente porque responde a una necesidad distinta del actor y tiene flujos de error diferentes. Si ves "Gestionar" o "Administrar" en el nombre de un caso de uso, desconfía: probablemente escondes varios casos de uso bajo una misma elipse.
 
 Volviendo al tema de nomenclatura: es mejor tener varias elipses con nombres precisos que una sola elipse ambigua que intente abarcarlo todo. La claridad del modelo se paga con más elipses, pero ese es un precio justo.
@@ -233,25 +294,32 @@ Volviendo al tema de nomenclatura: es mejor tener varias elipses con nombres pre
 
 Cuando un caso de uso necesita incluir información adicional sin salir del diagrama —una descripción breve, precondiciones o un enlace a la especificación detallada—, PlantUML ofrece separadores visuales dentro de la declaración `usecase`:
 
+
+
 ```plantuml
 @startuml
-usecase CU01 as "
-  Realizar Pedido
-  ==
-  Pre: Cliente autenticado
-  ..
-  Flujo: selecciona productos, confirma, paga
-  ..
-  Post: Pedido registrado, email enviado
-"
+rectangle "Sistema" {
+    usecase CU01 as "
+      Realizar Pedido
+      ==
+      Pre: Cliente autenticado
+      ..
+      Flujo: selecciona productos, confirma, paga
+      ..
+      Post: Pedido registrado, email enviado
+    "
+}
 @enduml
 ```
+
 
 Este enfoque es útil para documentación rápida, pero recuerda la regla de oro: el diagrama es un mapa, no una enciclopedia. El detalle completo pertenece a la especificación textual (sección 5).
 
 ## 3.3. Hacia una implementación concreta
 
 Cuando un equipo de desarrollo recibe un diagrama de casos de uso, no solo ve elipses: ve **módulos de código**, **endpoints de API** y **pruebas que escribir**. Cada caso de uso debería poder rastrearse hasta una implementación concreta. Por ejemplo, "Realizar Pedido" (CU-01) podría traducirse en:
+
+
 
 ```python
 # app/use_cases/realizar_pedido.py
@@ -269,7 +337,10 @@ def ejecutar(cliente_id, productos, direccion_envio, metodo_pago):
     return pedido
 ```
 
+
 Este fragmento —aunque simplificado— muestra cómo el flujo básico de 10 pasos visto en secciones anteriores se convierte en código real. Si el caso de uso incluía "Validar Stock" como relación `<<include>>`, esa validación estará en una función aparte que "Realizar Pedido" invoca, exactamente igual que en el diagrama.
+
+
 
 ```python
 # app/use_cases/validar_stock.py
@@ -278,9 +349,12 @@ def validar_stock(producto_id, cantidad):
     return stock >= cantidad
 ```
 
+
 ## 3.4. Diagrama completo integrador
 
 Cierro esta sección con un ejemplo que reúne los tres elementos —frontera del sistema, actores y casos de uso— en un diagrama autocontenido:
+
+
 
 ```plantuml
 @startuml
@@ -298,6 +372,7 @@ C --> Reg
 RP --> Pay : cobra
 @enduml
 ```
+
 
 Cada elemento en este diagrama tiene una razón de ser: los actores están fuera del rectángulo, los casos de uso dentro, y las líneas muestran quién inicia cada interacción. Este es el vocabulario visual mínimo que necesitas para cualquier diagrama de casos de uso. En la siguiente sección, cuando empecemos a conectar los casos de uso entre sí con relaciones, este vocabulario se enriquecerá, pero la estructura fundamental ya está aquí.
 
@@ -331,29 +406,24 @@ En el manual de PlantUML que estamos estudiando, las relaciones entre casos de u
 
 Un ejemplo sencillo:
 
+
+
 ```plantuml
 @startuml
 :Técnico de Soporte: as TS
 
-(Resolver Incidencia) as RI
-(Autenticar Técnico) as AT
+rectangle "Sistema" {
+    (Resolver Incidencia) as RI
+    (Autenticar Técnico) as AT
 
-RI ..> AT : <<include>>
+    RI ..> AT : <<include>>
+}
 TS --> RI
 @enduml
 ```
 
+
 Aquí, "Resolver Incidencia" incluye obligatoriamente "Autenticar Técnico". Observen que la flecha de inclusión apunta desde el caso de uso base (el que incluye) hacia el caso de uso incluido (el que es usado). Esta dirección es a veces confusa porque conceptualmente el flujo va del base al incluido, pero en UML la dependencia se dibuja hacia el elemento del que se depende.
-
-### 4.2.3. Impacto en la gestión y el Gantt
-
-**Perspectiva PM:** Desde mi rol de Project Manager, la inclusión tiene consecuencias directas en el cronograma:
-
-- **Reutilización = ahorro de esfuerzo**: Si tres casos de uso incluyen "Validar Stock", estimo y planifico esa funcionalidad una sola vez. Mi Gantt tendrá una tarea "Implementar Validar Stock" antes o en paralelo a los casos de uso que la incluyen.
-- **Precedencia técnica**: El caso de uso incluido debe estar operativo (al menos en una versión básica) antes de que los casos de uso base puedan probarse completamente. Esto me obliga a secuenciar tareas en el Gantt: no puedo probar "Realizar Pedido" hasta que "Validar Stock" esté implementado.
-- **Pruebas de regresión**: Cada vez que modifico un caso de uso incluido, debo planificar tiempo adicional para probar todos los casos de uso base que dependen de él. Mi plan de proyecto debe contemplar ese esfuerzo de regresión como una tarea explícita o un buffer de contingencia.
-
-**Perspectiva desarrollador:** En código, un `<<include>>` se traduce directamente en una función o método reutilizable. Si "Validar Stock" es un caso de uso incluido, escribiré una función `validar_stock(producto_id, cantidad)` que varios endpoints llamarán. El flujo básico del caso de uso base invoca esta función en un paso determinado, y si la validación falla, se dispara un flujo de excepción. Esta correspondencia uno a uno entre el diagrama y el código es lo que hace que los casos de uso sean una herramienta práctica, no solo teórica.
 
 ## 4.3. La Extensión (`<<extend>>`): El comportamiento opcional y controlado
 
@@ -369,31 +439,26 @@ El caso de uso extendido conoce al caso de uso base (sabe en qué punto de exten
 
 La extensión se dibuja con una flecha `..>` o `-->` que apunta desde el caso de uso extendido hacia el caso de uso base (dirección opuesta a la inclusión), con el estereotipo `<<extend>>`. También se puede especificar el punto de extensión y la condición de guarda como una nota unida a la flecha.
 
+
+
 ```plantuml
 @startuml
 :Cliente: as C
-(Realizar Pedido) as RP
-(Aplicar Descuento VIP) as ADV
+
+rectangle "Sistema" {
+    (Realizar Pedido) as RP
+    (Aplicar Descuento VIP) as ADV
+
+    ADV ..> RP : <<extend>>
+    note on link : Punto de extensión: calcular_total.\\nCondición: cliente VIP y total > 100€.
+}
 
 C --> RP
-ADV ..> RP : <<extend>>
-note on link : Punto de extensión: calcular_total.\nCondición: cliente VIP y total > 100€.
 @enduml
 ```
 
+
 La guía de PlantUML no dedica una sección exclusiva a la extensión, pero todas las relaciones entre casos de uso se manejan con la notación de flechas y estereotipos que vimos en el apartado anterior (páginas 58 y siguientes). La clave es que la punta de la flecha apunta al caso de uso base, y el estereotipo `<<extend>>` se coloca sobre la línea, generalmente entre `<<` y `>>`.
-
-### 4.3.3. Impacto en la gestión y el Gantt
-
-La extensión introduce una flexibilidad que, como PM, debo manejar con cuidado:
-
-- **Funcionalidad opcional = riesgo de alcance**: Si los stakeholders ven muchos `<<extend>>` en el diagrama, pueden asumir que todas esas extensiones estarán implementadas desde el primer día. Debo aclarar que las extensiones son opcionales y que se pueden planificar en fases posteriores del proyecto. En el Gantt, puedo marcar las tareas de extensión como "fase 2" o "opcional", dejando claro que no forman parte de la línea base del cronograma.
-- **Complejidad incremental**: Cada extensión añade puntos de inserción y condiciones que aumentan la complejidad de pruebas. Si el caso de uso base tiene 5 puntos de extensión, el número de combinaciones a probar crece exponencialmente. Debo planificar tiempo de pruebas suficiente o, idealmente, limitar el número de extensiones a las que realmente aportan valor diferencial.
-- **Mantenimiento a largo plazo**: Decido junto con el arquitecto de software si la extensión debe implementarse mediante un mecanismo de plugins, herencia o inyección de dependencias. Esa decisión técnica impacta en el esfuerzo de diseño y, por tanto, en las tareas del Gantt.
-
-**Perspectiva desarrollador:** En código, `<<extend>>` se implementa típicamente con un patrón de hook o callback. El caso de uso base define un punto de extensión (un evento, un método virtual, un decorador), y el caso de uso extendido se registra para ejecutarse en ese punto si se cumple la condición de guarda. Frameworks como Spring (AOP), Django (señales) o Flask (blueprints) ofrecen mecanismos nativos para este patrón. La implementación debe asegurar que el caso de uso base funciona correctamente incluso si ningún extendido está registrado.
-
-**Perspectiva analista:** La extensión es mi herramienta para capturar requisitos que son "deseables" o "condicionales" sin contaminar la especificación del núcleo. Cuando un stakeholder dice "sí, pero solo si el cliente es premium", no lo fuerzo a encajar en el flujo básico; lo modelo como extensión con su condición de guarda. Esto me permite presentar un MVP claro (solo flujo básico) y un conjunto de ampliaciones negociables para fases posteriores.
 
 ## 4.4. La Generalización: Cuando un caso de uso es una versión especializada de otro
 
@@ -409,23 +474,30 @@ La relación de generalización se representa con una flecha de punta hueca (her
 
 La guía muestra que PlantUML soporta la notación de herencia con `<|--` (página 58). En el contexto de casos de uso, la sintaxis es similar a la de clases pero con los elementos adecuados:
 
+
+
 ```plantuml
 @startuml
-(Pago) as Pago
-(Pago con Tarjeta) as PT
-(Pago con PayPal) as PP
+:Cliente: as C
 
-PT <|-- Pago
-PP <|-- Pago
+rectangle "Sistema" {
+    (Pago) as Pago
+    (Pago con Tarjeta) as PT
+    (Pago con PayPal) as PP
 
-:Cliente: --> PT
-:Cliente: --> PP
+    PT <|-- Pago
+    PP <|-- Pago
+}
+
+C --> PT
+C --> PP
 @enduml
 ```
 
+
 También es válido usar `usecase Pago as P` y luego conectar con `PT <|-- P`. La notación de PlantUML es flexible y soporta tanto la palabra reservada `usecase` como los paréntesis para definir casos de uso.
 
-### 4.4.3. Impacto en la gestión y el Gantt
+### 4.4.3. Impacto en la gestión
 
 La generalización tiene implicaciones importantes para la planificación:
 
@@ -435,6 +507,8 @@ La generalización tiene implicaciones importantes para la planificación:
 - **Pruebas jerárquicas**: Los escenarios de prueba del padre deben pasar con cada hijo. Mi plan de pruebas incluirá la verificación de que los hijos no rompen el comportamiento heredado, lo que añade esfuerzo de pruebas de regresión.
 
 **Perspectiva desarrollador:** En código, la generalización se traduce en herencia de clases (si usamos POO) o en implementación de interfaces. El caso de uso padre define el contrato y la lógica común; cada hijo sobrescribe los métodos que varían. Por ejemplo:
+
+
 
 ```python
 from abc import ABC, abstractmethod
@@ -459,6 +533,7 @@ class PagoPayPal(Pago):
         ...
 ```
 
+
 Este patrón asegura que cualquier nuevo método de pago que aparezca en el futuro herede automáticamente el flujo básico, reduciendo el riesgo de omitir pasos críticos.
 
 ## 4.5. Elección estratégica de relaciones
@@ -482,16 +557,26 @@ La asociación puede tener multiplicidad, aunque rara vez se muestra en el diagr
 
 En PlantUML, la asociación puede decorarse con etiquetas que aclaren la intención:
 
+
+
 ```plantuml
 @startuml
-:Cliente: --> (Consultar Catálogo) : navega
-:Cliente: --> (Realizar Pedido) : ejecuta
+:Cliente: as C
+
+rectangle "Sistema" {
+    (Consultar Catálogo) as CC
+    (Realizar Pedido) as RP
+}
+
+C --> CC : navega
+C --> RP : ejecuta
 @enduml
 ```
 
+
 Estas etiquetas ayudan a lectores no técnicos a entender el sentido de la interacción, aunque en UML puro la línea de asociación no lleva nombre. Como PM, las incluyo cuando el diagrama se va a presentar a un comité de dirección que no está familiarizado con la notación.
 
-## 4.7. Chuleta de relaciones: resumen visual
+## 4.7. Resumen visual
 
 Para cerrar, aquí tienes una referencia rápida de las tres relaciones con su sintaxis PlantUML:
 
@@ -505,7 +590,7 @@ Un truco mnemotécnico: en la inclusión, la flecha **apunta hacia el que se usa
 
 Con esto cubrimos las tres relaciones fundamentales entre casos de uso. En la próxima sección abordaremos la especificación textual detallada, que es donde realmente se juega el éxito del análisis de casos de uso. El diagrama es el mapa, pero la especificación es el territorio, y un Project Manager debe conocer ambos para guiar al equipo hacia la entrega exitosa del proyecto.
 
-# 5. Más Allá del Diagrama: La Especificación Textual del Caso de Uso
+# 5. La Especificación Textual del Caso de Uso
 
 Si el diagrama es la cartografía del sistema, la especificación textual es el relato detallado de cada viaje que un actor emprende con él. Los óvalos y las líneas nos muestran *qué* funcionalidades existen y *quién* puede ejecutarlas, pero callan sobre el *cómo* se desarrolla la interacción, *qué* reglas de negocio la gobiernan y *qué* sucede cuando algo no sale según lo previsto. Como ingenieros de software, no podemos construir un sistema a partir de simples elipses; necesitamos la narrativa completa, y esa narrativa se plasma en la especificación textual de casos de uso.
 
@@ -613,16 +698,21 @@ El manual de PlantUML que nos sirve de referencia (páginas 46-47 y secciones po
 
 Podemos incluir un texto largo directamente en la definición del caso de uso usando las palabras reservadas `usecase` y, si es necesario, separadores como `--`, `==` o `..` para organizar visualmente la información. Esto es útil para transmitir un resumen del flujo en el propio diagrama:
 
+
+
 ```plantuml
 @startuml
-usecase "Realizar Pedido" as RP
-note top of RP
-  <b>Pre:</b> Usuario autenticado.
-  <b>Flujo básico:</b> 1. Seleccionar productos, 2. ...
-  <b>Post:</b> Pedido confirmado, inventario actualizado.
-end note
+rectangle "Sistema" {
+    usecase "Realizar Pedido" as RP
+    note top of RP
+      <b>Pre:</b> Usuario autenticado.
+      <b>Flujo básico:</b> 1. Seleccionar productos, 2. ...
+      <b>Post:</b> Pedido confirmado, inventario actualizado.
+    end note
+}
 @enduml
 ```
+
 
 No obstante, sobrecargar el diagrama con todo el contenido textual suele ir en detrimento de la legibilidad. Por ello, reservo esta técnica para resúmenes ejecutivos o para la documentación embebida en la propia imagen.
 
@@ -630,26 +720,39 @@ No obstante, sobrecargar el diagrama con todo el contenido textual suele ir en d
 
 Las notas (`note left of`, `note right of`, `note top of`, `note bottom of`) admiten el uso de Creole (negritas, cursivas, subrayados, listas) y HTML básico (sección 1.19 del manual). Así podemos incluir aclaraciones breves sin abandonar el lienzo del diagrama:
 
+
+
 ```plantuml
 @startuml
-:Cliente:
-(Realizar Pedido)
-note right of (Realizar Pedido)
-  Ver especificación completa en
-  [[./docs/CU-01.md CU-01]]
-end note
+:Cliente: as C
+
+rectangle "Sistema" {
+    (Realizar Pedido) as RP
+    note right of RP
+      Ver especificación completa en
+      [[./docs/CU-01.md CU-01]]
+    end note
+}
+
+C --> RP
 @enduml
 ```
+
 
 ### 5.3.3 Enlaces a la documentación externa
 
 La solución que mejor equilibra claridad visual y profundidad documental es enlazar el caso de uso a su especificación detallada, alojada por ejemplo en un archivo Markdown versionado junto al código. PlantUML permite crear hipervínculos con la sintaxis `[[URL]]` o `[[URL texto]]` tanto en el nombre del caso de uso como en las notas (sección 22.7 de la guía).
 
+
+
 ```plantuml
 @startuml
-usecase "Realizar Pedido [[./specs/CU-01.md]]" as RP
+rectangle "Sistema" {
+    usecase "Realizar Pedido [[./specs/CU-01.md]]" as RP
+}
 @enduml
 ```
+
 
 De este modo, el diagrama funciona como índice navegable y cualquier interesado puede acceder al detalle completo con un solo clic.
 
@@ -667,7 +770,7 @@ Tras años escribiendo y revisando casos de uso, he interiorizado algunas reglas
 
 En resumen, el diagrama de casos de uso es la puerta de entrada, pero la especificación textual es la estancia donde realmente se cocina el software. Dominar su redacción es una habilidad que todo ingeniero de software debe cultivar, pues en ella se funden la comprensión del negocio, la precisión técnica y la comunicación efectiva con todo el equipo.
 
-### 🛠️ Ejercicio práctico: completa la especificación
+### Ejercicio práctico: completa la especificación
 
 Toma el caso de uso **CU-01: Realizar Pedido** y completa su especificación usando la plantilla anterior. Como ayuda, aquí tienes el flujo básico ya redactado:
 
@@ -722,6 +825,8 @@ La sintaxis fundamental en PlantUML es la palabra reservada `package` seguida de
 
 Un ejemplo mínimo:
 
+
+
 ```plantuml
 @startuml
 package "Gestión Académica" {
@@ -730,6 +835,7 @@ package "Gestión Académica" {
 }
 @enduml
 ```
+
 
 Este fragmento genera una carpeta etiquetada "Gestión Académica" que contiene dos casos de uso. Visualmente, los casos de uso aparecen dentro del rectángulo del paquete, estableciendo una pertenencia clara.
 
@@ -747,6 +853,8 @@ La guía de PlantUML (página 73) documenta que podemos modificar la apariencia 
 También podemos aplicar un estereotipo directamente en la declaración del paquete, como `package "Nombre" <<Node>>`, lo que permite que cada paquete tenga un estilo distinto en el mismo diagrama.
 
 Un ejemplo con varios estilos:
+
+
 
 ```plantuml
 @startuml
@@ -772,11 +880,14 @@ package "Infraestructura" <<Cloud>> {
 @enduml
 ```
 
+
 Aquí "Sistema de Ventas" se dibuja como rectángulo (por el `skinparam` global), pero "Sistema de Pagos" adopta la forma de nodo y "Infraestructura" la de nube, gracias a los estereotipos individuales. Esta combinación permite jerarquizar visualmente los subsistemas y destacar aquellos que son externos o cuya frontera es menos definida.
 
 ## 6.4. Anidamiento de paquetes
 
 Los paquetes pueden contener otros paquetes, reflejando la descomposición jerárquica de un sistema en subsistemas, módulos y submódulos. La sintaxis es simplemente colocar un bloque `package` dentro de otro:
+
+
 
 ```plantuml
 @startuml
@@ -793,6 +904,7 @@ package "Plataforma Universitaria" {
 @enduml
 ```
 
+
 El resultado muestra "Plataforma Universitaria" como el paquete raíz, y dentro de él, "Gestión Académica" y "Biblioteca" como subpaquetes, cada uno con sus respectivos casos de uso. Este anidamiento puede tener tantos niveles como sea necesario, aunque conviene no exceder tres o cuatro para mantener la legibilidad.
 
 ## 6.5. Agrupación de actores con paquetes
@@ -800,6 +912,8 @@ El resultado muestra "Plataforma Universitaria" como el paquete raíz, y dentro 
 No solo los casos de uso se benefician de la agrupación; los actores también pueden organizarse en paquetes. Esto es particularmente útil cuando el sistema interactúa con múltiples departamentos de una organización o con diferentes sistemas externos.
 
 La guía de PlantUML (páginas 46-47 en la sección de casos de uso, y ejemplos en las secciones de despliegue) muestra cómo declarar actores dentro de paquetes. La sintaxis es idéntica: los actores se colocan dentro del bloque `package` correspondiente.
+
+
 
 ```plantuml
 @startuml
@@ -832,6 +946,7 @@ Env <-- RP
 @enduml
 ```
 
+
 Observen cómo los actores están agrupados según su naturaleza —usuarios internos, clientes, servicios externos— y el sistema bajo diseño se representa con un rectángulo que encierra los casos de uso. Esta disposición deja claro quién pertenece a qué ámbito y cómo se conectan los distintos grupos.
 
 ## 6.6. Relaciones entre paquetes
@@ -839,6 +954,8 @@ Observen cómo los actores están agrupados según su naturaleza —usuarios int
 En sistemas grandes, no solo los casos de uso individuales se relacionan; los propios paquetes pueden tener dependencias entre sí. UML permite dibujar flechas de dependencia entre paquetes para indicar que el contenido de un paquete conoce o requiere elementos de otro. Aunque no es una práctica obligatoria en diagramas de casos de uso, puede ser útil para mostrar acoplamientos en alto nivel.
 
 PlantUML nos permite trazar flechas entre paquetes igual que entre cualquier otro elemento:
+
+
 
 ```plantuml
 @startuml
@@ -857,6 +974,7 @@ GPe ..> GI : <<include>>
 @enduml
 ```
 
+
 Aquí las flechas no conectan casos de uso directamente, sino los paquetes que los contienen, indicando que "Gestión de Pedidos" depende de "Gestión de Pagos" y de "Gestión de Inventario". Es una vista arquitectónica complementaria al detalle funcional interno de cada paquete.
 
 ## 6.7. Mejores prácticas para organizar paquetes en casos de uso
@@ -873,6 +991,8 @@ Después de muchas discusiones de diseño, he llegado a algunas reglas que ayuda
 ## 6.8. Dirección del diagrama: mejorando la legibilidad con `left to right direction`
 
 Un detalle que la guía de PlantUML menciona en la sección de casos de uso (páginas 52-53) y que es especialmente útil cuando trabajamos con paquetes y muchos casos de uso es la directiva `left to right direction`. Por defecto, PlantUML tiende a organizar los elementos de arriba hacia abajo. Con paquetes que contienen múltiples casos de uso, esto puede generar diagramas muy alargados verticalmente. Cambiar la dirección a izquierda-derecha a menudo produce una disposición más compacta y legible.
+
+
 
 ```plantuml
 @startuml
@@ -891,11 +1011,14 @@ package "Almacén" {
 @enduml
 ```
 
+
 La diferencia visual es notable y, en muchos casos, permite aprovechar mejor el espacio horizontal de las pantallas y los documentos.
 
 ## 6.9. Ejemplo completo integrador
 
 Para cerrar este tema, presento un diagrama más elaborado que muestra cómo se combinan actores agrupados, un sistema con múltiples paquetes, un paquete para un sistema externo y anidamiento de un subpaquete, todo ello con estilos diferenciados y dirección izquierda-derecha.
+
+
 
 ```plantuml
 @startuml
@@ -930,6 +1053,7 @@ A --> Re
 RP ..> PT : <<include>>
 @enduml
 ```
+
 
 Este ejemplo refleja un escenario realista: el "Sistema de Tienda Online" contiene dos subpaquetes ("Catálogo" y "Ventas") que agrupan funcionalidades relacionadas, mientras que el "Sistema de Pago Externo" se representa como una nube para indicar que está fuera de nuestra frontera de desarrollo. Los actores se sitúan fuera de los paquetes porque interactúan con múltiples partes del sistema.
 
@@ -1025,6 +1149,8 @@ Un modelo de casos de uso no está completo hasta que sus elementos son trazable
 
 **Perspectiva desarrollador:** En mi flujo de trabajo, cada caso de uso tiene un identificador (CU-01, CU-02) que uso como referencia en los commits, en los nombres de archivos y en los decoradores de las rutas de la API:
 
+
+
 ```python
 # git commit message: "feat: implementa CU-01 Realizar Pedido"
 # app/api/pedidos.py
@@ -1034,7 +1160,10 @@ def realizar_pedido(pedido: PedidoRequest):
     return JSONResponse(resultado, status_code=201)
 ```
 
+
 También usamos ese identificador en los tests:
+
+
 
 ```python
 # tests/test_cu01_realizar_pedido.py
@@ -1047,6 +1176,7 @@ def test_excepcion_stock_insuficiente_cu01():
     """Cubre flujo de excepción: producto sin stock."""
     ...
 ```
+
 
 Esta convención permite responder preguntas como "¿qué commits implementan CU-01?" (git log --grep="CU-01") o "¿qué pruebas cubren este caso de uso?" (pytest -k "cu01").
 
@@ -1164,3 +1294,31 @@ A lo largo de los años, he visto metodologías surgir y desaparecer. Los casos 
 Dominar los casos de uso no significa solo saber dibujar elipses con PlantUML. Significa desarrollar la capacidad de escuchar a un stakeholder, extraer de su discurso las verdaderas necesidades, estructurarlas en secuencias lógicas de interacción, identificar las dependencias y los puntos de fallo, y expresar todo ello de una forma que cualquier miembro del equipo —del desarrollador al director comercial— pueda entender y validar. Esa habilidad es la que distingue a un ingeniero de software que simplemente escribe código de otro que construye soluciones con sentido.
 
 Les animo a seguir practicando con los diagramas, a redactar especificaciones textuales, a cometer errores y corregirlos, a discutir con sus compañeros si tal funcionalidad es un caso de uso independiente o un paso de otro mayor. Cada iteración les hará más precisos y más valiosos para sus equipos y para sus clientes. Los casos de uso no son un fin en sí mismos; son una herramienta para pensar, comunicar y construir mejor. Y esa herramienta, ahora, está en sus manos.
+
+
+
+## Preguntas de repaso — Casos de Uso
+
+1. **Actor vs. Stakeholder:** ¿Cuál es la diferencia entre un actor y un stakeholder en un diagrama de casos de uso? Proporciona un ejemplo de cada uno para un sistema de biblioteca.
+2. **Include vs. Extend:** Explica la diferencia entre las relaciones `<<include>>` y `<<extend>>`. Dibuja un ejemplo concreto donde ambas sean necesarias y justifica por qué.
+3. **Generalización entre actores:** ¿Cuándo usarías generalización entre actores? Da un ejemplo de un sistema de gestión universitaria donde `Profesor` y `Alumno` se generalicen a `Usuario`.
+4. **Flujo básico vs. alternativo:** ¿Cuál es la diferencia entre un flujo alternativo y un flujo de excepción? Proporciona un ejemplo de cada uno para el caso de uso "Retirar Dinero" en un cajero automático.
+5. **Precondiciones y postcondiciones:** ¿Por qué son importantes las precondiciones y postcondiciones en la especificación de un caso de uso? ¿Qué problemas ayudan a prevenir?
+6. **Frontera del sistema:** ¿Qué representa la frontera del sistema en un diagrama de casos de uso? ¿Qué elementos quedan dentro y cuáles fuera? Usa un ejemplo de comercio electrónico.
+7. **Casos de uso demasiado granulares:** ¿Qué problemas causa modelar funciones atómicas (como "Validar Email") como casos de uso independientes? ¿Dónde deberían documentarse esas funciones?
+8. **Priorización de casos de uso:** ¿Qué criterios usarías para priorizar casos de uso en un proyecto? Explica cómo el valor para el actor y el riesgo técnico influyen en la decisión.
+9. **Trazabilidad:** ¿Cómo se puede mantener la trazabilidad entre un caso de uso y su implementación en código? ¿Qué beneficios aporta durante el mantenimiento del sistema?
+10. **Paquetes en casos de uso:** ¿Cuándo es necesario usar paquetes en un diagrama de casos de uso? ¿Qué criterios de agrupación recomendarías y por qué?
+
+## Ejercicios prácticos — Casos de Uso
+
+1. **Diagrama de casos de uso para biblioteca:** Dibuja un diagrama de casos de uso en PlantUML para un sistema de biblioteca con los actores `Socio`, `Bibliotecario` y `Proveedor`. Incluye al menos 6 casos de uso, una relación `<<include>>` y una `<<extend>>`. Justifica cada relación.
+2. **Corregir relaciones incorrectas:** Dado: `(Iniciar Sesión) ..> (Realizar Pedido) : <<extend>>` y `(Pago) ..> (Realizar Pedido) : <<include>>`. ¿Son correctas estas relaciones? Si no, corrígelas y justifica.
+3. **Especificación textual completa:** Escribe la especificación textual completa del caso de uso "CU-01: Retirar Dinero" para un cajero automático. Incluye identificación, precondiciones, flujo básico (al menos 5 pasos), un flujo alternativo y un flujo de excepción.
+4. **Generalización de actores:** Modela en PlantUML un sistema de gestión de incidencias donde `Usuario`, `Técnico` y `Administrador` son actores. Usa generalización para que `Técnico` y `Administrador` hereden de `Usuario`. Incluye al menos 4 casos de uso.
+5. **Paquetes y organización:** Toma 8 casos de uso de un sistema universitario (Matricular Asignatura, Consultar Notas, Pagar Matrícula, Solicitar Beca, Reservar Laboratorio, Gestionar Expediente, Generar Acta, Publicar Horarios) y organízalos en 3 paquetes funcionales. Usa `left to right direction`.
+6. **Identificar errores en un diagrama:** Dibuja intencionalmente un diagrama de casos de uso con 4 errores (actor dentro del sistema, relación mal dirigida, caso de uso sin actor, flecha sin estereotipo). Intercambia con un compañero para que los identifique.
+7. **De casos de uso a clases:** Dado el caso de uso "Gestionar Reservas de Hotel" (el cliente busca habitaciones, selecciona fechas, confirma la reserva, el sistema registra el pago y envía confirmación), deriva al menos 5 clases candidatas y sus relaciones. Presenta como tabla de trazabilidad.
+8. **Caso de uso con sistema externo:** Modela un diagrama donde un `Cliente` realiza un pedido, y el sistema se integra con `Pasarela de Pago` (actor secundario) y `Servicio de Envíos`. Usa paquetes para separar el sistema interno del externo.
+9. **Validación de especificación:** Dada la siguiente especificación incompleta de "CU-02: Devolver Producto": falta la sección de postcondiciones y solo tiene un flujo básico de 3 pasos. Complétala añadiendo al menos 2 postcondiciones, 1 flujo alternativo y 1 flujo de excepción.
+10. **Diagrama completo integrador:** Diseña un diagrama de casos de uso completo para un sistema de gestión de restaurantes con los actores `Cliente`, `Camarero`, `Cocinero`, `Administrador` y `Sistema de Pago Externo`. Incluye al menos 8 casos de uso, relaciones `<<include>>` y `<<extend>>`, paquetes con estilos variados y dirección izquierda-derecha. Añade notas con enlaces a especificaciones externas.
