@@ -40,15 +40,16 @@ git read-tree -mu HEAD
 git read-tree -mu HEAD
 ```
 
-### Automatizado (PowerShell)
-Usar `git-automatizar.ps1`:
+### Automatizado (PowerShell) — modo sincronización
+Usar `git-automatizar.ps1` sin pensar en nombres:
 
 ```powershell
-.\git-automatizar.ps1 "Nombre de la Carpeta"
-# Ejemplo: .\git-automatizar.ps1 "Gestión de Proyectos Tecnológicos"
+# Sincroniza: detecta carpetas nuevas en PC y las sube,
+# también quita del sparse-checkout las que ya no existen.
+.\git-automatizar.ps1 -Sincronizar
 
-# Subir todas las carpetas nuevas detectadas
-.\git-automatizar.ps1 -SubirTodo
+# Para correr sin preguntar confirmación:
+.\git-automatizar.ps1 -Sincronizar -Forzar
 ```
 
 ## Quitar carpeta de mi PC (sin borrarla de GitHub)

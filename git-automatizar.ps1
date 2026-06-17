@@ -1,73 +1,90 @@
 param(
-    [Parameter(Mandatory, Position = 0, HelpMessage = "Nombre de la carpeta a agregar (ej: 'Gestión de Proyectos Tecnológicos')")]
-    [string]$Carpeta,
-    [Parameter(HelpMessage = "Mensaje para el commit")]
-    [string]$Mensaje = "",
-    [switch]$SubirTodo = $false
+    [switch]$Sincronizar = $false,
+    [switch]$Forzar = $false
 )
 
 $ErrorActionPreference = "Stop"
 
 # --- Detectar git.exe en GitHub Desktop ---
-$ghDesktopPaths = @(
-    "$env:LOCALAPPDATA\GitHubDesktop\app-*\resources\app\git\cmd\git.exe"
-)
-$gitExe = $null
-foreach ($pat in $ghDesktopPaths) {
-    $found = Get-ChildItem $pat -ErrorAction SilentlyContinue | Sort-Object FullName -Descending | Select-Object -First 1
-    if ($found) { $gitExe = $found.FullName; break }
-}
+$ghDesktopPaths = "$env:LOCALAPPDATA\GitHubDesktop\app-*\resources\app\git\cmd\git.exe"
+$gitExe = Get-ChildItem $ghDesktopPaths -ErrorAction SilentlyContinue |
+    Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName
 if (-not $gitExe) { throw "No se encontró git.exe en GitHub Desktop" }
 
 $repo = "C:\Users\ingga\OneDrive\Documentos\Nueva carpeta\Clases"
 $sparseFile = "$repo\.git\info\sparse-checkout"
 
-# --- Función helper para ejecutar git ---
 function git-cmd {
     param([string[]]$Args)
-    & $gitExe -C $repo @Args 2>&1 | ForEach-Object { "$_" }
+    $o = & $gitExe -C $repo @Args 2>&1 | ForEach-Object { "$_" }
     if ($LASTEXITCODE -ne 0) { throw "git falló: $($Args -join ' ')" }
+    return $o
 }
 
-# --- Modo: subir todo (carpetas nuevas) ---
-if ($SubirTodo) {
-    # Buscar carpetas untracked en la raíz del repo
-    $status = git-cmd @("status", "--porcelain")
-    $nuevas = $status | Where-Object { $_ -match '^\?\? ' } | ForEach-Object { $_ -replace '^\?\? ' }
-    if (-not $nuevas) { Write-Output "No hay carpetas nuevas para subir."; return }
-    Write-Output "Carpetas nuevas detectadas:"
-    $nuevas | ForEach-Object { "  - $_" }
-    foreach ($c in $nuevas) {
-        $linea = "$c/**"
-        if (-not (Select-String -LiteralPath $sparseFile -Pattern "^$([regex]::Escape($linea))$" -Quiet)) {
-            Add-Content -Path $sparseFile -Value $linea
-            Write-Output "  -> Agregado al sparse-checkout: $linea"
-        }
-    }
-    git-cmd @("read-tree", "-mu", "HEAD")
-    git-cmd @("add", "--sparse", $nuevas)
-    git-cmd @("commit", "-m", "Agregar carpetas: $($nuevas -join ', ')")
-    git-cmd @("push", "origin", "master")
-    Write-Output "Todo subido correctamente."
+# --- Leer carpetas actuales en disco (excluir .git, archivos sueltos y el propio script) ---
+$carpetasEnDisco = Get-ChildItem -LiteralPath $repo -Directory |
+    Where-Object { $_.Name -notmatch '^\.' } |
+    Select-Object -ExpandProperty Name
+
+# --- Leer sparse-checkout actual ---
+$patronesExistentes = @()
+if (Test-Path $sparseFile) { $patronesExistentes = Get-Content $sparseFile | Where-Object { $_ -match '.+/\*\*' } }
+
+# --- Extraer nombres de carpeta de los patrones ---
+$carpetasEnSparse = $patronesExistentes | ForEach-Object { $_ -replace '/\*\*$' }
+
+# --- Comparar ---
+$agregar = $carpetasEnDisco | Where-Object { $_ -notin $carpetasEnSparse }
+$quitar = $carpetasEnSparse | Where-Object { $_ -notin $carpetasEnDisco }
+
+if (-not $agregar -and -not $quitar) {
+    Write-Output "Todo sincronizado. No hay cambios."
     return
 }
 
-# --- Modo: agregar una carpeta específica ---
-if (-not $Carpeta) { throw "Debes especificar el nombre de la carpeta o usar -SubirTodo" }
+if ($agregar) {
+    Write-Output "`nNUEVAS carpetas en PC (se subirán a GitHub):"
+    $agregar | ForEach-Object { "  + $_" }
+}
+if ($quitar) {
+    Write-Output "`nCARPETAS que ya no están en PC (se quitarán del sparse-checkout):"
+    $quitar | ForEach-Object { "  - $_" }
+}
 
-$rutaCarpeta = "$repo\$Carpeta"
-if (-not (Test-Path $rutaCarpeta)) { throw "La carpeta '$Carpeta' no existe en el repositorio local." }
+if (-not $Forzar) {
+    $r = Read-Host "`n¿Continuar? (s/N)"
+    if ($r -notmatch '^[sS]') { Write-Output "Cancelado."; return }
+}
 
-$patron = "$Carpeta/**"
-if (-not (Select-String -LiteralPath $sparseFile -Pattern "^$([regex]::Escape($patron))$" -Quiet)) {
-    Add-Content -Path $sparseFile -Value $patron
-    Write-Output "Agregado al sparse-checkout: $patron"
-} else { Write-Output "El patrón ya existe en sparse-checkout." }
+# --- Agregar nuevas carpetas al sparse-checkout ---
+foreach ($c in $agregar) {
+    $linea = "$c/**"
+    Add-Content -Path $sparseFile -Value $linea
+    Write-Output "  -> Agregado al sparse-checkout: $linea"
+}
 
+# --- Quitar carpetas inexistentes del sparse-checkout ---
+foreach ($c in $quitar) {
+    $patron = "$c/**"
+    $contenido = Get-Content $sparseFile | Where-Object { $_ -ne $patron }
+    Set-Content -Path $sparseFile -Value $contenido
+    Write-Output "  -> Quitado del sparse-checkout: $patron"
+}
+
+# --- Actualizar árbol de trabajo ---
 git-cmd @("read-tree", "-mu", "HEAD")
-git-cmd @("add", "--sparse", $Carpeta)
 
-if (-not $Mensaje) { $Mensaje = "Agregar carpeta: $Carpeta" }
-git-cmd @("commit", "-m", $Mensaje)
-git-cmd @("push", "origin", "master")
-Write-Output "Carpeta '$Carpeta' subida exitosamente."
+# --- Agregar nuevas carpetas al index ---
+if ($agregar) {
+    git-cmd @("add", "--sparse", $agregar)
+}
+
+# --- Commit y push ---
+if ($agregar -or $quitar) {
+    $msgs = @()
+    if ($agregar) { $msgs += "agregadas: $($agregar -join ', ')" }
+    if ($quitar) { $msgs += "quitadas del sparse-checkout: $($quitar -join ', ')" }
+    git-cmd @("commit", "-m", "Sincronizar carpetas: $($msgs -join '; ')")
+    git-cmd @("push", "origin", "master")
+    Write-Output "`nSincronización completada."
+}
