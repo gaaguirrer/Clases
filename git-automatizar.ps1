@@ -1,9 +1,27 @@
 param(
     [switch]$Sincronizar = $false,
-    [switch]$Forzar = $false
+    [switch]$Forzar = $false,
+    [switch]$Startup = $false
 )
 
 $ErrorActionPreference = "Stop"
+
+# --- Modo startup: esperar red y loguear a archivo ---
+if ($Startup) {
+    $log = "$env:USERPROFILE\.git-sync.log"
+    Start-Sleep -Seconds 30
+    # Esperar hasta que haya conexión a internet
+    $timeout = 60; $ok = $false
+    while ($timeout -gt 0) {
+        try { $req = [System.Net.WebRequest]::Create("https://github.com"); $req.Timeout = 3000; $req.GetResponse(); $ok = $true; break } catch {}
+        Start-Sleep -Seconds 2; $timeout -= 2
+    }
+    if (-not $ok) { "Sin conexión a internet." | Out-File $log; return }
+    $Forzar = $true
+    $output = & $PSCommandPath -Sincronizar -Forzar 2>&1 | ForEach-Object { "$_" }
+    $output | Out-File $log
+    return
+}
 
 # --- Detectar git.exe en GitHub Desktop ---
 $ghDesktopPaths = "$env:LOCALAPPDATA\GitHubDesktop\app-*\resources\app\git\cmd\git.exe"
