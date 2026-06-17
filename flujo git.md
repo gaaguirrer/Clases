@@ -40,6 +40,17 @@ git read-tree -mu HEAD
 git read-tree -mu HEAD
 ```
 
+### Automatizado (PowerShell)
+Usar `git-automatizar.ps1`:
+
+```powershell
+.\git-automatizar.ps1 "Nombre de la Carpeta"
+# Ejemplo: .\git-automatizar.ps1 "Gestión de Proyectos Tecnológicos"
+
+# Subir todas las carpetas nuevas detectadas
+.\git-automatizar.ps1 -SubirTodo
+```
+
 ## Quitar carpeta de mi PC (sin borrarla de GitHub)
 
 ```bash
