@@ -30,7 +30,7 @@ Una de las habilidades más importantes que pueden desarrollar como ingenieros d
 
 Cada transición en un diagrama de estados ocurre, en última instancia, porque un actor ejecuta un caso de uso (o porque se cumple una condición temporal, modelada como un evento de sistema). Si en el diagrama de estados del `Pedido` tenemos una transición de "En Creación" a "Confirmado" etiquetada con `confirmarPedido()`, esa transición existe porque el caso de uso "Realizar Pedido" incluye un paso en el que el cliente confirma el pedido.
 
-Como Project Manager, siempre exijo que cada evento en un diagrama de estados sea trazable hasta un caso de uso. Si encontramos una transición cuyo evento no aparece en ningún caso de uso, estamos ante un problema: o bien nos falta un caso de uso (requisito no documentado), o bien el evento es un artificio técnico que debería ocultarse (por ejemplo, un evento interno de temporizador que, en realidad, responde a un requisito temporal que sí debe estar documentado). Esta trazabilidad nos asegura que el diseño no se desvía de lo que el negocio necesita.
+En la gestión de proyectos, siempre exijo que cada evento en un diagrama de estados sea trazable hasta un caso de uso. Si encontramos una transición cuyo evento no aparece en ningún caso de uso, estamos ante un problema: o bien nos falta un caso de uso (requisito no documentado), o bien el evento es un artificio técnico que debería ocultarse (por ejemplo, un evento interno de temporizador que, en realidad, responde a un requisito temporal que sí debe estar documentado). Esta trazabilidad nos asegura que el diseño no se desvía de lo que el negocio necesita.
 
 ### 1.3.2. Diagrama de Clases: El dueño del estado
 
@@ -48,7 +48,7 @@ Mientras que el diagrama de estados muestra *cómo* reacciona un objeto a un eve
 
 Supongamos que el diagrama de estados del `Pedido` tiene una transición de "Pendiente de Pago" a "Pagado" disparada por el evento `pagoConfirmado()`. Si consultamos el diagrama de secuencia del flujo básico de "Realizar Pedido", veremos que ese evento no es espontáneo: es el `ServicioPago` el que, tras procesar la transacción, retorna una confirmación que el `ControladorPedido` traduce en una llamada `pagar()` al `Pedido`. El diagrama de secuencia nos da el contexto operacional: qué otros objetos están involucrados, en qué orden suceden las cosas, y qué datos se pasan.
 
-Esta conexión es crucial para la validación. Si en el diagrama de estados veo un evento `cancelar()`, debo encontrar al menos un diagrama de secuencia (o fragmento combinado `alt` en uno existente) donde el `Pedido` reciba ese mensaje. Si no existe tal diagrama, el agujero en el modelado es evidente: alguien ha asumido una funcionalidad que no está documentada en interacciones concretas. Como Project Manager, utilizo esta comprobación cruzada para garantizar que el diseño es completo y consistente.
+Esta conexión es crucial para la validación. Si en el diagrama de estados veo un evento `cancelar()`, debo encontrar al menos un diagrama de secuencia (o fragmento combinado `alt` en uno existente) donde el `Pedido` reciba ese mensaje. Si no existe tal diagrama, el agujero en el modelado es evidente: alguien ha asumido una funcionalidad que no está documentada en interacciones concretas. Como líder de proyecto, utilizo esta comprobación cruzada para garantizar que el diseño es completo y consistente.
 
 ## 1.4. Valor para el Project Manager: más allá del dibujo
 
@@ -66,7 +66,7 @@ En los próximos temas, profundizaremos en los elementos que componen un diagram
 
 # 2. Elementos fundamentales del diagrama de estados
 
-En el tema anterior establecimos que un diagrama de estados describe el ciclo de vida de un objeto, mostrando los estados por los que pasa y cómo transita entre ellos. Ahora vamos a desmenuzar con precisión quirúrgica los ladrillos que componen ese mapa de comportamiento: qué es exactamente un estado, qué información contiene, cómo se modela una transición y los distintos tipos de pseudoestados que nos permiten controlar el flujo de la máquina de estados. Como Project Manager, considero que la comprensión profunda de estos elementos es lo que distingue a un diseñador que simplemente “dibuja cajitas” de otro que realmente entiende y puede predecir cómo se comportará una entidad crítica del sistema en cualquier circunstancia.
+En el tema anterior establecimos que un diagrama de estados describe el ciclo de vida de un objeto, mostrando los estados por los que pasa y cómo transita entre ellos. Ahora vamos a desmenuzar con precisión quirúrgica los ladrillos que componen ese mapa de comportamiento: qué es exactamente un estado, qué información contiene, cómo se modela una transición y los distintos tipos de pseudoestados que nos permiten controlar el flujo de la máquina de estados. Desde la dirección del proyecto, considero que la comprensión profunda de estos elementos es lo que distingue a un diseñador que simplemente “dibuja cajitas” de otro que realmente entiende y puede predecir cómo se comportará una entidad crítica del sistema en cualquier circunstancia.
 
 ## 2.1. El Estado: Mucho más que un nombre
 
@@ -85,7 +85,7 @@ PlantUML nos permite definir estos comportamientos con una sintaxis muy clara, t
 
 Veamos un ejemplo simple en notación PlantUML. Mostraré cómo declarar un estado con acciones internas:
 
-???
+```plantuml
 @startuml
 state Pendiente {
   entry / registrarFechaCreacion
@@ -93,7 +93,7 @@ state Pendiente {
   exit / liberarRecursos
 }
 @enduml
-???
+```
 
 Este diagrama muestra el estado `Pendiente` de un objeto, con una acción que se ejecuta al entrar (`entry`), una actividad continua (`do`) y una acción al salir (`exit`). Todo esto se reflejará posteriormente en el diseño detallado de la clase correspondiente.
 
@@ -109,14 +109,14 @@ Una transición es una flecha dirigida que conecta un estado origen con un estad
 
 En PlantUML, las transiciones se representan con flechas entre estados, y la etiqueta se coloca directamente sobre la línea de la flecha. Siguiendo con el ejemplo del pedido:
 
-???
+```plantuml
 @startuml
 [*] --> Creado
 Creado --> Confirmado : confirmarPedido()
 Confirmado --> Pagado : recibirPago() [montoValido] / registrarPago
 Pagado --> [*]
 @enduml
-???
+```
 
 En este fragmento, vemos cómo el evento `confirmarPedido()` provoca la transición de `Creado` a `Confirmado`. La transición de `Confirmado` a `Pagado` solo ocurre si, además del evento `recibirPago()`, la guarda `montoValido` es verdadera, y en ese momento se ejecuta la acción `registrarPago`. Finalmente, un estado final indica que el ciclo de vida del objeto ha terminado.
 
@@ -135,7 +135,7 @@ Cuando el comportamiento asociado a un estado es complejo, UML permite **anidar*
 
 En PlantUML, un estado compuesto se define con la palabra reservada `state` seguida del nombre y un bloque de llaves `{}` que contiene la submáquina completa. Por ejemplo, un pedido en estado “Activo” podría descomponerse en “En Creación”, “Confirmado” y “Pagado”:
 
-???
+```plantuml
 @startuml
 [*] --> Activo
 state Activo {
@@ -147,7 +147,7 @@ state Activo {
 Activo --> Cerrado : archivar()
 Cerrado --> [*]
 @enduml
-???
+```
 
 En este diagrama, `Activo` es un estado compuesto que contiene a su vez otros tres estados y sus transiciones. El objeto está en `Activo` mientras está en cualquiera de sus subestados. La transición `Activo --> Cerrado` es aplicable desde cualquier subestado interno, lo que evita tener que dibujar flechas desde cada uno de ellos.
 
@@ -157,7 +157,7 @@ Algunos objetos pueden tener comportamientos simultáneos que evolucionan de for
 
 En PlantUML, la forma más común de definir concurrencia es usando los símbolos `--` (separación horizontal) o `||` (separación vertical) dentro de un estado compuesto. Cada región definida de esta manera contiene una submáquina independiente, y el objeto estará en un estado de cada región simultáneamente. Por ejemplo:
 
-???
+```plantuml
 @startuml
 state Procesando {
   -- Facturacion --
@@ -170,7 +170,7 @@ state Procesando {
   EnTransito --> Entregado : confirmarEntrega()
 }
 @enduml
-???
+```
 
 Aquí, el estado `Procesando` contiene dos regiones separadas por `--`. El objeto estará, por ejemplo, en `PendienteFactura` y `PendienteEnvio` a la vez, y cada región evolucionará según sus propios eventos. La salida del estado compuesto suele ocurrir cuando todas las regiones activas han alcanzado un estado final, o cuando una transición de grupo las interrumpe.
 
@@ -183,7 +183,7 @@ Para controlar el flujo de transiciones sin necesidad de estados ficticios, UML 
 
 Un ejemplo con un punto de elección:
 
-???
+```plantuml
 @startuml
 state ElegirTipoPago <<choice>>
 [*] --> ElegirTipoPago
@@ -192,13 +192,13 @@ ElegirTipoPago --> PagarPaypal : [tipo = paypal]
 PagarTarjeta --> [*]
 PagarPaypal --> [*]
 @enduml
-???
+```
 
 Observen cómo el diamante etiquetado como `<<choice>>` toma la decisión basada en el valor de la condición `tipo`. Las acciones asociadas a cada rama se ejecutarán después de elegir el camino.
 
 ## 2.7. Integración con el resto del modelo
 
-Cada uno de estos elementos debe mantener una coherencia absoluta con el modelo de clases y los diagramas de secuencia. Como Project Manager, insisto en la siguiente verificación cruzada:
+Cada uno de estos elementos debe mantener una coherencia absoluta con el modelo de clases y los diagramas de secuencia. Como responsable del proyecto, insisto en la siguiente verificación cruzada:
 
 - Los nombres de los eventos en las transiciones deben coincidir con mensajes que el objeto recibe en los diagramas de secuencia. Si el evento `confirmarPedido()` aparece en el diagrama de estados, en algún diagrama de secuencia debe verse al objeto `Pedido` recibiendo ese mensaje desde un controlador u otro objeto.
 - Los estados, en la mayoría de los casos, deben corresponderse con valores de un atributo de la clase, generalmente un atributo `estado` de tipo `String` o `Enum`. Esto asegura que el estado se pueda consultar y persistir.
@@ -208,7 +208,7 @@ Con estos fundamentos sólidamente asentados, en el próximo tema abordaremos el
 
 # 3. Derivando estados desde la arquitectura del sistema
 
-Hemos estudiado la teoría de los diagramas de estado y sus elementos. Ahora abordaremos el proceso inverso: cómo, a partir de los artefactos que ya tenemos —casos de uso, diagramas de clases y diagramas de secuencia—, podemos extraer y construir rigurosamente la máquina de estados de una entidad. Porque un diagrama de estado no es un gráfico aislado que se dibuja por capricho. Es la destilación del comportamiento temporal de una clase, y su construcción debe estar guiada por las necesidades funcionales y la arquitectura del sistema. Como gestor, este proceso de derivación me permite auditar que el diseño es completo y que no hay "agujeros" funcionales.
+Hemos estudiado la teoría de los diagramas de estado y sus elementos. Ahora abordaremos el proceso inverso: cómo, a partir de los artefactos que ya tenemos —casos de uso, diagramas de clases y diagramas de secuencia—, podemos extraer y construir rigurosamente la máquina de estados de una entidad. Porque un diagrama de estado no es un gráfico aislado que se dibuja por capricho. Es la destilación del comportamiento temporal de una clase, y su construcción debe estar guiada por las necesidades funcionales y la arquitectura del sistema. En el rol de líder del proyecto, este proceso de derivación me permite auditar que el diseño es completo y que no hay "agujeros" funcionales.
 
 ## 3.1. Identificación de la clase candidata: no todo merece un estado
 
@@ -246,7 +246,7 @@ En PlantUML, podemos empezar a prototipar el diagrama de forma muy sencilla, dec
 
 # 4. Notación PlantUML para diagramas de estados
 
-Hemos llegado al punto en que la teoría del modelado de estados debe materializarse en una herramienta concreta que el equipo pueda usar, versionar y compartir. La guía de referencia de PlantUML (páginas 210 a 231) nos proporciona una notación textual rica y expresiva para diagramas de estados. En este tema, recorreremos esa notación de manera sistemática, desde la declaración más básica hasta las construcciones avanzadas, vinculando cada elemento sintáctico con los conceptos de diseño que hemos discutido en los temas anteriores. Como Project Manager, valoro que una notación sea clara, concisa y mantenible; PlantUML cumple estos requisitos con creces, y mi objetivo es que al finalizar este tema ustedes dominen su uso para cualquier entidad de negocio que necesiten modelar.
+Hemos llegado al punto en que la teoría del modelado de estados debe materializarse en una herramienta concreta que el equipo pueda usar, versionar y compartir. La guía de referencia de PlantUML (páginas 210 a 231) nos proporciona una notación textual rica y expresiva para diagramas de estados. En este tema, recorreremos esa notación de manera sistemática, desde la declaración más básica hasta las construcciones avanzadas, vinculando cada elemento sintáctico con los conceptos de diseño que hemos discutido en los temas anteriores. En mi experiencia dirigiendo proyectos, valoro que una notación sea clara, concisa y mantenible; PlantUML cumple estos requisitos con creces, y mi objetivo es que al finalizar este tema ustedes dominen su uso para cualquier entidad de negocio que necesiten modelar.
 
 ## 4.1. La declaración básica: estados y transiciones simples
 
@@ -254,7 +254,7 @@ La esencia de un diagrama de estados en PlantUML se construye con apenas un par 
 
 La sintaxis mínima para un diagrama de estados se compone de estos elementos:
 
-???
+```plantuml
 @startuml
 ' Declaración básica: flujo de vida de un Pedido
 [*] --> Creado
@@ -264,7 +264,7 @@ Pagado --> Enviado : despacharPedido()
 Enviado --> Entregado : confirmarEntrega()
 Entregado --> [*]
 @enduml
-???
+```
 
 En este ejemplo, cada línea expresa una transición. La etiqueta después de los dos puntos representa el evento que dispara el cambio. Observen la simplicidad: no hemos necesitado declarar previamente los estados; PlantUML los reconoce automáticamente al aparecer en las flechas. Sin embargo, yo recomiendo declararlos explícitamente con la palabra `state` cuando el diagrama crece, para mantener el control y poder añadir detalles internos más adelante.
 
@@ -276,19 +276,19 @@ Un estado no es solo una palabra. Como vimos en el tema 2, un estado puede encap
 
 La primera forma es la notación compacta con dos puntos, adecuada para estados simples:
 
-???
+```plantuml
 @startuml
 state Confirmado : entry / notificarCliente
 state Confirmado : exit / liberarBloqueoInventario
 state Pagado : do / verificarFraude
 @enduml
-???
+```
 
 Cada línea añade una acción interna al estado. La palabra reservada `entry` indica que la acción se ejecuta al entrar en el estado; `exit`, al salir; `do`, mientras se permanece en él. Esta notación es clara pero dispersa, ya que cada acción va en una línea separada.
 
 Para estados con varias acciones internas, o cuando queremos agrupar visualmente toda la información del estado, la sintaxis de bloque con llaves es más adecuada:
 
-???
+```plantuml
 @startuml
 state Confirmado {
   entry / notificarCliente
@@ -296,7 +296,7 @@ state Confirmado {
   exit / liberarBloqueoInventario
 }
 @enduml
-???
+```
 
 Este formato, que la guía detalla en las páginas 211-212, es mi preferido para la documentación formal, porque encapsula toda la lógica del estado en un solo lugar y facilita la lectura.
 
@@ -304,23 +304,7 @@ Este formato, que la guía detalla en las páginas 211-212, es mi preferido para
 
 Como vimos, un estado puede contener una máquina de estados completa. En PlantUML, esto se logra colocando el bloque de estados internos dentro de las llaves del estado padre. La sintaxis es idéntica a la del nivel raíz, incluyendo su propio estado inicial y final.
 
-El ejemplo canónico es un pedido cuyo ciclo de vida "Activo" se descompone en subestados:
-
-???
-@startuml
-[*] --> Activo
-state Activo {
-  [*] --> EnCreacion
-  EnCreacion --> Confirmado : confirmar()
-  Confirmado --> Pagado : pagar()
-  Pagado --> [*]
-}
-Activo --> Cerrado : archivar()
-Cerrado --> [*]
-@enduml
-???
-
-Aquí, `Activo` es un estado compuesto. La transición `Activo --> Cerrado` es visible desde el nivel superior, lo cual tiene una implicación semántica importante: el evento `archivar()` puede ocurrir estando en cualquiera de los subestados internos (`EnCreacion`, `Confirmado` o `Pagado`), y provocará la salida del estado compuesto completo. Esta es una de las mayores ventajas de los estados compuestos: evitan la repetición de transiciones idénticas desde cada subestado.
+Retomemos el ejemplo del estado `Activo` que vimos en la sección 2.4. Allí se mostraba cómo un pedido cuyo ciclo de vida se descompone en `EnCreacion`, `Confirmado` y `Pagado` se modela con un estado compuesto. En PlantUML, esa descomposición se escribe con la sintaxis de llaves que acabamos de describir, y la transición `Activo --> Cerrado` desde el nivel superior evita repetir flechas desde cada subestado.
 
 La guía de PlantUML (páginas 211-213) también documenta la posibilidad de tener subestados anidados, y de que un estado compuesto herede las transiciones de su padre. Esta notación es perfectamente compatible con los ejemplos que hemos ido construyendo.
 
@@ -330,7 +314,7 @@ Los objetos pueden tener comportamientos que evolucionan de forma independiente.
 
 La notación con `--` dibuja una línea horizontal entre las regiones, mientras que `||` las separa verticalmente. La elección es meramente estética y depende de la disposición que resulte más clara en el diagrama. Veamos un ejemplo con el estado `Procesando` de un pedido, que tiene dos áreas concurrentes: facturación y envío.
 
-???
+```plantuml
 @startuml
 state Procesando {
   -- Facturacion --
@@ -343,7 +327,7 @@ state Procesando {
   EnTransito --> Entregado : confirmarEntrega()
 }
 @enduml
-???
+```
 
 La guía (páginas 215-216) muestra ejemplos muy similares. Al entrar en `Procesando`, el objeto se encontrará simultáneamente en `PendienteFactura` y `PendienteEnvio`. Cada región evolucionará por separado según sus propios eventos. La salida del estado compuesto puede producirse cuando ambas regiones hayan alcanzado un estado final, o mediante una transición explícita desde el nivel superior que interrumpa ambas.
 
@@ -355,20 +339,9 @@ Para modelar lógica condicional y sincronización sin necesidad de crear estado
 - `<<fork>>`: divide el flujo en varias ramas concurrentes que entran en regiones paralelas de un estado compuesto.
 - `<<join>>`: sincroniza varias ramas concurrentes, esperando a que todas lleguen antes de continuar con una única transición.
 
-La sintaxis de PlantUML para estos elementos es directa:
+Estos estereotipos se aplican directamente sobre cualquier estado con la sintaxis `state Nombre <<estereotipo>>`, y las transiciones se definen como flechas ordinarias. El ejemplo del punto de elección para elegir tipo de pago que vimos en la sección 2.6 ilustra perfectamente esta sintaxis.
 
-???
-@startuml
-state ElegirTipoPago <<choice>>
-[*] --> ElegirTipoPago
-ElegirTipoPago --> PagarTarjeta : [tipo = tarjeta]
-ElegirTipoPago --> PagarPaypal : [tipo = paypal]
-PagarTarjeta --> [*]
-PagarPaypal --> [*]
-@enduml
-???
-
-El diamante `<<choice>>` evalúa la condición tras el evento y dirige el flujo al estado correspondiente. La guía (páginas 217-218) también muestra cómo combinar `<<fork>>` y `<<join>>` para entrar y salir de regiones concurrentes de manera explícita. Aunque muchos diagramas no requieren estos elementos, su disponibilidad en PlantUML nos permite modelar con total fidelidad situaciones complejas.
+La guía (páginas 217-218) muestra cómo combinar `<<fork>>` y `<<join>>` para entrar y salir de regiones concurrentes de manera explícita. Aunque muchos diagramas no requieren estos elementos, su disponibilidad en PlantUML nos permite modelar con total fidelidad situaciones complejas.
 
 ## 4.6. Personalización visual: adaptando el diagrama a la audiencia
 
@@ -376,7 +349,7 @@ Un mismo diagrama de estados puede presentarse a un comité de dirección, a un 
 
 - **`skinparam`**: es la forma más directa de cambiar colores, fuentes y bordes. Podemos aplicarlo globalmente o a elementos específicos (`state`, `arrow`, etc.). Por ejemplo:
 
-???
+```plantuml
 @startuml
 skinparam state {
   BackgroundColor PaleGreen
@@ -386,11 +359,11 @@ skinparam state {
 [*] --> Activo : inicio
 Activo --> [*] : fin
 @enduml
-???
+```
 
 - **`<style>`**: más potente y flexible, permite definir estilos con selectores, similar a CSS. Se puede aplicar a clases, estereotipos y profundidades. Por ejemplo:
 
-???
+```plantuml
 @startuml
 <style>
 stateDiagram {
@@ -405,9 +378,9 @@ state Activo <<destacado>>
 [*] --> Activo
 Activo --> [*]
 @enduml
-???
+```
 
-La guía (páginas 226-228) dedica una sección completa a la personalización, incluyendo cómo cambiar el estilo de las líneas, las flechas y los textos. Como Project Manager, suelo definir una paleta de estilos al inicio del proyecto y aplicarla consistentemente en todos los diagramas, asegurando que la documentación tenga una identidad visual unificada.
+La guía (páginas 226-228) dedica una sección completa a la personalización, incluyendo cómo cambiar el estilo de las líneas, las flechas y los textos. En la práctica de la gestión, suelo definir una paleta de estilos al inicio del proyecto y aplicarla consistentemente en todos los diagramas, asegurando que la documentación tenga una identidad visual unificada.
 
 ## 4.7. La notación como aliada del diseño riguroso
 
@@ -417,6 +390,9 @@ Cuando enseñan a un equipo a usar esta notación, no solo están transmitiendo 
 
 Con este dominio de la notación, ya están en condiciones de modelar el ciclo de vida de cualquier entidad del sistema de manera profesional y mantenible.
 
+# 5. Buenas prácticas y validación del diagrama de estados
+
+## 5.1. Pertenencia a una clase: el estado no vaga solo
 
 También podemos usar notas dentro del propio diagrama para dejar constancia. Pero lo esencial es que cualquier persona que abra ese archivo sepa, sin lugar a dudas, que está viendo el ciclo de vida de las instancias de una clase concreta del modelo estructural.
 
@@ -461,3 +437,62 @@ A lo largo de estos temas, hemos visto que un diagrama de estados no se improvis
 La recompensa es inmensa. Un sistema cuyas entidades críticas tienen diagramas de estados claros y actualizados es un sistema donde los desarrolladores saben exactamente qué tienen que implementar, los testers saben qué caminos deben probar, y los analistas pueden verificar que las reglas de negocio se respetan. Es un sistema, en definitiva, más robusto, más mantenible y más predecible.
 
 Confíen en esta herramienta, pero no la conviertan en un fetiche. No necesitan un diagrama de estados para cada clase; solo para aquellas cuyo ciclo de vida sea lo bastante complejo como para merecerlo. Y cuando lo hagan, háganlo con propósito, con rigor y con la mirada puesta en el resto de los modelos que componen la arquitectura del software. Esa es la marca de un verdadero ingeniero.
+
+---
+
+# 6. Ejercicios de autoevaluación
+
+## 6.1. Preguntas conceptuales
+
+1. ¿Cuál es la diferencia fundamental entre un diagrama de estados y un diagrama de secuencia en términos del enfoque de modelado?
+
+2. ¿Qué condiciones debe cumplir una clase para que merezca la pena modelar su diagrama de estados? Menciona al menos dos criterios.
+
+3. Explica la diferencia entre `entry`, `exit` y `do` dentro de un estado. ¿En qué momento se ejecuta cada uno?
+
+4. ¿Qué es un estado compuesto y qué ventaja ofrece frente a tener todos los estados en el mismo nivel?
+
+5. ¿Cómo se representa la concurrencia en un diagrama de estados de PlantUML? Describe un ejemplo donde sea útil.
+
+6. ¿Cuál es la diferencia entre un punto de elección (`<<choice>>`) y una bifurcación (`<<fork>>`)?
+
+7. ¿Por qué es importante que cada evento en una transición sea trazable hasta un caso de uso o un diagrama de secuencia?
+
+8. ¿Qué son los estados muertos y los estados trampa? ¿Cómo se detectan?
+
+9. Si una clase tiene un atributo `estado` de tipo `String`, ¿qué relación debe existir entre los valores de ese atributo y los estados del diagrama?
+
+10. ¿Cuándo conviene usar `skinparam` y cuándo conviene usar `<style>` en PlantUML para personalizar la apariencia?
+
+## 6.2. Ejercicios prácticos
+
+1. **Ciclo de vida de una Reserva de Hotel**: Modela en PlantUML el diagrama de estados de una clase `ReservaHotel`. Estados sugeridos: `Creada`, `Confirmada`, `Pagada`, `EstanciaActiva`, `Finalizada`, `Cancelada`. Incluye al menos una transición con condición de guarda y una con acción.
+
+2. **Estados concurrentes en un Pedido**: Amplía el ejemplo del `Pedido` del tema para que el estado `Procesando` tenga tres regiones concurrentes: `Facturacion`, `Envio` y `Notificacion`. Cada región debe tener al menos dos estados.
+
+3. **Submáquina de un estado compuesto**: Modela la clase `SolicitudVacaciones`. El estado `EnAprobacion` debe ser un estado compuesto que contenga los subestados `PendienteJefe`, `PendienteRRHH` (si son más de 10 días) y `Aprobada`.
+
+4. **Detección de estados imposibles**: Dado el siguiente conjunto de reglas de negocio para un `PréstamoBiblioteca`, identifica qué transiciones son imposibles y corrígelas: `Solicitado → Prestado → Devuelto → Vencido → Sancionado`. Las reglas dicen: un préstamo vencido puede devolverse; un préstamo devuelto no puede vencerse; un préstamo sancionado puede pagar la multa y volver a estado normal.
+
+5. **Punto de elección para métodos de pago**: Dado el estado `PendientePago` de un `Pedido`, modela un punto de elección que dirija a `PagadoTarjeta`, `PagadoPaypal` o `PagadoTransferencia` según el método de pago seleccionado.
+
+6. **Validación cruzada**: Escribe una lista de verificación (checklist) de 5 puntos que usarías para validar que un diagrama de estados es coherente con el diagrama de clases y los diagramas de secuencia de un proyecto.
+
+7. **De secuencia a estados**: Dado el siguiente conjunto de mensajes que recibe una clase `CuentaBancaria`: `abrir()`, `depositar()`, `retirar()`, `bloquear()`, `desbloquear()`, `cerrar()`. Define los estados y construye el diagrama de estados en PlantUML.
+
+8. **Diagrama de estados con `entry` y `exit`**: Modela la clase `SesionUsuario` con los estados `Iniciada`, `Activa`, `Inactiva` y `Cerrada`. Asigna acciones `entry` y `exit` apropiadas (ej: al entrar en `Activa`, ejecutar `registrarInicioSesion`; al salir de `Activa`, ejecutar `guardarEstado`).
+
+9. **Corrección de errores**: El siguiente diagrama contiene errores. Identifícalos y corrígelos:
+   ```plantuml
+   @startuml
+   [*] --> Creado
+   Creado --> Confirmado : pagar()
+   Confirmado --> Cancelado : pagar()
+   Cancelado --> Confirmado : deshacerCancelacion()
+   Confirmado --> Enviado : despachar()
+   Enviado --> Entregado : entregar()
+   Entregado --> Creado : reiniciar()
+   @enduml
+   ```
+
+10. **Proyecto completo**: Para la clase `ProyectoSoftware` de un sistema de gestión, define los estados por los que pasa (al menos 6), las transiciones con eventos, condiciones y acciones, e impleméntalo en PlantUML usando estados compuestos y al menos un punto de elección.

@@ -4,108 +4,95 @@
 
 ## **Explicación del código**
 
-Este programa es el famoso "LED con Pulsador". Su objetivo es ejecutar una secuencia de encendido/apagado de tres LEDs (Verde, Amarillo y Rojo) **solo cuando se presiona un pulsador**. Se usa una estructura condicional `if` para leer el estado del pulsador y ejecutar la secuencia si se ha presionado. Es una introducción a la lectura de entradas digitales y al control del flujo del programa.
+Este programa implementa el control básico de un LED mediante un pulsador. Su objetivo es encender el LED mientras se mantiene presionado el botón y apagarlo cuando se suelta. Es una introducción a la lectura de entradas digitales y al uso de la estructura condicional `if` para tomar decisiones en el flujo del programa.
 
 ### **1. Declaración de variables globales**
 
 ```c++
-const int led_rojo = 7;
-const int led_amarillo = 8;
-const int led_verde = 9;
-const int pulsador = 10;
-int tiempo = 500;
+int btn_e = 2;
+int led_s = 3;
+bool estado = LOW;
 ```
 
-- `const int led_rojo = 7;`: Define el pin para el LED rojo como el pin digital 7. El uso de `const` evita que el valor se modifique accidentalmente en el programa.
-- `const int led_amarillo = 8;`: Define el pin para el LED amarillo como el pin digital 8.
-- `const int led_verde = 9;`: Define el pin para el LED verde como el pin digital 9.
-- `const int pulsador = 10;`: Define el pin para el pulsador como el pin digital 10. Este pin se configurará como entrada para leer el estado del pulsador.
-- `int tiempo = 500;`: Declara una variable llamada `tiempo` que almacena la duración de los delays (500 ms). Esto permite cambiar la velocidad de la secuencia modificando un solo número.
+- `int btn_e = 2;`: Define el pin digital 2 como entrada para el pulsador.
+- `int led_s = 3;`: Define el pin digital 3 como salida para el LED. Este pin tiene capacidad PWM, aunque en este programa solo se usa `digitalWrite()`.
+- `bool estado = LOW;`: Declara una variable de tipo `bool` (booleana) llamada `estado` que almacena el estado actual del LED (apagado o encendido). Se inicializa en `LOW` (apagado). En este programa no se usa para mantener el estado entre ciclos, sino como preparación para futuras expansiones.
 
 ### **2. Configuración `setup()`**
 
 ```c++
-void setup() {
-  pinMode(led_rojo, OUTPUT);
-  pinMode(led_amarillo, OUTPUT);
-  pinMode(led_verde, OUTPUT);
-  pinMode(pulsador, INPUT);
+void setup()
+{
+  pinMode(led_s, OUTPUT);
+  pinMode(btn_e, INPUT);
 }
 ```
 
-- Los pines de los LEDs se configuran como `OUTPUT` para poder controlarlos.
-- El pin del pulsador se configura como `INPUT`. Esto significa que Arduino leerá el estado del pin (HIGH o LOW). Es necesario conectar el pulsador de manera que entregue HIGH cuando es presionado (conectándolo a VCC, generalmente 5V, y usando una resistencia "pull-down" para que lea LOW cuando no se presiona).
+- `pinMode(led_s, OUTPUT);`: Configura el pin del LED como salida digital para poder controlar su encendido y apagado.
+- `pinMode(btn_e, INPUT);`: Configura el pin del pulsador como entrada. Para que la lectura sea estable, se debe conectar el pulsador con una resistencia externa de pull-down (10 kΩ a tierra) o usar la resistencia pull-up interna con `INPUT_PULLUP`.
 
 ### **3. Bucle `loop()` con estructura `if`**
 
 ```c++
-void loop() {
-  if (digitalRead(pulsador) == HIGH) {
-    digitalWrite(led_verde, HIGH);
-    delay(tiempo);
-    digitalWrite(led_amarillo, HIGH);
-    delay(tiempo);
-    digitalWrite(led_rojo, HIGH);
-    delay(tiempo);
-    digitalWrite(led_rojo, LOW);
-    delay(tiempo);
-    digitalWrite(led_amarillo, LOW);
-    delay(tiempo);
-    digitalWrite(led_verde, LOW);
-    delay(tiempo);
+void loop()
+{
+  //Presiono el botón y enciende led, suelto 
+  // botón y se apaga el led
+  if (digitalRead(btn_e) == HIGH)
+  {
+    digitalWrite(led_s, HIGH);
   }
+  else 
+  {
+    digitalWrite(led_s, LOW);
+  }
+  
+  //delay(1000);
 }
 ```
 
-- `if (digitalRead(pulsador) == HIGH)`: Esta es la condición. La función `digitalRead(pulsador)` lee el estado del pin del pulsador. Si es `HIGH` (normalmente significa que el pulsador está presionado), las instrucciones dentro de las llaves `{ ... }` se ejecutarán. Si no, el programa simplemente las saltará y el bucle `loop` se repetirá hasta que se presione el pulsador.
+#### **Lectura del pulsador**
+- `if (digitalRead(btn_e) == HIGH)`: Comprueba si el pulsador está presionado. La función `digitalRead(btn_e)` lee el estado del pin del pulsador. Si el botón está presionado, el pin recibe `HIGH` (5V) y se ejecuta el bloque dentro del `if`.
+- `digitalWrite(led_s, HIGH);`: Enciende el LED escribiendo un valor `HIGH` en el pin de salida.
 
-#### **Secuencia de Encendido y Apagado:**
+#### **Estado cuando no se presiona**
+- `else { digitalWrite(led_s, LOW); }`: Si el pulsador no está presionado (el `if` es falso), se ejecuta el bloque `else` y se apaga el LED escribiendo `LOW` en el pin.
 
-Dentro del `if`, el programa ejecuta la siguiente secuencia cuando se presiona el pulsador:
+#### **Comportamiento general**
+El programa lee continuamente el estado del pulsador en cada ciclo del `loop()`. Mientras el botón esté presionado, el LED permanece encendido. Cuando se suelta, el LED se apaga inmediatamente. No hay efecto de "toggle" o memoria de estado; el LED refleja en tiempo real el estado del pulsador.
 
-1.  **Verde ON:** `digitalWrite(led_verde, HIGH);` → Espera 0.5 segundos.
-2.  **Amarillo ON:** `digitalWrite(led_amarillo, HIGH);` → Espera 0.5 segundos.
-3.  **Rojo ON:** `digitalWrite(led_rojo, HIGH);` → Espera 0.5 segundos.
-4.  **Rojo OFF:** `digitalWrite(led_rojo, LOW);` → Espera 0.5 segundos.
-5.  **Amarillo OFF:** `digitalWrite(led_amarillo, LOW);` → Espera 0.5 segundos.
-6.  **Verde OFF:** `digitalWrite(led_verde, LOW);` → Espera 0.5 segundos.
-
-La combinación produce una onda de iluminación y apagado secuencial que simula un efecto tipo "carrusel".
+#### **Nota sobre el delay**
+La línea `//delay(1000);` está comentada. Si se activara, introduciría una pausa de 1 segundo en cada ciclo del `loop()`, lo que provocaría que el LED tarde hasta 1 segundo en responder al cambio del pulsador, generando una sensación de lentitud o falta de respuesta inmediata.
 
 ### **Código completo para copiar y pegar**
 
 ```c++
-// LED con Pulsador - IF
-// Resistencias de 220 ohm en serie con cada LED
-
-const int led_rojo = 7;
-const int led_amarillo = 8;
-const int led_verde = 9;
-const int pulsador = 10;
-int tiempo = 500;
-
-void setup() {
-  pinMode(led_rojo, OUTPUT);
-  pinMode(led_amarillo, OUTPUT);
-  pinMode(led_verde, OUTPUT);
-  pinMode(pulsador, INPUT);
+// C++ code
+//Bloque de Declaración 
+int btn_e = 2;
+int led_s = 3;
+bool estado = LOW;
+ 
+void setup()
+{
+  pinMode(led_s, OUTPUT);
+  pinMode(btn_e, INPUT);
 }
 
-void loop() {
-  if (digitalRead(pulsador) == HIGH) {
-    digitalWrite(led_verde, HIGH);
-    delay(tiempo);
-    digitalWrite(led_amarillo, HIGH);
-    delay(tiempo);
-    digitalWrite(led_rojo, HIGH);
-    delay(tiempo);
-    digitalWrite(led_rojo, LOW);
-    delay(tiempo);
-    digitalWrite(led_amarillo, LOW);
-    delay(tiempo);
-    digitalWrite(led_verde, LOW);
-    delay(tiempo);
+void loop()
+{
+  //Presiono el botón y enciende led, suelto 
+  // botón y se apaga el led
+  if (digitalRead(btn_e) == HIGH)
+  {
+    digitalWrite(led_s, HIGH);
   }
+  else 
+  {
+    digitalWrite(led_s, LOW);
+  }
+  
+  //delay(1000);
 }
 ```
 
@@ -117,37 +104,37 @@ void loop() {
 
 ## **Preguntas teóricas**
 
-1. ¿Por qué el pin del pulsador se configura como `INPUT` y los pines de los LED como `OUTPUT`? ¿Qué función cumple la función `digitalRead()`?
-2. En el contexto de un pulsador, ¿qué significa "PULL-DOWN" y "PULL-UP"? ¿Por qué es necesario y cómo se implementaría en el código para un pulsador que conecta a tierra?
-3. Explica el propósito de la estructura condicional `if` y cómo funciona junto con `digitalRead()` para controlar la ejecución de la secuencia de luces.
-4. Si se cambia la variable `tiempo` a 100 ms, ¿cómo cambiará la secuencia de los LEDs? Describe el efecto visual y su duración total.
-5. ¿Qué sucede si se omite la línea `pinMode(pulsador, INPUT);` en el `setup()`? ¿El comportamiento del circuito sería el mismo? Justifica tu respuesta.
+1. ¿Qué es una variable de tipo `bool`? ¿Qué valores puede almacenar y para qué se utiliza en este programa?
+2. Explica el funcionamiento de la estructura `if` – `else` en el programa. ¿Qué ocurre si se omite el bloque `else`?
+3. ¿Qué es el "rebote" (bouncing) de un pulsador? En este programa, ¿afecta el rebote al comportamiento del LED? ¿Por qué?
+4. En el código, la línea `delay(1000);` está comentada. ¿Qué efecto tendría si se activara? ¿Por qué el programador decidió comentarla?
+5. ¿Por qué es necesario configurar el pin del pulsador como `INPUT`? ¿Qué sucede si se configura como `OUTPUT` por error? Analiza las consecuencias.
 
 ---
 
 ## **Ejercicios prácticos (modificar el código y anotar cambios)**
 
-**Instrucciones:** Para cada ejercicio, copia el código original, realiza la modificación indicada, carga el programa en el simulador (o en Arduino real) y describe cómo cambia el comportamiento del circuito.
+**Instrucciones:** Para cada ejercicio, copia el código original, realiza la modificación indicada, carga el programa en el simulador (o en el Arduino real) y describe cómo cambia el comportamiento del circuito.
 
 ### **Ejercicio 1**
-Modifica el programa para que los LEDs se enciendan en orden inverso (Rojo, Amarillo, Verde) en lugar de verde, amarillo, rojo.
-*Pregunta:* ¿Observas alguna diferencia en la secuencia respecto al original? ¿Es más fácil identificar el cambio?
+Modifica el programa para que el LED se encienda cuando **no** se presiona el pulsador y se apague cuando se presiona. (Pista: invierte la condición del `if` o los valores de `digitalWrite`).
+*Pregunta:* ¿El comportamiento es el opuesto al original? ¿Se te ocurre una aplicación práctica para esta lógica invertida?
 
 ### **Ejercicio 2**
-Añade un cuarto LED Azul en el pin 6. Modifica el código para que después del LED verde, el LED azul también se encienda y luego se apague, integrando al azul en la secuencia final.
-*Pregunta:* ¿Cómo afecta esto a la duración total de la secuencia? ¿Qué patrón de luces ves?
+Agrega un segundo LED en el pin 4. Modifica el código para que el segundo LED se encienda únicamente cuando el pulsador **no** esté presionado (es decir, ambos LEDs tienen estados opuestos).
+*Pregunta:* ¿Qué patrón de luces observas al presionar y soltar el botón?
 
 ### **Ejercicio 3**
-Cambia la lógica del pulsador para que el programa ejecute la secuencia cuando **no** se presione el pulsador y no haga nada cuando se presione. (Pista: Cambia la condición dentro del `if`).
-*Pregunta:* ¿Cómo se comporta el circuito ahora? ¿Por qué este comportamiento podría ser útil en algún proyecto?
+Reemplaza el LED por un buzzer pasivo (zumbador) conectado al pin 3. Modifica el código para que el buzzer emita un tono mientras se mantenga presionado el pulsador.
+*Pregunta:* ¿Qué función cumple `tone()` y qué parámetros recibe? ¿El comportamiento es análogo al del LED?
 
 ### **Ejercicio 4**
-Elimina la línea `digitalWrite(led_rojo, LOW);`, `digitalWrite(led_amarillo, LOW);` y `digitalWrite(led_verde, LOW);` y sus respectivos `delay(tiempo)`. Deja solo la parte del encendido.
-*Pregunta:* ¿Qué ocurre con los LEDs después de que la secuencia de encendido termina? ¿El programa regresa a su estado inicial? Explica qué ves.
+Elimina el `else` del programa, dejando solo el bloque `if` que enciende el LED cuando se presiona el botón.
+*Pregunta:* ¿Qué ocurre con el LED cuando se suelta el pulsador? ¿Se apaga o queda en un estado indeterminado? Explica por qué.
 
 ### **Ejercicio 5**
-Agrega un `delay(tiempo);` adicional **al final** de la secuencia dentro del `if` (justo antes de cerrar las llaves).
-*Pregunta:* ¿Qué cambia en la respuesta del LED cuando se presiona el pulsador? ¿Hay algún efecto de "colapso" o retardo antes de que el sistema pueda responder nuevamente?
+Activa el `delay(1000);` (quita los comentarios) y observa el comportamiento.
+*Pregunta:* ¿Cómo afecta el delay a la respuesta del LED? ¿El LED responde inmediatamente al presionar o soltar el botón? ¿Por qué?
 
 ---
 

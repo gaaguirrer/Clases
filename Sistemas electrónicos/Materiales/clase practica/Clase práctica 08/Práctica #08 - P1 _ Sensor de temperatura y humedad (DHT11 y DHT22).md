@@ -1,104 +1,190 @@
 # **Sensor de temperatura y humedad (DHT11 y DHT22)**
-<img src="C:\one\OneDrive - UNP Universidad Nacional Politécnica\Clases\Materias\Sistemas electrónicos\Materiales\clase practica\Clase práctica 08\tkc1.png" align="left" width="250" style="margin-right: 20px;">
-El DHT11 y el DHT22 son sensores de temperatura y humedad ampliamente utilizados en proyectos de electrónica y domótica. Aunque ambos sensores tienen funciones similares y la misma interfaz de comunicación (un solo cable de datos), existen diferencias clave entre ellos en cuanto a precisión, rango de medición y velocidad de muestreo. A continuación, se detallan las características de ambos sensores:
 
-### **DHT11**:
+<img src="tkc1.png" align="left" width="250" style="margin-right: 20px;">
+
+El DHT11 y el DHT22 son sensores de temperatura y humedad ampliamente utilizados en proyectos de electrónica y domótica. Aunque ambos sensores tienen funciones similares y la misma interfaz de comunicación (un solo cable de datos), existen diferencias clave entre ellos en cuanto a precisión, rango de medición y velocidad de muestreo.
+
+### **Características del DHT11**
 - Rango de Temperatura: 0 a 50 °C
 - Precisión de Temperatura: ±2 °C
 - Rango de Humedad: 20-90% RH
 - Precisión de Humedad: ±5% RH
-- Frecuencia de Muestreo: 1 muestra por segundo (1 Hz)
-- Durabilidad: Vida útil moderada
-- Costo: Bajo
+- Frecuencia de Muestreo: 1 Hz (1 muestra por segundo)
 
-### **DHT22**:
+### **Características del DHT22**
 - Rango de Temperatura: -40 a 80 °C
 - Precisión de Temperatura: ±0.5 °C
 - Rango de Humedad: 0-100% RH
 - Precisión de Humedad: ±2-5% RH
-- Frecuencia de Muestreo: 0.5 Hz (una muestra cada 2 segundos)
-- Durabilidad: Vida útil más larga
-- Costo: Moderadamente más alto que el DHT11
+- Frecuencia de Muestreo: 0.5 Hz (1 muestra cada 2 segundos)
 
-## **Interfaz y Código**
-Ambos sensores utilizan un protocolo de comunicación digital de un solo hilo, y se pueden conectar de manera similar a microcontroladores como Arduino, ESP8266 o ESP32. A menudo, la misma biblioteca de software puede utilizarse para ambos sensores, aunque es necesario tener en cuenta los tiempos de muestreo y las diferencias en precisión al interpretar los datos.
+## **Explicación del código**
 
-A continuación, se presenta un ejemplo de código para Arduino utilizando la biblioteca DHT de Adafruit, que es compatible con ambos sensores. Este código muestra cómo inicializar y leer datos tanto del DHT11 como del DHT22.
+Este programa utiliza la biblioteca DHT de Adafruit para leer temperatura y humedad desde un sensor DHT11 o DHT22, y muestra los valores incluyendo el índice de calor (heat index) en el Monitor Serie.
 
-## **Código Arduino**
+### **1. Inclusión de librería y definiciones**
 
 ```cpp
 #include "DHT.h"
 
-// Definir el pin al que está conectado el sensor
-#define DHTPIN 2     
+#define DHTPIN 2
+//#define DHTTYPE DHT11
+#define DHTTYPE DHT22
 
-// Definir el tipo de sensor
-//#define DHTTYPE DHT11   // Descomentar esta línea si se usa el DHT11
-#define DHTTYPE DHT22   // Descomentar esta línea si se usa el DHT22
-
-// Inicializar el sensor DHT
 DHT dht(DHTPIN, DHTTYPE);
+```
 
+- `#include "DHT.h"`: Incluye la biblioteca DHT de Adafruit.
+- `#define DHTPIN 2`: Define el pin de datos del sensor.
+- `#define DHTTYPE DHT22`: Define el tipo de sensor. Se debe comentar/descomentar la línea correspondiente según el sensor usado.
+- `DHT dht(DHTPIN, DHTTYPE)`: Crea un objeto `dht` que manejará la comunicación con el sensor.
+
+### **2. Configuración `setup()`**
+
+```cpp
 void setup() {
-  // Inicializar la comunicación serie para la depuración
   Serial.begin(9600);
   Serial.println("DHTxx test!");
-
-  // Inicializar el sensor DHT
   dht.begin();
 }
+```
 
+- Inicializa la comunicación serie a 9600 baudios.
+- `dht.begin()`: Inicializa el sensor DHT. Este método configura el pin y prepara el protocolo de comunicación.
+
+### **3. Bucle `loop()`**
+
+```cpp
 void loop() {
-  // Esperar unos segundos entre mediciones
   delay(2000);
 
-  // Leer la humedad
   float h = dht.readHumidity();
-  // Leer la temperatura en grados Celsius (por defecto)
   float t = dht.readTemperature();
-  // Leer la temperatura en grados Fahrenheit
   float f = dht.readTemperature(true);
 
-  // Verificar si alguna lectura ha fallado y salir temprano (para intentarlo de nuevo)
   if (isnan(h) || isnan(t) || isnan(f)) {
     Serial.println("Falla al leer el sensor de calor!");
     return;
   }
 
-  // Calcular el índice de calor en grados Fahrenheit
   float hif = dht.computeHeatIndex(f, h);
-  // Calcular el índice de calor en grados Celsius
   float hic = dht.computeHeatIndex(t, h, false);
 
-  // Mostrar los resultados
-  // Imprimir la humedad
   Serial.print("Humedad: ");
   Serial.print(h);
-  Serial.print(" %\t"); // \t agrega una tabulación para una mejor legibilidad
-
-  // Imprimir la temperatura en grados Celsius
+  Serial.print(" %\t");
   Serial.print("Temperatura: ");
   Serial.print(t);
-  Serial.print(" *C "); // *C indica grados Celsius
-
-  // Imprimir la temperatura en grados Fahrenheit
+  Serial.print(" *C ");
   Serial.print(f);
-  Serial.print(" *F\t"); // \t agrega una tabulación para una mejor legibilidad
-
-  // Imprimir el índice de calor en grados Celsius
+  Serial.print(" *F\t");
   Serial.print("Índice de calor: ");
   Serial.print(hic);
-  Serial.print(" *C "); // *C indica grados Celsius
-
-  // Imprimir el índice de calor en grados Fahrenheit
+  Serial.print(" *C ");
   Serial.print(hif);
-  Serial.println(" *F"); // \n indica una nueva línea
+  Serial.println(" *F");
+}
+```
 
-  // Nota: El índice de calor (heat index) se calcula en función de la temperatura y la humedad,
-  // proporcionando una medida de cómo se siente realmente la temperatura en función de la humedad.
+- `delay(2000)`: Espera 2 segundos entre lecturas (mínimo recomendado para DHT22).
+- `dht.readHumidity()`: Lee la humedad relativa en porcentaje.
+- `dht.readTemperature()`: Lee la temperatura en grados Celsius.
+- `dht.readTemperature(true)`: Lee la temperatura en grados Fahrenheit.
+- `isnan()`: Verifica si alguna lectura falló (retorna `NaN`). Si hay fallo, muestra un mensaje y reinicia el `loop()`.
+- `dht.computeHeatIndex(f, h)`: Calcula el índice de calor en Fahrenheit usando temperatura y humedad.
+- `dht.computeHeatIndex(t, h, false)`: Calcula el índice de calor en Celsius.
+- Los resultados se muestran en el Monitor Serie con formato tabulado.
+
+### **Código completo para copiar y pegar**
+
+```cpp
+// Sensor de temperatura y humedad (DHT11 y DHT22)
+
+#include "DHT.h"
+
+#define DHTPIN 2
+//#define DHTTYPE DHT11
+#define DHTTYPE DHT22
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("DHTxx test!");
+  dht.begin();
 }
 
+void loop() {
+  delay(2000);
 
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+  float f = dht.readTemperature(true);
+
+  if (isnan(h) || isnan(t) || isnan(f)) {
+    Serial.println("Falla al leer el sensor de calor!");
+    return;
+  }
+
+  float hif = dht.computeHeatIndex(f, h);
+  float hic = dht.computeHeatIndex(t, h, false);
+
+  Serial.print("Humedad: ");
+  Serial.print(h);
+  Serial.print(" %\t");
+  Serial.print("Temperatura: ");
+  Serial.print(t);
+  Serial.print(" *C ");
+  Serial.print(f);
+  Serial.print(" *F\t");
+  Serial.print("Índice de calor: ");
+  Serial.print(hic);
+  Serial.print(" *C ");
+  Serial.print(hif);
+  Serial.println(" *F");
+}
 ```
-[enlace en línea](https://www.tinkercad.com/things/254aJdmC3zK-practica-08-p1-sensor-de-temperatura-y-humedad-dht11-y-22)
+
+### **Enlace al simulador**
+
+[Código en Tinkercad](https://www.tinkercad.com/things/254aJdmC3zK-practica-08-p1-sensor-de-temperatura-y-humedad-dht11-y-22)
+
+---
+
+## **Preguntas teóricas**
+
+1. ¿Cuáles son las diferencias principales entre el DHT11 y el DHT22 en cuanto a precisión y rango?
+2. ¿Por qué es necesario un delay de al menos 2 segundos entre lecturas? ¿Qué pasa si se lee más rápido?
+3. ¿Qué significa `isnan()` y por qué se usa para verificar las lecturas del sensor?
+4. ¿Qué es el índice de calor (heat index) y cómo se calcula? ¿Por qué es útil?
+5. ¿Qué función cumple `dht.begin()`? ¿Qué sucede si se omite esta línea?
+
+---
+
+## **Ejercicios prácticos (modificar el código y anotar cambios)**
+
+**Instrucciones:** Copia el código original, realiza la modificación indicada, carga el programa en el simulador (o en Arduino real) y describe cómo cambia el comportamiento del circuito.
+
+### **Ejercicio 1**
+Cambia el tipo de sensor a DHT11 (descomenta la línea correspondiente y comenta la del DHT22).
+*Pregunta:* ¿Los valores cambian? ¿El comportamiento del programa es el mismo?
+
+### **Ejercicio 2**
+Reduce el delay entre lecturas a 500 ms y observa qué sucede.
+*Pregunta:* ¿El sensor sigue funcionando correctamente? ¿Aparecen errores de lectura? ¿Por qué?
+
+### **Ejercicio 3**
+Agrega un LED en el pin 13 que se encienda cuando la temperatura supere los 30 °C.
+*Pregunta:* ¿Cómo integras la condición en el código? ¿El LED responde correctamente?
+
+### **Ejercicio 4**
+Muestra los valores de temperatura y humedad en una pantalla LCD 16×2 en lugar del Monitor Serie.
+*Pregunta:* ¿Qué librería adicional necesitas? ¿Cómo distribuyes los datos en las dos filas?
+
+### **Ejercicio 5**
+Agrega detección de tendencia: muestra si la temperatura está subiendo, bajando o estable comparando con la lectura anterior.
+*Pregunta:* ¿Cómo almacenas la lectura anterior? ¿Qué margen definiste para considerar "estable"?
+
+---
+
+*Entregar las respuestas a las preguntas teóricas y la descripción de los cambios observados en cada ejercicio.*

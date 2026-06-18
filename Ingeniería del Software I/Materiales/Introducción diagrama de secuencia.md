@@ -34,7 +34,7 @@ Aunque dedicaremos temas completos a cada elemento, conviene presentar aquí un 
 
 En PlantUML, la sintaxis para crear estos elementos es deliberadamente sencilla. Basta con declarar los participantes y escribir los mensajes en orden, de arriba abajo. La herramienta se encarga del resto. Por ejemplo, una interacción simple se define como:
 
-???
+```
 @startuml
 actor Cliente
 participant ControladorPedido
@@ -44,7 +44,7 @@ ControladorPedido -> Pedido: confirmar()
 Pedido --> ControladorPedido: confirmado
 ControladorPedido --> Cliente: pedidoRealizado
 @enduml
-???
+```
 
 La limpieza y legibilidad de esta notación textual es una de las razones por las que PlantUML ha ganado tanto terreno en la documentación de proyectos de software. No se dibuja; se escribe. Y al escribirse, se versiona, se revisa y se mejora como cualquier otro artefacto de código.
 
@@ -116,7 +116,7 @@ Todas estas palabras clave pueden ir seguidas del nombre del participante (entre
 
 Veamos un ejemplo de declaración de participantes para el caso de uso "Realizar Pedido", alineado con nuestro diagrama de clases:
 
-???
+```
 @startuml
 actor "Cliente" as Cl
 boundary "FormularioPedido" as FP
@@ -126,7 +126,7 @@ entity "Producto" as Prod
 database "BaseDatos" as BD
 Cl -> FP: realizaPedido()
 @enduml
-???
+```
 
 Cada uno de estos participantes existe en el diagrama de clases: `FormularioPedido` es una clase `<<boundary>>`, `ControladorPedido` es `<<control>>`, `Pedido` y `Producto` son `<<entity>>`. La coherencia es total.
 
@@ -140,11 +140,11 @@ UML distingue varios tipos de mensajes, y PlantUML ofrece una notación específ
 
 Es el más común. El emisor envía el mensaje y **se queda esperando** hasta que el receptor procesa la petición y devuelve el control (normalmente con un mensaje de retorno). En UML se dibuja con una línea continua y una punta de flecha **rellena** (triángulo negro). En PlantUML, se consigue con la flecha `->` estándar.
 
-???
+```
 @startuml
 Cliente -> ServidorWeb: solicitarPagina()
 @enduml
-???
+```
 
 También podemos usar `-->` para obtener un trazo discontinuo con punta de flecha normal, si queremos transmitir un matiz menos intenso, aunque la semántica síncrona se suele asociar al trazo sólido.
 
@@ -152,11 +152,11 @@ También podemos usar `-->` para obtener un trazo discontinuo con punta de flech
 
 El emisor envía el mensaje y **continúa su ejecución inmediatamente**, sin esperar respuesta. Es típico en sistemas basados en eventos, mensajería o notificaciones. Se dibuja con una línea continua y una punta de flecha **abierta** (solo los dos trazos laterales). En PlantUML, se logra con la flecha `->>` o `-->` si el trazo es discontinuo.
 
-???
+```
 @startuml
 Cliente ->> ServidorEmail: enviarNotificacion()
 @enduml
-???
+```
 
 La diferencia entre síncrono y asíncrono tiene implicaciones directas en el código: una llamada síncrona bloqueará el hilo de ejecución; una asíncrona probablemente se implementará con una cola de mensajes, un callback o una operación "fire and forget".
 
@@ -164,12 +164,12 @@ La diferencia entre síncrono y asíncrono tiene implicaciones directas en el c�
 
 Representa el retorno desde una llamada síncrona. Puede llevar un valor de vuelta o simplemente indicar que el control regresa al emisor. En UML se dibuja con una línea **discontinua** y una punta de flecha abierta. En PlantUML, se obtiene con `-->`.
 
-???
+```
 @startuml
 Cliente -> Servidor: solicitarDatos()
 Servidor --> Cliente: datos
 @enduml
-???
+```
 
 Los retornos son opcionales y, en muchos diagramas, se omiten para no recargar el dibujo cuando el valor de retorno no es relevante. Sin embargo, en fases de diseño detallado, pueden ser muy útiles para especificar qué datos viajan de vuelta.
 
@@ -177,13 +177,13 @@ Los retornos son opcionales y, en muchos diagramas, se omiten para no recargar e
 
 En ciertos escenarios, necesitamos mostrar que un objeto se crea en medio de la interacción o que es destruido al final de ella. PlantUML ofrece la palabra reservada `create` antes del mensaje que provoca la creación, y `destroy` para marcar el fin de la línea de vida.
 
-???
+```
 @startuml
 Controlador -> Pedido: create
 Controlador -> Pedido: confirmar()
 Controlador -> Pedido: destroy
 @enduml
-???
+```
 
 La guía (páginas 21-23) también presenta una sintaxis abreviada muy elegante: `++` para activar y crear, `--` para desactivar, `**` para crear una instancia y `!!` para destruirla. Esta notación compacta simplifica el código PlantUML y mantiene el diagrama limpio.
 
@@ -199,14 +199,14 @@ Una activación (también llamada *foco de control* o *barra de activación*) es
 
 PlantUML puede dibujar activaciones automáticamente cuando usamos las flechas `->` y `-->`, pero también permite un control explícito con los comandos `activate` y `deactivate` aplicados al participante (página 19). Además, la sintaxis abreviada que mencioné antes —`++` para activar, `--` para desactivar— es aún más compacta y recomendable.
 
-???
+```
 @startuml
 Cliente -> Controlador: ++ realizarPedido()
 Controlador -> Pedido: ++ confirmar()
 Pedido --> Controlador: --
 Controlador --> Cliente: -- pedidoRealizado
 @enduml
-???
+```
 
 En este ejemplo, `++` después del mensaje activa al objeto receptor (y desactiva al emisor si no sigue activo), mientras que `--` en el mensaje de retorno desactiva al objeto que responde. El resultado visual es un diagrama con barras de activación bien delimitadas, que cualquier desarrollador puede interpretar de un vistazo.
 
@@ -228,7 +228,7 @@ Un fragmento combinado es un área del diagrama delimitada por un rectángulo (a
 
 PlantUML emplea una sintaxis muy natural para estos fragmentos:
 
-???
+```
 @startuml
 actor Cliente
 control ControladorPedido as CP
@@ -239,7 +239,7 @@ opt stock suficiente
 end
 CP --> Cliente: pedidoRealizado
 @enduml
-???
+```
 
 En este ejemplo, el fragmento `opt` condiciona la ejecución del mensaje `decrementarStock()` a que se cumpla la guarda "stock suficiente". La sintaxis es la misma para `alt` con `else`, `loop` con condición de repetición, etc.
 
@@ -249,7 +249,7 @@ Los fragmentos combinados no son opcionales cuando el caso de uso que estamos mo
 
 Antes de cerrar este tema, quiero mostrar cómo estos cuatro elementos —líneas de vida, mensajes, activaciones y fragmentos combinados— se ensamblan en un diagrama coherente. Tomemos un fragmento mínimo del flujo básico de "Realizar Pedido": el cliente añade un producto al carrito. Los participantes son `Cliente` (actor), `FormularioPedido` (`<<boundary>>`), `ControladorPedido` (`<<control>>`) y `Producto` (`<<entity>>`), todos de nuestro modelo de clases.
 
-???
+```
 @startuml
 actor Cliente as Cl
 boundary FormularioPedido as FP
@@ -281,7 +281,7 @@ else stock insuficiente
   deactivate FP
 end
 @enduml
-???
+```
 
 Analicemos el diagrama:
 
@@ -355,7 +355,7 @@ La guía de PlantUML (páginas 3-4) nos proporciona precisamente estas palabras 
 
 Un diagrama de secuencia correctamente descompuesto para "Realizar Pedido" podría arrancar así:
 
-???
+```
 @startuml
 actor "Cliente" as Cl
 boundary "FormularioPedido" as FP
@@ -372,7 +372,7 @@ Ped --> CP: productoAñadido
 CP --> FP: pedidoActualizado
 FP --> Cl: mostrarPedido()
 @enduml
-???
+```
 
 Observen cómo la interacción se distribuye entre varios objetos, cada uno con una responsabilidad clara. `FormularioPedido` solo dialoga con el actor y con el controlador. `ControladorPedido` coordina la creación del pedido y la adición de productos. `Pedido` se encarga de su propia lógica (añadir productos) y delega en `Producto` la verificación de stock. No hay un "Sistema" omnisciente; hay una coreografía de objetos que colaboran.
 
@@ -418,7 +418,7 @@ El fragmento de especificación textual dice:
 
 El diagrama de secuencia correspondiente, sin inventar ningún objeto, quedaría:
 
-???
+```
 @startuml
 actor "Cliente" as Cl
 boundary "FormularioPedido" as FP
@@ -450,7 +450,7 @@ else stock insuficiente
   deactivate FP
 end
 @enduml
-???
+```
 
 Analicemos la coherencia:
 
@@ -531,29 +531,29 @@ Vamos a construir el diagrama de secuencia para este flujo básico, paso a paso,
 
 **Paso 1** (El Cliente solicita iniciar un nuevo pedido): el actor envía un mensaje `iniciarPedido()` al `FormularioPedido`. Este, a su vez, delega en el `ControladorPedido` para que cree el pedido en el sistema. El controlador puede crear la instancia de `Pedido` con un mensaje `crear()`.
 
-???
+```
 Cl -> FP: iniciarPedido()
 FP -> CP: crearPedido()
 CP -> Ped: crear()
 Ped --> CP: pedidoCreado
 CP --> FP: pedidoCreado
 FP --> Cl: mostrarPedidoVacio()
-???
+```
 
 **Paso 2** (mostrar catálogo): el formulario o el actor consultan el catálogo. Aquí podemos modelar que el `Cliente` solicita ver el catálogo al `Catalogo`, que a su vez consulta los `Producto`s disponibles.
 
-???
+```
 Cl -> Cat: mostrarCatalogo()
 Cat -> Prod: buscarDisponibles()
 Prod --> Cat: listaProductos
 Cat --> Cl: mostrarCatalogo(listaProductos)
-???
+```
 
 **Paso 3 y 4** (seleccionar productos y agregar al carrito/pedido): el cliente va añadiendo productos uno a uno. Para cada adición, se sigue el patrón que ya conocemos: el formulario llama al controlador; el controlador verifica stock en `Producto`; si hay stock, añade una línea al `Pedido`. Aquí aparece un fragmento `loop` para reflejar que el cliente puede añadir varios productos, y un fragmento `opt` o `alt` para la condición de stock. Sin embargo, el flujo básico asume que todos los productos tienen stock, por lo que en el diagrama del flujo básico podemos omitir la condición de error (o incluirla de forma simplificada). En rigor, el flujo básico es el camino sin errores, así que modelaremos solo el camino exitoso, pero dejaremos una nota de que las excepciones se tratan en otro diagrama.
 
 Para cada producto:
 
-???
+```
 loop para cada producto seleccionado
   Cl -> FP: añadirProducto(codigo, cantidad)
   FP -> CP: añadirProducto(codigo, cantidad)
@@ -564,11 +564,11 @@ loop para cada producto seleccionado
   CP --> FP: productoAñadido
   FP --> Cl: mostrarResumenParcial()
 end
-???
+```
 
 **Paso 5** (confirmar pedido): el cliente confirma a través del formulario. El controlador puede validar que el pedido no esté vacío y cambiar el estado del pedido.
 
-???
+```
 Cl -> FP: confirmarPedido()
 FP -> CP: confirmarPedido()
 CP -> Ped: estaVacio()
@@ -576,11 +576,11 @@ Ped --> CP: false
 CP -> Ped: setEstado("confirmado")
 Ped --> CP: estadoActualizado
 CP --> FP: pedidoConfirmado
-???
+```
 
 **Paso 6 y 7** (solicitar y proporcionar dirección de envío): el sistema solicita la dirección; el cliente ingresa la dirección. El formulario la pasa al controlador, que se la asigna al pedido.
 
-???
+```
 FP --> Cl: solicitarDireccionEnvio()
 Cl -> FP: ingresarDireccion(direccion)
 FP -> CP: asignarDireccionEnvio(direccion)
@@ -588,20 +588,20 @@ CP -> Ped: setDireccionEnvio(direccion)
 Ped --> CP: direccionAsignada
 CP --> FP: direccionAsignada
 FP --> Cl: direccionGuardada
-???
+```
 
 **Paso 8** (calcular costo total y mostrar resumen final): el controlador solicita al `Pedido` que calcule su total, y luego lo retorna al formulario para mostrarlo.
 
-???
+```
 CP -> Ped: calcularTotal()
 Ped --> CP: total
 CP --> FP: mostrarResumenFinal(total)
 FP --> Cl: mostrarResumenFinal(total)
-???
+```
 
 **Paso 9 y 10** (autorizar pago y procesarlo): el cliente autoriza el pago. El formulario invoca al controlador, que a su vez se comunica con el `ServicioPago` externo. Si el pago es exitoso, el controlador actualiza el estado del pedido, decrementa el stock de los productos (posiblemente con un bucle sobre las líneas de pedido) y envía la confirmación mediante `ServicioCorreo`. Todo esto en el flujo básico, asumiendo éxito. Las excepciones las modelaremos aparte.
 
-???
+```
 Cl -> FP: autorizarPago(datosPago)
 FP -> CP: procesarPago(datosPago)
 CP -> ServicioPago: realizarTransaccion(datosPago)
@@ -616,7 +616,7 @@ CP -> ServicioCorreo: enviarConfirmacion(cliente.email, Ped)
 ServicioCorreo --> CP: confirmacionEnviada
 CP --> FP: pagoProcesado
 FP --> Cl: mostrarConfirmacion()
-???
+```
 
 Hemos traducido cada paso del flujo básico a mensajes concretos, empleando los objetos del modelo de clases. El resultado es un diagrama de secuencia que narra visualmente la historia completa del caso de uso, sin ambigüedades.
 
@@ -670,7 +670,7 @@ PlantUML permite abreviar la declaración usando directamente el tipo seguido de
 
 Un ejemplo de declaración para nuestro caso de uso "Realizar Pedido":
 
-???
+```
 @startuml
 actor "Cliente" as Cl
 boundary "FormularioPedido" as FP
@@ -681,7 +681,7 @@ entity "Producto" as Prod
 participant "ServicioPago" as SP
 participant "ServicioCorreo" as SC
 @enduml
-???
+```
 
 Observen la coherencia: `FormularioPedido` y `Catalogo` son `boundary` porque gestionan la interacción con el actor. `ControladorPedido` es `control` porque orquesta la lógica. `Pedido` y `Producto` son `entity` porque almacenan datos persistentes. `ServicioPago` y `ServicioCorreo` se declaran como `participant` genéricos, ya que representan servicios externos. Todos ellos existen en nuestro diagrama de clases.
 
@@ -709,7 +709,7 @@ Un aspecto fundamental es la **creación y destrucción** de objetos. PlantUML p
 
 Un ejemplo con mensajes y la notación abreviada:
 
-???
+```
 @startuml
 actor Cliente
 control Controlador
@@ -723,7 +723,7 @@ Pedido --> Controlador: confirmado
 Controlador -> Pedido: !! destruir()
 Controlador --> Cliente: -- pedidoFinalizado
 @enduml
-???
+```
 
 En este fragmento, `++` activa `Controlador`, `**` crea `Pedido`, y `!!` lo destruye. Los retornos devuelven el control.
 
@@ -753,7 +753,7 @@ Los fragmentos combinados son la herramienta de PlantUML para expresar condicion
 
 La sintaxis de todos sigue el patrón:
 
-???
+```
 @startuml
 actor Cliente
 control CP
@@ -767,27 +767,27 @@ else stock insuficiente
   CP --> Cliente: errorSinStock
 end
 @enduml
-???
+```
 
 Los fragmentos deben incluir guardas que parafraseen la especificación textual del caso de uso. Así se mantiene la trazabilidad y se facilita la validación. En el ejemplo, "stock suficiente" y "stock insuficiente" son condiciones que aparecen en el flujo alternativo de "Realizar Pedido".
 
 Para bucles:
 
-???
+```
 loop por cada producto en el carrito
   CP -> Producto: verificarStock()
   Producto --> CP: disponible
   CP -> Pedido: añadirLinea()
 end
-???
+```
 
 Y para operaciones opcionales:
 
-???
+```
 opt cliente tiene cupón
   CP -> Pedido: aplicarDescuento()
 end
-???
+```
 
 Los fragmentos anidados deben usarse con moderación. Si la lógica se vuelve muy compleja, es mejor extraer subescenarios a diagramas de secuencia separados y referenciarlos mediante `ref` (página 16). La regla general es que un diagrama de secuencia no debería tener más de dos o tres niveles de anidamiento.
 
@@ -803,7 +803,7 @@ PlantUML proporciona la palabra clave `autonumber` para añadir automáticamente
 
 Un ejemplo:
 
-???
+```
 @startuml
 autonumber "<b>Msg [00]</b>"
 Cliente -> Controlador: realizarPedido()
@@ -811,7 +811,7 @@ Controlador -> Pedido: confirmar()
 Pedido --> Controlador: confirmado
 Controlador --> Cliente: pedidoRealizado
 @enduml
-???
+```
 
 Esto numerará los mensajes como "Msg 01", "Msg 02", etc., en negrita. La numeración no afecta la semántica del diagrama, pero simplifica enormemente la comunicación: "Revisemos el mensaje 03 del diagrama de secuencia del flujo básico".
 
@@ -828,14 +828,14 @@ Las notas pueden ser multilínea usando `end note`. También aceptan formato Cre
 
 Un ejemplo con notas:
 
-???
+```
 @startuml
 Cliente -> Servidor: solicitarDatos()
 note right of Servidor: Este método puede lanzar\nuna excepción si el timeout se agota.
 Servidor --> Cliente: datos
 note left of Cliente: La respuesta debe mostrarse\nen menos de 2 segundos.
 @enduml
-???
+```
 
 Las notas son el lugar ideal para registrar aclaraciones que no forman parte del flujo narrativo pero que son valiosas para el desarrollador o el tester. En mis diagramas, suelo incluir una nota que enlace al código del caso de uso (`[[CU-01]]`) o al diagrama de clases de referencia.
 
@@ -901,7 +901,7 @@ Con la lista de participantes sobre la mesa, abrimos un nuevo archivo `.puml` y 
 
 Para nuestro escenario, la declaración inicial quedaría así:
 
-???
+```
 @startuml
 ' Flujo básico de Realizar Pedido (CU-01)
 actor "Cliente" as Cl
@@ -913,7 +913,7 @@ entity "Producto" as Prod
 participant "ServicioPago" as SP
 participant "ServicioCorreo" as SC
 @enduml
-???
+```
 
 He incluido un comentario al inicio para identificar el escenario. Cada participante tiene un alias corto pero descriptivo. Las declaraciones son explícitas respecto al rol arquitectónico. A partir de este esqueleto, comenzaremos a tejer los mensajes.
 
@@ -978,7 +978,7 @@ La inclusión de estos fragmentos transforma el diagrama en un reflejo fiel de l
 
 Aplicando los pasos anteriores, el código PlantUML para el flujo básico de "Realizar Pedido" quedaría como se muestra a continuación. He incorporado todos los elementos discutidos: declaraciones de participantes, mensajes con activación abreviada, fragmentos combinados y una nota que remite a los flujos de excepción.
 
-???
+```
 @startuml
 ' Flujo básico: Realizar Pedido (CU-01)
 autonumber "<b>[00]</b>"
@@ -1063,7 +1063,7 @@ CP --> FP: -- pagoProcesado
 FP --> Cl: mostrarConfirmacion()
 
 @enduml
-???
+```
 
 Observen cómo el diagrama narra visualmente la historia completa. Cada paso del caso de uso tiene su reflejo en mensajes. Los objetos son exactamente los del diagrama de clases. La numeración automática permite referenciar cada mensaje sin ambigüedad. Las activaciones muestran la profundidad de las llamadas. Y la nota recuerda que el camino de error está documentado aparte.
 
@@ -1178,3 +1178,74 @@ Los diagramas de secuencia son, para mí, el crisol donde se funden el análisis
 La diferencia entre ambos extremos no está en la herramienta, sino en la cultura de diseño. Si exigen que cada objeto provenga del modelo de clases, que cada mensaje sea un método existente y que cada fragmento combinado tenga su guarda extraída de la especificación textual, están convirtiendo el modelado en una práctica de ingeniería rigurosa que les ahorrará incontables horas de depuración y refactorización. 
 
 Les animo a aplicar estos principios en sus proyectos, a revisar sus propios diagramas con ojo crítico y a no conformarse con dibujos que “más o menos” funcionan. Busquen la precisión, la coherencia y la claridad. El resultado será una documentación que el equipo amará en lugar de temer.
+# 8. Preguntas y ejercicios
+
+## 8.1. Preguntas de repaso
+
+1. ¿Qué problema resuelve el diagrama de secuencia que no cubren ni el diagrama de casos de uso ni el diagrama de clases?
+
+2. ¿Cuál es la diferencia fundamental entre un mensaje síncrono y uno asíncrono en un diagrama de secuencia? ¿Cómo se representan en PlantUML?
+
+3. Explica por qué el texto del curso afirma que "el diagrama de secuencia es la coreografía que demuestra que nuestro diseño estático es capaz de ejecutar las historias que prometimos a los actores".
+
+4. ¿Qué son las activaciones (barras de ejecución) y qué información aportan al flujo de control del diagrama?
+
+5. ¿Cuál es la regla fundamental respecto a la procedencia de las líneas de vida en un diagrama de secuencia? ¿Por qué es tan importante?
+
+6. Describe el problema del "objeto Sistema" y explica cómo debe descomponerse según los estereotipos UML (boundary, control, entity).
+
+7. Nombra al menos cuatro tipos de fragmentos combinados que soporta PlantUML e indica para qué se usa cada uno.
+
+8. ¿Cómo se asegura la trazabilidad entre la especificación textual del caso de uso y el diagrama de secuencia?
+
+9. ¿Qué ventaja aporta la numeración automática de mensajes con `autonumber` en un diagrama de secuencia?
+
+10. Según el proceso paso a paso descrito en el tema 6, ¿cuáles son los siete pasos para construir un diagrama de secuencia?
+
+## 8.2. Ejercicios prácticos
+
+1. **Traducción de flujo a mensajes.** Dado el siguiente paso de un caso de uso: "El Cliente introduce su usuario y contraseña. El Sistema verifica las credenciales contra la base de datos. Si son correctas, muestra la pantalla principal; si no, muestra un mensaje de error". Identifica los objetos participantes (actor, frontera, control, entidad) y escribe el código PlantUML que modele esta interacción, incluyendo activaciones y un fragmento combinado `alt`.
+
+2. **Identificación de errores.** El siguiente diagrama de secuencia contiene al menos tres errores graves según las reglas del curso. Identifícalos y explica por qué son incorrectos:
+   ```
+   @startuml
+   actor Usuario
+   participant Sistema
+   Usuario -> Sistema: login()
+   Sistema --> Usuario: ok
+   @enduml
+   ```
+
+3. **Derivación desde el modelo de clases.** Dado un diagrama de clases que contiene `PantallaLogin` (boundary), `ControladorAutenticacion` (control), `Usuario` (entity) y `BaseDatos` (database), elabora el diagrama de secuencia completo para el escenario de "Inicio de sesión exitoso" siguiendo el proceso paso a paso del tema 6.
+
+4. **Ampliación con fragmentos combinados.** Toma el diagrama de secuencia del flujo básico de "Realizar Pedido" (sección 6.7) y modifícalo para incluir un flujo alternativo donde el `ServicioPago` rechaza la transacción. Añade un fragmento `alt` que capture ambas ramas (éxito y rechazo) y muestra cómo el sistema notifica al cliente en cada caso.
+
+5. **Modelado de un bucle de selección.** Construye un diagrama de secuencia en PlantUML para el siguiente escenario: "El Cliente añade productos al carrito uno por uno. Por cada producto, el Sistema verifica el stock y, si está disponible, lo agrega al carrito y muestra el subtotal actualizado. El proceso se repite hasta que el Cliente decide finalizar". Incluye un fragmento `loop` y los objetos `FormularioCarrito`, `ControladorCarrito`, `Producto` y `Carrito`.
+
+6. **Corrección de coherencia.** Revisa el siguiente fragmento de diagrama de secuencia. Asumiendo que en el diagrama de clases `Pedido` NO tiene un método `enviarConfirmacion()`, ¿qué problema de coherencia existe? Propón una corrección siguiendo las reglas de derivación estricta.
+   ```
+   Controlador -> Pedido: enviarConfirmacion(email)
+   ```
+
+7. **Creación y destrucción de objetos.** Modela en PlantUML un escenario donde un `ControladorSesion` crea un objeto `Sesion` cuando un usuario inicia sesión y lo destruye cuando el usuario cierra la sesión. Usa la notación abreviada (`**`, `!!`, `++`, `--`).
+
+8. **Diagrama para un flujo de excepción.** Elabora el diagrama de secuencia para el siguiente flujo de excepción de "Realizar Pedido": "Si durante el procesamiento del pago el `ServicioPago` externo no responde en 10 segundos, el `ControladorPedido` debe cancelar el pedido, liberar el stock reservado y notificar al Cliente con un mensaje de error".
+
+9. **Conversión de especificación a diagrama.** Dada la siguiente especificación textual, construye el diagrama de secuencia completo en PlantUML:
+   > **Caso de uso:** Consultar saldo
+   > **Flujo básico:**
+   > 1. El Cliente introduce su número de cuenta.
+   > 2. El Sistema muestra los datos de la cuenta.
+   > 3. El Cliente solicita consultar el saldo.
+   > 4. El Sistema recupera el saldo actual de la base de datos.
+   > 5. El Sistema muestra el saldo al Cliente.
+   >
+   > **Clases del modelo:** `PantallaCuenta` (boundary), `ControladorCuenta` (control), `Cuenta` (entity), `BaseDatos` (database).
+
+10. **Diseño completo desde cero.** Imagina un sistema de reserva de vuelos. El diagrama de clases contiene: `FormularioReserva` (boundary), `ControladorReserva` (control), `Vuelo` (entity), `Reserva` (entity), `ServicioPago` (participant). El flujo básico es:
+    1. El Cliente busca vuelos disponibles (origen, destino, fecha).
+    2. El Sistema muestra la lista de vuelos.
+    3. El Cliente selecciona un vuelo y proporciona datos de pago.
+    4. El Sistema procesa el pago, crea la reserva y confirma.
+
+    Construye el diagrama de secuencia completo con activaciones, fragmentos combinados, numeración automática y una nota que indique que el caso de "vuelo sin disponibilidad" se modela en otro diagrama.
