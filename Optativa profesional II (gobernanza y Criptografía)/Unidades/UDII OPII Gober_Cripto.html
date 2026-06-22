@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad Didáctica - Gobierno TI, Unidad II</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f9f9f9;
+        }
+
+        .page-letter {
+            width: 21.59cm;
+            min-height: 27.94cm;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .page-letter .logo-icon svg {
+            width: 88px;
+            height: 88px;
+        }
+
+        .page-letter .acronym {
+            font-size: 3rem;
+        }
+
+        .page-letter .line-red-only {
+            margin: 3px 0 5px 0;
+            height: 4px;
+        }
+
+        .page-letter .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .page-letter .logo-icon svg {
+            width: 88px;
+            height: 88px;
+            display: block;
+        }
+
+        .ray { fill: #193a6f; }
+        .book-left { fill: #d90f6d; }
+        .book-spine { fill: #ffffff; }
+        .book-right { fill: #00b1e6; }
+        .dot-yellow { fill: #fad02c; }
+
+        .page-letter .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+        }
+
+        .page-letter .acronym {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #193a6f;
+            letter-spacing: -1.5px;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            border-bottom: none;
+        }
+
+        .page-letter .line-red-only {
+            height: 4px;
+            width: 100%;
+            background-color: #c52f2b;
+            border-radius: 2px;
+            margin: 6px 0 10px 0;
+        }
+
+        .page-letter .full-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #193a6f;
+            line-height: 1.2;
+        }
+
+        .center-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 40px 0 0;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: -160px;
+        }
+
+        .title-group {
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .title-main {
+            font-family: 'Impact', 'Arial Narrow', sans-serif;
+            font-size: 4.8rem;
+            color: #193a6f;
+            letter-spacing: 1px;
+            margin: 0 0 4px 0;
+            padding: 0;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+            text-align: right;
+            border-bottom: none;
+        }
+
+        .decoration-lines {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            gap: 2%;
+            margin-bottom: 25px;
+        }
+
+        .line-blue-cover {
+            width: 69%;
+            height: 20px;
+            background-color: #c52f2b;
+            border-radius: 1px;
+        }
+
+        .line-red-cover {
+            width: 29%;
+            height: 20px;
+            background-color: #193a6f;
+            border-radius: 1px;
+        }
+
+        .subtitle-cover {
+            text-align: right;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #000000;
+            font-size: 1.9rem;
+            line-height: 1.3;
+        }
+
+        .page-content {
+            width: 21.59cm;
+            height: 27.94cm;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 48px 56px;
+            margin: 0 auto 40px auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            counter-increment: page;
+        }
+
+        .page-number {
+            text-align: right;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: #999999;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+
+        .page-number::after {
+            content: counter(page);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 100%;
+            margin-bottom: 36px;
+        }
+
+        .section-header .header-text {
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            line-height: 1;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .block-red {
+            flex: 29;
+            height: 22px;
+            background-color: #c52f2b;
+            border-radius: 1px;
+        }
+
+        .bar-gap {
+            flex: 2;
+        }
+
+        .block-blue {
+            flex: 69;
+            height: 22px;
+            background-color: #193a6f;
+            border-radius: 1px;
+        }
+
+        .topic-header {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #193a6f;
+            margin: 16px 0 10px 0;
+            padding: 8px 0 8px 12px;
+            border-left: 5px solid #c52f2b;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #0a3d62;
+            text-align: center;
+            margin-bottom: 8px;
+            border-bottom: 3px solid #0a3d62;
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #0a3d62;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 4px solid #e67e22;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 16px;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 12px 0 16px 28px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        strong {
+            color: #0a3d62;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 14px;
+        }
+
+        th {
+            background: #0a3d62;
+            color: #fff;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f5f6fa;
+        }
+
+        .toc {
+            background: #f0f4f8;
+            padding: 20px 24px;
+            border-radius: 6px;
+            margin: 20px 0 28px;
+            border-left: 4px solid #0a3d62;
+        }
+
+        .toc ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc ul li {
+            margin-bottom: 4px;
+            list-style: none;
+        }
+
+        .toc ul li a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .toc .page-ref {
+            float: right;
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        .toc ul li::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .toc ul ul {
+            margin-left: 24px;
+            margin-top: 4px;
+        }
+
+        .highlight {
+            background: #fff3e0;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #e67e22;
+            margin: 16px 0;
+        }
+
+        .highlight strong {
+            color: #d35400;
+        }
+
+        .caso-exito {
+            background: #e8f5e9;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #27ae60;
+            margin: 16px 0;
+        }
+
+        .caso-fallo {
+            background: #fbe9e7;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #c0392b;
+            margin: 16px 0;
+        }
+
+        .reflexion {
+            background: #f3e5f5;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #8e24aa;
+            margin: 16px 0;
+        }
+
+        .autoeval {
+            background: #eaf2f8;
+            padding: 20px 24px;
+            border-radius: 6px;
+            border-left: 4px solid #2980b9;
+            margin: 20px 0;
+        }
+
+        .autoeval ol {
+            margin: 12px 0 0 24px;
+        }
+
+        .autoeval li {
+            margin-bottom: 12px;
+        }
+
+        .autoeval .respuesta {
+            color: #555;
+            font-style: italic;
+            margin-top: 4px;
+            padding-left: 16px;
+            border-left: 2px solid #2980b9;
+        }
+
+        .glosario dt {
+            font-weight: 700;
+            color: #0a3d62;
+            margin-top: 12px;
+        }
+
+        .glosario dd {
+            margin-left: 20px;
+            margin-top: 4px;
+            text-align: justify;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2980b9;
+            margin: 16px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            background: #f0f4f8;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        blockquote {
+            background: #f9f9f9;
+            padding: 12px 20px;
+            border-left: 4px solid #0a3d62;
+            margin: 16px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        @media (max-width: 800px) {
+            .page-letter,
+            .page-content {
+                width: 100%;
+                min-height: auto;
+                padding: 20px;
+                box-shadow: none;
+            }
+            .page-letter .logo-container { flex-direction: row; text-align: left; }
+            .title-main { font-size: 3.5rem; }
+            .line-blue-cover, .line-red-cover { height: 16px; }
+            .subtitle-cover { font-size: 1.5rem; }
+        }
+
+        @media print {
+            @page {
+                margin: 0;
+                size: letter portrait;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            .page-letter,
+            .page-content {
+                box-shadow: none;
+                margin: 0;
+                padding: 0.5in;
+                width: 100%;
+                height: 27.94cm;
+                min-height: 0;
+                border: none;
+                border-radius: 0;
+                background-color: #ffffff;
+                box-sizing: border-box;
+                overflow: hidden;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body style="counter-reset: page 0;">
+
+    <!-- ╔══════════════════════════════════════════════════════════════╗
+         ║  PORTADA — NO MODIFICAR EL LOGO INSTITUCIONAL             ║
+         ║  (SVG + textos UNHSJM / UNIVERSIDAD NACIONAL...)         ║
+         ╚══════════════════════════════════════════════════════════════╝ -->
+    <div class="page-letter">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <g id="rayo">
+                            <path d="M49 26 L51 26 L56 3 C56 2 54 1 50 1 C46 1 44 2 44 3 L49 26 Z" class="ray"/>
+                        </g>
+                    </defs>
+                    <use href="#rayo" transform="rotate(0, 50, 50)" />
+                    <use href="#rayo" transform="rotate(22.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(45, 50, 50)" />
+                    <use href="#rayo" transform="rotate(67.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(90, 50, 50)" />
+                    <use href="#rayo" transform="rotate(112.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(135, 50, 50)" />
+                    <use href="#rayo" transform="rotate(157.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(180, 50, 50)" />
+                    <use href="#rayo" transform="rotate(202.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(225, 50, 50)" />
+                    <use href="#rayo" transform="rotate(247.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(270, 50, 50)" />
+                    <use href="#rayo" transform="rotate(292.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(315, 50, 50)" />
+                    <use href="#rayo" transform="rotate(337.5, 50, 50)" />
+                    <g transform="translate(37, 39)">
+                        <polygon points="0,0 11,6 11,22 0,18" class="book-left" />
+                        <polygon points="11,6 14,6 14,23 11,22" class="book-spine" />
+                        <polygon points="14,6 26,0 26,18 14,23" class="book-right" />
+                    </g>
+                    <circle cx="50" cy="40" r="3.5" class="dot-yellow" />
+                </svg>
+            </div>
+            <div class="logo-text">
+                <h1 class="acronym">UNHSJM</h1>
+                <div class="line-red-only"></div>
+                <div class="full-name">
+                    UNIVERSIDAD NACIONAL<br>
+                    HÉROES DE SAN JOSÉ DE LAS MULAS
+                </div>
+            </div>
+        </div>
+
+        <div class="center-content">
+            <div class="title-group">
+                <h1 class="title-main">Unidad Didáctica</h1>
+                <div class="decoration-lines">
+                    <div class="line-blue-cover"></div>
+                    <div class="line-red-cover"></div>
+                </div>
+            </div>
+            <div class="subtitle-cover">
+                Gobierno TI<br>
+                Unidad II
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 1: ÍNDICE -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Índice de Contenido</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="toc">
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#desarrollo">Desarrollo de Contenidos</a>
+                    <ul>
+                        <li><a href="#plan-seguridad">El Plan de Seguridad</a></li>
+                        <li><a href="#procesos-negocio">Procesos de Negocio</a></li>
+                        <li><a href="#gestion-riesgos">Gestión de Riesgos</a></li>
+                        <li><a href="#cism">Isaca CISM</a></li>
+                    </ul>
+                </li>
+                <li><a href="#autoevaluacion">Autoevaluación</a></li>
+                <li><a href="#bibliografia">Bibliografía y Webgrafía</a></li>
+                <li><a href="#glosario">Glosario</a></li>
+            </ul>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 2: INTRODUCCIÓN -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Introducción</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p>Cuando ocurre un ciberataque, muchos preguntan: "¿qué tecnología falló?". Pero la pregunta clave rara vez se hace: "¿quién decidió qué proteger y cómo?". La respuesta está en el <strong>gobierno de seguridad</strong>, y de eso trata esta unidad.</p>
+        <p>En la unidad anterior aprendimos los fundamentos de la seguridad de la información: la visión estratégica, los principios CIA, el espionaje industrial y los estándares internacionales. Ahora es momento de subir un escalón. La seguridad no puede ser un conjunto de acciones aisladas; necesita un gobierno que la dirija, que establezca políticas, asigne recursos y garantice que la organización no dependa de héroes o soluciones improvisadas.</p>
+        <p>El gobierno de TI (Tecnologías de la Información) aplicado a la seguridad es el marco que alinea la protección de los datos con los objetivos del negocio, que define quién decide qué riesgos se aceptan y quién responde cuando algo falla. ¿Cómo saber si una inversión en seguridad es suficiente? ¿Cuándo conviene aceptar un riesgo en lugar de mitigarlo? En esta unidad abordaremos cuatro elementos esenciales: cómo construir un <strong>plan de seguridad</strong> efectivo, por qué los <strong>procesos de negocio</strong> son el punto de partida, cómo se <strong>gestionan los riesgos</strong> de forma sistemática, y cómo el marco <strong>CISM</strong> de ISACA estructura profesionalmente la gestión de seguridad.</p>
+        <p>Prepárate para pensar como un director de seguridad, no solo como un técnico. Al final, serás capaz de diseñar un plan de seguridad básico y construir tu propia matriz de riesgos. Te invito a leer con atención los casos reales: cada uno encierra una lección que vale más que cualquier tecnología.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 3: DESARROLLO - EL PLAN DE SEGURIDAD (inicio) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h3 class="topic-header" id="plan-seguridad">El Plan de Seguridad</h3>
+        <p>Un plan de seguridad es el documento maestro que define qué se va a proteger, cómo se va a proteger, quién es responsable y qué recursos se destinarán. No es una lista de compras tecnológicas; es una hoja de ruta estratégica que responde a las preguntas fundamentales de la organización.</p>
+
+        <h4>Componentes esenciales de un plan de seguridad</h4>
+        <ul>
+            <li><strong>Alcance y objetivos</strong>: ¿Qué sistemas, datos y procesos cubre el plan? ¿Qué metas concretas persigue (ej. reducir incidentes en un 30% en 12 meses)?</li>
+            <li><strong>Políticas de seguridad</strong>: Directrices de alto nivel aprobadas por la dirección. Por ejemplo: "toda la información confidencial debe cifrarse en tránsito y en reposo".</li>
+            <li><strong>Procedimientos</strong>: Pasos detallados para ejecutar las políticas. Por ejemplo, el procedimiento para conceder acceso a un nuevo empleado.</li>
+            <li><strong>Estándares</strong>: Especificaciones técnicas obligatorias. Ejemplo: "el cifrado debe usar AES-256".</li>
+            <li><strong>Directrices</strong>: Recomendaciones flexibles que orientan sin imponer. Ejemplo: "se recomienda usar contraseñas de al menos 12 caracteres".</li>
+            <li><strong>Asignación de roles y responsabilidades</strong>: CISO, administradores, usuarios, comité de seguridad.</li>
+            <li><strong>Presupuesto</strong>: Recursos económicos y humanos asignados.</li>
+            <li><strong>Métricas e indicadores</strong>: KPIs que permitan medir la efectividad (tiempo medio de detección, tiempo medio de respuesta, número de incidentes, % de parches aplicados a tiempo).</li>
+            <li><strong>Cronograma</strong>: Hitos y plazos de implementación.</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 4: DESARROLLO - PHVA + CASOS PLAN SEGURIDAD -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Ciclo de vida del plan: enfoque PHVA (Planificar-Hacer-Verificar-Actuar)</h4>
+        <p>El ciclo de mejora continua, también conocido como ciclo Deming, es la base de los sistemas de gestión como ISO 27001:</p>
+        <ol>
+            <li><strong>Planificar</strong>: Diagnosticar la situación actual, identificar riesgos, definir objetivos y recursos.</li>
+            <li><strong>Hacer</strong>: Implementar los controles y procedimientos definidos en el plan.</li>
+            <li><strong>Verificar</strong>: Medir, auditar y revisar si los controles funcionan como se esperaba.</li>
+            <li><strong>Actuar</strong>: Corregir desviaciones, ajustar el plan y mejorar continuamente.</li>
+        </ol>
+        <p><strong>Ejemplo práctico:</strong> Una empresa mediana detecta que ha tenido tres incidentes de phishing en seis meses. En la fase <em>Planificar</em>, decide implementar MFA para todos los accesos remotos y formación trimestral. En <em>Hacer</em>, despliega MFA y ejecuta el primer taller. En <em>Verificar</em>, revisa los logs y descubre que el MFA bloqueó dos intentos de acceso sospechosos, pero la formación tuvo solo un 60% de asistencia. En <em>Actuar</em>, ajusta el horario de los talleres para mejorar la asistencia y añade simulaciones automáticas de phishing.</p>
+
+        <div class="caso-exito">
+            <strong>Caso real: plan de seguridad que funcionó</strong>
+            <p><strong>JPMorgan Chase</strong> invierte más de 600 millones de dólares al año en ciberseguridad y cuenta con un plan que abarca desde inteligencia de amenazas hasta formación continua. En 2014, tras sufrir una brecha que afectó a 76 millones de hogares, la dirección decidió no solo reparar el daño, sino transformar su enfoque. Crearon un comité de seguridad presidido por el CEO, duplicaron el equipo de seguridad e implementaron un plan de respuesta a incidentes probado trimestralmente. Desde entonces, no han sufrido brechas significativas, demostrando que un plan bien ejecutado da resultados.</p>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 5: DESARROLLO - CASO FALLO + PROCESOS DE NEGOCIO INICIO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-fallo">
+            <strong>Caso real: fracaso por falta de plan</strong>
+            <p><strong>British Airways</strong> fue multada con 20 millones de libras en 2020 por una brecha en 2018 que expuso datos de 400.000 clientes. La investigación reveló que la aerolínea no tenía un plan de seguridad actualizado, sus sistemas críticos carecían de segmentación y los parches se aplicaban con retrasos de hasta seis meses. La falta de un plan de seguridad (y de un gobierno que lo exigiera) convirtió un riesgo conocido en una multa millonaria.</p>
+        </div>
+
+        <h3 class="topic-header" id="procesos-negocio">Procesos de Negocio</h3>
+        <p>Un error común es pensar que la seguridad es una capa que se añade "al final" de un proyecto. La realidad es que la seguridad debe integrarse en los procesos de negocio desde su diseño. Si un proceso no es seguro, el negocio está en riesgo.</p>
+
+        <h4>¿Qué es un proceso de negocio?</h4>
+        <p>Es un conjunto de actividades interrelacionadas que transforman entradas en salidas, generando valor para el cliente. Por ejemplo: contratación de personal, facturación, atención al cliente, gestión de proveedores. Cada proceso consume, genera o modifica información, y esa información debe protegerse.</p>
+        <p><strong>Proceso vs. Proyecto:</strong> Un proyecto tiene inicio y fin (ej. "implementar un firewall"). Un proceso es continuo (ej. "gestionar accesos de empleados"). La seguridad debe vivirse como proceso, no como proyecto. Muchas organizaciones fallan porque tratan la seguridad como una lista de proyectos con fecha de fin, cuando el riesgo no se toma vacaciones.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 6: DESARROLLO - TABLA PROCESOS + SEGURIDAD POR DISEÑO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Integración de seguridad en procesos clave</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Proceso de negocio</th>
+                    <th>Riesgo principal si falla</th>
+                    <th>Controles recomendados</th>
+                    <th>KPI sugerido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Onboarding de empleados</td>
+                    <td>Acceso sin autorización o excesivo</td>
+                    <td>Aprobación del jefe, verificación de antecedentes, mínimo privilegio, MFA</td>
+                    <td>% de accesos con MFA activado en &lt; 24h</td>
+                </tr>
+                <tr>
+                    <td>Offboarding / baja</td>
+                    <td>Acceso residual de exempleados</td>
+                    <td>Revocación automática de cuentas, revisión periódica de usuarios activos</td>
+                    <td>Tiempo medio de revocación tras la baja</td>
+                </tr>
+                <tr>
+                    <td>Gestión de proveedores</td>
+                    <td>Fuga de información por terceros</td>
+                    <td>Evaluación de seguridad precontractual, cláusulas de confidencialidad, auditorías periódicas</td>
+                    <td>N° de proveedores críticos auditados por año</td>
+                </tr>
+                <tr>
+                    <td>Desarrollo de software</td>
+                    <td>Vulnerabilidades en producción</td>
+                    <td>SAST, análisis de dependencias, pruebas de penetración previas a producción</td>
+                    <td>% de proyectos con análisis de seguridad integrado en el pipeline</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Cada paso de estos procesos debe tener un <strong>por qué</strong>. Por ejemplo, en el onboarding: la aprobación del jefe evita que un admin cree cuentas sin control; el mínimo privilegio reduce el daño si la cuenta se compromete; la revocación automática impide que un ex-empleado acceda meses después.</p>
+
+        <h4>Seguridad por diseño (Security by Design)</h4>
+        <p>Este principio establece que la seguridad debe considerarse en cada etapa del ciclo de vida de un sistema o proceso, no como un añadido posterior. Implica:</p>
+        <ul>
+            <li><strong>Definir requisitos de seguridad</strong> al mismo tiempo que los requisitos funcionales.</li>
+            <li><strong>Realizar modelado de amenazas</strong> (<em>threat modeling</em>) para identificar riesgos potenciales antes de escribir código. Un marco práctico es <strong>STRIDE</strong>, que clasifica amenazas en seis categorías:</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 7: DESARROLLO - STRIDE TABLE + CASOS PROCESOS -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p>Marco <strong>STRIDE</strong> para modelado de amenazas:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría STRIDE</th>
+                    <th>¿Qué busca?</th>
+                    <th>Ejemplo concreto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>S</strong>poofing (suplantación)</td>
+                    <td>Alguien se hace pasar por otro</td>
+                    <td>Un atacante usa credenciales robadas para acceder como administrador</td>
+                </tr>
+                <tr>
+                    <td><strong>T</strong>ampering (manipulación)</td>
+                    <td>Modificación no autorizada de datos</td>
+                    <td>Un empleado altera el monto de una factura antes de enviarla</td>
+                </tr>
+                <tr>
+                    <td><strong>R</strong>epudiation (repudio)</td>
+                    <td>Negar haber realizado una acción</td>
+                    <td>Un usuario afirma no haber enviado un correo que sí envió</td>
+                </tr>
+                <tr>
+                    <td><strong>I</strong>nformation Disclosure (revelación)</td>
+                    <td>Fuga de información confidencial</td>
+                    <td>Un bucket S3 mal configurado expone datos de clientes</td>
+                </tr>
+                <tr>
+                    <td><strong>D</strong>enial of Service (denegación)</td>
+                    <td>Indisponibilidad del sistema</td>
+                    <td>Un DDoS contra la pasarela de pagos impide vender</td>
+                </tr>
+                <tr>
+                    <td><strong>E</strong>levation of Privilege (elevación)</td>
+                    <td>Obtener permisos superiores a los debidos</td>
+                    <td>Un atacante pasa de usuario normal a administrador del sistema</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Aplicar STRIDE al diseñar un proceso permite anticipar ataques y definir controles antes de que ocurran.</p>
+        <ul>
+            <li><strong>Aplicar el principio de mínimo privilegio</strong> en cada interacción.</li>
+            <li><strong>Documentar decisiones de seguridad</strong> para auditorías futuras.</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 8: DESARROLLO - CASOS FALLO + GOBERNANZA PROCESOS -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-exito">
+            <strong>Caso de integración exitosa: DevSecOps en Amazon</strong>
+            <p>Amazon integró la seguridad directamente en su pipeline de desarrollo (DevSecOps). Cada pieza de código, antes de llegar a producción, pasa por análisis estático automatizado (SAST), escaneo de dependencias vulnerables y pruebas de seguridad dinámicas. Si algo falla, el despliegue se bloquea automáticamente. Esto no ralentiza el desarrollo; lo acelera porque los problemas se detectan en minutos, no en semanas. El resultado: miles de despliegues diarios con un nivel de seguridad que antes requería auditorías manuales.</p>
+        </div>
+
+        <div class="caso-fallo">
+            <strong>Caso de integración fallida: atención al cliente y PCI DSS</strong>
+            <p>Una empresa de comercio electrónico permitía a sus agentes de atención al cliente ver el número completo de tarjetas de crédito en pantalla para "agilizar la resolución de quejas". Esto violaba PCI DSS (que exige enmascarar los dígitos, mostrando solo los últimos 4). Un agente descontento copió números de tarjetas y los vendió en foros clandestinos. La empresa fue multada y perdió la capacidad de procesar pagos durante tres meses. La lección: el proceso de atención al cliente no había sido diseñado con controles de confidencialidad; primó la "agilidad" sobre la seguridad.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 9: DESARROLLO - MARRIOTT + GOBERNANZA DE PROCESOS -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-fallo">
+            <strong>Caso emblemático: fusión Marriott-Starwood</strong>
+            <p><strong>Marriott International</strong> sufrió en 2018 una brecha que expuso datos de 500 millones de clientes. La causa fue que el sistema de reservas de Starwood (cadena adquirida por Marriott) no había integrado controles de seguridad en sus procesos de desarrollo. Cuando Marriott integró los sistemas de Starwood, heredó también sus vulnerabilidades. La lección: la seguridad debe evaluarse en los procesos de fusiones y adquisiciones desde el primer día, no después de firmar el contrato.</p>
+        </div>
+
+        <h4>Gobernanza de procesos</h4>
+        <p>Cada proceso de negocio debe tener un <strong>dueño</strong> asignado, responsable de que los controles de seguridad se apliquen y se actualicen. El dueño reporta al comité de seguridad las desviaciones, los incidentes relacionados con el proceso y las métricas de cumplimiento. Este reporte debe ser periódico (trimestral o semestral) y documentado para auditorías. Sin esta estructura de gobierno, los controles se degradan con el tiempo y el proceso vuelve a ser inseguro.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 10: DESARROLLO - GESTIÓN DE RIESGOS INICIO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h3 class="topic-header" id="gestion-riesgos">Gestión de Riesgos</h3>
+        <p>La gestión de riesgos es el corazón del gobierno de seguridad. No se trata de eliminar todos los riesgos (eso es imposible), sino de identificarlos, evaluarlos y decidir cuáles aceptar, mitigar, transferir o evitar.</p>
+
+        <h4>Conceptos fundamentales</h4>
+        <ul>
+            <li><strong>Activo</strong>: Algo que tiene valor para la organización (datos, sistemas, personas, reputación).</li>
+            <li><strong>Amenaza</strong>: Cualquier cosa que pueda causar daño a un activo (hacker, incendio, error humano).</li>
+            <li><strong>Vulnerabilidad</strong>: Debilidad que puede ser explotada por una amenaza (falta de parche, contraseña débil).</li>
+            <li><strong>Impacto</strong>: Consecuencia negativa si la amenaza materializa el riesgo.</li>
+            <li><strong>Probabilidad</strong>: Posibilidad de que el riesgo ocurra.</li>
+        </ul>
+
+        <p><strong>Fórmula conceptual:</strong></p>
+        <pre>Riesgo = Amenaza × Vulnerabilidad × Impacto</pre>
+
+        <h4>Ciclo de gestión de riesgos</h4>
+        <p>La gestión de riesgos sigue un ciclo continuo de cinco fases:</p>
+        <ol>
+            <li><strong>Identificar</strong>: Catalogar activos, amenazas y vulnerabilidades. ¿Qué tenemos? ¿Qué puede salir mal?</li>
+            <li><strong>Analizar</strong>: Estimar la probabilidad y el impacto de cada riesgo. ¿Qué tan probable es? ¿Qué tan grave sería?</li>
+            <li><strong>Evaluar</strong>: Comparar el nivel de riesgo contra el apetito de riesgo de la organización. ¿Este riesgo es aceptable o exige tratamiento?</li>
+            <li><strong>Tratar</strong>: Aplicar la estrategia adecuada (mitigar, transferir, aceptar, evitar). ¿Qué hacemos con él?</li>
+            <li><strong>Monitorear</strong>: Revisar periódicamente los riesgos, los controles y el contexto. ¿Sigue siendo válida nuestra evaluación?</li>
+        </ol>
+        <p>Este ciclo se repite de forma continua. Los riesgos cambian, los controles se degradan y el negocio evoluciona.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 11: DESARROLLO - RIESGO INHERENTE + APETITO + REGISTRO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Riesgo inherente vs. residual</h4>
+        <ul>
+            <li><strong>Riesgo inherente</strong>: Nivel de riesgo antes de aplicar controles. Es el riesgo "en bruto".</li>
+            <li><strong>Riesgo residual</strong>: Nivel de riesgo que permanece después de implementar controles.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> Un servidor expuesto a internet tiene un riesgo inherente Alto. Tras aplicar un firewall, MFA y parches, el riesgo residual baja a Medio. Si la organización solo acepta riesgos Bajos, deberá añadir más controles. Si su apetito de riesgo es Medio, podrá aceptar el riesgo residual.</p>
+
+        <h4>Apetito y tolerancia al riesgo</h4>
+        <ul>
+            <li><strong>Apetito de riesgo</strong>: Nivel de riesgo que la organización está dispuesta a aceptar en conjunto para alcanzar sus objetivos. Una startup fintech puede tener un apetito alto; un banco tradicional, muy bajo.</li>
+            <li><strong>Tolerancia al riesgo</strong>: Límite específico de desviación aceptable para cada riesgo. Por ejemplo: "El tiempo máximo de inactividad aceptable es de 4 horas."</li>
+        </ul>
+
+        <h4>Registro de riesgos (Risk Register)</h4>
+        <p>Toda gestión de riesgos debe documentarse en un <strong>registro de riesgos</strong>, que incluye al menos:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Riesgo</th>
+                    <th>Prob.</th>
+                    <th>Impacto</th>
+                    <th>Nivel</th>
+                    <th>Controles existentes</th>
+                    <th>R. Residual</th>
+                    <th>Responsable</th>
+                    <th>Próxima revisión</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R01</td>
+                    <td>Fuga de datos por empleado interno</td>
+                    <td>Media</td>
+                    <td>Alto</td>
+                    <td>Alto</td>
+                    <td>DLP, MFA, formación anual</td>
+                    <td>Medio</td>
+                    <td>CISO</td>
+                    <td>Dic 2025</td>
+                </tr>
+                <tr>
+                    <td>R02</td>
+                    <td>DDoS en plataforma de ventas</td>
+                    <td>Alta</td>
+                    <td>Medio</td>
+                    <td>Alto</td>
+                    <td>WAF, CDN escalable, seguro cibernético</td>
+                    <td>Medio</td>
+                    <td>Administrador de red</td>
+                    <td>Trimestral</td>
+                </tr>
+                <tr>
+                    <td>R03</td>
+                    <td>Fallo eléctrico en sala de servidores</td>
+                    <td>Baja</td>
+                    <td>Alto</td>
+                    <td>Medio</td>
+                    <td>UPS, generador, redundancia en nube</td>
+                    <td>Bajo</td>
+                    <td>Infraestructura</td>
+                    <td>Anual</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Este registro vive y se actualiza; no es un documento que se archiva y se olvida.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 12: DESARROLLO - METODOLOGÍAS (CUALITATIVO + CUANTITATIVO) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Metodologías de análisis de riesgos</h4>
+        <p><strong>Análisis cualitativo:</strong> Utiliza escalas descriptivas (Alto, Medio, Bajo) para evaluar probabilidad e impacto. Es rápido y útil para priorizar. Ejemplo de matriz con semáforo:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Probabilidad \ Impacto</th>
+                    <th>Bajo</th>
+                    <th>Medio</th>
+                    <th>Alto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alta</td>
+                    <td>[Medio]</td>
+                    <td>[Alto]</td>
+                    <td>[Crítico]</td>
+                </tr>
+                <tr>
+                    <td>Media</td>
+                    <td>[Bajo]</td>
+                    <td>[Medio]</td>
+                    <td>[Alto]</td>
+                </tr>
+                <tr>
+                    <td>Baja</td>
+                    <td>[Bajo]</td>
+                    <td>[Bajo]</td>
+                    <td>[Medio]</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Acción sugerida por nivel:</p>
+        <ul>
+            <li><strong>Crítico</strong>: Mitigar o transferir de inmediato.</li>
+            <li><strong>Alto</strong>: Plan de tratamiento en los próximos 30 días.</li>
+            <li><strong>Medio</strong>: Monitorear y reevaluar periódicamente.</li>
+            <li><strong>Bajo</strong>: Aceptar o proceder con controles normales.</li>
+        </ul>
+
+        <p><strong>Análisis cuantitativo:</strong> Asigna valores numéricos y monetarios. Utiliza métricas como:</p>
+        <ul>
+            <li><strong>SLE (Single Loss Expectancy)</strong>: pérdida por un incidente individual.</li>
+            <li><strong>ARO (Annualized Rate of Occurrence)</strong>: frecuencia esperada al año.</li>
+            <li><strong>ALE (Annualized Loss Expectancy)</strong>: pérdida anual esperada = SLE × ARO.</li>
+        </ul>
+
+        <p><strong>Ejemplo cuantitativo:</strong> Un servidor crítico tiene un SLE de 50.000 € (costo de recuperación + pérdida de negocio) y se estima un ARO de 0.2 (un incidente cada 5 años). Entonces ALE = 50.000 × 0.2 = 10.000 €/año. Si un firewall cuesta 3.000 €/año y reduce la probabilidad a la mitad (nuevo ARO = 0.1, nuevo ALE = 5.000 €/año), se puede calcular el <strong>ROSI (Return on Security Investment)</strong>:</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 13: DESARROLLO - ROSI + ESTRATEGIAS + MARCOS + CASOS -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <pre>ROSI = (ALE antes − ALE después − Costo del control) / Costo del control
+ROSI = (10.000 − 5.000 − 3.000) / 3.000 = 0.66 → 66%</pre>
+        <p>Un ROSI positivo (mayor que 0) indica que la inversión en seguridad se justifica económicamente.</p>
+
+        <h4>Estrategias de tratamiento de riesgos</h4>
+        <ol>
+            <li><strong>Mitigar</strong>: Reducir la probabilidad o el impacto mediante controles (ej. instalar antivirus, cifrar datos).</li>
+            <li><strong>Aceptar</strong>: Asumir el riesgo de forma consciente y documentada (ej. una web informativa sin datos sensibles puede aceptar cierto riesgo de disponibilidad).</li>
+            <li><strong>Transferir</strong>: Pasar el riesgo a un tercero (ej. contratar un seguro cibernético o externalizar la seguridad a un MSSP).</li>
+            <li><strong>Evitar</strong>: Eliminar la actividad que genera el riesgo (ej. dejar de almacenar datos de tarjetas de crédito si no son necesarios para el negocio).</li>
+        </ol>
+
+        <h4>Marcos de referencia</h4>
+        <p>Las metodologías formales de gestión de riesgos están estandarizadas:</p>
+        <ul>
+            <li><strong>ISO/IEC 27005</strong>: Guía de gestión de riesgos de seguridad de la información, alineada con ISO 27001.</li>
+            <li><strong>NIST SP 800-30</strong>: Guía para realizar evaluaciones de riesgo, ampliamente usada en el sector público estadounidense.</li>
+            <li><strong>FAIR (Factor Analysis of Information Risk)</strong>: Modelo cuantitativo abierto que descompone el riesgo en factores medibles.</li>
+        </ul>
+        <p>Elegir un marco depende del sector, los requisitos normativos y la madurez de la organización. Lo importante es tener un método consistente, no importa cuál se elija.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 14: DESARROLLO - CASOS RIESGOS (SOLARWINDS, MGM, NETFLIX) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p><strong>Caso real de gestión de riesgos deficiente</strong></p>
+        <div class="caso-fallo">
+            <p><strong>Caso SolarWinds (2020)</strong>: La empresa SolarWinds, proveedora de software de monitorización, fue comprometida por atacantes que insertaron código malicioso en sus actualizaciones de producto. Esto afectó a 18.000 clientes, incluyendo agencias gubernamentales de EE.UU. El riesgo de la cadena de suministro era conocido, pero fue subestimado. SolarWinds no había evaluado adecuadamente el impacto de un ataque a su proceso de compilación y distribución de software. El costo: más de 2.000 millones de dólares en pérdidas para los afectados y la quiebra virtual de la confianza en el producto. La lección: ningún riesgo debe evaluarse de forma aislada; hay que considerar el efecto dominó sobre toda la cadena.</p>
+        </div>
+        <div class="caso-fallo">
+            <p><strong>Un caso más reciente:</strong> En 2023, <strong>MGM Resorts</strong> sufrió un ataque de ransomware que paralizó sus casinos durante 10 días, con pérdidas estimadas de 100 millones de dólares. La causa fue un único clic en un enlace de phishing que los atacantes usaron para escalar privilegios. MGM había evaluado el riesgo de phishing como "Medio" y no implementó MFA en todos los accesos de administración. La subestimación del riesgo costó caro.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 15: DESARROLLO - NETFLIX CASO ÉXITO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-exito">
+            <strong>Ejemplo de buena gestión de riesgos</strong>
+            <p><strong>Netflix</strong> utiliza un enfoque llamado <em>Chaos Engineering</em>. Consiste en introducir fallos intencionadamente en sus sistemas (como el famoso <em>Chaos Monkey</em> que apaga servidores aleatoriamente) para probar la resiliencia. Esta práctica permite identificar vulnerabilidades antes de que los atacantes las exploten. Netflix ha aceptado que los fallos ocurrirán, y prefiere gestionarlos de forma controlada que esperar pasivamente. Además, transfiere los riesgos restantes mediante un seguro cibernético y mantiene un fondo de contingencia para respuesta a incidentes. Es un ejemplo de cómo una organización puede integrar el ciclo de gestión de riesgos en su cultura operativa.</p>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 16: DESARROLLO - ISACA CISM INICIO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h3 class="topic-header" id="cism">Isaca CISM</h3>
+        <p>ISACA (Information Systems Audit and Control Association) es una asociación profesional internacional fundada en 1969, dedicada a la gobernanza, auditoría, control y seguridad de los sistemas de información. Su certificación <strong>CISM (Certified Information Security Manager)</strong> es una de las más prestigiosas para profesionales que gestionan, diseñan y supervisan programas de seguridad empresarial.</p>
+
+        <h4>¿Qué diferencia al CISM de otras certificaciones?</h4>
+        <p>Mientras que el CISSP se enfoca en la arquitectura técnica de seguridad, el <strong>CISM está orientado a la gestión y al gobierno</strong>. No pregunta "cómo cifrar", sino "cómo decidir qué cifrar y cuánto invertir en ello". Está diseñado para quienes ocupan o aspiran a ocupar puestos como CISO, Director de Seguridad o Gerente de Riesgos.</p>
+
+        <h4>El ecosistema ISACA</h4>
+        <p>Además del CISM, ISACA ofrece otras certificaciones complementarias:</p>
+        <ul>
+            <li><strong>CISA (Certified Information Systems Auditor)</strong>: enfocada en auditoría, control y aseguramiento de sistemas de información.</li>
+            <li><strong>CRISC (Certified in Risk and Information Systems Control)</strong>: centrada en la identificación y gestión de riesgos de TI.</li>
+        </ul>
+        <p>Un profesional de gobierno de seguridad suele combinar CISM con CISA o CRISC según su rol. Mientras CISA audita los controles y CRISC cuantifica los riesgos, CISM los gobierna y dirige.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 16: DESARROLLO - CISM DOMINIOS -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Los cuatro dominios del CISM</h4>
+
+        <p><strong>Dominio 1: Gobierno de Seguridad de la Información (24%)</strong><br>
+        Establece el marco de gobierno: alinear la seguridad con los objetivos del negocio, definir roles y responsabilidades, desarrollar estrategias y asegurar el respaldo de la alta dirección.</p>
+        <p>Preguntas clave:</p>
+        <ul>
+            <li>¿La estrategia de seguridad está alineada con la estrategia del negocio?</li>
+            <li>¿Existe un comité de seguridad con representación de la dirección?</li>
+            <li>¿Se reportan los riesgos de seguridad al consejo directivo periódicamente?</li>
+        </ul>
+
+        <p><strong>Dominio 2: Gestión de Riesgos de Seguridad de la Información (30%)</strong><br>
+        Cubre todo el ciclo de gestión de riesgos: identificación, análisis, evaluación y tratamiento. Incluye la clasificación de activos, la identificación de amenazas y vulnerabilidades, y la selección de controles basados en el apetito de riesgo de la organización. Este dominio se conecta directamente con la sección de Gestión de Riesgos vista anteriormente en esta unidad.</p>
+        <p>Preguntas clave:</p>
+        <ul>
+            <li>¿Cómo se clasifican los activos de información?</li>
+            <li>¿Cada cuánto se actualiza la matriz de riesgos?</li>
+            <li>Quién define y aprueba el apetito de riesgo de la organización?</li>
+        </ul>
+
+        <p><strong>Dominio 3: Programa de Seguridad de la Información (27%)</strong><br>
+        Se centra en la creación, gestión y mejora del programa de seguridad. Incluye la definición de métricas, la gestión de recursos, la concienciación y formación, y la gestión de proyectos de seguridad. Este dominio enlaza con el Plan de Seguridad abordado al inicio de la unidad.</p>
+        <p>Preguntas clave:</p>
+        <ul>
+            <li>¿El programa de seguridad tiene métricas definidas y medibles?</li>
+            <li>¿Se reporta periódicamente la efectividad del programa?</li>
+            <li>¿Existe un presupuesto asignado y revisado anualmente?</li>
+        </ul>
+
+        <p><strong>Dominio 4: Gestión de Incidentes de Seguridad de la Información (19%)</strong><br>
+        Aborda la preparación, detección, respuesta y recuperación ante incidentes. Incluye la creación de equipos de respuesta (CSIRT), la realización de ejercicios y simulacros, y la gestión de la comunicación durante una crisis.</p>
+        <p>Preguntas clave:</p>
+        <ul>
+            <li>¿Existe un plan de respuesta a incidentes documentado y probado?</li>
+            <li>¿Se realizan simulacros al menos una vez al año?</li>
+            <li>¿Está definida la cadena de comunicación y escalamiento ante una brecha?</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 17: DESARROLLO - CISM REQUISITOS + INFORME -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Requisitos para obtener y mantener el CISM</h4>
+        <ul>
+            <li><strong>Experiencia</strong>: 5 años de experiencia laboral en gestión de seguridad de la información (no solo técnica). Se pueden eximir hasta 3 años si se poseen otras certificaciones (CISSP, CISA, CRISC) o una titulación universitaria superior equivalente.</li>
+            <li><strong>Examen</strong>: Consta de 150 preguntas tipo test en 4 horas, administrado en centros autorizados o en línea con supervisión.</li>
+            <li><strong>Recertificación</strong>: Se renueva cada 3 años acumulando 120 CPE (Continuing Professional Education) mediante conferencias, cursos formales, publicaciones o participación en comités profesionales.</li>
+        </ul>
+
+        <h4>Cómo CISM transforma una organización</h4>
+        <p>Una empresa cuyo responsable de seguridad tiene formación CISM tiende a:</p>
+        <ul>
+            <li>Tomar decisiones basadas en riesgos, no en tecnología.</li>
+            <li>Comunicar la seguridad en lenguaje de negocio (ROI, riesgo residual, impacto financiero).</li>
+            <li>Establecer métricas que demuestren el valor de la inversión en seguridad.</li>
+            <li>Obtener respaldo de la dirección para proyectos de seguridad.</li>
+        </ul>
+
+        <p><strong>Ejemplo de informe ejecutivo con enfoque CISM:</strong> Un CISO con mentalidad CISM no presenta al consejo un listado de vulnerabilidades técnicas. Presenta un informe como este:</p>
+        <blockquote>"Riesgos críticos actuales: 3 (reducidos de 5 el trimestre anterior). Riesgo residual general: Medio (dentro del apetito aprobado). Inversión solicitada: 200.000 € para renovar el programa DLP (ROSI estimado: 85%). Incidentes mayores en el trimestre: 0. Cumplimiento normativo: 100% de los controles críticos operativos."</blockquote>
+        <p>Este lenguaje permite que el consejo (formado mayoritariamente por no técnicos) comprenda, apruebe y respalde las decisiones de seguridad.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 18: DESARROLLO - TABLA COMPARATIVA CISM VS CISSP -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4>Tabla comparativa: CISM vs CISSP</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspecto</th>
+                    <th>CISM</th>
+                    <th>CISSP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Enfoque principal</td><td>Gestión y gobierno</td><td>Arquitectura técnica</td></tr>
+                <tr><td>Público objetivo</td><td>CISO, gerentes de seguridad</td><td>Arquitectos, ingenieros, consultores</td></tr>
+                <tr><td>Requisito de experiencia</td><td>5 años en gestión de seguridad</td><td>5 años en 2 o más dominios de seguridad</td></tr>
+                <tr><td>Dominios</td><td>4 (gobierno, riesgos, programa, incidentes)</td><td>8 (desde criptografía hasta seguridad física)</td></tr>
+                <tr><td>Formato del examen</td><td>150 preguntas, 4 horas</td><td>125-175 preguntas, 4 horas (adaptativo)</td></tr>
+                <tr><td>Periodicidad de recertificación</td><td>3 años (120 CPE)</td><td>3 años (120 CPE)</td></tr>
+                <tr><td>Costo aproximado (examen)</td><td>760 USD</td><td>749 USD</td></tr>
+                <tr><td>Idioma del examen</td><td>Inglés (principal), otros disponibles</td><td>Inglés, japonés, chino, entre otros</td></tr>
+            </tbody>
+        </table>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 19: DESARROLLO - CISM CASOS ÉXITO Y FRACASO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-exito">
+            <strong>Caso de éxito: aplicación de CISM en Banco Santander</strong>
+            <p><strong>Banco Santander</strong> exige que su equipo de seguridad de alto nivel cuente con certificaciones como CISM o CISSP. En sus informes anuales de gobierno corporativo, el banco reporta explícitamente al consejo de administración los riesgos cibernéticos identificados, las medidas implementadas y el nivel de riesgo residual, siguiendo las mejores prácticas del Dominio 1 de CISM. Esto ha permitido que el consejo comprenda y apruebe las inversiones en seguridad. Este enfoque conecta directamente con el ciclo de gestión de riesgos y el plan de seguridad vistos anteriormente en la unidad: CISM integra ambos en un marco de gobierno coherente.</p>
+        </div>
+
+        <div class="caso-fallo">
+            <strong>Caso de fracaso: falta de gobierno al estilo CISM</strong>
+            <p>En 2022, una empresa de logística sufrió un ataque de ransomware que paralizó sus operaciones durante 15 días, con pérdidas superiores a 50 millones de dólares. La investigación reveló que el CISO reportaba al director de TI (no al consejo), no existía un comité de seguridad, y los riesgos cibernéticos no se incluían en los informes de gobierno corporativo. El consejo se enteró del riesgo el día del ataque. Una estructura de gobierno alineada con CISM (Dominio 1) habría garantizado que el consejo conociera el riesgo con antelación y aprobara medidas preventivas.</p>
+        </div>
+
+        <p>El CISM no es solo una certificación; es una mentalidad que transforma la seguridad de un centro de costo en un habilitador del negocio. Con esto cerramos los contenidos de la unidad. A continuación, pon a prueba lo aprendido con la autoevaluación.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 20: AUTOEVALUACIÓN (preguntas 1-5) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Autoevaluación</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p>Lea cada pregunta, responda mentalmente y luego consulte el glosario o los conceptos si tiene dudas. Las respuestas no se entregan; son para su propio aprendizaje.</p>
+        <div class="autoeval">
+            <ol>
+                <li>
+                    <strong>Verdadero o falso:</strong> STRIDE es un marco de modelado de amenazas que clasifica los riesgos en seis categorías: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service y Elevation of Privilege.
+                    <div class="respuesta">Verdadero. STRIDE permite anticipar ataques durante la fase de diseño de sistemas y procesos.</div>
+                </li>
+                <li>
+                    <strong>¿Cuál de los siguientes NO es un componente esencial de un plan de seguridad?</strong><br>
+                    a) Políticas de seguridad<br>
+                    b) Asignación de roles y responsabilidades<br>
+                    c) Lista de proveedores de software<br>
+                    d) Métricas e indicadores
+                    <div class="respuesta">c) Lista de proveedores de software. Aunque los proveedores se gestionan, no es un componente estructural del plan de seguridad.</div>
+                </li>
+                <li>
+                    <strong>Relacione cada estrategia de tratamiento de riesgos con su definición:</strong><br>
+                    - Mitigar → (Reducir probabilidad o impacto mediante controles)<br>
+                    - Transferir → (Pasar el riesgo a un tercero, como un seguro)<br>
+                    - Aceptar → (Asumir el riesgo de forma consciente)<br>
+                    - Evitar → (Eliminar la actividad que genera el riesgo)
+                </li>
+                <li>
+                    <strong>¿Qué es el registro de riesgos (risk register) y qué información mínima debe contener?</strong>
+                    <div class="respuesta">Es un documento vivo que cataloga todos los riesgos identificados. Debe incluir al menos: ID, descripción del riesgo, probabilidad, impacto, nivel de riesgo, controles existentes, riesgo residual, responsable y fecha de próxima revisión.</div>
+                </li>
+                <li>
+                    <strong>¿Cuál de los cuatro dominios de CISM se enfoca en la alineación de la seguridad con los objetivos del negocio?</strong>
+                    <div class="respuesta">Dominio 1 - Gobierno de Seguridad de la Información.</div>
+                </li>
+            </ol>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 21: AUTOEVALUACIÓN (preguntas 6-10) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Autoevaluación</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="autoeval">
+            <ol start="6">
+                <li>
+                    <strong>Caso práctico:</strong> Una empresa invierte 5.000 €/año en un sistema DLP. El ALE del riesgo de fuga de datos antes del control es de 30.000 €/año, y después del control se reduce a 10.000 €/año. Calcule el ROSI y determine si la inversión se justifica.
+                    <div class="respuesta">ROSI = (30.000 − 10.000 − 5.000) / 5.000 = 15.000 / 5.000 = 3 = 300%. ROSI > 0, la inversión se justifica ampliamente.</div>
+                </li>
+                <li>
+                    <strong>Verdadero o falso:</strong> En seguridad informática, un "proyecto" tiene inicio y fin, mientras que un "proceso" es continuo. Tratar la seguridad como proyecto en lugar de proceso es una práctica recomendada.
+                    <div class="respuesta">Falso. La seguridad debe gestionarse como un proceso continuo, no como un proyecto con fecha de fin. El riesgo no se toma vacaciones.</div>
+                </li>
+                <li>
+                    <strong>Mencione las tres certificaciones principales del ecosistema ISACA y el enfoque de cada una.</strong>
+                    <div class="respuesta">CISM (gestión y gobierno de la seguridad), CISA (auditoría de sistemas de información), CRISC (gestión de riesgos de TI).</div>
+                </li>
+                <li>
+                    <strong>Explique con sus palabras la diferencia entre apetito de riesgo y tolerancia al riesgo.</strong>
+                    <div class="respuesta">El apetito de riesgo es el nivel general de riesgo que la organización está dispuesta a aceptar para alcanzar sus objetivos. La tolerancia al riesgo es el límite específico de desviación aceptable para cada riesgo individual (ej. "el tiempo máximo de inactividad aceptable es de 4 horas").</div>
+                </li>
+                <li>
+                    <strong>Reflexión final:</strong> Muchas organizaciones invierten en tecnología de seguridad (firewalls, antivirus, EDR) pero descuidan el gobierno (políticas, roles, métricas, planificación). ¿Por qué cree que ocurre esto y qué consecuencias puede traer?
+                    <div class="respuesta">Respuesta abierta. Se espera que el estudiante mencione: la tecnología es tangible y fácil de comprar, mientras que el gobierno requiere tiempo, disciplina y cambio cultural. Las consecuencias incluyen: inversiones sin dirección, falsa sensación de seguridad, incapacidad de medir efectividad, y falta de preparación ante incidentes.</div>
+                </li>
+            </ol>
+        </div>
+        <p>Si obtuvo menos de 7 respuestas correctas, revise nuevamente las secciones de Plan de Seguridad, Procesos de Negocio, Gestión de Riesgos e Isaca CISM, así como los casos reales de cada sección.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 22: BIBLIOGRAFÍA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Bibliografía y Webgrafía</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <ul>
+            <li>Deutsch, V. E. (2022). <em>Ciberseguridad para directivos: Riesgos, control y eficiencia por medio del gobierno de la seguridad</em>. LID Editorial.</li>
+            <li>ISACA. (2022). <em>Manual de Revisión del CISM</em> (16ª ed.). ISACA.</li>
+            <li>Piattini Velthuis, M. G. & Ruiz González, F. (2022). <em>Gobierno de las Tecnologías y Sistemas de Información</em> (2ª ed.). RA-MA Editorial.</li>
+            <li>Postigo Palacios, A. (2020). <em>Seguridad informática</em> (Edición 2020). Editorial Paraninfo.</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 23: GLOSARIO (1/3) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="glosario">
+            <dl>
+                <dt>ALE (Annualized Loss Expectancy)</dt>
+                <dd>Pérdida monetaria esperada por año debido a un riesgo específico. Se calcula como SLE × ARO.</dd>
+                <dt>Amenaza</dt>
+                <dd>Cualquier circunstancia o evento que puede causar daño a un activo de información.</dd>
+                <dt>Apetito de riesgo</dt>
+                <dd>Nivel de riesgo que una organización está dispuesta a aceptar en busca de sus objetivos.</dd>
+                <dt>ARO (Annualized Rate of Occurrence)</dt>
+                <dd>Frecuencia esperada con la que ocurrirá un incidente en un año.</dd>
+                <dt>CISM (Certified Information Security Manager)</dt>
+                <dd>Certificación profesional de ISACA enfocada en la gestión y gobierno de la seguridad de la información.</dd>
+                <dt>CSIRT (Computer Security Incident Response Team)</dt>
+                <dd>Equipo especializado en la respuesta a incidentes de seguridad informática.</dd>
+                <dt>Gobierno de TI</dt>
+                <dd>Marco de responsabilidades, procesos y políticas que aseguran que el uso de la tecnología está alineado con los objetivos del negocio.</dd>
+                <dt>Impacto</dt>
+                <dd>Consecuencia negativa (financiera, reputacional, legal) de la materialización de una amenaza.</dd>
+            </dl>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 24: GLOSARIO (2/3) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="glosario">
+            <dl>
+                <dt>ISACA</dt>
+                <dd>Asociación profesional internacional dedicada a la gobernanza, auditoría y seguridad de los sistemas de información (fundada en 1969).</dd>
+                <dt>KPI (Key Performance Indicator)</dt>
+                <dd>Indicador clave de rendimiento que permite medir la efectividad de los controles o procesos de seguridad.</dd>
+                <dt>Matriz de riesgos</dt>
+                <dd>Herramienta visual que cruza la probabilidad de un evento con su impacto para priorizar riesgos.</dd>
+                <dt>Mínimo privilegio</dt>
+                <dd>Principio de seguridad que otorga a cada usuario o sistema únicamente los permisos necesarios para realizar su función.</dd>
+                <dt>Mitigar</dt>
+                <dd>Aplicar controles para reducir la probabilidad o el impacto de un riesgo.</dd>
+                <dt>PHVA (Planificar-Hacer-Verificar-Actuar)</dt>
+                <dd>Ciclo de mejora continua (Deming) aplicado a los sistemas de gestión de seguridad.</dd>
+                <dt>Plan de seguridad</dt>
+                <dd>Documento estratégico que define los objetivos, políticas, recursos y cronograma para proteger los activos de información.</dd>
+                <dt>Proceso de negocio</dt>
+                <dd>Conjunto de actividades interrelacionadas que transforman entradas en salidas generando valor para el cliente.</dd>
+            </dl>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 25: GLOSARIO (3/3) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="glosario">
+            <dl>
+                <dt>Riesgo inherente</dt>
+                <dd>Nivel de riesgo antes de aplicar controles de seguridad.</dd>
+                <dt>Riesgo residual</dt>
+                <dd>Nivel de riesgo que permanece después de implementar controles.</dd>
+                <dt>Security by Design</dt>
+                <dd>Enfoque que integra la seguridad en cada etapa del desarrollo de sistemas y procesos desde su concepción.</dd>
+                <dt>SLE (Single Loss Expectancy)</dt>
+                <dd>Pérdida monetaria asociada a un único incidente de seguridad.</dd>
+                <dt>Transferir</dt>
+                <dd>Traspasar el riesgo a un tercero (seguro, outsourcing).</dd>
+                <dt>Vulnerabilidad</dt>
+                <dd>Debilidad o fallo en un activo que puede ser aprovechado por una amenaza.</dd>
+                <dt>Zero Trust</dt>
+                <dd>Modelo de seguridad que exige verificación continua de cada acceso, sin confianza automática en la red interna.</dd>
+            </dl>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+</body>
+</html>

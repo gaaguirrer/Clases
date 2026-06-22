@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla - Unidad Didáctica</title>
+    <!--
+    ================================================================
+    REGLAS DE PARTICION DE CONTENIDO (leer antes de editar)
+    ================================================================
+    1. Altura fija 27.94 cm, overflow hidden → partir contenido
+       manualmente entre páginas.
+    2. El número de página debe ser SIEMPRE visible. Si el
+       .page-number queda oculto, mover el último elemento de la
+       página (párrafo, tabla, bloque de caso, lista≥3 items, etc.)
+       completo a la página siguiente.
+    3. Compactar: si sobra espacio, traer el primer elemento de la
+       página siguiente, verificando que aún quepa el .page-number.
+    4. Doble verificación: aplicar pasos 2 y 3 dos veces sobre
+       todo el documento tras cada cambio.
+    5. NO partir entre páginas: párrafos, tablas, .caso-exito,
+       .caso-fallo, .highlight, .reflexion, .autoeval, listas≥3.
+    6. El .section-header se repite al inicio de cada página
+       aunque la sección continúe de la página anterior.
+    7. NO MODIFICAR el logo institucional (SVG + texto UNHSJM +
+       línea roja + nombre completo). Solo título y subtítulo
+       de la unidad pueden cambiarse en la portada.
+    ================================================================
+    -->
+    <style>
+        /* ============================================================
+           RESETEO BÁSICO
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ============================================================
+           CUERPO
+           ============================================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f9f9f9;
+            /* El contador de páginas se reinicia inline en el <body>:
+               style="counter-reset: page 0;" */
+        }
+
+        /* ============================================================
+           PORTADA — Tamaño carta, centrada en la pantalla
+           ============================================================ */
+        .page-letter {
+            width: 21.59cm;
+            min-height: 27.94cm;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        /* Logo: alineación, tamaño SVG, texto */
+        .page-letter .logo-container {
+            padding: 0;
+            margin: 35px 0 0 40px;
+        }
+
+        .page-letter .logo-icon svg {
+            width: 88px;
+            height: 88px;
+        }
+
+        .page-letter .acronym {
+            font-size: 3rem;
+        }
+
+        .page-letter .line-red-only {
+            margin: 3px 0 5px 0;
+            height: 4px;
+            width: 100%;
+        }
+
+        .page-letter .full-name {
+            font-size: 0.75rem;
+        }
+
+        /* Contenido central de la portada: título y barras decorativas */
+        .center-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 40px 0 0;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: -160px;
+        }
+
+        .title-group {
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .title-main {
+            font-family: 'Impact', 'Arial Narrow', sans-serif;
+            font-size: 4.8rem;
+            color: #193a6f;
+            letter-spacing: 1px;
+            margin: 0 0 4px 0;
+            padding: 0;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+            text-align: right;
+            border-bottom: none;
+        }
+
+        .decoration-lines {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            gap: 2%;
+            margin-bottom: 25px;
+        }
+
+        .line-blue-cover {
+            width: 69%;
+            height: 20px;
+            background-color: #c52f2b;
+            border-radius: 1px;
+        }
+
+        .line-red-cover {
+            width: 29%;
+            height: 20px;
+            background-color: #193a6f;
+            border-radius: 1px;
+        }
+
+        .subtitle-cover {
+            text-align: right;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #000000;
+            font-size: 1.9rem;
+            line-height: 1.3;
+        }
+
+        /* ============================================================
+           PÁGINAS DE CONTENIDO — Cada página = hoja tamaño carta
+           ============================================================ */
+        .page-content {
+            width: 21.59cm;
+            height: 27.94cm;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 48px 56px;
+            margin: 0 auto 40px auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            counter-increment: page;
+        }
+
+        /* ============================================================
+           NÚMERO DE PÁGINA — Al pie, auto-incrementado con CSS
+           ============================================================ */
+        .page-number {
+            text-align: right;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: #999999;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+
+        .page-number::after {
+            content: counter(page);
+        }
+
+        /* ============================================================
+           ENCABEZADO DE SECCIÓN — Estilo índice
+           Texto + barra roja (29%) + separador (2%) + barra azul (69%)
+           ============================================================ */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 100%;
+            margin-bottom: 36px;
+        }
+
+        .section-header .header-text {
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            line-height: 1;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .block-red {
+            flex: 29;
+            height: 22px;
+            background-color: #c52f2b;
+            border-radius: 1px;
+        }
+
+        .bar-gap {
+            flex: 2;
+        }
+
+        .block-blue {
+            flex: 69;
+            height: 22px;
+            background-color: #193a6f;
+            border-radius: 1px;
+        }
+
+        /* ============================================================
+           RESALTE DE SUBTEMAS — Borde rojo izquierdo + fondo gris
+           ============================================================ */
+        .topic-header {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #193a6f;
+            margin: 16px 0 10px 0;
+            padding: 8px 0 8px 12px;
+            border-left: 5px solid #c52f2b;
+            background: #f5f5f5;
+        }
+
+        /* ============================================================
+           TÍTULOS
+           ============================================================ */
+        h1 {
+            font-size: 28px;
+            color: #0a3d62;
+            text-align: center;
+            margin-bottom: 8px;
+            border-bottom: 3px solid #0a3d62;
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #0a3d62;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 4px solid #e67e22;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 16px;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* ============================================================
+           PÁRRAFOS Y LISTAS
+           ============================================================ */
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 12px 0 16px 28px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        strong {
+            color: #0a3d62;
+        }
+
+        /* ============================================================
+           TABLAS
+           ============================================================ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 14px;
+        }
+
+        th {
+            background: #0a3d62;
+            color: #fff;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f5f6fa;
+        }
+
+        /* ============================================================
+           ÍNDICE DE CONTENIDO
+           ============================================================ */
+        .toc {
+            background: #f0f4f8;
+            padding: 20px 24px;
+            border-radius: 6px;
+            margin: 20px 0 28px;
+            border-left: 4px solid #0a3d62;
+        }
+
+        .toc ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc ul li {
+            margin-bottom: 4px;
+            list-style: none;
+        }
+
+        .toc ul li a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .toc .page-ref {
+            float: right;
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        .toc ul li::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .toc ul ul {
+            margin-left: 24px;
+            margin-top: 4px;
+        }
+
+        /* ============================================================
+           BLOQUES DE DESTAQUE
+           ============================================================ */
+        .highlight {
+            background: #fff3e0;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #e67e22;
+            margin: 16px 0;
+        }
+
+        .highlight strong {
+            color: #d35400;
+        }
+
+        .caso-exito {
+            background: #e8f5e9;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #27ae60;
+            margin: 16px 0;
+        }
+
+        .caso-fallo {
+            background: #fbe9e7;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #c0392b;
+            margin: 16px 0;
+        }
+
+        .reflexion {
+            background: #f3e5f5;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #8e24aa;
+            margin: 16px 0;
+        }
+
+        /* ============================================================
+           AUTOEVALUACIÓN
+           ============================================================ */
+        .autoeval {
+            background: #eaf2f8;
+            padding: 20px 24px;
+            border-radius: 6px;
+            border-left: 4px solid #2980b9;
+            margin: 20px 0;
+        }
+
+        .autoeval ol {
+            margin: 12px 0 0 24px;
+        }
+
+        .autoeval li {
+            margin-bottom: 12px;
+        }
+
+        .autoeval .respuesta {
+            color: #555;
+            font-style: italic;
+            margin-top: 4px;
+            padding-left: 16px;
+            border-left: 2px solid #2980b9;
+        }
+
+        /* ============================================================
+           GLOSARIO
+           ============================================================ */
+        .glosario dt {
+            font-weight: 700;
+            color: #0a3d62;
+            margin-top: 12px;
+        }
+
+        .glosario dd {
+            margin-left: 20px;
+            margin-top: 4px;
+            text-align: justify;
+        }
+
+        /* ============================================================
+           RESPONSIVE (hasta 800px)
+           ============================================================ */
+        @media (max-width: 800px) {
+            .page-letter,
+            .page-content {
+                width: 100%;
+                min-height: auto;
+                padding: 20px;
+                box-shadow: none;
+            }
+            .page-letter .logo-container { flex-direction: row; text-align: left; }
+            .title-main { font-size: 3.5rem; }
+            .line-blue-cover, .line-red-cover { height: 16px; }
+            .subtitle-cover { font-size: 1.5rem; }
+        }
+
+        /* ============================================================
+           IMPRESIÓN / PDF
+           ============================================================ */
+        @media print {
+            @page {
+                margin: 0;
+                size: letter portrait;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            .page-letter,
+            .page-content {
+                box-shadow: none;
+                margin: 0;
+                padding: 0.5in;
+                width: 100%;
+                height: 27.94cm;
+                min-height: 0;
+                border: none;
+                border-radius: 0;
+                background-color: #ffffff;
+                box-sizing: border-box;
+                overflow: hidden;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body style="counter-reset: page 0;">
+
+    <!-- ================================================================
+         PORTADA  ⚠️  NO MODIFICAR EL LOGO (SVG + texto + line-red-only)
+         ================================================================
+         El bloque completo de PORTADA (desde .page-letter hasta su cierre)
+         NO DEBE MODIFICARSE. El SVG del escudo, el texto "UNHSJM",
+         "UNIVERSIDAD NACIONAL HÉROES DE SAN JOSÉ DE LAS MULAS",
+         y la línea roja divisoria forman parte de la identidad
+         institucional. Cualquier cambio en este bloque requiere
+         aprobación del área de comunicación institucional.
+         ================================================================ -->
+    <div class="page-letter">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <!-- SVG del logotipo UNHSJM (16 rayos + libro + punto) -- NO MODIFICAR -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <g id="rayo">
+                            <path d="M49 26 L51 26 L56 3 C56 2 54 1 50 1 C46 1 44 2 44 3 L49 26 Z" fill="#193a6f"/>
+                        </g>
+                    </defs>
+                    <use href="#rayo" transform="rotate(0, 50, 50)" />
+                    <use href="#rayo" transform="rotate(22.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(45, 50, 50)" />
+                    <use href="#rayo" transform="rotate(67.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(90, 50, 50)" />
+                    <use href="#rayo" transform="rotate(112.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(135, 50, 50)" />
+                    <use href="#rayo" transform="rotate(157.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(180, 50, 50)" />
+                    <use href="#rayo" transform="rotate(202.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(225, 50, 50)" />
+                    <use href="#rayo" transform="rotate(247.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(270, 50, 50)" />
+                    <use href="#rayo" transform="rotate(292.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(315, 50, 50)" />
+                    <use href="#rayo" transform="rotate(337.5, 50, 50)" />
+                    <g transform="translate(37, 39)">
+                        <polygon points="0,0 11,6 11,22 0,18" fill="#d90f6d" />
+                        <polygon points="11,6 14,6 14,23 11,22" fill="#ffffff" />
+                        <polygon points="14,6 26,0 26,18 14,23" fill="#00b1e6" />
+                    </g>
+                    <circle cx="50" cy="40" r="3.5" fill="#fad02c" />
+                </svg>
+            </div>
+            <div class="logo-text">
+                <h1 class="acronym" style="border:none;text-align:left;margin:0;padding:0;">UNHSJM</h1>
+                <div class="line-red-only"></div>
+                <div class="full-name" style="font-size:1.1rem;">
+                    UNIVERSIDAD NACIONAL<br>
+                    HÉROES DE SAN JOSÉ DE LAS MULAS
+                </div>
+            </div>
+        </div>
+
+        <div class="center-content">
+            <div class="title-group">
+                <h1 class="title-main" style="border:none;text-align:right;margin:0;padding:0;">Título de la Unidad</h1>
+                <div class="decoration-lines">
+                    <div class="line-blue-cover"></div>
+                    <div class="line-red-cover"></div>
+                </div>
+            </div>
+            <div class="subtitle-cover">
+                Subtítulo o descripción<br>
+                Unidad I
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 1: ÍNDICE
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Índice de Contenido</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="toc">
+            <ul>
+                <li><a href="#">Tema 1</a><span class="page-ref">2</span></li>
+                <li><a href="#">Tema 2</a><span class="page-ref">3</span>
+                    <ul>
+                        <li><a href="#">Subtema 2.1</a><span class="page-ref">3</span></li>
+                        <li><a href="#">Subtema 2.2</a><span class="page-ref">5</span></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tema 3</a><span class="page-ref">7</span></li>
+            </ul>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 2: INTRODUCCIÓN
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Introducción</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p>Escriba aquí el texto de introducción. Cada párrafo debe estar envuelto en una etiqueta <code>&lt;p&gt;</code>. Evite que un párrafo quede cortado entre dos páginas; si el espacio disponible no alcanza para el párrafo completo, muévalo entero a la siguiente página.</p>
+        <p>Segundo párrafo de la introducción.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 3: DESARROLLO DE CONTENIDOS
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h3 class="topic-header" id="tema1">Nombre del Tema Principal</h3>
+        <p>Contenido del primer tema. Cada página de Desarrollo de Contenidos debe llevar el encabezado <strong>Desarrollo de Contenidos</strong> repetido en la parte superior.</p>
+        <p>Más contenido del tema.</p>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 4: DESARROLLO (continuación)
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p>Continuación del contenido del tema anterior, o inicio de un nuevo subtema.</p>
+        <h4>Subtema</h4>
+        <ul>
+            <li>Elemento de lista 1</li>
+            <li>Elemento de lista 2</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 5: AUTOEVALUACIÓN
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Autoevaluación</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="autoeval">
+            <ol>
+                <li>
+                    <strong>Pregunta 1:</strong> Enunciado de la pregunta.
+                    <div class="respuesta">Respuesta visible (opcional).</div>
+                </li>
+                <li>
+                    <strong>Pregunta 2:</strong> Enunciado de la pregunta.
+                    <div class="respuesta">Respuesta visible (opcional).</div>
+                </li>
+            </ol>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 6: BIBLIOGRAFÍA
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Bibliografía y Webgrafía</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <ul>
+            <li>Apellido, N. (Año). <em>Título del libro</em>. Editorial.</li>
+            <li>Apellido, N. (Año). <em>Título del libro</em>. Editorial.</li>
+        </ul>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- ================================================================
+         PÁGINA 7: GLOSARIO
+         ================================================================ -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="glosario">
+            <dl>
+                <dt><strong>Término</strong></dt>
+                <dd>Definición del término.</dd>
+                <dt><strong>Otro término</strong></dt>
+                <dd>Definición del otro término.</dd>
+            </dl>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+</body>
+</html>

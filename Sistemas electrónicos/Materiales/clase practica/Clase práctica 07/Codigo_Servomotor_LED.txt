@@ -1,0 +1,94 @@
+// Servomotor con indicador LED: Rojo = 0�, Verde = 180�
+// LED rojo en pin 12, LED verde en pin 13
+
+#include <Servo.h>
+Servo servo1;
+
+const int SERVO = 2;
+const int PULSO_MIN = 500;
+const int PULSO_MAX = 800;
+
+const int LED_ROJO = 12;
+const int LED_VERDE = 13;
+
+void setup()
+{
+  servo1.attach(SERVO, PULSO_MIN, PULSO_MAX);
+  pinMode(LED_ROJO, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
+}
+
+void loop()
+{
+  // Cerrar servo a 0� -> LED rojo encendido, verde apagado
+  servo1.write(0);
+  digitalWrite(LED_ROJO, HIGH);
+  digitalWrite(LED_VERDE, LOW);
+  delay(2000);
+
+  // Abrir servo a 180� -> LED verde encendido, rojo apagado
+  servo1.write(180);
+  digitalWrite(LED_ROJO, LOW);
+  digitalWrite(LED_VERDE, HIGH);
+  delay(2000);
+}
+
+================================================================================
+PREGUNTAS SOBRE EL C�DIGO
+================================================================================
+
+1. �Qu� funci�n cumplen las l�neas "pinMode(LED_ROJO, OUTPUT);" y 
+   "pinMode(LED_VERDE, OUTPUT);" dentro del setup()? �Qu� pasaria si no se 
+   incluyeran?
+
+2. �En qu� parte del c�digo se decide que el LED rojo debe estar encendido 
+   cuando el servo esta en 0�? Explica la logica de las se�ales digitales 
+   utilizadas.
+
+3. �Que hace la l�nea "servo1.attach(SERVO, PULSO_MIN, PULSO_MAX);" y por 
+   que debe ir en setup() en lugar de loop()?
+
+4. �Cual es la diferencia entre usar digitalWrite() para los LEDs y usar 
+   servo1.write() para el servomotor? �Que tipo de se�al genera cada uno?
+
+5. Si se quisiera que el LED rojo parpadeara mientras el servo se mueve de 
+   0� a 180�, �en que parte del c�digo habria que agregar las instrucciones 
+   de parpadeo?
+
+================================================================================
+EJERCICIOS DE MODIFICACION
+================================================================================
+
+Ejercicio 1
+Agrega una posicion intermedia de 90� con el LED azul en el pin 11. La
+secuencia debe ser: 0� (rojo) -> 90� (azul) -> 180� (verde) -> 90� (azul)
+-> 0� (rojo). Cada posicion debe durar 1.5 segundos.
+�Cuantos LED se encienden a la vez en cada paso?
+
+Ejercicio 2
+Reemplaza el delay(2000) por un barrido progresivo con un bucle for que
+incremente el angulo de 1 en 1 con delay(15). El LED rojo debe estar
+encendido mientras el angulo sea menor a 90� y el LED verde cuando sea
+mayor o igual a 90�.
+�En que momento exacto ocurre el cambio de color?
+
+Ejercicio 3
+Agrega un pulsador en el pin 7 con pull-up interno. Cada vez que se
+presione el boton, el servo debe alternar entre 0� (rojo) y 180� (verde).
+El servo solo debe moverse cuando se presione el boton.
+�Cuantas veces hay que presionar para completar un ciclo completo de
+ida y vuelta?
+
+Ejercicio 4
+Conecta un potenciometro en A0. Usa la funcion map() para convertir el
+valor leido (0-1023) a angulo (0-180). El LED rojo debe encenderse cuando
+el angulo sea menor a 45�, el LED verde cuando sea mayor a 135�, y ambos
+LED deben estar apagados entre 45� y 135�.
+�En que rango del potenciometro no se enciende ningun LED?
+
+Ejercicio 5
+Invierte la logica de los LEDs: que el LED rojo se encienda cuando el servo
+esta en 180� (abierto) y el LED verde cuando el servo esta en 0� (cerrado).
+Ademas, agrega un tercer LED amarillo en el pin 11 que se encienda solo
+durante el tiempo de delay, mientras el servo se esta moviendo.
+�Que secuencia de colores observas ahora en un ciclo completo?

@@ -1,4 +1,4 @@
-![Logo UNHSJM](Logo UNHSJM.jpeg)
+<img src="../../Logo UNHSJM.jpeg" alt="Logo UNHSJM" width="800">
 
 # Prueba 1 — Unidad I
 ## Aspectos Conceptuales y Metodológicos de la Seguridad Informática

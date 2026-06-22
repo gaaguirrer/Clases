@@ -1,4 +1,4 @@
-<img src="Logo UNHSJM.jpeg" alt="Logo UNHSJM" width="800">
+<img src="../../LogoUNHSJM.jpeg" alt="Logo UNHSJM" width="800">
 
 # **Introducción a la Seguridad Informática, Unidad I**
 

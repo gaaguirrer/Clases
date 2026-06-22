@@ -1,0 +1,311 @@
+/* ============================================================
+   HOJA DE ESTILOS — Unidades Didácticas
+   Optativa Profesional II (Gobernanza y Criptografía)
+   UNHSJM - Ingeniería en Sistemas de Información
+   ============================================================ */
+
+/* --- RESETEO BÁSICO --- */
+/* Elimina márgenes, paddings y usa box-sizing border-box en todos los elementos
+   para que paddings y borders no sumen al ancho total de los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- ESTILOS DEL CUERPO --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    background: #f9f9f9;
+}
+/* font-family: define una pila de fuentes sans-serif legibles
+   line-height: 1.7 da espacio entre líneas para facilitar la lectura
+   max-width: 900px limita el ancho del contenido para que no se estire en pantallas grandes
+   margin: 0 auto centra el contenido horizontalmente
+   padding: agrega espacio interior alrededor del contenido
+   background: color de fondo gris claro para toda la página */
+
+/* --- CONTENEDOR PRINCIPAL (TARJETA BLANCA) --- */
+.container {
+    background: #fff;
+    padding: 48px 56px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+/* background blanco para el área de contenido
+   border-radius: 8px redondea las esquinas
+   box-shadow agrega una sombra suave para dar efecto de tarjeta elevada */
+
+/* --- LOGOTIPO --- */
+.logo {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+/* .logo centra la imagen y agrega espacio inferior
+   .logo img asegura que la imagen sea responsive (nunca más ancha que su contenedor) */
+
+/* --- TÍTULOS --- */
+h1 {
+    font-size: 28px;
+    color: #0a3d62;
+    text-align: center;
+    margin-bottom: 8px;
+    border-bottom: 3px solid #0a3d62;
+    padding-bottom: 16px;
+}
+/* h1: título principal — color azul institucional #0a3d62, centrado,
+   con una línea inferior sólida que funciona como separador visual */
+
+h2 {
+    font-size: 22px;
+    color: #0a3d62;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid #e67e22;
+}
+/* h2: subtítulos — mismo color azul, con una barra naranja (#e67e22)
+   a la izquierda que los destaca visualmente */
+
+h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+/* h3: títulos de tercer nivel — color gris oscuro, más compacto que h2 */
+
+h4 {
+    font-size: 16px;
+    color: #34495e;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+/* h4: cuarto nivel — gris más claro, usado para subsecciones menores */
+
+/* --- PÁRRAFOS --- */
+p {
+    margin-bottom: 16px;
+    text-align: justify;
+}
+/* margin-bottom separa párrafos entre sí
+   text-align: justify alinea el texto a ambos lados para un aspecto más formal */
+
+/* --- LISTAS --- */
+ul, ol {
+    margin: 12px 0 16px 28px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+/* ul/ol: sangría izquierda de 28px para listas
+   li: espacio entre elementos de la lista */
+
+/* --- NEGRITAS --- */
+strong {
+    color: #0a3d62;
+}
+/* Las negritas toman el color institucional azul para resaltar conceptos clave */
+
+/* --- TABLAS --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+}
+/* width: 100% ocupa todo el ancho disponible
+   border-collapse: collapse fusiona los bordes de celdas adyacentes
+   font-size: 14px ligeramente más pequeño que el texto normal */
+
+th {
+    background: #0a3d62;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+}
+/* th: celdas de encabezado — fondo azul oscuro, texto blanco, alineación izquierda */
+
+td {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+/* td: celdas de datos — borde gris claro, alineación vertical superior
+   para que el texto no se centre verticalmente */
+
+tr:nth-child(even) {
+    background: #f5f6fa;
+}
+/* Filas pares con fondo gris muy claro (efecto cebra) para mejorar legibilidad */
+
+/* --- ÍNDICE DE CONTENIDO --- */
+.toc {
+    background: #f0f4f8;
+    padding: 20px 24px;
+    border-radius: 6px;
+    margin: 20px 0 28px;
+    border-left: 4px solid #0a3d62;
+}
+/* Fondo gris azulado claro con borde izquierdo azul
+   para destacar el índice como un bloque informativo */
+
+.toc h3 {
+    margin: 0 0 12px;
+    color: #0a3d62;
+}
+
+.toc ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.toc ul li {
+    margin-bottom: 4px;
+    list-style: none;
+}
+
+.toc ul li a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.toc .page-ref {
+    float: right;
+    color: #555;
+    font-size: 0.85em;
+}
+
+.toc ul li::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.toc ul ul {
+    margin-left: 24px;
+    margin-top: 4px;
+}
+/* Enlaces del índice en azul sin subrayado */
+
+.toc ul li a:hover {
+    text-decoration: underline;
+}
+/* Al pasar el mouse, aparece subrayado para indicar que es clickeable */
+
+.toc ul ul {
+    margin-left: 20px;
+    margin-top: 4px;
+}
+/* Sub-elementos del índice con sangría adicional */
+
+/* --- BLOQUES DE DESTAQUE --- */
+
+/* Recomendaciones / conclusiones (borde naranja) */
+.highlight {
+    background: #fff3e0;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #e67e22;
+    margin: 16px 0;
+}
+
+.highlight strong {
+    color: #d35400;
+}
+/* .highlight: para conclusiones prácticas o recomendaciones importantes
+   Fondo naranja claro, borde naranja oscuro */
+
+/* Casos de éxito (borde verde) */
+.caso-exito {
+    background: #e8f5e9;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #27ae60;
+    margin: 16px 0;
+}
+/* Fondo verde claro, borde verde oscuro — asociado mentalmente con "correcto" */
+
+/* Casos de fracaso (borde rojo) */
+.caso-fallo {
+    background: #fbe9e7;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #c0392b;
+    margin: 16px 0;
+}
+/* Fondo rojo claro, borde rojo oscuro — asociado con "error" o "advertencia" */
+
+/* Reflexiones (borde púrpura) */
+.reflexion {
+    background: #f3e5f5;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #8e24aa;
+    margin: 16px 0;
+}
+/* Fondo púrpura claro, borde púrpura — para pensamientos críticos o cierres reflexivos */
+
+/* --- AUTOEVALUACIÓN --- */
+.autoeval {
+    background: #eaf2f8;
+    padding: 20px 24px;
+    border-radius: 6px;
+    border-left: 4px solid #2980b9;
+    margin: 20px 0;
+}
+/* Fondo azul muy claro, borde azul — identifica la sección de autoevaluación */
+
+.autoeval ol {
+    margin: 12px 0 0 24px;
+}
+
+.autoeval li {
+    margin-bottom: 12px;
+}
+
+.autoeval .respuesta {
+    color: #555;
+    font-style: italic;
+    margin-top: 4px;
+    padding-left: 16px;
+    border-left: 2px solid #2980b9;
+}
+/* .respuesta: texto gris en cursiva para no confundir con la pregunta
+   Borde izquierdo azul delgado para separar visualmente la respuesta */
+
+/* --- LÍNEA SEPARADORA --- */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 32px 0;
+}
+/* Línea horizontal delgada y gris para separar secciones grandes */
+
+/* --- GLOSARIO --- */
+.glosario dt {
+    font-weight: 700;
+    color: #0a3d62;
+    margin-top: 12px;
+}
+/* dt (término): negrita azul institucional, con espacio superior */
+
+.glosario dd {
+    margin-left: 20px;
+    margin-top: 4px;
+    text-align: justify;
+}
+/* dd (definición): sangría izquierda, justificado, espacio mínimo superior */

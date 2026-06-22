@@ -1,4 +1,4 @@
-<img src="Logo UNHSJM.jpeg" alt="Logo UNHSJM" width="800">
+<img src="../../Logo UNHSJM.jpeg" alt="Logo UNHSJM" width="800">
 
 # Gobierno TI, Unidad II
 

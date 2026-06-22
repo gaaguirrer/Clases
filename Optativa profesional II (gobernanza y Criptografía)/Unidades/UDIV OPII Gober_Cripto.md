@@ -1,4 +1,4 @@
-![Logo UNHSJM](Logo UNHSJM.jpeg)
+<img src="../../Logo UNHSJM.jpeg" alt="Logo UNHSJM" width="800">
 
 # El Rol del Gerente de Proyecto en la Evaluación, Seguimiento y Control del Proyecto Tecnológico
 

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad I - Introducción a la Seguridad Informática</title>
+    <link rel="stylesheet" href="../../estilos/unidades.css">
+    <link rel="stylesheet" href="../../estilos/logo.css">
+    <link rel="stylesheet" href="../../estilos/portada.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Inicia contador de páginas (portada no cuenta) */
+        body {
+            counter-reset: page 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA TIPO LIBRO -->
+    <div class="page-letter">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <g id="rayo">
+                            <path d="M49 26 L51 26 L56 3 C56 2 54 1 50 1 C46 1 44 2 44 3 L49 26 Z" class="ray"/>
+                        </g>
+                    </defs>
+                    <use href="#rayo" transform="rotate(0, 50, 50)" />
+                    <use href="#rayo" transform="rotate(22.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(45, 50, 50)" />
+                    <use href="#rayo" transform="rotate(67.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(90, 50, 50)" />
+                    <use href="#rayo" transform="rotate(112.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(135, 50, 50)" />
+                    <use href="#rayo" transform="rotate(157.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(180, 50, 50)" />
+                    <use href="#rayo" transform="rotate(202.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(225, 50, 50)" />
+                    <use href="#rayo" transform="rotate(247.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(270, 50, 50)" />
+                    <use href="#rayo" transform="rotate(292.5, 50, 50)" />
+                    <use href="#rayo" transform="rotate(315, 50, 50)" />
+                    <use href="#rayo" transform="rotate(337.5, 50, 50)" />
+                    <g transform="translate(37, 39)">
+                        <polygon points="0,0 11,6 11,22 0,18" class="book-left" />
+                        <polygon points="11,6 14,6 14,23 11,22" class="book-spine" />
+                        <polygon points="14,6 26,0 26,18 14,23" class="book-right" />
+                    </g>
+                    <circle cx="50" cy="40" r="3.5" class="dot-yellow" />
+                </svg>
+            </div>
+            <div class="logo-text">
+                <h1 class="acronym">UNHSJM</h1>
+                <div class="line-red-only"></div>
+                <div class="full-name">
+                    UNIVERSIDAD NACIONAL<br>
+                    HÉROES DE SAN JOSÉ DE LAS MULAS
+                </div>
+            </div>
+        </div>
+
+        <div class="center-content">
+            <div class="title-group">
+                <h1 class="title-main">Unidad Didáctica</h1>
+                
+                <div class="decoration-lines">
+                    <div class="line-blue-cover"></div>
+                    <div class="line-red-cover"></div>
+                </div>
+            </div>
+
+            <div class="subtitle-cover">
+                Introducción a la Seguridad Informática<br>
+                Unidad I
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 1: ÍNDICE -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Índice de Contenido</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="toc">
+            <ul>
+                <li><a href="#introduccion">Introducción</a><span class="page-ref">2</span></li>
+                <li><a href="#desarrollo">Desarrollo de Contenidos</a><span class="page-ref">3</span>
+                    <ul>
+                        <li><a href="#vision">Visión Estratégica de la Seguridad de los datos en la Empresa</a><span class="page-ref">3</span></li>
+                        <li><a href="#elementos">Elementos de la Seguridad de la Información</a><span class="page-ref">7</span></li>
+                        <li><a href="#espionaje">Espionaje Industrial</a><span class="page-ref">11</span></li>
+                        <li><a href="#estandares">Estándares y Certificaciones</a><span class="page-ref">13</span></li>
+                    </ul>
+                </li>
+                <li><a href="#autoevaluacion">Autoevaluación</a><span class="page-ref">16</span></li>
+                <li><a href="#bibliografia">Bibliografía y Webgrafía</a><span class="page-ref">18</span></li>
+                <li><a href="#glosario">Glosario</a><span class="page-ref">19</span></li>
+            </ul>
+        </div>
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 2: INTRODUCCIÓN -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Introducción</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <p>Cuando hablamos de seguridad informática, muchos piensan solo en antivirus o contraseñas. Sin embargo, la realidad es mucho más amplia y profunda. La información se ha convertido en el activo más valioso de cualquier organización, y protegerla requiere entender desde la estrategia de negocio hasta los detalles técnicos del cifrado. En esta unidad comenzaremos por lo fundamental: ¿qué significa realmente proteger la información? ¿Por qué empresas aparentemente sólidas han quebrado tras un ciberataque? ¿Cómo se organiza internacionalmente la gestión de la seguridad?</p>
+
+        <p>A lo largo de estas páginas exploraremos la visión estratégica que la alta dirección debe tener sobre la seguridad, los principios básicos que todo profesional debe conocer (confidencialidad, integridad, disponibilidad), las amenazas silenciosas como el espionaje industrial, y los marcos de trabajo que permiten certificar que una organización maneja la seguridad de manera competente. También pondremos manos a la obra con una herramienta real de cifrado, GnuPG, porque la teoría sin práctica se olvida pronto.</p>
+
+        <p>Te invito a leer con calma, a cuestionarte cada ejemplo y a relacionarlo con tu propia experiencia o con noticias que hayas visto. La seguridad informática no es un conjunto de recetas mágicas; es una disciplina que se construye con conocimiento, conciencia y buenas prácticas.</p>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 3: DESARROLLO - VISIÓN ESTRATÉGICA + ESTRATEGIA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <h3 class="topic-header" id="vision">Visión Estratégica de la Seguridad de los datos en la Empresa</h3>
+
+        <p>Para empezar, conviene entender un cambio fundamental que ha ocurrido en las últimas dos décadas. Antes, la seguridad informática se veía como un mal necesario: "compremos un firewall y un antivirus, y ya estamos protegidos". Esa visión ingenua ha dejado paso a un enfoque estratégico. La seguridad hoy es un habilitador del negocio, no un freno.</p>
+
+        <p>Una visión estratégica implica que la protección de los datos está alineada con los objetivos de la organización. Por ejemplo, si una empresa de comercio electrónico quiere crecer, necesita garantizar la confidencialidad de las tarjetas de crédito de sus clientes; si falla, no solo perderá ventas, sino que enfrentará multas y demandas. La estrategia de seguridad debe responder preguntas como: ¿cuáles son nuestros activos críticos? ¿Qué riesgos estamos dispuestos a asumir? ¿Cuánto invertimos en proteger cada activo?</p>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 4: DESARROLLO - ESTRATEGIA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <h4 class="topic-header">Elementos de una estrategia de seguridad sólida</h4>
+
+        <ul>
+            <li><strong>Gobierno de seguridad</strong>: un comité directivo que revisa las políticas y asigna recursos.</li>
+            <li><strong>Análisis de riesgos</strong>: identificar, evaluar y priorizar los riesgos (no todos merecen la misma protección).</li>
+            <li><strong>Plan de respuesta a incidentes</strong>: saber qué hacer cuando (no si) ocurre una brecha.</li>
+            <li><strong>Concienciación continua</strong>: la mayoría de los incidentes involucran error humano; formar a los empleados es tan importante como la tecnología.</li>
+        </ul>
+
+        <h4>Conceptos actuales que toda estrategia debe integrar</h4>
+
+        <ul>
+            <li><strong>Modelo Zero Trust</strong>: nunca confiar automáticamente, siempre verificar cada acceso, incluso desde la red interna. Implica microsegmentación, autenticación continua y mínimos privilegios.</li>
+            <li><strong>GDPR</strong>: desde 2018, cualquier empresa que trate datos de ciudadanos europeos debe cumplir estrictos requisitos de confidencialidad, notificación de brechas en 72 horas y derecho al olvido. Ignorarlo puede costar multas de hasta 20 millones de euros o el 4% de la facturación global.</li>
+            <li><strong>Seguridad en la nube</strong>: ya no basta con proteger el perímetro; se deben gestionar identidades, configuraciones de buckets (como el caso Verizon), y usar cifrado gestionado por el cliente.</li>
+            <li><strong>Inteligencia artificial en ciberseguridad</strong>: tanto para defensa (detección de anomalías, análisis de comportamiento) como para ataque (deepfakes, phishing automatizado). Una estrategia moderna debe considerar cómo la IA amplifica riesgos y oportunidades.</li>
+        </ul>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 5: DESARROLLO - CASOS PRÁCTICOS -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-fallo">
+            <strong>Ejemplo real que ilustra la falta de visión estratégica:</strong>
+            <p>El caso de <strong>Target Corporation</strong> en 2013. Esta cadena de tiendas estadounidense sufrió una brecha masiva donde se robaron 40 millones de números de tarjetas de crédito y 70 millones de registros de clientes. El ataque comenzó cuando un proveedor de calefacción, ventilación y aire acondicionado (HVAC) tuvo sus credenciales comprometidas. ¿Por qué un proveedor de HVAC tenía acceso a la red de pago de Target? Porque no existía una segmentación adecuada ni una política de acceso mínimo necesario. La falta de visión estratégica (considerar la seguridad desde el diseño de la red y las relaciones con terceros) costó a Target más de 200 millones de dólares en arreglos y una enorme pérdida de reputación.</p>
+        </div>
+
+        <div class="caso-exito">
+            <strong>Ejemplo de evolución estratégica exitosa:</strong>
+            <p><strong>Microsoft</strong> ha demostrado una evolución notable. Desde la iniciativa "Secure Development Lifecycle" (SDL) hasta la integración de seguridad por defecto en Windows y Azure, la compañía ha convertido la seguridad en un pilar competitivo. Invierten miles de millones anualmente, pero el retorno es la confianza de gobiernos y grandes empresas que adoptan su nube. Además, han adoptado explícitamente el modelo Zero Trust en sus productos y recomiendan autenticación multifactor (MFA) obligatoria para todos los inquilinos de Azure.</p>
+        </div>
+
+        <div class="caso-fallo">
+            <strong>Otro caso actual de fracaso estratégico:</strong>
+            <p>En 2021, <strong>Colonial Pipeline</strong> pagó 4.4 millones de dólares de rescate por un ataque de ransomware. La causa raíz fue una cuenta VPN sin autenticación multifactor y una segmentación de red deficiente. La lección: la estrategia de seguridad debe priorizar el acceso remoto y asumir que las credenciales pueden ser robadas.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 6: CONCLUSIÓN PRÁCTICA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="highlight">
+            <strong>Conclusión práctica para la empresa:</strong>
+            <p>Una visión estratégica no significa comprar la tecnología más cara, sino tomar decisiones basadas en riesgos. Por ejemplo, si una pequeña empresa maneja datos de salud, deberá invertir en cifrado y controles de acceso; si solo tiene información pública, bastará con proteger la disponibilidad. Lo importante es que la seguridad esté dirigida desde la alta dirección y se revise periódicamente, al menos una vez al año o tras cada incidente relevante.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 7: ELEMENTOS DE LA SEGURIDAD (INICIO) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h3 class="topic-header" id="elementos">Elementos de la Seguridad de la Información</h3>
+
+        <p>Los tres pilares clásicos son confidencialidad, integridad y disponibilidad. A menudo se representan con el triángulo CIA (Confidentiality, Integrity, Availability). Pero no son meras palabras; cada uno tiene técnicas específicas y consecuencias cuando fallan. A estos tres se añaden con frecuencia autenticidad, no repudio y privacidad.</p>
+
+        <h4>Confidencialidad</h4>
+
+        <p>Es la propiedad que impide que la información sea revelada a personas, entidades o procesos no autorizados. La violación típica es que alguien no autorizado lea un dato. Por ejemplo, un hacker que intercepta un correo electrónico o un empleado curioso que accede a nóminas.</p>
+
+        <p><strong>Mecanismos para garantizar confidencialidad:</strong></p>
+        <ul>
+            <li>Cifrado (en reposo, en tránsito).</li>
+            <li>Controles de acceso (autenticación y autorización).</li>
+            <li>Segmentación de redes y firewalls.</li>
+            <li>Políticas de clasificación de información.</li>
+            <li>Autenticación multifactor (MFA) para accesos remotos.</li>
+        </ul>
+
+        <div class="caso-fallo">
+            <strong>Ejemplo de fallo de confidencialidad:</strong>
+            <p>El caso de <strong>Equifax</strong> en 2017. Una vulnerabilidad en Apache Struts no fue parcheada a tiempo. Los atacantes robaron datos personales de 147 millones de estadounidenses: nombres, números de seguro social, fechas de nacimiento. La información sensible quedó expuesta por negligencia en la gestión de parches. El costo: más de 1.400 millones de dólares en multas y acuerdos.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 8: INTEGRIDAD Y DISPONIBILIDAD -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4 class="topic-header">Integridad</h4>
+
+        <p>Asegura que la información y los métodos de procesamiento sean exactos y completos, y que no sean modificados de manera no autorizada. No basta con que nadie lea un dato; también debe importarnos que nadie lo cambie indebidamente. Un ejemplo crítico es la modificación de un registro financiero o la alteración de una receta médica.</p>
+
+        <p><strong>Mecanismos para garantizar integridad:</strong></p>
+        <ul>
+            <li>Sumas de verificación (hashes como SHA-256).</li>
+            <li>Firmas digitales.</li>
+            <li>Registros de auditoría (logs).</li>
+            <li>Controles de versiones y bloqueo de ediciones concurrentes.</li>
+        </ul>
+
+        <div class="caso-fallo">
+            <strong>Caso real documentado:</strong>
+            <p>En 2018, un atacante modificó las calificaciones de estudiantes en el sistema <strong>Infinite Campus</strong> usado por varias escuelas de EE.UU. Aunque no se trató de un hackeo masivo, el incidente mostró cómo cuentas mal protegidas pueden alterar la integridad de registros académicos. La escuela afectada tuvo que restaurar desde copias de seguridad y reforzar la autenticación de profesores.</p>
+        </div>
+
+        <h4>Disponibilidad</h4>
+
+        <p>Garantiza que los usuarios autorizados tengan acceso a la información y a los sistemas cuando lo requieran. La denegación de servicio (DDoS) es el ataque más común contra la disponibilidad, pero también los fallos de hardware, los cortes eléctricos o los errores humanos.</p>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 9: DISPONIBILIDAD (CONT.) Y CIA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <p><strong>Mecanismos para garantizar disponibilidad:</strong></p>
+        <ul>
+            <li>Redundancia (servidores, discos, enlaces).</li>
+            <li>Copias de respaldo y planes de recuperación ante desastres.</li>
+            <li>Sistemas de alimentación ininterrumpida (UPS).</li>
+            <li>Balanceo de carga y tolerancia a fallos.</li>
+        </ul>
+
+        <div class="caso-fallo">
+            <strong>Ejemplo impactante:</strong>
+            <p>En octubre de 2016, el proveedor de DNS Dyn sufrió un ataque DDoS masivo utilizando la botnet Mirai (dispositivos IoT infectados). Grandes plataformas como Twitter, Netflix, Reddit, Spotify y PayPal estuvieron inaccesibles durante horas en la costa este de EE.UU. La indisponibilidad causó pérdidas estimadas en 110 millones de dólares solo por ventas no realizadas en Amazon y otros sitios.</p>
+        </div>
+
+        <h4>Otros elementos complementarios</h4>
+
+        <ul>
+            <li><strong>Autenticidad</strong>: certeza de que la identidad de un sujeto o el origen de un dato es genuino. Se logra con firmas digitales y certificados.</li>
+            <li><strong>No repudio</strong>: imposibilidad de negar una acción realizada (por ejemplo, haber enviado un mensaje). También se apoya en firmas digitales y registros de auditoría inmutables.</li>
+            <li><strong>Privacidad</strong>: derecho de las personas a controlar sus datos personales. Es un concepto legal y ético, pero se apoya en la confidencialidad e integridad. El GDPR y leyes similares han elevado la privacidad a requisito obligatorio.</li>
+        </ul>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 10: TABLA CIA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4 class="topic-header">Tabla resumen de los principios CIA</h4>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Principio</th>
+                    <th>Definición breve</th>
+                    <th>Mecanismo principal</th>
+                    <th>Ejemplo de fallo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Confidencialidad</td>
+                    <td>Solo autorizados pueden ver</td>
+                    <td>Cifrado, control de acceso</td>
+                    <td>Equifax (robo de datos)</td>
+                </tr>
+                <tr>
+                    <td>Integridad</td>
+                    <td>Los datos no se modifican sin permiso</td>
+                    <td>Hashes, firmas digitales</td>
+                    <td>Modificación de notas escolares</td>
+                </tr>
+                <tr>
+                    <td>Disponibilidad</td>
+                    <td>Acceso oportuno cuando se necesita</td>
+                    <td>Redundancia, respaldos</td>
+                    <td>Ataque DDoS a Dyn</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="reflexion">
+            <strong>Reflexión:</strong> Los tres principios a menudo entran en conflicto. Por ejemplo, cifrar muy fuerte puede ralentizar el acceso (afectando disponibilidad). Verificar cada cambio puede consumir recursos. Una buena estrategia de seguridad equilibra los tres según la criticidad de cada activo.
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 11: ESPIONAJE INDUSTRIAL -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h3 class="topic-header" id="espionaje">Espionaje Industrial</h3>
+
+        <p>El espionaje industrial no es un invento de Hollywood. Es una práctica real que empresas, e incluso estados, utilizan para obtener ventajas competitivas. Consiste en la obtención ilícita de información confidencial de una empresa: secretos comerciales, estrategias de mercado, listas de clientes, patentes, fórmulas, etc.</p>
+
+        <h4>Técnicas más comunes observadas en la práctica</h4>
+
+        <ul>
+            <li><strong>Ingeniería social</strong>: manipular a empleados para que revelen contraseñas o información sensible.</li>
+            <li><strong>Phishing y spear phishing</strong>: correos electrónicos engañosos que parecen legítimos. El spear phishing está dirigido a un objetivo concreto con mensajes personalizados.</li>
+            <li><strong>Malware específico</strong>: troyanos que extraen documentos y los envían a servidores externos.</li>
+            <li><strong>Ataques a la cadena de suministro</strong>: comprometer a un proveedor para llegar al objetivo final.</li>
+            <li><strong>Dispositivos físicos</strong>: keyloggers, grabación de conversaciones, revisión de papeles desechados (dumpster diving).</li>
+            <li><strong>Deepfakes y suplantación de identidad avanzada</strong>: uso de inteligencia artificial para imitar voces o videos de directivos, solicitando transferencias o datos confidenciales.</li>
+        </ul>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 12: CASOS DE ESPIONAJE -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="caso-fallo">
+            <strong>Caso emblemático de espionaje industrial:</strong>
+            <p>El affaire <strong>Alstom vs. General Electric</strong> (2013-2015). Alstom, una empresa francesa de energía, fue acusada por el Departamento de Justicia de EE.UU. de sobornos en varios países. Durante la investigación, se descubrió que Alstom había contratado a consultores que, en realidad, recopilaban información confidencial de sus competidores. Finalmente, Alstom fue condenada y su división de energía fue adquirida por General Electric por 12.400 millones de euros.</p>
+        </div>
+
+        <div class="caso-fallo">
+            <strong>Caso claro de robo de secretos comerciales:</strong>
+            <p><strong>Waymo vs. Uber</strong> (2017). Un ingeniero de Waymo (la división de vehículos autónomos de Google) descargó más de 14.000 archivos confidenciales que contenían diseños de sensores LiDAR y se unió a Uber. El caso se resolvió con Uber pagando a Waymo 245 millones de dólares en acciones.</p>
+        </div>
+
+        <h4>Medidas de protección contra espionaje industrial</h4>
+
+        <ul>
+            <li>Clasificación de información y control de acceso basado en roles (principio de mínimo privilegio).</li>
+            <li>Formación continua en detección de ingeniería social y phishing (simulaciones periódicas).</li>
+            <li>Cifrado de datos sensibles y uso de soluciones DLP (Data Loss Prevention).</li>
+            <li>Monitorización de accesos y de la red, con alertas ante descargas masivas o accesos anómalos.</li>
+            <li>Acuerdos de confidencialidad y cláusulas de seguridad en contratos con proveedores y empleados.</li>
+            <li>Autenticación multifactor (MFA) para sistemas que contengan secretos comerciales.</li>
+            <li>Programas de "insider threat" que detecten comportamientos sospechosos de empleados con privilegios.</li>
+        </ul>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 13: REFLEXIÓN ESPIONAJE + ESTÁNDARES -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <div class="reflexion">
+            <strong>Reflexión final:</strong> El espionaje industrial suele ser silencioso y difícil de detectar porque no siempre implica ruido técnico. Muchas veces, la información sale por una conversación casual en un bar, un correo mal dirigido o un USB perdido. La concienciación del personal y la revisión periódica de accesos son tan importantes como los firewalls.
+        </div>
+
+        <h3 class="topic-header" id="estandares">Estándares y Certificaciones</h3>
+
+        <p>Cuando una organización desea demostrar que maneja la seguridad de manera profesional, recurre a estándares y certificaciones. No basta con decir "somos seguros"; hay que someterse a auditorías externas.</p>
+
+        <h4>Principales estándares internacionales</h4>
+
+        <ul>
+            <li><strong>ISO/IEC 27001</strong>: Estándar estrella para Sistemas de Gestión de Seguridad de la Información (SGSI). Versión actual: ISO 27001:2022.</li>
+            <li><strong>ISO/IEC 27002</strong>: Código de prácticas con 114 controles de seguridad (versión 2022). Complementario al 27001.</li>
+            <li><strong>NIST SP 800-53</strong>: Catálogo de controles de seguridad y privacidad, usado por agencias gubernamentales de EE.UU.</li>
+            <li><strong>PCI DSS</strong>: Obligatorio para entidades que procesan datos de tarjetas de crédito. Versión 4.0 vigente desde 2024.</li>
+        </ul>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 14: CERTIFICACIONES Y TABLA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4 class="topic-header">Certificaciones profesionales</h4>
+
+        <ul>
+            <li><strong>CISSP</strong>: Para arquitectos y gerentes de seguridad.</li>
+            <li><strong>CISM</strong>: Enfocada en la gobernanza y gestión.</li>
+            <li><strong>CompTIA Security+</strong>: Certificación de nivel inicial.</li>
+            <li><strong>CEH</strong>: Para profesionales de pruebas de penetración.</li>
+        </ul>
+
+        <div class="caso-exito">
+            <strong>Caso de éxito con estándares:</strong>
+            <p>La aerolínea <strong>Delta Air Lines</strong> obtuvo la certificación ISO 27001 para sus sistemas de reservas y gestión de pasajeros. Corregir las brechas identificadas redujo en un 40% los incidentes de seguridad en dos años.</p>
+        </div>
+
+        <div class="caso-fallo">
+            <strong>Caso de fracaso por ignorar estándares:</strong>
+            <p>En 2017, <strong>Verizon Partner Solutions</strong> dejó expuestos los datos de 14 millones de clientes debido a un bucket de Amazon S3 mal configurado. No se siguieron las buenas prácticas del NIST o ISO 27001 sobre configuración segura de servicios en la nube.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- PÁGINA 15: TABLA DE ESTÁNDARES -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Desarrollo de Contenidos</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+        <h4 class="topic-header">Tabla resumen de estándares y su ámbito</h4>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Estándar</th>
+                    <th>Ámbito principal</th>
+                    <th>Certificable</th>
+                    <th>Uso típico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ISO 27001</td>
+                    <td>SGSI - gestión de seguridad</td>
+                    <td>Sí (organización)</td>
+                    <td>Empresas de cualquier sector</td>
+                </tr>
+                <tr>
+                    <td>ISO 27002</td>
+                    <td>Guía de controles</td>
+                    <td>No</td>
+                    <td>Complemento del 27001</td>
+                </tr>
+                <tr>
+                    <td>NIST SP 800-53</td>
+                    <td>Controles de seguridad y privacidad</td>
+                    <td>No (pero se audita)</td>
+                    <td>Gobierno y contratistas de EE.UU.</td>
+                </tr>
+                <tr>
+                    <td>PCI DSS</td>
+                    <td>Datos de tarjetas de pago</td>
+                    <td>Sí</td>
+                    <td>Comercios, bancos, procesadoras</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight">
+            <strong>Recomendación práctica:</strong>
+            <p>Para una pyme, empezar con ISO 27001 puede ser costoso. Se recomienda primero adoptar el conjunto de controles de ISO 27002 o seguir guías del NIST (como el Cybersecurity Framework) para madurar procesos, y luego buscar certificación si clientes o regulaciones lo exigen.</p>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- AUTOEVALUACIÓN (Pág 1/2) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Autoevaluación</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <div class="autoeval">
+            <p>Lea cada pregunta, responda mentalmente y luego consulte el glosario o los conceptos si tiene dudas. Las respuestas no se entregan; son para su propio aprendizaje.</p>
+
+            <ol>
+                <li>
+                    <strong>Verdadero o falso:</strong> El modelo Zero Trust implica confiar automáticamente en todos los dispositivos que se encuentren dentro de la red interna de la empresa.
+                    <div class="respuesta">Falso. Zero Trust se basa en "nunca confiar, siempre verificar"; ni siquiera los dispositivos internos son confiables por defecto.</div>
+                </li>
+                <li>
+                    <strong>¿Cuál de los siguientes NO es un mecanismo de confidencialidad?</strong> a) Cifrado b) MFA c) Firma digital d) Segmentación de red
+                    <div class="respuesta">c) Firma digital. La firma digital garantiza integridad y no repudio, no confidencialidad.</div>
+                </li>
+                <li>
+                    <strong>Mencione al menos dos técnicas de espionaje industrial que utilicen inteligencia artificial o ingeniería social avanzada.</strong>
+                    <div class="respuesta">Deepfakes (suplantación de voz o video de directivos), spear phishing con mensajes generados por IA.</div>
+                </li>
+                <li>
+                    <strong>Según el GDPR, ¿en cuánto tiempo máximo debe una empresa notificar una brecha de datos?</strong>
+                    <div class="respuesta">72 horas desde que tuvo conocimiento de la brecha.</div>
+                </li>
+                <li>
+                    <strong>Explique la diferencia entre cifrar un archivo y firmar digitalmente un archivo.</strong>
+                    <div class="respuesta">Cifrar protege la confidencialidad (solo el destinatario puede leer). Firmar garantiza integridad y autenticidad (cualquiera puede verificar que el archivo no fue alterado y que proviene de quien dice ser).</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- AUTOEVALUACIÓN (Pág 2/2) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Autoevaluación</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <div class="autoeval">
+            <ol start="6">
+                <li>
+                    <strong>Caso práctico:</strong> Una empresa tiene servidores en una sala sin UPS ni generador. Un corte eléctrico deja los sistemas inaccesibles durante 6 horas. ¿Qué principio de seguridad se ha vulnerado?
+                    <div class="respuesta">Disponibilidad, porque los usuarios autorizados no pudieron acceder a los sistemas cuando lo necesitaban.</div>
+                </li>
+                <li>
+                    <strong>¿Cuál fue la principal lección del ataque a Colonial Pipeline?</strong>
+                    <div class="respuesta">La cuenta VPN comprometida no usaba autenticación multifactor (MFA).</div>
+                </li>
+                <li>
+                    <strong>Relacione la certificación profesional con su enfoque principal:</strong> CISSP, CEH, CISM.
+                    <div class="respuesta">CISSP → gestión y arquitectura; CEH → hacking ético; CISM → gobierno y gestión.</div>
+                </li>
+                <li>
+                    <strong>¿Qué comando de GnuPG generaría una firma en texto claro (legible)?</strong>
+                    <div class="respuesta"><code>gpg --clearsign documento.txt</code></div>
+                </li>
+                <li>
+                    <strong>Reflexión final:</strong> A pesar de casos como Equifax, Colonial Pipeline y Waymo, muchas pymes aún no implementan estrategias básicas de seguridad. ¿Qué factores lo explican?
+                    <div class="respuesta">Costo aparente, falta de conciencia de la dirección, creencia de que "a mí no me va a pasar", desconocimiento técnico, o ausencia de requisitos legales en su sector.</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- BIBLIOGRAFÍA -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Bibliografía y Webgrafía</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <ul>
+            <li>Ramió, J. (2010). <em>Seguridad Informática y Criptografía</em>. CriptoRed.</li>
+            <li>Stallings, W. (2006). <em>Cryptography and Network Security</em> (4ª ed.). Prentice Hall.</li>
+            <li>Schneier, B. (1996). <em>Applied Cryptography</em> (2ª ed.). John Wiley &amp; Sons.</li>
+            <li>ISO/IEC 27001:2022. <em>Information security, cybersecurity and privacy protection — Information security management systems</em>. ISO.</li>
+            <li>The Open Web Application Security Project (OWASP). <a href="https://owasp.org/" target="_blank">https://owasp.org/</a></li>
+            <li>CERT. <a href="https://www.cert.org/" target="_blank">https://www.cert.org/</a></li>
+            <li>GnuPG Project. <a href="https://gnupg.org/" target="_blank">https://gnupg.org/</a></li>
+        </ul>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- GLOSARIO -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <div class="glosario">
+            <dl>
+                <dt><strong>Autenticación multifactor (MFA)</strong></dt>
+                <dd>Método de autenticación que requiere dos o más factores independientes (algo que sabes, algo que tienes, algo que eres) para verificar la identidad de un usuario.</dd>
+
+                <dt><strong>Autenticidad</strong></dt>
+                <dd>Propiedad que garantiza que la identidad de un sujeto o el origen de un dato es genuino. Se logra con firmas digitales y certificados.</dd>
+
+                <dt><strong>Cifrado asimétrico</strong></dt>
+                <dd>Sistema criptográfico que utiliza un par de claves (pública y privada). Lo que se cifra con una clave solo puede descifrarse con la otra.</dd>
+
+                <dt><strong>CISSP</strong></dt>
+                <dd>Certified Information Systems Security Professional, certificación avanzada en seguridad de la información, enfocada en arquitectura y gestión.</dd>
+
+                <dt><strong>CISM</strong></dt>
+                <dd>Certified Information Security Manager, certificación enfocada en la gobernanza y gestión de la seguridad.</dd>
+
+                <dt><strong>Confidencialidad</strong></dt>
+                <dd>Principio de seguridad que asegura que la información no sea revelada a entidades no autorizadas.</dd>
+
+                <dt><strong>Deepfake</strong></dt>
+                <dd>Técnica basada en inteligencia artificial para crear videos, audios o imágenes falsas pero muy realistas, utilizada en espionaje industrial para suplantar identidades de directivos.</dd>
+            </dl>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- GLOSARIO (Pág 2/3) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <div class="glosario">
+            <dl>
+                <dt><strong>Disponibilidad</strong></dt>
+                <dd>Principio que garantiza el acceso oportuno y fiable a la información por parte de los usuarios autorizados.</dd>
+
+                <dt><strong>DLP (Data Loss Prevention)</strong></dt>
+                <dd>Sistemas que monitorean, detectan y bloquean la fuga de datos sensibles.</dd>
+
+                <dt><strong>Espionaje industrial</strong></dt>
+                <dd>Obtención ilícita de información confidencial de una empresa por parte de competidores o agentes maliciosos.</dd>
+
+                <dt><strong>Firma digital</strong></dt>
+                <dd>Mecanismo criptográfico que permite autenticar el origen e integridad de un mensaje, proporcionando no repudio. No garantiza confidencialidad.</dd>
+
+                <dt><strong>GDPR</strong></dt>
+                <dd>Reglamento General de Protección de Datos de la Unión Europea (vigente desde 2018). Exige notificación de brechas en 72 horas.</dd>
+
+                <dt><strong>GnuPG</strong></dt>
+                <dd>GNU Privacy Guard, implementación libre del estándar OpenPGP para cifrado y firmas digitales.</dd>
+
+                <dt><strong>Ingeniería social</strong></dt>
+                <dd>Técnica de manipulación psicológica para obtener información confidencial o accesos no autorizados.</dd>
+
+                <dt><strong>Integridad</strong></dt>
+                <dd>Principio que garantiza que la información no ha sido modificada de manera no autorizada.</dd>
+            </dl>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+
+    <!-- GLOSARIO (Pág 3/3) -->
+    <div class="page-content">
+        <div class="section-header">
+            <span class="header-text">Glosario</span>
+            <div class="bar-container">
+                <div class="block-red"></div>
+                <div class="bar-gap"></div>
+                <div class="block-blue"></div>
+            </div>
+        </div>
+
+        <div class="glosario">
+            <dl>
+                <dt><strong>ISO 27001</strong></dt>
+                <dd>Estándar internacional que especifica los requisitos para un Sistema de Gestión de Seguridad de la Información (SGSI).</dd>
+
+                <dt><strong>ISO 27002</strong></dt>
+                <dd>Código de prácticas que proporciona una guía detallada de controles de seguridad (114 controles en su versión 2022).</dd>
+
+                <dt><strong>No repudio</strong></dt>
+                <dd>Garantía de que una parte no puede negar haber realizado una acción.</dd>
+
+                <dt><strong>NIST SP 800-53</strong></dt>
+                <dd>Estándar del Instituto Nacional de Estándares y Tecnología de EE.UU. que ofrece un catálogo de controles de seguridad y privacidad.</dd>
+
+                <dt><strong>PCI DSS</strong></dt>
+                <dd>Payment Card Industry Data Security Standard, estándar de seguridad obligatorio para entidades que procesan datos de tarjetas de pago.</dd>
+
+                <dt><strong>Privacidad</strong></dt>
+                <dd>Derecho de las personas a controlar sus datos personales.</dd>
+
+                <dt><strong>SGSI</strong></dt>
+                <dd>Sistema de Gestión de Seguridad de la Información, marco de trabajo para gestionar la seguridad mediante políticas, procedimientos y controles.</dd>
+
+                <dt><strong>Spear phishing</strong></dt>
+                <dd>Variante del phishing dirigida a una persona u organización específica, con mensajes altamente personalizados.</dd>
+
+                <dt><strong>Zero Trust</strong></dt>
+                <dd>Modelo de seguridad basado en "nunca confiar, siempre verificar". Exige autenticación y autorización continuas para cada acceso.</dd>
+            </dl>
+        </div>
+
+        <div class="page-number"></div>
+    </div>
+</body>
+</html>

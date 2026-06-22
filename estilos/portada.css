@@ -1,0 +1,232 @@
+/* ---- PORTADA TIPO LIBRO (TAMAÑO CARTA) ---- */
+
+.page-letter {
+    width: 21.59cm;
+    min-height: 27.94cm;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.page-letter .logo-container {
+    padding: 0;
+    margin: 35px 0 0 40px;
+}
+
+.page-letter .logo-icon svg {
+    width: 88px;
+    height: 88px;
+}
+
+.page-letter .acronym {
+    font-size: 3rem;
+}
+
+.page-letter .line-red-only {
+    margin: 3px 0 5px 0;
+    height: 4px;
+}
+
+.page-letter .full-name {
+    font-size: 0.75rem;
+}
+
+/* ---- PÁGINAS DE CONTENIDO ---- */
+.page-content {
+    width: 21.59cm;
+    height: 27.94cm;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 48px 56px;
+    margin: 0 auto 40px auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    counter-increment: page;
+}
+
+.page-number {
+    text-align: right;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #999999;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.page-number::after {
+    content: counter(page);
+}
+
+/* ---- CONTENIDO CENTRAL (Corregido para que quede Centrado) ---- */
+.center-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 40px 0 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -160px;
+}
+
+.title-group {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.title-main {
+    font-family: 'Impact', 'Arial Narrow', sans-serif;
+    font-size: 4.8rem;
+    color: #193a6f;
+    letter-spacing: 1px;
+    margin: 0 0 4px 0;
+    padding: 0;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+    text-align: right;
+    border-bottom: none;
+}
+
+.decoration-lines {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 2%;
+    margin-bottom: 25px;
+}
+
+.line-blue-cover {
+    width: 69%;
+    height: 20px;
+    background-color: #c52f2b;
+    border-radius: 1px;
+}
+
+.line-red-cover {
+    width: 29%;
+    height: 20px;
+    background-color: #193a6f;
+    border-radius: 1px;
+}
+
+.subtitle-cover {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.9rem;
+    line-height: 1.3;
+}
+
+@media (max-width: 800px) {
+    .page-letter,
+    .page-content {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+        box-shadow: none;
+    }
+    .page-letter .logo-container { flex-direction: row; text-align: left; }
+    .title-main { font-size: 3.5rem; }
+    .line-blue-cover, .line-red-cover { height: 16px; }
+    .subtitle-cover { font-size: 1.5rem; }
+}
+
+/* ========================================================
+   CORRECCIÓN DE IMPRESIÓN (ELIMINA EL DOBLE BORDE Y LA BARRA)
+   ======================================================== */
+@media print {
+    /* Quitamos los márgenes por defecto del navegador */
+    @page {
+        margin: 0;
+        size: letter portrait;
+    }
+
+    /* Reseteamos el body */
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .page-letter,
+    .page-content {
+        box-shadow: none;
+        margin: 0;
+        padding: 0.5in;
+        width: 100%;
+        height: 27.94cm;
+        min-height: 0;
+        border: none;
+        border-radius: 0;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        overflow: hidden;
+        page-break-after: always;
+    }
+}
+
+/* ---- ENCABEZADO DE SECCIÓN (Estilo índice) ---- */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+.section-header .header-text {
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    line-height: 1;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.block-red {
+    flex: 29;
+    height: 22px;
+    background-color: #c52f2b;
+    border-radius: 1px;
+}
+
+.bar-gap {
+    flex: 2;
+}
+
+.block-blue {
+    flex: 69;
+    height: 22px;
+    background-color: #193a6f;
+    border-radius: 1px;
+}
+
+/* ---- RESALTE DE SUBTEMAS (Dentro de Desarrollo) ---- */
+.topic-header {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #193a6f;
+    margin: 16px 0 10px 0;
+    padding: 8px 0 8px 12px;
+    border-left: 5px solid #c52f2b;
+    background: #f5f5f5;
+}
+
+
