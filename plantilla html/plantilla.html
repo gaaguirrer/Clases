@@ -6,25 +6,64 @@
     <title>Plantilla - Unidad Didáctica</title>
     <!--
     ================================================================
-    REGLAS DE PARTICION DE CONTENIDO (leer antes de editar)
+    REGLAS DE PARTICION DE CONTENIDO (Algoritmo Mejorado v3)
     ================================================================
-    1. Altura fija 27.94 cm, overflow hidden → partir contenido
-       manualmente entre páginas.
-    2. El número de página debe ser SIEMPRE visible. Si el
-       .page-number queda oculto, mover el último elemento de la
-       página (párrafo, tabla, bloque de caso, lista≥3 items, etc.)
-       completo a la página siguiente.
-    3. Compactar: si sobra espacio, traer el primer elemento de la
-       página siguiente, verificando que aún quepa el .page-number.
-    4. Doble verificación: aplicar pasos 2 y 3 dos veces sobre
-       todo el documento tras cada cambio.
-    5. NO partir entre páginas: párrafos, tablas, .caso-exito,
-       .caso-fallo, .highlight, .reflexion, .autoeval, listas≥3.
-    6. El .section-header se repite al inicio de cada página
-       aunque la sección continúe de la página anterior.
-    7. NO MODIFICAR el logo institucional (SVG + texto UNHSJM +
-       línea roja + nombre completo). Solo título y subtítulo
-       de la unidad pueden cambiarse en la portada.
+    A. REGLA FUNDAMENTAL: REDISTRIBUIR, NO COMPRIMIR ESTILOS
+       El padding original .page-content { padding: 48px 56px; } NO
+       debe modificarse. Tampoco se deben reducir márgenes, tamaños
+       de fuente (salvo tablas) ni line-height. Si hay desborde,
+       crear más páginas moviendo bloques completos.
+
+       Única excepción: table { font-size: 12px; } para ayudar a
+       que las tablas quepan sin afectar legibilidad.
+
+    B. CÁLCULO DE ESPACIO (con padding 48px 56px, font 16px, lh 1.7)
+       Área útil ~27 líneas. Dejar 2 líneas libres para número de
+       página = ~25 líneas de contenido real.
+
+       Referencia aproximada:
+       - 1 párrafo estándar             = 4-5 líneas
+       - 1 encabezado <h4>              = 2 líneas
+       - 1 lista de 3 ítems             = 5-6 líneas
+       - 1 tabla de 5 filas (incl th)   = 12-14 líneas (con font 12px)
+       - 1 bloque .caso-exito/.caso-fallo = 8-12 líneas
+       - 1 bloque .autoeval (5 preg)    = 20-25 líneas
+       - .page-number ocupa 2 líneas. Dejar SIEMPRE 2 líneas libres.
+
+    C. REGLAS DE CORTE
+       1. Párrafos, listas (≥3 items), .caso-exito, .caso-fallo,
+          .highlight, .reflexion, .autoeval: NUNCA se parten.
+          Si no caben completos, se mueven enteros a la sig. página.
+       2. Tablas: Se pueden cortar. Si >6 filas de datos, partir.
+          Repetir <thead> en la página siguiente. Ejemplo:
+          Pág. N:   <table><thead>...<tbody>filas 1..5</tbody></table>
+          Pág. N+1: <table><thead>...(REPETIDO)<tbody>filas 6..10</tbody></table>
+       3. Listas de >5 ítems: partir si no caben enteras.
+       4. .section-header debe repetirse al inicio de cada página
+          de la misma sección.
+
+    D. OPTIMIZACIÓN DE TABLAS
+       - Usar table-layout: auto (por defecto) para que los
+         navegadores ajusten el ancho según el contenido.
+       - NO usar table-layout: fixed ni anchos fijos en columnas.
+       - Si una tabla es demasiado ancha, partirla en varias páginas
+         con <thead> repetido.
+       - Si una tabla tiene más de 6 columnas, considerar rotar la
+         página a landscape con:
+           .page-content.landscape { page: landscape; }
+
+    E. COMPACTACIÓN
+       Si una página queda con >5 líneas libres, traer el primer
+       bloque completo de la página siguiente (si cabe y no es un
+       encabezado huérfano).
+
+    F. DOBLE VERIFICACIÓN
+       Aplicar B, C y D dos veces consecutivas sobre todo el
+       documento (excepto portada).
+
+    G. BLOCKQUOTES
+       Si abarcan varias páginas, cerrar con </p></blockquote>
+       antes del .page-number y reabrir en la sig. página.
     ================================================================
     -->
     <style>
@@ -161,7 +200,7 @@
             height: 27.94cm;
             background-color: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            padding: 48px 56px;
+            padding: 48px 56px; /* NO MODIFICAR — redistribuir contenido si hay desborde */
             margin: 0 auto 40px auto;
             box-sizing: border-box;
             display: flex;
@@ -310,7 +349,7 @@
             width: 100%;
             border-collapse: collapse;
             margin: 16px 0 24px;
-            font-size: 14px;
+            font-size: 12px; /* ÚNICA reducción permitida para controlar desborde */
         }
 
         th {
@@ -512,16 +551,17 @@
 </head>
 <body style="counter-reset: page 0;">
 
-    <!-- ================================================================
-         PORTADA  ⚠️  NO MODIFICAR EL LOGO (SVG + texto + line-red-only)
-         ================================================================
+    <!-- ══════════════════════════════════════════════════════════════════
+         ⚠️  PORTADA INVIOLABLE — NO ELIMINAR NI MODIFICAR
+         (excepto título y subtítulo de la unidad)
+         ══════════════════════════════════════════════════════════════════
          El bloque completo de PORTADA (desde .page-letter hasta su cierre)
          NO DEBE MODIFICARSE. El SVG del escudo, el texto "UNHSJM",
          "UNIVERSIDAD NACIONAL HÉROES DE SAN JOSÉ DE LAS MULAS",
          y la línea roja divisoria forman parte de la identidad
          institucional. Cualquier cambio en este bloque requiere
          aprobación del área de comunicación institucional.
-         ================================================================ -->
+         ══════════════════════════════════════════════════════════════════ -->
     <div class="page-letter">
         <div class="logo-container">
             <div class="logo-icon">
@@ -620,7 +660,7 @@
                 <div class="block-blue"></div>
             </div>
         </div>
-        <p>Escriba aquí el texto de introducción. Cada párrafo debe estar envuelto en una etiqueta <code>&lt;p&gt;</code>. Evite que un párrafo quede cortado entre dos páginas; si el espacio disponible no alcanza para el párrafo completo, muévalo entero a la siguiente página.</p>
+        <p>Escriba aquí el texto de introducción. Cada párrafo debe estar envuelto en una etiqueta <code>&lt;p&gt;</code>. Evite que un párrafo quede cortado entre dos páginas; estime las líneas de cada párrafo con: <code>palabras ÷ 11</code> (≈10-12 palabras por línea). Si no cabe en el espacio restante (≈27 líneas útiles por página), muévalo entero a la siguiente página.</p>
         <p>Segundo párrafo de la introducción.</p>
         <div class="page-number"></div>
     </div>

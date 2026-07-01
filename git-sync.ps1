@@ -80,25 +80,34 @@ if ($Sparse -or -not ($Auto -or $Startup)) {
     $carpetasEnDisco = Get-ChildItem -LiteralPath $repo -Directory |
         Where-Object { $_.Name -notmatch '^\.' } |
         Select-Object -ExpandProperty Name
+    $archivosRaiz = & $gitExe -C $repo ls-files | Where-Object { $_ -notmatch '/' }
+    $patronesEsperados = @()
+    $carpetasEnDisco | ForEach-Object { $patronesEsperados += "$_/**" }
+    $archivosRaiz | ForEach-Object { $patronesEsperados += $_ }
     $patronesExistentes = @()
     if (Test-Path $sparseFile) {
-        $patronesExistentes = Get-Content $sparseFile | Where-Object { $_ -match '.+/\*\*' }
+        $patronesExistentes = Get-Content $sparseFile
     }
-    $carpetasEnSparse = $patronesExistentes | ForEach-Object { $_ -replace '/\*\*$' }
+    $carpetasEnSparse = $patronesExistentes | Where-Object { $_ -match '.+/\*\*' } | ForEach-Object { $_ -replace '/\*\*$' }
+    $archivosEnSparse = $patronesExistentes | Where-Object { $_ -notmatch '.+/\*\*' -and $_ -notmatch '^/\*$' }
     $agregar = $carpetasEnDisco | Where-Object { $_ -notin $carpetasEnSparse }
     $quitar = $carpetasEnSparse | Where-Object { $_ -notin $carpetasEnDisco }
-    if ($agregar -or $quitar) {
+    $agregarArchivos = $archivosRaiz | Where-Object { $_ -notin $archivosEnSparse }
+    $quitarArchivos = $archivosEnSparse | Where-Object { $_ -notin $archivosRaiz }
+    if ($agregar -or $quitar -or $agregarArchivos -or $quitarArchivos) {
         Write-Output "`n--- Sparse-checkout ---"
-        if ($agregar) { $agregar | ForEach-Object { Write-Output "  + $_ (nueva carpeta)" } }
-        if ($quitar) { $quitar | ForEach-Object { Write-Output "  - $_ (ya no existe)" } }
+        if ($agregar) { $agregar | ForEach-Object { Write-Output "  + $_/ (nueva carpeta)" } }
+        if ($quitar) { $quitar | ForEach-Object { Write-Output "  - $_/ (ya no existe)" } }
+        if ($agregarArchivos) { $agregarArchivos | ForEach-Object { Write-Output "  + $_ (nuevo archivo raiz)" } }
+        if ($quitarArchivos) { $quitarArchivos | ForEach-Object { Write-Output "  - $_ (ya no existe)" } }
         if (-not $Forzar -and -not $Auto) {
             $r = Read-Host "`nActualizar sparse-checkout? (s/N)"
             if ($r -notmatch '^[sS]') { Write-Output "Cancelado."; return }
         }
         foreach ($c in $agregar) { Add-Content -Path $sparseFile -Value "$c/**" }
-        foreach ($c in $quitar) {
-            $patron = "$c/**"
-            $contenido = Get-Content $sparseFile | Where-Object { $_ -ne $patron }
+        foreach ($c in $agregarArchivos) { Add-Content -Path $sparseFile -Value $c }
+        foreach ($c in $quitar + $quitarArchivos) {
+            $contenido = Get-Content $sparseFile | Where-Object { $_ -ne "$c/**" -and $_ -ne $c }
             Set-Content -Path $sparseFile -Value $contenido
         }
         Invoke-Git -GitExe $gitExe -GitArgs @("read-tree", "-mu", "HEAD")
